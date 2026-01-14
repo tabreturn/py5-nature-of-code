@@ -1,17 +1,19 @@
-# py5 Port - Nature of Code
+# py5 Port -- Nature of Code
 
-*py5 implementations of "The Nature of Code" (2024 edition)
+*py5 implementations of "The Nature of Code" (2024 edition)*
 
 http://natureofcode.com
 
-Built with [py5](https://py5coding.org) using [Thonny-py5mode](https://github.com/py5coding/thonny-py5mode).
+**Built with [py5](https://py5coding.org) using [Thonny-py5mode](https://github.com/py5coding/thonny-py5mode).**
 
 The examples in the print/online book and the p5.js editor are not always identical. In addition, certain liberties were necessary to accommodate a Python implementation and to keep the code idiomatic and 'Pythonic.' Ultimately, I've aimed to strike a balance between fidelity to the original material, Python best practices, and clarity for readers following along with *The Nature of Code*.
 
 
 ## Contents
 
-*I'm starting with Chapters 09, 10, and 11. After completing those, I'll start from Chapter 01.*
+<br />
+*NOTE: I'm starting with Chapters 09, 10, and 11. After completing those, I'll start from Chapter 01.*
+<br />
 
 ### Ch. 09 -- Evolutionary Computing
 
