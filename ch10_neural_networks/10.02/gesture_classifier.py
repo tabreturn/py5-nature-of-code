@@ -4,7 +4,6 @@
 from sklearn.neural_network import MLPClassifier
 from sklearn.preprocessing import StandardScaler
 
-# Step 1: data
 DATA = [
   {'x': 0.99, 'y': 0.02, 'label': 'right'},
   {'x': 0.76, 'y': -0.1, 'label': 'right'},
@@ -16,143 +15,77 @@ DATA = [
   {'x': -0.1, 'y': -0.8, 'label': 'up'},
 ]
 
-X = np.array([[d['x'], d['y']] for d in DATA], dtype=np.float32)
-y = np.array([d['label'] for d in DATA])
-
-
-# Step 2-3: model + scaler
-scaler = StandardScaler()
-mlp = MLPClassifier(
-    hidden_layer_sizes=(8, 8),
-    activation='tanh',
-    solver='adam',
-    max_iter=1,        # one epoch per fit()
-    warm_start=True,
-    random_state=0,
-)
-
-
-# Status + interaction
-status = "training"
-trained = False
+OPTIONS = {
+  'max_iter': 25 * 100,         # Set the number of epochs for training.
+  'verbose': True,              # The Shell will serve as the 'Visor'
+  'hidden_layer_sizes': (16,),  # Approximate ml5 defaults
+  # NOTE: scikit-learn infers input/output dimensionality from the data.
+}
 
 start = None
 end = None
 
 
-# Training control
-EPOCHS = 200
-epoch_now = 0
-progress = 0.0
-last_loss = None
-
-Xs = None
-monospace = None
-
-
 def setup():
-    global Xs, monospace
+    global monospace, classifier, scaler, status
     size(640, 240)
     monospace = create_font('DejaVu Sans Mono', 32)
+    text_font(monospace)
 
-    # Step 5: normalize data
-    scaler.fit(X)
-    Xs = scaler.transform(X)
+    classifier = MLPClassifier(**OPTIONS)
+    scaler = StandardScaler()
+
+    # An array of two numbers for the inputs.
+    inputs = [[item['x'], item['y']] for item in DATA]
+    inputs = np.array(inputs)
+    # A single string label for the output.
+    outputs = [item['label'] for item in DATA]
+    outputs = np.array(outputs)
+
+    # Normalize the data.
+    inputs = scaler.fit_transform(inputs)
+
+    # Add the training data to the classifier.
+    print(status := 'training')
+    classifier.fit(inputs, outputs)  # fit() method initiates training process.
+    print(status := 'ready')
 
 
 def draw():
-    global status, trained, epoch_now, progress, last_loss
-
-    # Step 6: train (no threads): one epoch per frame
-    if not trained:
-        if epoch_now < EPOCHS:
-            mlp.fit(Xs, y)  # one epoch
-            epoch_now += 1
-            progress = epoch_now / EPOCHS
-            last_loss = float(mlp.loss_)
-        else:
-            trained = True
-            status = "ready"
-
-    # Step 7: render
     background(255)
 
     text_align(CENTER, CENTER)
     fill(0)
     text_size(64)
-    text(status, width / 2, height / 2)
+    text(status, width / 2, height / 2 - 5)
 
     if start is not None and end is not None:
         stroke(0)
         stroke_weight(8)
-        line(start[0], start[1], end[0], end[1])
+        line(start.x, start.y, end.x, end.y)
 
-    # Display some info (Nature of Code style)
-    no_stroke()
-    fill(0)
-    text_font(monospace)
-    text_size(11)
-    text_align(LEFT, TOP)  # <-- important: reset after CENTER,CENTER
-
-    cycles_left = max(0, EPOCHS - epoch_now)
-    if last_loss is None:
-        hud = (
-            f'Epoch #: {epoch_now}\n'
-            f'Cycles left: {cycles_left}\n'
-            f'Loss: -'
-        )
-    else:
-        hud = (
-            f'Epoch #: {epoch_now}\n'
-            f'Cycles left: {cycles_left}\n'
-            f'Loss: {last_loss:.6f}'
-        )
-
-    text(hud, 10, 20)
-    text('(C) pause\n(Z) advance frame\n(X) run continuous\n(Q) quit', 10, 187)
-
+    # Display some info.
+    text_align(LEFT); text_font(monospace); text_size(11)
+    text('\n'.join(
+      f'dense_{i}  [batch,{W.shape[1]:>2}]  {W.size+b.size}'
+      for i, (W, b) in enumerate(zip(classifier.coefs_, classifier.intercepts_), 1)
+    ), 10, 20)
+    text('Use the Shell to observe training performance', 10, 226)
 
 
 def mouse_pressed():
     global start, end
-    start = (mouse_x, mouse_y)
+    start = Py5Vector2D(mouse_x, mouse_y)
     end = None
 
 
 def mouse_dragged():
     global end
-    end = (mouse_x, mouse_y)
+    end = Py5Vector2D(mouse_x, mouse_y)
 
 
 def mouse_released():
-    global status, end
-
-    if not trained or start is None:
-        return
-
-    if end is None:
-        end = (mouse_x, mouse_y)
-
-    # Step 8: classify direction
-    sx, sy = start
-    ex, ey = end
-    vx, vy = ex - sx, ey - sy
-
-    n = np.hypot(vx, vy)
-    if n == 0:
-        return
-
-    direction = np.array([[vx / n, vy / n]], dtype=np.float32)
-    direction_s = scaler.transform(direction)
-    status = str(mlp.predict(direction_s)[0])
-
-
-def key_pressed():
-    if key == 'c':
-        no_loop()
-    if key == 'z':
-        redraw()
-    if key == 'x':
-        loop()
-    if key == 'q':
-        exit_sketch()
+    global status
+    v = (end - start).normalize()
+    inputs = scaler.transform([[v.x, v.y]])
+    status = str(classifier.predict(inputs)[0])
