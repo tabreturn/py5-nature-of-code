@@ -44,14 +44,11 @@ def draw():
     stroke_weight(2)
     circle(target.x, target.y, 24)
     # Display some info.
-    fill(0)
-    text_font(monospace)
-    text_size(11)
+    fill(0); text_font(monospace); text_size(11)
     text(
       f'Generation #: {population.generations}\n'
       f'Cycles left: {LIFE_SPAN - life_counter}',
-      10,
-      20,
+      10, 20,
     )
     text('(C) pause\n(Z) advance frame\n(X) run continuous\n(Q) quit', 10, 187)
 

@@ -11,10 +11,10 @@ class Flower:
     """Flower phenotype."""
 
     def __init__(self, dna: DNA, x: float, y: float):
-        self.dna = dna  # Flower DNA.
-        self.fitness = 1  # How fit is the flower?
+        self.dna = dna            # Flower DNA.
+        self.fitness = 1          # How fit is the flower?
         self.rollover_on = False  # Are we rolling over this flower?
-        self.x, self.y = x, y  # Position on screen.
+        self.x, self.y = x, y     # Position on screen.
         self.w, self.h = 70, 140  # Size of square enclosing flower.
         self.bounding_box = Rectangle(
             self.x - self.w / 2, self.y - self.h / 2, self.w, self.h
