@@ -6,6 +6,8 @@
 
 The examples in the print/online book and the p5.js editor are not always identical. In addition, certain liberties were necessary to accommodate a Python implementation and to keep the code idiomatic and 'Pythonic.' Ultimately, I've aimed to strike a balance between fidelity to the original material, Python best practices, and clarity for readers following along with *[The Nature of Code](http://natureofcode.com)*.
 
+To run the sketches, [install Thonny-py5mode](https://github.com/py5coding/thonny-py5mode) and activate **py5 > Imported mode for py5** in the editor.
+
 
 ## Contents
 
@@ -38,7 +40,7 @@ The examples in the print/online book and the p5.js editor are not always identi
 - 10.01 -- the_perceptron:
   [py5](ch10_evolutionary_computing/10.01) |
   [p5.js](https://editor.p5js.org/natureofcode/sketches/sMozIaMCW)
-- 10.02 -- ...
+- 10.02 -- *... [in progress](ch10_evolutionary_computing/10.02) ...*
 
 ### Ch. 11 -- Neuroevolution
 
