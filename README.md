@@ -8,6 +8,8 @@ I have taken a few liberties in my interpretation. First, the examples in the bo
 
 To run the sketches, install [Thonny-py5mode](https://github.com/py5coding/thonny-py5mode) and activate **py5 → Imported mode for py5** in the editor.
 
+![](banner.png)
+
 ---
 
 ## Contents
