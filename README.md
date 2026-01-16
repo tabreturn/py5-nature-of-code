@@ -1,10 +1,10 @@
-# py5 Port -- Nature of Code
+# Nature of Code -- py5 Port
 
 *py5 implementations of "The Nature of Code" (2024 edition)*
 
 **Built with [py5](https://py5coding.org) using [Thonny-py5mode](https://github.com/py5coding/thonny-py5mode)**
 
-The examples in the print/online book and the p5.js editor are not always identical. In addition, certain liberties were necessary to accommodate a Python implementation and to keep the code idiomatic and 'Pythonic.' Ultimately, I've aimed to strike a balance between fidelity to the original material, Python best practices, and clarity for readers following along with *[The Nature of Code](http://natureofcode.com)*.
+The examples in the print/online book and the p5.js editor don’t always match exactly. In a few places, minor adjustments were necessary to support a Python implementation and to keep the code idiomatic and Pythonic. Throughout, I’ve aimed to balance faithfulness to the original material with Python best practices and clarity for readers working through this fantastic [book](http://natureofcode.com).
 
 To run the sketches, [install Thonny-py5mode](https://github.com/py5coding/thonny-py5mode) and activate **py5 > Imported mode for py5** in the editor.
 
@@ -52,4 +52,5 @@ To run the sketches, [install Thonny-py5mode](https://github.com/py5coding/thonn
 - 11.04 -- ...
 - 11.05 -- ...
 - 11.06 --
+
 
