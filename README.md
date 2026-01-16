@@ -6,7 +6,9 @@
 
 I have taken a few liberties in my interpretation. First, the examples in the book and its accompanying [p5.js examples](https://natureofcode.com/examples) do not always match exactly. Second, in a few places, minor adjustments were necessary to support a Python implementation and to keep the code idiomatic. However, my aim throughout has been to balance faithfulness to the original material with Python best practices and clarity for readers working through this [fantastic book](https://natureofcode.com).
 
-To run the sketches, install [Thonny-py5mode](https://github.com/py5coding/thonny-py5mode) and activate **py5 → Imported mode for py5** in the editor.
+To run the sketches, install [Thonny-py5mode](https://github.com/py5coding/thonny-py5mode) and activate **py5 → Imported mode for py5** in the editor. 
+
+Sketches use *DejaVu Sans* fonts, available at [https://dejavu-fonts.github.io](https://dejavu-fonts.github.io)
 
 ![](banner.png)
 
