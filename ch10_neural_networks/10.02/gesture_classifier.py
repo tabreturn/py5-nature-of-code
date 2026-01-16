@@ -61,7 +61,7 @@ def draw():
     text_align(CENTER, CENTER)
     fill(0)
     text_size(64)
-    text(status, width / 2, height / 2 - 5)
+    text(status, width / 2, height / 2)
 
     if start is not None and end is not None:
         stroke(0)
@@ -70,9 +70,9 @@ def draw():
 
     # Display some info.
     text_align(LEFT); text_font(monospace); text_size(11)
-    text(f'{"Layer":<10} {"Shape":<8} Params\n' + '\n'.join(
+    text(f'{"Layer":<10} {"Shape":<10} Params\n' + '\n'.join(
       f'{(f"hidden_{i}" if i < len(classifier.coefs_) else "output"):<10} '
-      f'{W.shape[1]:<8} {W.size + b.size:}'
+      f'{str(W.shape):<10} {W.size + b.size:}'
       for i, (W, b) in enumerate(zip(classifier.coefs_, classifier.intercepts_), 1)
     ),10, 20)
     text('* Use the Shell to observe training performance', 10, 226)
