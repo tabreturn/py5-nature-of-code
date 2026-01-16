@@ -23,7 +23,7 @@ DATA = [
 OPTIONS = {
   # NOTE: scikit-learn infers input/output dimensionality from the data.
   'max_iter': 25 * 100,         # Set the number of 'epochs' for training.
-  'verbose': True,              # The Shell will serve as the 'Visor'
+  'verbose': True,              # The Shell will serve as the 'Visor'.
   'hidden_layer_sizes': (16,),  # Approximate ml5.js 'best guess' configuration.
 }
 classifier = MLPClassifier(**OPTIONS)
