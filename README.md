@@ -40,7 +40,9 @@ To run the sketches, [install Thonny-py5mode](https://github.com/py5coding/thonn
 - 10.01 -- the_perceptron:
   [py5](ch10_neural_networks/10.01) |
   [p5.js](https://editor.p5js.org/natureofcode/sketches/sMozIaMCW)
-- 10.02 -- *... [in progress](ch10_neural_networks/10.02) ...*
+- 10.02 -- gesture_classifier:
+  [py5](ch10_neural_networks/10.02) |
+  [p5.js](https://editor.p5js.org/natureofcode/sketches/SbfSv_GhM)
 
 ### Ch. 11 -- Neuroevolution
 
