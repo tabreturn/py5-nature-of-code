@@ -20,7 +20,7 @@ Sketches use *DejaVu Sans* fonts, available at [https://dejavu-fonts.github.io](
 <em>NOTE: This port begins with Chapters 09, 10, and 11. After completing those, I plan to continue from Chapter 01.</em>
 <br />
 
-## Ch. 09 - Evolutionary Computing
+### Ch. 09 - Evolutionary Computing
 
 - **09.01 - ga_shakespeare** |
   py5: [ch09_evolutionary_computing/09.01](ch09_evolutionary_computing/09.01) |
@@ -43,7 +43,7 @@ Sketches use *DejaVu Sans* fonts, available at [https://dejavu-fonts.github.io](
   p5.js: [1HDlp_tKF](https://editor.p5js.org/natureofcode/sketches/1HDlp_tKF)
 
 
-## Ch. 10 - Neural Networks
+### Ch. 10 - Neural Networks
 
 - **10.01 - the_perceptron** |
   py5: [ch10_neural_networks/10.01](ch10_neural_networks/10.01) |
@@ -54,7 +54,7 @@ Sketches use *DejaVu Sans* fonts, available at [https://dejavu-fonts.github.io](
   p5.js: [SbfSv_GhM](https://editor.p5js.org/natureofcode/sketches/SbfSv_GhM)
 
 
-## Ch. 11 - Neuroevolution
+### Ch. 11 - Neuroevolution
 
 - **11.01 - flappy_bird** |
   py5: [ch11_neuroevolution/11.01](ch11_neuroevolution/11.01) |
