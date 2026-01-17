@@ -12,8 +12,6 @@ from brain_ga import Brain
 POP_SIZE = 200
 PIPE_INTERVAL = 100
 
-birds = []
-pipes = []
 
 
 def setup():
@@ -53,7 +51,10 @@ def draw():
         if pipes[i].offscreen():
             pipes.pop(i)
 
-    # birds
+
+
+
+
     for bird in birds:
         if not bird.alive:
             continue
@@ -79,12 +80,16 @@ def draw():
     # Add a new pipe every 100 frames.
     if frame_count % 100 == 0:
         pipes.append(Pipe())'''
-    # new pipe
+
+
+
+
+
     sketch = get_current_sketch()
     if sketch.frame_count % PIPE_INTERVAL == 0:
         pipes.append(Pipe())
 
-    # next generation
+
     if all_birds_dead(birds):
         next_gen = reproduction(birds)
         birds[:] = next_gen
@@ -96,13 +101,11 @@ def all_birds_dead(birds_list) -> bool:
 
 
 def reset_pipes(pipes_list):
-    # keep only the newest pipe
     if len(pipes_list) > 1:
         del pipes_list[:-1]
 
 
 def normalize_fitness(birds_list):
-    # optional trick from Shiffman: square scores to increase selection pressure
     total = 0.0
     for b in birds_list:
         b.fitness = b.fitness * b.fitness
@@ -138,7 +141,6 @@ def reproduction(birds_list):
 
     next_birds = []
 
-    # tiny elitism helps a lot (keep best 2 unchanged)
     elite = sorted(birds_list, key=lambda b: b.fitness, reverse=True)[:2]
     for e in elite:
         next_birds.append(Bird(e.brain.copy()))

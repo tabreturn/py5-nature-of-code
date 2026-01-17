@@ -1,9 +1,5 @@
-# brain_ga.py
-from __future__ import annotations
-
-import math
-import random
-from typing import List
+import math # ------------------ SWAP OUT
+import random # ------------------ SWAP OUT
 
 
 def _tanh(x: float) -> float:

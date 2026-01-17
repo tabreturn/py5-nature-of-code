@@ -1,4 +1,7 @@
 from py5 import fill, circle, get_current_sketch, stroke, stroke_weight
+
+
+
 from brain_ga import Brain
 
 
@@ -45,10 +48,18 @@ class Bird:
             self.flap()
 
     def update(self) -> None:
-        if not self.alive:  # Add gravity.
+
+
+
+        if not self.alive:
             return
 
-        self.velocity += self.gravity
+
+
+
+
+
+        self.velocity += self.gravity  # Add gravity.
         self.y += self.velocity
 
         # Dampen velocity.
