@@ -49,7 +49,7 @@ def draw():
         # Step 4: Repetition. Go back to the beginning of draw()!
 
 
-def display_progress():
+def display_progress() -> None:
     """Display the current best phrase and summary statistics."""
     background(255)
     fill(0)

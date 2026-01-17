@@ -20,7 +20,7 @@ class Flower:
             self.x - self.w / 2, self.y - self.h / 2, self.w, self.h
         )
 
-    def show(self):
+    def show(self) -> None:
         """Display the flower."""
         # DNA values such as petal color, petal size, and number of petals.
         genes = self.dna.genes

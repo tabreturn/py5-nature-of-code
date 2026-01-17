@@ -40,7 +40,7 @@ def draw():
     text(f'Generation {population.generations}', 12, height - 10)
 
 
-def next_generation():
+def next_generation() -> None:
     """If the button is pressed, evolve the next generation."""
     population.selection()
     population.reproduction()

@@ -20,7 +20,7 @@ class Perceptron:
         # The perceptron is guessing: Is it on one side of the line or other?
         return self.activate(weighted_sum)
 
-    def activate(self, weighted_sum: float):
+    def activate(self, weighted_sum: float) -> int:
         """The output is a +1 or –1."""
         return 1 if weighted_sum > 0 else -1
 
