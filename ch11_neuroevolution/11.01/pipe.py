@@ -4,19 +4,19 @@ from bird import Bird
 
 class Pipe:
     def __init__(self):
-         # The size of the opening between the two parts of the pipe.
-         self.spacing = 100
-         # A random height for the top of the pipe.
-         self.height = get_current_sketch().height
-         self.top = random(self.height - self.spacing)
-         # The starting position of the bottom pipe (based on the top).
-         self.bottom = self.top + self.spacing
-         # The pipe starts at the edge of the canvas.
-         self.x = get_current_sketch().width
-         # The width of the pipe.
-         self.w = 20
-         # The horizontal speed of the pipe.
-         self.velocity = 2
+        # The size of the opening between the two parts of the pipe.
+        self.spacing = 100
+        # A random height for the top of the pipe.
+        self.height = get_current_sketch().height
+        self.top = random(self.height - self.spacing)
+        # The starting position of the bottom pipe (based on the top).
+        self.bottom = self.top + self.spacing
+        # The pipe starts at the edge of the canvas.
+        self.x = get_current_sketch().width
+        # The width of the pipe.
+        self.w = 20
+        # The horizontal speed of the pipe.
+        self.velocity = 2
 
     def show(self) -> None:
         """Draw the two pipes."""

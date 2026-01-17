@@ -41,8 +41,8 @@ Sketches use *DejaVu Sans* fonts, available at [https://dejavu-fonts.github.io](
 
 | Example | py5 path | p5.js URL |
 |--------|----------|-----------|
-| 11.01 - IN PROGRESS | [ch11_neuroevolution/11.01](ch11_neuroevolution/11.01) | https://editor.p5js.org/natureofcode/sketches/Pv-JlO0cl |
-| 11.02 |  |  |
+| 11.01 - flappy_bird | [ch11_neuroevolution/11.01](ch11_neuroevolution/11.01) | https://editor.p5js.org/natureofcode/sketches/Pv-JlO0cl |
+| 11.02 - IN PROGRESS | [ch11_neuroevolution/11.02](ch11_neuroevolution/11.02) | https://editor.p5js.org/natureofcode/sketches/PEUKc5dpZ |
 | 11.03 |  |  |
 | 11.04 |  |  |
 | 11.05 |  |  |
