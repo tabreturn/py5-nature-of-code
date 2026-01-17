@@ -1,4 +1,4 @@
-from py5 import get_current_sketch
+from py5 import fill, circle, get_current_sketch, stroke, stroke_weight
 
 
 class Bird:
@@ -10,11 +10,11 @@ class Bird:
         self.gravity = 0.5
         self.flap_force = -10
 
-    def flap(self):
+    def flap(self) -> None:
         """The bird flaps its wings."""
         self.velocity += self.flap_force
 
-    def update(self):
+    def update(self) -> None:
         self.velocity += self.gravity  # Add gravity.
         self.y += self.velocity
         # Dampen velocity.
@@ -23,3 +23,9 @@ class Bird:
         if self.y > get_current_sketch().height:
             self.y = get_current_sketch().height
             self.velocity = 0
+
+    def show(self) -> None:
+        stroke_weight(2)
+        stroke(0)
+        fill(127)
+        circle(self.x, self.y, 16)
