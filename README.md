@@ -20,31 +20,63 @@ Sketches use *DejaVu Sans* fonts, available at [https://dejavu-fonts.github.io](
 <em>NOTE: This port begins with Chapters 09, 10, and 11. After completing those, I plan to continue from Chapter 01.</em>
 <br />
 
-### Ch. 09 - Evolutionary Computing
+## Ch. 09 - Evolutionary Computing
 
-| Example | py5 path | p5.js URL |
-|--------|----------|-----------|
-| 09.01 - ga_shakespeare | [ch09_evolutionary_computing/09.01](ch09_evolutionary_computing/09.01) | [q4F192JCV](https://editor.p5js.org/natureofcode/sketches/q4F192JCV) |
-| 09.02 - smart_rockets | [ch09_evolutionary_computing/09.02](ch09_evolutionary_computing/09.02) | [jzfy_9p1ES](https://editor.p5js.org/natureofcode/sketches/jzfy_9p1ES) |
-| 09.03 - smarter_rockets | [ch09_evolutionary_computing/09.03](ch09_evolutionary_computing/09.03) | [565K_KXSA](https://editor.p5js.org/natureofcode/sketches/565K_KXSA) |
-| 09.04 - interactive_selection | [ch09_evolutionary_computing/09.04](ch09_evolutionary_computing/09.04) | [dUeAaapkQ](https://editor.p5js.org/natureofcode/sketches/dUeAaapkQ) |
-| 09.05 - evolving_ecosystem | [ch09_evolutionary_computing/09.05](ch09_evolutionary_computing/09.05) | [1HDlp_tKF](https://editor.p5js.org/natureofcode/sketches/1HDlp_tKF) |
+- **09.01 - ga_shakespeare**  
+  py5: [ch09_evolutionary_computing/09.01](ch09_evolutionary_computing/09.01)  
+  p5.js: [q4F192JCV](https://editor.p5js.org/natureofcode/sketches/q4F192JCV)
 
-### Ch. 10 - Neural Networks
+- **09.02 - smart_rockets**  
+  py5: [ch09_evolutionary_computing/09.02](ch09_evolutionary_computing/09.02)  
+  p5.js: [jzfy_9p1ES](https://editor.p5js.org/natureofcode/sketches/jzfy_9p1ES)
 
-| Example | py5 path | p5.js URL |
-|--------|----------|-----------|
-| 10.01 - the_perceptron | [ch10_neural_networks/10.01](ch10_neural_networks/10.01) | [sMozIaMCW](https://editor.p5js.org/natureofcode/sketches/sMozIaMCW) |
-| 10.02 - gesture_classifier | [ch10_neural_networks/10.02](ch10_neural_networks/10.02) | [SbfSv_GhM](https://editor.p5js.org/natureofcode/sketches/SbfSv_GhM) |
+- **09.03 - smarter_rockets**  
+  py5: [ch09_evolutionary_computing/09.03](ch09_evolutionary_computing/09.03)  
+  p5.js: [565K_KXSA](https://editor.p5js.org/natureofcode/sketches/565K_KXSA)
 
-### Ch. 11 - Neuroevolution
+- **09.04 - interactive_selection**  
+  py5: [ch09_evolutionary_computing/09.04](ch09_evolutionary_computing/09.04)  
+  p5.js: [dUeAaapkQ](https://editor.p5js.org/natureofcode/sketches/dUeAaapkQ)
 
-| Example | py5 path | p5.js URL |
-|--------|----------|-----------|
-| 11.01 - flappy_bird | [ch11_neuroevolution/11.01](ch11_neuroevolution/11.01) | [JlO0cl](https://editor.p5js.org/natureofcode/sketches/Pv-JlO0cl) |
-| 11.02 - IN PROGRESS | [ch11_neuroevolution/11.02](ch11_neuroevolution/11.02) | [PEUKc5dpZ](https://editor.p5js.org/natureofcode/sketches/PEUKc5dpZ) |
-| 11.03 |  |  |
-| 11.04 |  |  |
-| 11.05 |  |  |
-| 11.06 |  |  |
+- **09.05 - evolving_ecosystem**  
+  py5: [ch09_evolutionary_computing/09.05](ch09_evolutionary_computing/09.05)  
+  p5.js: [1HDlp_tKF](https://editor.p5js.org/natureofcode/sketches/1HDlp_tKF)
+
+
+## Ch. 10 - Neural Networks
+
+- **10.01 - the_perceptron**  
+  py5: [ch10_neural_networks/10.01](ch10_neural_networks/10.01)  
+  p5.js: [sMozIaMCW](https://editor.p5js.org/natureofcode/sketches/sMozIaMCW)
+
+- **10.02 - gesture_classifier**  
+  py5: [ch10_neural_networks/10.02](ch10_neural_networks/10.02)  
+  p5.js: [SbfSv_GhM](https://editor.p5js.org/natureofcode/sketches/SbfSv_GhM)
+
+
+## Ch. 11 - Neuroevolution
+
+- **11.01 - flappy_bird**  
+  py5: [ch11_neuroevolution/11.01](ch11_neuroevolution/11.01)  
+  p5.js: [JlO0cl](https://editor.p5js.org/natureofcode/sketches/Pv-JlO0cl)
+
+- **11.02 - IN PROGRESS**  
+  py5: [ch11_neuroevolution/11.02](ch11_neuroevolution/11.02)  
+  p5.js: [PEUKc5dpZ](https://editor.p5js.org/natureofcode/sketches/PEUKc5dpZ)
+
+- **11.03**  
+  py5:  
+  p5.js:  
+
+- **11.04**  
+  py5:  
+  p5.js:  
+
+- **11.05**  
+  py5:  
+  p5.js:  
+
+- **11.06**  
+  py5:  
+  p5.js:  
 
