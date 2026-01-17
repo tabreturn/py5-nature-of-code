@@ -16,9 +16,7 @@ Sketches use *DejaVu Sans* fonts, available at [https://dejavu-fonts.github.io](
 
 ## Contents
 
-<br />
-<em>NOTE: This port begins with Chapters 09, 10, and 11. After completing those, I plan to continue from Chapter 01.</em>
-<br />
+<br /><em>NOTE: This port begins with Chapters 09, 10, and 11. After completing those, I plan to continue from Chapter 01.</em><br />
 
 ### Ch. 09 - Evolutionary Computing
 
@@ -58,7 +56,7 @@ Sketches use *DejaVu Sans* fonts, available at [https://dejavu-fonts.github.io](
 
 - **11.01 - flappy_bird** |
   py5: [ch11_neuroevolution/11.01](ch11_neuroevolution/11.01) |
-  p5.js: [JlO0cl](https://editor.p5js.org/natureofcode/sketches/Pv-JlO0cl)
+  p5.js: [Pv-JlO0cl](https://editor.p5js.org/natureofcode/sketches/Pv-JlO0cl)
 
 - **11.02 - IN PROGRESS** |
   py5: [ch11_neuroevolution/11.02](ch11_neuroevolution/11.02) |
