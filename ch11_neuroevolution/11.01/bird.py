@@ -12,6 +12,7 @@ class Bird:
 
     def flap(self) -> None:
         """The bird flaps its wings."""
+
         self.velocity += self.flap_force
 
     def update(self) -> None:

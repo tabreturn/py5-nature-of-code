@@ -6,6 +6,7 @@ from food import Food
 
 class World:
     """The World class manages the population of bloops and all the food."""
+
     def __init__(self, population_size: int):
         # Create the population.
         self.bloops = [
@@ -24,6 +25,7 @@ class World:
 
     def run(self) -> None:
         """Run the world."""
+
         # This method draws the food and adds new food when necessary.
         self.food.run()
 
@@ -47,5 +49,6 @@ class World:
 
     def born(self, x: int, y: int) -> None:
         """We can add a creature manually if we so desire."""
+
         position = Py5Vector2D(x, y)
         self.bloops.append(Bloop(position, DNA()))

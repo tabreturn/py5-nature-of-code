@@ -6,6 +6,7 @@ class DNA:
     # (p5.js sketches share a single global scope)
     def __init__(self, life_span: int):
         """The genetic sequence is an array of vectors."""
+
         self.max_force = 0.1  # How strong can the thrusters be?
         # Notice that the length of genes is equal to global LIFE_SPAN variable.
         self.genes = [
@@ -17,6 +18,7 @@ class DNA:
 
     def crossover(self, partner: 'DNA') -> 'DNA':
         """Crossover."""
+
         child = DNA(len(self.genes))
         midpoint = floor(random(len(self.genes)))
         child.genes[:midpoint] = self.genes[:midpoint]
@@ -25,6 +27,7 @@ class DNA:
 
     def mutate(self, mutation_rate: float) -> None:
         """Mutation."""
+
         for i, gene in enumerate(self.genes):
             if random(1) < mutation_rate:
                 angle = random(TWO_PI)

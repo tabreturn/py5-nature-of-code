@@ -9,6 +9,7 @@ class DNA:
 
     def copy(self) -> 'DNA':
         """This copy() method replaces crossover()."""
+
         new_dna = DNA()  # Create new DNA (with random genes).
         # Overwrite the random genes with a copy of this DNA's genes.
         new_dna.genes = self.genes[:]
@@ -16,6 +17,7 @@ class DNA:
 
     def mutate(self, mutation_rate: float) -> None:
         """Mutation."""
+
         for i in range(len(self.genes)):
             if random(1) < mutation_rate:
                 self.genes[i] = random(1)

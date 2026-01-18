@@ -92,6 +92,7 @@ def mouse_dragged():
 
 def mouse_released():
     """The gesture is complete when the mouse is released."""
+
     # Calculate and normalize a direction vector.
     direction = (end - start).normalize()
     # Convert to an input array and classify.
@@ -104,6 +105,7 @@ def mouse_released():
 
 def got_results(label, probas) -> None:
     """Store resulting label in the status variable for showing in canvas."""
+
     global status
     status = str(label)
 

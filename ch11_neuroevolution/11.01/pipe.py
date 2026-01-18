@@ -20,6 +20,7 @@ class Pipe:
 
     def show(self) -> None:
         """Draw the two pipes."""
+
         fill(0)
         no_stroke()
         rect(self.x, 0, self.w, self.top)
@@ -27,6 +28,7 @@ class Pipe:
 
     def update(self) -> None:
         """Update the horizontal position."""
+
         self.x -= self.velocity
 
     def collides(self, bird: Bird) -> bool:
@@ -39,4 +41,5 @@ class Pipe:
 
     def offscreen(self) -> bool:
         """For when a pipe has moved beyond the left edge of the canvas."""
+
         return self.x < -self.w

@@ -42,5 +42,6 @@ def draw():
 
 def next_generation() -> None:
     """If the button is pressed, evolve the next generation."""
+
     population.selection()
     population.reproduction()

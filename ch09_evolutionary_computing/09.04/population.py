@@ -12,11 +12,13 @@ class Population:
 
     def show(self) -> None:
         """Display all faces."""
+
         for flower in self.population:
             flower.show()
 
     def rollover(self, mx: int, my: int) -> None:
         """Are we rolling over any of the faces?"""
+
         for flower in self.population:
             flower.rollover(mx, my)
 
@@ -37,6 +39,7 @@ class Population:
 
     def selection(self) -> None:
         """The selection method normalizes all the fitness values."""
+
         # Sum all the fitness values.
         total_fitness = sum(flower.fitness for flower in self.population)
         # Divide by the total to normalize the fitness values.

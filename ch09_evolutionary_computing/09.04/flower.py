@@ -22,6 +22,7 @@ class Flower:
 
     def show(self) -> None:
         """Display the flower."""
+
         # DNA values such as petal color, petal size, and number of petals.
         genes = self.dna.genes
         # Set RGB range from 0 to 1 with color_mode() and use map() as needed.
@@ -66,6 +67,7 @@ class Flower:
 
     def rollover(self, mx: float, my: float) -> None:
         """Increment fitness if mouse is rolling over flower."""
+
         if self.bounding_box.contains(mx, my):
             self.rollover_on = True
             self.fitness += 0.25

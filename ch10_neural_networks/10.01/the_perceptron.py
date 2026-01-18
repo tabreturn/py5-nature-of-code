@@ -7,6 +7,7 @@ count = 0  # A counter to track training data points one by one
 
 def f(x: float) -> float:
     """The formula for a line"""
+
     return 0.5 * x + 1
 
 

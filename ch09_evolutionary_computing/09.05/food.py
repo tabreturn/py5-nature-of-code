@@ -6,6 +6,7 @@ class Food:
 
     def __init__(self, num: int):
         """Start with some food."""
+
         self.food_positions = [
           Py5Vector2D(
             random(get_current_sketch().width),
@@ -16,10 +17,12 @@ class Food:
 
     def add(self, position: Py5Vector2D) -> None:
         """Add some food at a location."""
+
         self.food_positions.append(position.copy)
 
     def run(self) -> None:
         """Display the food."""
+
         rect_mode(CENTER)
         stroke(0)
         stroke_weight(1)

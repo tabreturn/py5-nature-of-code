@@ -33,6 +33,7 @@ class Bloop:
 
     def reproduce(self) -> 'Bloop':
         """This method will return a new child bloop."""
+
         # A 0.5% chance of executing the code inside the if statement.
         if random(1) < 0.0005:
             # A child is an exact copy of a single parent.
@@ -44,6 +45,7 @@ class Bloop:
 
     def dead(self) -> bool:
         """A method to test whether the bloop is alive or dead."""
+
         return self.health < 0.0
 
     def run(self) -> None:
@@ -63,6 +65,7 @@ class Bloop:
 
     def borders(self) -> None:
         """Wraparound."""
+
         sketch = get_current_sketch()
         if self.position.x < -self.r: self.position.x = sketch.width + self.r
         elif self.position.x > sketch.width + self.r: self.position.x = -self.r
@@ -71,6 +74,7 @@ class Bloop:
 
     def show(self) -> None:
         """A bloop is a circle."""
+
         stroke(0, self.health)
         fill(0, self.health)
         circle(self.position.x, self.position.y, self.r * 2)

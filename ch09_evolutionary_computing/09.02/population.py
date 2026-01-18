@@ -9,6 +9,7 @@ class Population:
     def __init__(self, mutation: float, length: int, life_span: int, xy: tuple):
         """Population has variables to keep track of the mutation rate, current
         population array, and number of generations."""
+
         self.mutation_rate = mutation  # Mutation rate.
         self.generations = 0  # Number of generations
         self.x, self.y = xy
@@ -20,17 +21,20 @@ class Population:
     def live(self) -> None:
         """The run() method takes care of the simulation, updates the rocket's
         position, and draws it to the canvas."""
+
         for rocket in self.population:
             rocket.run()
 
     def fitness(self, target: Py5Vector2D) -> None:
         # Needs "target" because Python modules have isolated namespaces.
         """Calculate the fitness for each rocket."""
+
         for rocket in self.population:
             rocket.calculate_fitness(target)
 
     def selection(self) -> None:
         """The selection method normalizes all the fitness values."""
+
         # Sum all the fitness values.
         total_fitness = sum(rocket.fitness for rocket in self.population)
         # Divide by the total to normalize the fitness values.

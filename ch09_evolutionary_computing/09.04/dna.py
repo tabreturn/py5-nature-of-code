@@ -11,6 +11,7 @@ class DNA:
 
     def crossover(self, partner: 'DNA') -> 'DNA':
         """Crossover."""
+
         child = DNA()
         midpoint = floor(random(len(self.genes)))
         child.genes[:midpoint] = self.genes[:midpoint]
@@ -19,6 +20,7 @@ class DNA:
 
     def mutate(self, mutation_rate: float) -> None:
         """Mutation."""
+
         for i, _ in enumerate(self.genes):
             if random(1) < mutation_rate:
                 self.genes[i] = random(1)

@@ -42,8 +42,8 @@ def draw():
         child = parent_a.crossover(parent_b)  # Step 3a: Crossover.
         child.mutate(MUTATION_RATE)  # Step 3b: Mutation.
 
-        """You overwrite the population with the new children. On the next call
-        to draw(), the same steps run again on this new generation."""
+        # You overwrite the population with the new children. 
+        # On the next draw(), the same steps run again on this new generation.
         population[i] = child
 
         # Step 4: Repetition. Go back to the beginning of draw()!
@@ -51,6 +51,7 @@ def draw():
 
 def display_progress() -> None:
     """Display the current best phrase and summary statistics."""
+
     background(255)
     fill(0)
     text_font(monospace)
@@ -87,6 +88,7 @@ def display_progress() -> None:
 
 def key_pressed():
     """Handle keyboard controls for stepping, looping, pausing, and quitting."""
+
     if key == 'c': no_loop()
     if key == 'z': redraw()
     if key == 'x': loop()

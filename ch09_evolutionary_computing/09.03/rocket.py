@@ -13,6 +13,7 @@ class Rocket:
 
     def __init__(self, x: float, y: float, dna: DNA):
         """A rocket has three vectors: position, velocity, and acceleration."""
+
         self.dna = dna  # A rocket has DNA.
         self.fitness = 0  # A rocket has fitness.
         self.position = Py5Vector2D(x, y)
@@ -27,6 +28,7 @@ class Rocket:
 
     def calculate_fitness(self, target: Py5Vector2D) -> None:
         """Reward finishing faster and getting close"""
+
         # Fitness is inversely proportional to distance.
 #        distance = self.position.dist(target)
 #        self.fitness = 1 / distance  # linear
@@ -43,6 +45,7 @@ class Rocket:
 
     def check_target(self, target: Obstacle) -> None:
         """How close did the rocket get?"""
+
         distance = self.position.dist(target.position)
         # Check whether the distance is closer than the record distance.
         if distance < self.record_distance:
@@ -57,6 +60,7 @@ class Rocket:
 
     def run(self, obstacles: list[Obstacle]) -> None:
         """# Apply a force from the genes array."""
+
         # Stop the rocket if it has hit an obstacle.
         if not self.hit_obstacle and not self.hit_target:
             self.apply_force(self.dna.genes[self.gene_counter])
@@ -69,10 +73,12 @@ class Rocket:
 
     def apply_force(self, force: Py5Vector2D) -> None:
         """Accumulate forces into acceleration (Newton's second law)."""
+
         self.acceleration += force
 
     def update(self) -> None:
         """A simple physics engine (Euler integration)."""
+
         # Velocity changes according to acceleration.
         self.velocity += self.acceleration
         # Position changes according to velocity.
@@ -103,6 +109,7 @@ class Rocket:
 
     def check_obstacles(self, obstacles: list[Obstacle]) -> None:
         """Checks whether a rocket has hit an obstacle."""
+
         self.hit_obstacle = any(
           obstacle.contains(self.position) for obstacle in obstacles
         )

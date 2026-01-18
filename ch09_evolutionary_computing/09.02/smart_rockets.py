@@ -55,6 +55,7 @@ def draw():
 
 def mouse_pressed():
     """Move the target if the mouse is clicked. Rockets adapt to new target."""
+
     global target
     target.x = mouse_x
     target.y = mouse_y
@@ -62,6 +63,7 @@ def mouse_pressed():
 
 def key_pressed():
     """Handle keyboard controls for stepping, looping, pausing, and quitting."""
+
     if key == "c": no_loop()
     if key == "z": redraw()
     if key == "x": loop()
