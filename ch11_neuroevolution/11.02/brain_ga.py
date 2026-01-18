@@ -1,92 +1,80 @@
-import math # ------------------ SWAP OUT
-import random # ------------------ SWAP OUT
+# ml5.js-style neural network functionality implemented with bespoke class.
 
+from __future__ import annotations
+from py5 import np
 
-def _tanh(x: float) -> float:
-    return math.tanh(x)
-
-
-def _sigmoid(x: float) -> float:
-    # stable enough for our small numbers
-    return 1.0 / (1.0 + math.exp(-x))
+_rng = np.random.default_rng()
 
 
 class Brain:
-    """
-    Fixed-topology neural net:
-      4 inputs -> H hidden -> 1 output
-    Evolved with a simple GA (crossover + mutation).
-    """
+    """Vectorized NumPy brain with GA helpers (drop-in-ish)."""
 
-    def __init__(self, num_inputs: int = 4, num_hidden: int = 8) -> None:
-        self.n_in = num_inputs
-        self.n_h = num_hidden
+    def __init__(self, inputs: int, outputs: int, hidden: int = 8) -> None:
+        self.n_in, self.n_h, self.n_out = inputs, hidden, outputs
+        self.w_ih = _rng.uniform(-1.0, 1.0, (hidden, inputs))
+        self.b_h  = _rng.uniform(-1.0, 1.0, (hidden,))
+        self.w_ho = _rng.uniform(-1.0, 1.0, (outputs, hidden))
+        self.b_o  = _rng.uniform(-1.0, 1.0, (outputs,))
 
-        # weights:
-        # input->hidden: n_h * n_in
-        # hidden bias:   n_h
-        # hidden->out:   n_h
-        # out bias:      1
-        self.w_ih = [random.uniform(-1.0, 1.0) for _ in range(self.n_h * self.n_in)]
-        self.b_h = [random.uniform(-1.0, 1.0) for _ in range(self.n_h)]
-        self.w_ho = [random.uniform(-1.0, 1.0) for _ in range(self.n_h)]
-        self.b_o = random.uniform(-1.0, 1.0)
-
-    def copy(self) -> "Brain":
-        b = Brain(self.n_in, self.n_h)
-        b.w_ih = self.w_ih[:]
-        b.b_h = self.b_h[:]
-        b.w_ho = self.w_ho[:]
-        b.b_o = self.b_o
+    def copy(self) -> 'Brain':
+        b = Brain(self.n_in, self.n_h, self.n_out)
+        b.w_ih, b.b_h, b.w_ho, b.b_o = (
+          self.w_ih.copy(), self.b_h.copy(),
+          self.w_ho.copy(), self.b_o.copy(),
+        )
         return b
 
-    def predict_flap(self, inputs: List[float]) -> bool:
-        """Return True if we should flap."""
-        if len(inputs) != self.n_in:
-            raise ValueError(f"Expected {self.n_in} inputs, got {len(inputs)}")
+    def forward(self, inputs: list[float]) -> list[float]:
+        x = np.asarray(inputs, dtype=float)
+        h = np.tanh(self.w_ih @ x + self.b_h)
+        return (self.w_ho @ h + self.b_o).tolist()
 
-        # hidden activations
-        h = []
-        for j in range(self.n_h):
-            s = self.b_h[j]
-            base = j * self.n_in
-            for i in range(self.n_in):
-                s += self.w_ih[base + i] * inputs[i]
-            h.append(_tanh(s))
+    # Prediction methods.
 
-        # output
-        s_out = self.b_o
-        for j in range(self.n_h):
-            s_out += self.w_ho[j] * h[j]
+    def predict_binary(self, inputs: list[float], threshold: float = 0.5) -> bool:
+        z = self.forward(inputs)[0]
+        p = 1.0 / (1.0 + np.exp(-z))
+        return p > threshold
 
-        # classification-like decision (probability-ish)
-        p = _sigmoid(s_out)
-        return p > 0.5
+    def predict_flap(self, inputs: list[float]) -> bool:
+        return (
+          self.predict_binary(inputs)
+          if self.n_out == 1
+          else self.predict_class(inputs) == 0
+        )
+
+    def predict_continuous_01(self, inputs: list[float]) -> list[float]:
+        raw = np.asarray(self.forward(inputs), dtype=float)
+        return ((np.tanh(raw) + 1.0) * 0.5).tolist()
+
+    def predict_probs(self, inputs: list[float]) -> list[float]:
+        raw = np.asarray(self.forward(inputs), dtype=float)
+        if self.n_out == 1:
+            return [float(1.0 / (1.0 + np.exp(-raw[0])))]
+        raw = raw - np.max(raw)
+        e = np.exp(raw)
+        return (e / np.sum(e)).tolist()
+
+    def predict_class(self, inputs: list[float]) -> int:
+        return int(np.argmax(self.forward(inputs)))
+
+    # Crossover and mutation.
 
     @staticmethod
-    def crossover(a: "Brain", b: "Brain") -> "Brain":
-        """Per-weight uniform crossover."""
-        if (a.n_in, a.n_h) != (b.n_in, b.n_h):
-            raise ValueError("Brain shapes do not match")
-
-        child = Brain(a.n_in, a.n_h)
-
-        child.w_ih = [random.choice([wa, wb]) for wa, wb in zip(a.w_ih, b.w_ih)]
-        child.b_h = [random.choice([wa, wb]) for wa, wb in zip(a.b_h, b.b_h)]
-        child.w_ho = [random.choice([wa, wb]) for wa, wb in zip(a.w_ho, b.w_ho)]
-        child.b_o = random.choice([a.b_o, b.b_o])
-
-        return child
+    def crossover(a: 'Brain', b: 'Brain') -> 'Brain':
+        c = Brain(a.n_in, a.n_h, a.n_out)
+        c.w_ih = np.where(_rng.random(a.w_ih.shape) < 0.5, a.w_ih, b.w_ih)
+        c.b_h  = np.where(_rng.random(a.b_h.shape)  < 0.5, a.b_h,  b.b_h)
+        c.w_ho = np.where(_rng.random(a.w_ho.shape) < 0.5, a.w_ho, b.w_ho)
+        c.b_o  = np.where(_rng.random(a.b_o.shape)  < 0.5, a.b_o,  b.b_o)
+        return c
 
     def mutate(self, rate: float = 0.01, sigma: float = 0.5) -> None:
-        """Like JS: child.mutate(0.01). Adds gaussian noise to some weights."""
-        def maybe_mut(x: float) -> float:
-            if random.random() < rate:
-                return x + random.gauss(0.0, sigma)
-            return x
+        def mut(arr: np.ndarray) -> np.ndarray:
+            m = _rng.random(arr.shape) < rate
+            return arr + m * _rng.normal(0.0, sigma, arr.shape)
 
-        self.w_ih = [maybe_mut(x) for x in self.w_ih]
-        self.b_h = [maybe_mut(x) for x in self.b_h]
-        self.w_ho = [maybe_mut(x) for x in self.w_ho]
-        self.b_o = maybe_mut(self.b_o)
-
+        self.w_ih = mut(self.w_ih)
+        self.b_h  = mut(self.b_h)
+        self.w_ho = mut(self.w_ho)
+        self.b_o  = mut(self.b_o)

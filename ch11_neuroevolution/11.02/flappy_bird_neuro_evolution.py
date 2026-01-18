@@ -1,12 +1,14 @@
 # https://natureofcode.com/neuroevolution/#reinforcement-learning
 
-import random # ------------------ SWAP OUT
-
 from bird import Bird
 from pipe import Pipe
 
 # ml5.js-style neural network functionality implemented with bespoke class.
 from brain_ga import Brain
+
+
+
+
 
 
 POP_SIZE = 200
@@ -122,7 +124,7 @@ def normalize_fitness(birds_list):
 
 
 def weighted_selection(birds_list) -> Brain:
-    r = random.random()
+    r = random()
     idx = 0
     while r > 0.0:
         r -= birds_list[idx].fitness

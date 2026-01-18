@@ -7,7 +7,10 @@ from brain_ga import Brain
 
 class Bird:
     def __init__(self, brain: Brain | None = None):
-        self.brain = brain if brain is not None else Brain(num_inputs=4, num_hidden=8)
+        self.brain = brain if brain is not None else Brain(
+          inputs = 4,
+          outputs = 1,  # flap / no flap
+        )
 
         self.x = 50  # The bird's position (x will be constant).
         self.y = 120.0
@@ -21,6 +24,7 @@ class Bird:
 
     def flap(self) -> None:
         """The bird flaps its wings."""
+
         self.velocity += self.flap_force
 
     def think(self, pipes):
