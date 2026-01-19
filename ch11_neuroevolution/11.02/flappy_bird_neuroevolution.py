@@ -20,6 +20,11 @@ def setup():
     # ml5.setBackend('cpu');
 
 
+#def mouse_pressed():
+#    # The bird flaps its wings when the mouse is clicked.
+#    bird.flap()
+
+
 def draw():
     global birds, pipes
 
