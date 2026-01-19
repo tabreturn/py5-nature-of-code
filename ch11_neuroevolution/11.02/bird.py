@@ -5,9 +5,13 @@ from brain_ne import Brain
 class Bird:
     def __init__(self, brain: Brain | None = None):
         # A bird's brain receives four inputs classifying into one of two labels.
-        self.brain = brain if brain is not None else Brain(
-          inputs = 4,
-          outputs = 1,  # single logit for binary action (flap vs no flap)
+        self.brain = (
+          brain
+          if brain is not None
+          else Brain(
+            inputs=4,
+            outputs=1,  # single logit for binary action (flap vs no flap)
+          )
         )
         self.x = 50  # The bird's position (x will be constant).
         self.y = 120.0
@@ -29,10 +33,10 @@ class Bird:
         # Dampen velocity.
         self.velocity *= 0.95
         # Handle the floor.
-#         if self.y > get_current_sketch().height:
-#             self.y = get_current_sketch().height
-#             self.velocity = 0
-        if  self.y > get_current_sketch().height or self.y < 0:
+#        if self.y > get_current_sketch().height:
+#            self.y = get_current_sketch().height
+#            self.velocity = 0
+        if self.y > get_current_sketch().height or self.y < 0:
             self.alive = False
         # Increment the fitness each time through update().
         self.fitness += 1
@@ -54,10 +58,10 @@ class Bird:
         # All the inputs are now normalized by width and height.
         width, height = get_current_sketch().width, get_current_sketch().height
         inputs = [
-          self.y / height,                 # y-position of the bird.
-          self.velocity / height,          # y-velocity of the bird.
-          next_pipe.top / height,          # Top opening of the next pipe.
-          (next_pipe.x - self.x) / width,  # Distance to the next pipe.
+            self.y / height,                 # y-position of the bird.
+            self.velocity / height,          # y-velocity of the bird.
+            next_pipe.top / height,          # Top opening of the next pipe.
+            (next_pipe.x - self.x) / width,  # Distance to the next pipe.
         ]
 
         result = self.brain.classify_binary(inputs)

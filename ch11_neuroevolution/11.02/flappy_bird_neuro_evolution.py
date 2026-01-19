@@ -15,7 +15,7 @@ def setup():
     # Create the bird population.
     birds = [Bird() for _ in range(POPULATION_SIZE)]  # Array of birds.
     pipes = [Pipe()]
-    
+
     # brain_pe.py runs on NumPy (i.e. on CPU by default)
     # ml5.setBackend('cpu');
 
