@@ -17,7 +17,7 @@ def setup():
     pipes = [Pipe()]
 
     # brain_pe.py runs on NumPy (i.e. on CPU by default)
-    # ml5.setBackend('cpu');
+    # No need for anything like ml5.setBackend('cpu');
 
 
 #def mouse_pressed():

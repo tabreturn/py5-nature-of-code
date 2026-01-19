@@ -7,10 +7,10 @@ class Bird:
         # A bird's brain receives four inputs classifying into one of two labels.
         self.brain = (
           brain
-          if brain is not None
-          else Brain(
-            inputs=4,
-            outputs=1,  # single logit for binary action (flap vs no flap)
+          if brain is not None  # Check whether a brain was passed in.
+          else Brain(           # If not, make a new one.
+            inputs = 4,
+            outputs = 1,  # single logit for binary action (flap vs no flap)
           )
         )
         self.x = 50  # The bird's position (x will be constant).
@@ -58,10 +58,10 @@ class Bird:
         # All the inputs are now normalized by width and height.
         width, height = get_current_sketch().width, get_current_sketch().height
         inputs = [
-            self.y / height,                 # y-position of the bird.
-            self.velocity / height,          # y-velocity of the bird.
-            next_pipe.top / height,          # Top opening of the next pipe.
-            (next_pipe.x - self.x) / width,  # Distance to the next pipe.
+          self.y / height,                 # y-position of the bird.
+          self.velocity / height,          # y-velocity of the bird.
+          next_pipe.top / height,          # Top opening of the next pipe.
+          (next_pipe.x - self.x) / width,  # Distance to the next pipe.
         ]
 
         result = self.brain.classify_binary(inputs)
