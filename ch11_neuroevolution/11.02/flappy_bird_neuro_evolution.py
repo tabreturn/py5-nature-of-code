@@ -6,21 +6,18 @@ from pipe import Pipe
 # ml5.js-style neuro-evolution functionality implemented with bespoke class.
 from brain_ne import Brain
 
-#POP_SIZE = 200
-#PIPE_INTERVAL = 100
+POPULATION_SIZE = 200  # Population size.
 
 
 def setup():
     global birds, pipes
     size(640, 240)
-    # Create a bird and start with one pipe.
-    birds = [Bird() for _ in range(POP_SIZE)]
+    # Create the bird population.
+    birds = [Bird() for _ in range(POPULATION_SIZE)]  # Array of birds.
     pipes = [Pipe()]
-
-
-def mouse_pressed():
-    # The bird flaps its wings when the mouse is clicked.
-    bird.flap()
+    
+    # brain_pe.py runs on NumPy (i.e. on CPU by default)
+    # ml5.setBackend('cpu');
 
 
 def draw():
@@ -33,114 +30,86 @@ def draw():
         pipe.show()
         pipe.update()
 
-        if pipe.collides(bird):
-            text('OOPS!', pipe.x, pipe.top + 20)
+#        if pipe.collides(bird):
+#           text('OOPS!', pipe.x, pipe.top + 20)
 
         if pipe.offscreen():
             pipes.remove(pipe)
-    '''
-    # Handle all the pipes.
-    for i in range(len(pipes) - 1, -1, -1):
-        pipes[i].update()
-        pipes[i].show()
-        if pipes[i].offscreen():
-            pipes.pop(i)
-    '''
 
-    # Update and show the bird.
-    bird.update()
-    bird.show()
-
+    for bird in birds:  # There's now an array of birds!
+        # Operate only on the birds that are still alive.
+        if bird.alive:
+            # This is the new method for the bird to decide to flap or not.
+            bird.think(pipes)  # Make a decision based on the pipes.
+            # Update and show the bird.
+            bird.update()
+            bird.show()
+            # Has the bird hit a pipe? If so, it's no longer alive.
+            for pipe in pipes:
+                if pipe.collides(bird):
+                    bird.alive = False
 
     # Add a new pipe every 100 frames.
     if frame_count % 100 == 0:
         pipes.append(Pipe())
 
+    # Create the next generation when all the birds have died.
+    if all_birds_dead():
+        normalize_fitness()
+        reproduction()
+        reset_pipes()
 
 
-#     for bird in birds:
-#         if not bird.alive:
-#             continue
-# 
-#         # collisions (Pipe.collides uses bird.x/bird.y etc.) :contentReference[oaicite:3]{index=3}
-#         for pipe in pipes:
-#             if pipe.collides(bird):
-#                 bird.alive = False
-#                 break
-# 
-#         if bird.alive:
-#             bird.think(pipes)
-#             bird.update()
-#             bird.show()
-#
-#   
-#     sketch = get_current_sketch()
-#     if sketch.frame_count % PIPE_INTERVAL == 0:
-#         pipes.append(Pipe())
-# 
-# 
-#     if all_birds_dead(birds):
-#         next_gen = reproduction(birds)
-#         birds[:] = next_gen
-#         reset_pipes(pipes)
-#    
-#
-# def all_birds_dead(birds_list) -> bool:
-#     return all(not b.alive for b in birds_list)
-# 
-# 
-# def reset_pipes(pipes_list):
-#     if len(pipes_list) > 1:
-#         del pipes_list[:-1]
-# 
-# 
-# def normalize_fitness(birds_list):
-#     total = 0.0
-#     for b in birds_list:
-#         b.fitness = b.fitness * b.fitness
-#         total += b.fitness
-# 
-#     if total == 0.0:
-#         p = 1.0 / len(birds_list)
-#         for b in birds_list:
-#             b.fitness = p
-#         return
-# 
-#     for b in birds_list:
-#         b.fitness = b.fitness / total
-# 
-# 
-# def weighted_selection(birds_list) -> Brain:
-#     r = random()
-#     idx = 0
-#     while r > 0.0:
-#         r -= birds_list[idx].fitness
-#         idx += 1
-#         if idx >= len(birds_list):
-#             idx = len(birds_list) - 1
-#             break
-#     idx -= 1
-#     if idx < 0:
-#         idx = 0
-#     return birds_list[idx].brain
-# 
-# 
-# def reproduction(birds_list):
-#     normalize_fitness(birds_list)
-# 
-#     next_birds = []
-# 
-#     elite = sorted(birds_list, key=lambda b: b.fitness, reverse=True)[:2]
-#     for e in elite:
-#         next_birds.append(Bird(e.brain.copy()))
-# 
-#     while len(next_birds) < len(birds_list):
-#         parentA = weighted_selection(birds_list)
-#         parentB = weighted_selection(birds_list)
-# 
-#         child = Brain.crossover(parentA, parentB)
-#         child.mutate(rate=0.01, sigma=0.5)  # JS-like mutate(0.01)
-# 
-#         next_birds.append(Bird(child))
-# 
-#     return next_birds
+def weighted_selection() -> Brain:
+    """See Chapter 9 for a detailed explanation of this algorithm."""
+    index = 0
+    start = random()
+
+    while start > 0:
+        start -= birds[index].fitness
+        index += 1
+
+    index -= 1
+    # Instead of returning the entire Bird object, just the brain is returned.
+    return birds[index].brain
+
+
+def normalize_fitness() -> None:
+    # Sum the total fitness of all birds.
+    fitness_sum = sum(bird.fitness for bird in birds)
+    # Divide each bird's fitness by the sum.
+    for bird in birds:
+        bird.fitness /= fitness_sum
+
+
+def reproduction() -> list[Bird]:
+    global birds
+    next_birds = []  # Start with a new empty array.
+
+    for _ in range(POPULATION_SIZE):
+        # Pick two parents.
+        parent_a = weighted_selection()
+        parent_b = weighted_selection()
+        # Create a child with crossover.
+        child = parent_a.crossover(parent_b)
+        # Apply mutation.
+        child.mutate(0.01)
+        # Create the new bird object.
+        next_birds.append(Bird(child))
+
+    # The next generation is now the current one!
+    birds = next_birds
+
+
+def all_birds_dead() -> bool:
+    for bird in birds:
+        # If a single bird is alive, they are not all dead!
+        if bird.alive:
+            return False
+    # If the loop completes without finding a living bird, all birds are dead.
+    return True
+
+
+def reset_pipes() -> None:
+    """Remove all the pipes but the very latest one."""
+    del pipes[:-1]

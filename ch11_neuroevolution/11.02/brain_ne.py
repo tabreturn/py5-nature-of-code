@@ -50,13 +50,12 @@ class Brain:
 
     # Crossover and mutation.
 
-    @staticmethod
-    def crossover(a: 'Brain', b: 'Brain') -> 'Brain':
-        c = Brain(a.n_in, a.n_h, a.n_out)
-        c.w_ih = np.where(_rng.random(a.w_ih.shape) < 0.5, a.w_ih, b.w_ih)
-        c.b_h  = np.where(_rng.random(a.b_h.shape)  < 0.5, a.b_h,  b.b_h)
-        c.w_ho = np.where(_rng.random(a.w_ho.shape) < 0.5, a.w_ho, b.w_ho)
-        c.b_o  = np.where(_rng.random(a.b_o.shape)  < 0.5, a.b_o,  b.b_o)
+    def crossover(self, other: 'Brain') -> 'Brain':
+        c = Brain(self.n_in, self.n_h, self.n_out)
+        c.w_ih = np.where(_rng.random(self.w_ih.shape) < 0.5, self.w_ih, other.w_ih)
+        c.b_h  = np.where(_rng.random(self.b_h.shape)  < 0.5, self.b_h,  other.b_h)
+        c.w_ho = np.where(_rng.random(self.w_ho.shape) < 0.5, self.w_ho, other.w_ho)
+        c.b_o  = np.where(_rng.random(self.b_o.shape)  < 0.5, self.b_o,  other.b_o)
         return c
 
     def mutate(self, rate: float = 0.01, sigma: float = 0.5) -> None:

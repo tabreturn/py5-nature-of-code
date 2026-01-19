@@ -15,9 +15,8 @@ class Bird:
         self.velocity = 0.0
         self.gravity = 0.5
         self.flap_force = -10.0
-
-        #self.fitness = 0.0
-        #self.alive = True
+        self.fitness = 0.0  # The bird's fitness
+        self.alive = True  # Is the bird alive or not?
 
     def flap(self) -> None:
         """The bird flaps its wings."""
@@ -30,14 +29,18 @@ class Bird:
         # Dampen velocity.
         self.velocity *= 0.95
         # Handle the floor.
-        if self.y > get_current_sketch().height:
-            self.y = get_current_sketch().height
-            self.velocity = 0
+#         if self.y > get_current_sketch().height:
+#             self.y = get_current_sketch().height
+#             self.velocity = 0
+        if  self.y > get_current_sketch().height or self.y < 0:
+            self.alive = False
+        # Increment the fitness each time through update().
+        self.fitness += 1
 
     def show(self) -> None:
         stroke_weight(2)
         stroke(0)
-        fill(127)
+        fill(127, 200)
         circle(self.x, self.y, 16)
 
     def think(self, pipes: list['Pipe']) -> None:
@@ -61,31 +64,3 @@ class Bird:
         # classify_binary() returns True (flap) or False (no flap)
         if result:
             self.flap()
-
-#     def update(self) -> None:
-#         if not self.alive:
-#             return
-
-
-
-
-
-
-        self.velocity += self.gravity  # Add gravity.
-        self.y += self.velocity
-
-        # Dampen velocity.
-        self.velocity *= 0.95
-
-        # Handle the floor.
-        if self.y > get_current_sketch().height:
-            self.y = get_current_sketch().height
-            self.velocity = 0
-        '''
-        if self.y > h or self.y < 0:
-            self.alive = False
-        '''
-
-        # score = time alive (like JS)
-        #self.fitness += 1.0
-
