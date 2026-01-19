@@ -58,13 +58,13 @@ Sketches use *DejaVu Sans* fonts, available at [https://dejavu-fonts.github.io](
   py5: [ch11_neuroevolution/11.01](ch11_neuroevolution/11.01) |
   p5.js: [Pv-JlO0cl](https://editor.p5js.org/natureofcode/sketches/Pv-JlO0cl)
 
-- **11.02 - IN PROGRESS** |
+- **11.02 - flappy_bird_neuro_evolution** |
   py5: [ch11_neuroevolution/11.02](ch11_neuroevolution/11.02) |
   p5.js: [PEUKc5dpZ](https://editor.p5js.org/natureofcode/sketches/PEUKc5dpZ)
 
-- **11.03** |
-  py5: |
-  p5.js:
+- **11.03 - IN PROGRESS** |
+  py5: [ch11_neuroevolution/11.03](ch11_neuroevolution/11.03) |
+  p5.js: [KkV4lTS4H](https://editor.p5js.org/natureofcode/sketches/KkV4lTS4H)
 
 - **11.04** |
   py5: |
