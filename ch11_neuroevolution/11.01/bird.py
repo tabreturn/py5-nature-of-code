@@ -6,7 +6,7 @@ class Bird:
         self.x = 50  # The bird's position (x will be constant).
         self.y = 120
         # Velocity and forces are scalar since bird moves only along the y-axis.
-        self.velocity = 0
+        self.velocity = 0.0
         self.gravity = 0.5
         self.flap_force = -10
 

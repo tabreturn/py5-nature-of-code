@@ -7,7 +7,7 @@ _rng = np.random.default_rng()
 
 
 class Brain:
-    """Vectorized NumPy brain with GA helpers (drop-in-ish)."""
+    """Vectorized NumPy brain with GA helpers."""
 
     def __init__(self, inputs: int, outputs: int, hidden: int = 8) -> None:
         self.n_in, self.n_h, self.n_out = inputs, hidden, outputs
@@ -29,25 +29,14 @@ class Brain:
         h = np.tanh(self.w_ih @ x + self.b_h)
         return (self.w_ho @ h + self.b_o).tolist()
 
-    # Prediction methods.
+    # Classify and prediction methods.
 
-    def predict_binary(self, inputs: list[float], threshold: float = 0.5) -> bool:
+    def classify_binary(self, inputs: list[float], threshold: float = 0.5) -> bool:
         z = self.forward(inputs)[0]
         p = 1.0 / (1.0 + np.exp(-z))
         return p > threshold
 
-    def predict_flap(self, inputs: list[float]) -> bool:
-        return (
-          self.predict_binary(inputs)
-          if self.n_out == 1
-          else self.predict_class(inputs) == 0
-        )
-
-    def predict_continuous_01(self, inputs: list[float]) -> list[float]:
-        raw = np.asarray(self.forward(inputs), dtype=float)
-        return ((np.tanh(raw) + 1.0) * 0.5).tolist()
-
-    def predict_probs(self, inputs: list[float]) -> list[float]:
+    def classify_probs(self, inputs: list[float]) -> list[float]:
         raw = np.asarray(self.forward(inputs), dtype=float)
         if self.n_out == 1:
             return [float(1.0 / (1.0 + np.exp(-raw[0])))]
@@ -55,8 +44,9 @@ class Brain:
         e = np.exp(raw)
         return (e / np.sum(e)).tolist()
 
-    def predict_class(self, inputs: list[float]) -> int:
-        return int(np.argmax(self.forward(inputs)))
+    def predict_continuous_01(self, inputs: list[float]) -> list[float]:
+        raw = np.asarray(self.forward(inputs), dtype=float)
+        return ((np.tanh(raw) + 1.0) * 0.5).tolist()
 
     # Crossover and mutation.
 
