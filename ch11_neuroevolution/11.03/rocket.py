@@ -9,6 +9,7 @@ from py5 import (
 #from dna import DNA
 import sys, os; sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 from brain_ne import Brain
+
 from obstacle import Obstacle
 
 
@@ -92,12 +93,12 @@ class Rocket:
             magnitude = outputs[1] * self.max_force
             magnitude = max(0.2, magnitude)   # minimum thrust
             # Create and apply the force.
-            force = Py5Vector2D.from_heading(angle).set_mag(magnitude) 
+            force = Py5Vector2D.from_heading(angle).set_mag(magnitude)
             self.apply_force(force)
 
             self.update()
             # Check whether the rocket has hit an obstacle.
-            self.check_obstacles(obstacles)            
+            self.check_obstacles(obstacles)
 
         self.show()
 
