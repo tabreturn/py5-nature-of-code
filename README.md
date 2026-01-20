@@ -20,30 +20,31 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
 
 ### Ch. 00 - Randomness
 
-- **00.01 - IN PROGRESS** |
+- 00.01 - IN PROGRESS |
   py5: [ch00_randomness/00.01](ch00_randomness/00.01) |
   p5.js: [5C69XyrlsR](https://editor.p5js.org/natureofcode/sketches/5C69XyrlsR)
 
-- **00.02 - IN PROGRESS** |
+- 00.02 - IN PROGRESS |
   py5: [ch00_randomness/00.02](ch00_randomness/00.02) |
   p5.js: [u4vTwZuhT](https://editor.p5js.org/natureofcode/sketches/u4vTwZuhT)
 
-- **00.03 - IN PROGRESS** |
+- 00.03 - IN PROGRESS |
   py5: [ch00_randomness/00.03](ch00_randomness/00.03) |
   p5.js: [iAjs_70DF](https://editor.p5js.org/natureofcode/sketches/iAjs_70DF)
 
-- **00.04 - IN PROGRESS** |
+- 00.04 - IN PROGRESS |
   py5: [ch00_randomness/00.04](ch00_randomness/00.04) |
   p5.js: [Yk_eSiNOR](https://editor.p5js.org/natureofcode/sketches/Yk_eSiNOR)
 
-- **00.05 - IN PROGRESS** |
+- 00.05 - IN PROGRESS |
   py5: [ch00_randomness/00.05](ch00_randomness/00.05) |
   p5.js: [3t5iHwA7Q](https://editor.p5js.org/natureofcode/sketches/3t5iHwA7Q)
 
-- **00.06 - IN PROGRESS** |
+- 00.06 - IN PROGRESS |
   py5: [ch00_randomness/00.06](ch00_randomness/00.06) |
   p5.js: [qyNwGUy59](https://editor.p5js.org/natureofcode/sketches/qyNwGUy59)
 
+### Ch. 01 - Vectors
   ...
 
 ### Ch. 09 - Evolutionary Computing
