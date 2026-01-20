@@ -4,11 +4,11 @@
 
 **Built with [py5](https://py5coding.org) using [Thonny-py5mode](https://github.com/py5coding/thonny-py5mode)**
 
-I have taken a few liberties in my interpretation. First, the examples in the book and its accompanying [p5.js examples](https://natureofcode.com/examples) do not always match exactly. Second, in a few places, minor adjustments were necessary to support a Python implementation and to keep the code idiomatic. However, my aim throughout has been to balance faithfulness to the original material with Python best practices and clarity for readers working through this [fantastic book](https://natureofcode.com).
+I have taken a few liberties in my interpretation. First, the examples in the book and its accompanying [p5.js sketches](https://natureofcode.com/examples) do not always match exactly. Second, in a few places, minor adjustments were necessary to support an idiomatic, py5-compatible Python implementation. Throughout, however, my aim has been to balance faithfulness to the original material with Python best practices and clarity for readers working through this [fantastic book](https://natureofcode.com).
 
-To run the sketches, install [Thonny-py5mode](https://github.com/py5coding/thonny-py5mode) and activate **py5 → Imported mode for py5** in the editor. 
+To run the sketches, install [Thonny-py5mode](https://github.com/py5coding/thonny-py5mode) and activate **py5 → Imported mode for py5** in the editor.
 
-Sketches use *DejaVu Sans* fonts, available at [https://dejavu-fonts.github.io](https://dejavu-fonts.github.io)
+Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
 
 ![](banner.png)
 
@@ -62,13 +62,13 @@ Sketches use *DejaVu Sans* fonts, available at [https://dejavu-fonts.github.io](
   py5: [ch11_neuroevolution/11.02](ch11_neuroevolution/11.02) |
   p5.js: [PEUKc5dpZ](https://editor.p5js.org/natureofcode/sketches/PEUKc5dpZ)
 
-- **11.03 - IN PROGRESS** |
+- **11.03 - smart_rockets_neuroevolution** |
   py5: [ch11_neuroevolution/11.03](ch11_neuroevolution/11.03) |
   p5.js: [KkV4lTS4H](https://editor.p5js.org/natureofcode/sketches/KkV4lTS4H)
 
-- **11.04** |
-  py5: |
-  p5.js:
+- **11.04 - IN PROGRESS** |
+  py5: [ch11_neuroevolution/11.04](ch11_neuroevolution/11.04) |
+  p5.js: [fZDfxxVrf](https://editor.p5js.org/natureofcode/sketches/fZDfxxVrf)
 
 - **11.05** |
   py5: |

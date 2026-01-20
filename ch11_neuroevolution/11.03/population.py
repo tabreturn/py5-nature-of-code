@@ -6,8 +6,7 @@ from rocket import Rocket
 class Population:
     # Needs "life_span", "xy" because Python modules have isolated namespaces.
     # (p5.js sketches share a single global scope)
-#    def __init__(self, mutation: float, length: int, life_span: int, xy: tuple):
-    def __init__(self, mutation: float, length: int, xy: tuple):
+    def __init__(self, mutation: float, length: int, life_span: int, xy: tuple):
         """Population has variables to keep track of the mutation rate, current
         population array, and number of generations."""
 
@@ -58,12 +57,8 @@ class Population:
             parent_a = self.weighted_selection()
             parent_b = self.weighted_selection()
             child = parent_a.crossover(parent_b)
-
-#            child.mutate(self.mutation_rate)
             child.mutate(self.mutation_rate)  # Apply mutation.
-
             # Rocket goes in the new population.
-#            new_population.append(Rocket(self.x, self.y, child))
             new_population.append(Rocket(self.x, self.y, child))
 
         # Now the new population is the current one.
