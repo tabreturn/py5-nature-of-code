@@ -1,0 +1,3 @@
+# https://natureofcode.com/neuroevolution/#responding-to-change
+
+... need to complete Walker first (to extend upon) ...
