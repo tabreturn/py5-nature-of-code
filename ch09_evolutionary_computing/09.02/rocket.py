@@ -2,8 +2,8 @@ from py5 import PI, Py5Vector2D, random
 
 # py5 drawing methods for rendering rockets
 from py5 import (
-  stroke, stroke_weight, push, translate, rotate,  rect_mode, fill, rect,
-  begin_shape, vertex, end_shape, pop, CENTER, TRIANGLES, CLOSE
+  begin_shape, CENTER, CLOSE, end_shape, fill, pop, push, rect, rect_mode,
+  rotate, stroke, stroke_weight, translate, TRIANGLES, vertex,
 )
 from dna import DNA
 
