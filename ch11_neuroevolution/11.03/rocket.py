@@ -110,8 +110,8 @@ class Rocket:
         """A simple physics engine (Euler integration)."""
 
         # Velocity changes according to acceleration.
-        self.velocity += self.acceleration
         self.velocity.set_limit(self.max_speed)
+        self.velocity += self.acceleration
         # Position changes according to velocity.
         self.position += self.velocity
         self.acceleration *= 0

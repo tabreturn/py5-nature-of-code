@@ -69,9 +69,10 @@ def draw():
 def mouse_pressed():
     """Move the target if the mouse is clicked. Rockets adapt to new target."""
 
-    global target
+    global record_time, target
     target.position.x = mouse_x
     target.position.y = mouse_y
+    record_time = LIFE_SPAN
 
 
 def key_pressed():
