@@ -7,6 +7,7 @@ from py5 import (
   TWO_PI,
 )
 #from dna import DNA
+import sys, os; sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 from brain_ne import Brain
 from obstacle import Obstacle
 
@@ -89,6 +90,7 @@ class Rocket:
             angle = outputs[0] * TWO_PI
             # Use another output for the magnitude.
             magnitude = outputs[1] * self.max_force
+            magnitude = max(0.2, magnitude)   # minimum thrust
             # Create and apply the force.
             force = Py5Vector2D.from_heading(angle).set_mag(magnitude) 
             self.apply_force(force)
@@ -107,9 +109,9 @@ class Rocket:
     def update(self) -> None:
         """A simple physics engine (Euler integration)."""
 
-        self.velocity.set_limit(self.max_speed)
         # Velocity changes according to acceleration.
         self.velocity += self.acceleration
+        self.velocity.set_limit(self.max_speed)
         # Position changes according to velocity.
         self.position += self.velocity
         self.acceleration *= 0

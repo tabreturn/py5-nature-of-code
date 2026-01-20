@@ -21,8 +21,7 @@ def setup():
     # Try different values for the mutation rate and population size.
     xy = (width / 2, height - 20)
     # The population.
-#    population = Population(MUTATION_RATE, POPULATION_SIZE, LIFE_SPAN, xy)
-    population = Population(MUTATION_RATE, POPULATION_SIZE, xy)
+    population = Population(MUTATION_RATE, POPULATION_SIZE, LIFE_SPAN, xy)
     # Create the obstacle course
     obstacles = [
       Obstacle(width / 2 - 75, height / 2, 150, 10)

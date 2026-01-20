@@ -4,6 +4,7 @@ from bird import Bird
 from pipe import Pipe
 
 # ml5.js-style neuro-evolution functionality implemented with bespoke class.
+import sys, os; sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 from brain_ne import Brain
 
 POPULATION_SIZE = 200  # Population size.

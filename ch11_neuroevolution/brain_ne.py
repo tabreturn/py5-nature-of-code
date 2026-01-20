@@ -16,14 +16,6 @@ class Brain:
         self.w_ho = _rng.uniform(-1.0, 1.0, (outputs, hidden))
         self.b_o = _rng.uniform(-1.0, 1.0, (outputs,))
 
-    def copy(self) -> 'Brain':
-        b = Brain(self.n_in, self.n_h, self.n_out)
-        b.w_ih, b.b_h, b.w_ho, b.b_o = (
-          self.w_ih.copy(), self.b_h.copy(),
-          self.w_ho.copy(), self.b_o.copy(),
-        )
-        return b
-
     def forward(self, inputs: list[float]) -> list[float]:
         x = np.asarray(inputs, dtype=float)
         h = np.tanh(self.w_ih @ x + self.b_h)
@@ -36,21 +28,9 @@ class Brain:
         p = 1.0 / (1.0 + np.exp(-z))
         return p > threshold
 
-    def classify_probs(self, inputs: list[float]) -> list[float]:
-        raw = np.asarray(self.forward(inputs), dtype=float)
-        if self.n_out == 1:
-            return [float(1.0 / (1.0 + np.exp(-raw[0])))]
-        raw = raw - np.max(raw)
-        e = np.exp(raw)
-        return (e / np.sum(e)).tolist()
-
     def predict_continuous_01(self, inputs: list[float]) -> list[float]:
         raw = np.asarray(self.forward(inputs), dtype=float)
         return ((np.tanh(raw) + 1.0) * 0.5).tolist()
-
-    def predict_sync(self, inputs: list[float]) -> list[dict]:
-        vals_01 = self.predict_continuous_01(inputs)
-        return [{'value': float(v)} for v in vals_01]
 
     # Crossover and mutation.
 
