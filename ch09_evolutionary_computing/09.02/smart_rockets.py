@@ -13,7 +13,7 @@ life_counter = 0      # Keep track of the life span.
 def setup():
     global monospace, population, target
     size(640, 240)
-    monospace = create_font('DejaVu Sans Mono', 32)
+    monospace = create_font('../../DejaVuSansMono.ttf', 32)
     target = Py5Vector2D(width / 2, 24)
     # Step 1: Create the population.
     # Try different values for the mutation rate and population size.

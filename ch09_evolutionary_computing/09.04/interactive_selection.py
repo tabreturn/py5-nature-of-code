@@ -11,7 +11,7 @@ MUTATION_RATE = 0.05
 def setup():
     global button, monospace, population
     size(640, 240)
-    monospace = create_font('DejaVu Sans Mono', 32)
+    monospace = create_font('../../DejaVuSansMono.ttf', 32)
     color_mode(RGB, 1)
     # Create the population.
     population = Population(MUTATION_RATE, POPULATION_SIZE)

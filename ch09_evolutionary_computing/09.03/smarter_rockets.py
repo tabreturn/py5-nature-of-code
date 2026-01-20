@@ -15,7 +15,7 @@ record_time = LIFE_SPAN  # Fastest time to target.
 def setup():
     global monospace, obstacles, population, target
     size(640, 240)
-    monospace = create_font('DejaVu Sans Mono', 32)
+    monospace = create_font('../../DejaVuSansMono.ttf', 32)
     target = Obstacle(width / 2 - 12, 24, 24, 24)
     # Step 1: Create the population.
     # Try different values for the mutation rate and population size.

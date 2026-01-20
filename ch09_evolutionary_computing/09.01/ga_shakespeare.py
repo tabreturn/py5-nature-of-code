@@ -10,7 +10,7 @@ TARGET = 'to be or not to be'  # Target phrase to evolve toward.
 def setup():
     global monospace, population
     size(640, 360)
-    monospace = create_font('DejaVu Sans Mono', 32)
+    monospace = create_font('../../DejaVuSansMono.ttf', 32)
 
     # Step 1: Initialization.
     population = [DNA(len(TARGET)) for _ in range(POPULATION_SIZE)]

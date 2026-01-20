@@ -51,7 +51,7 @@ start, end = None, None
 def setup():
     global monospace
     size(640, 240)
-    monospace = create_font('DejaVu Sans Mono', 32)
+    monospace = create_font('../../DejaVuSansMono.ttf', 32)
     text_font(monospace)
     
 
