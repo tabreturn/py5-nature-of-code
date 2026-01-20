@@ -16,7 +16,7 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
 ---
 
 
-<em>NOTE: This port begins with Chapters 09, 10, and 11. After completing those, I plan to continue from Chapter 01.</em>
+<em>NOTE: I've started porting Chapters 09, 10, and 11 (and 00). After completing those, I will continue from Chapter 01.</em>
 
 
 ---
@@ -59,7 +59,7 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
 
 ## Part 2: It's Alive!
 
-### Ch. 05 - Autonomous Agnets
+### Ch. 05 - Autonomous Agents
 ...
 
 
