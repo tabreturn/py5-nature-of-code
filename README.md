@@ -12,11 +12,17 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
 
 ![](banner.png)
 
+
 ---
 
-## Contents
 
-<br /><em>NOTE: This port begins with Chapters 09, 10, and 11. After completing those, I plan to continue from Chapter 01.</em><br />
+<em>NOTE: This port begins with Chapters 09, 10, and 11. After completing those, I plan to continue from Chapter 01.</em>
+
+
+---
+
+
+## Part 1: Inanimate Objects
 
 ### Ch. 00 - Randomness
 
@@ -45,7 +51,23 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   p5.js: [qyNwGUy59](https://editor.p5js.org/natureofcode/sketches/qyNwGUy59)
 
 ### Ch. 01 - Vectors
-  ...
+...
+
+
+---
+
+
+## Part 2: It's Alive!
+
+### Ch. 05 - Autonomous Agnets
+...
+
+
+---
+
+
+## Part 3: Intelligence
+
 
 ### Ch. 09 - Evolutionary Computing
 
@@ -106,3 +128,4 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
 - 11.06 - IN PROGRESS |
   py5: [ch11_neuroevolution/11.06](ch11_neuroevolution/11.06) |
   p5.js: [IQbcREjUK](https://editor.p5js.org/natureofcode/sketches/IQbcREjUK)
+
