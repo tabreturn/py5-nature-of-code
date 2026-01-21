@@ -9,11 +9,11 @@ class Walker:
         self.x = width / 2
         self.y = height / 2
 
-    def show(self):  # Objects have methods.
+    def show(self) -> None:  # Objects have methods.
         stroke(0)
         point(self.x, self.y)
 
-    def step(self):
+    def step(self) -> None:
         # 0, 1, 2, or 3. The random choice determines the step.
         match floor(random(4)):
             # Four possible steps.
