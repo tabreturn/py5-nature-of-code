@@ -38,7 +38,7 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch00_randomness/00.03](ch00_randomness/00.03) |
   p5.js: [iAjs_70DF](https://editor.p5js.org/natureofcode/sketches/iAjs_70DF)
 
-- 00.04 - IN PROGRESS |
+- **00.04 - gaussian_distribution** |
   py5: [ch00_randomness/00.04](ch00_randomness/00.04) |
   p5.js: [Yk_eSiNOR](https://editor.p5js.org/natureofcode/sketches/Yk_eSiNOR)
 
