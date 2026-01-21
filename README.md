@@ -26,7 +26,7 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
 
 ### Ch. 00 - Randomness
 
-- 00.01 - IN PROGRESS |
+- **00.01 - traditional_random_walk** |
   py5: [ch00_randomness/00.01](ch00_randomness/00.01) |
   p5.js: [5C69XyrlsR](https://editor.p5js.org/natureofcode/sketches/5C69XyrlsR)
 
