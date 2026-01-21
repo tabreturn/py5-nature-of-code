@@ -42,7 +42,7 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch00_randomness/00.04](ch00_randomness/00.04) |
   p5.js: [Yk_eSiNOR](https://editor.p5js.org/natureofcode/sketches/Yk_eSiNOR)
 
-- 00.05 - IN PROGRESS |
+- **00.05 - accept-reject_distribution** |
   py5: [ch00_randomness/00.05](ch00_randomness/00.05) |
   p5.js: [3t5iHwA7Q](https://editor.p5js.org/natureofcode/sketches/3t5iHwA7Q)
 
