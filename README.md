@@ -34,7 +34,7 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch00_randomness/00.02](ch00_randomness/00.02) |
   p5.js: [u4vTwZuhT](https://editor.p5js.org/natureofcode/sketches/u4vTwZuhT)
 
-- 00.03 - IN PROGRESS |
+- **00.03 - walker_that_tends_right** |
   py5: [ch00_randomness/00.03](ch00_randomness/00.03) |
   p5.js: [iAjs_70DF](https://editor.p5js.org/natureofcode/sketches/iAjs_70DF)
 

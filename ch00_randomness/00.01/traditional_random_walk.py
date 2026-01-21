@@ -15,12 +15,12 @@ class Walker:
 
     def step(self):
         # 0, 1, 2, or 3. The random choice determines the step.
-         match floor(random(4)):
-             # Four possible steps.
-             case 0: self.x += 1
-             case 1: self.x -= 1
-             case 2: self.y += 1
-             case 3: self.y -= 1
+        match floor(random(4)):
+            # Four possible steps.
+            case 0: self.x += 1
+            case 1: self.x -= 1
+            case 2: self.y += 1
+            case 3: self.y -= 1
 
 #        # Eight possible steps.
 #        # Yields -1, 0, or 1
