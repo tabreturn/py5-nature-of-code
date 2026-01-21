@@ -28,9 +28,8 @@ class Walker:
 #        self.y += random_int(-1, 1)
 #        # Instead use random() for any floating-point number from -1 to 1.
 
-        # A 40% chance of moving to the right
+        # A 40% chance of moving to the right.
         r = random()
-
         if r < 0.4:
             self.x += 1
         elif r < 0.6:
@@ -39,7 +38,6 @@ class Walker:
             self.y += 1
         else:
             self.y -= 1
-
         self.x = constrain(self.x, 0, width - 1)
         self.y = constrain(self.y, 0, height - 1)
 
