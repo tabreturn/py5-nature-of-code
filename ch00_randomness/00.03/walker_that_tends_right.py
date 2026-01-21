@@ -1,5 +1,6 @@
 # https://natureofcode.com/random/#probability-and-nonuniform-distributions
 
+
 class Walker:
 
     # Objects have a constructor where they are initialized.
@@ -39,8 +40,8 @@ class Walker:
         else:
             self.y -= 1
 
-        self.x = constrain(self.x, 0, width -1)
-        self.y = constrain(self.y, 0, height -1)
+        self.x = constrain(self.x, 0, width - 1)
+        self.y = constrain(self.y, 0, height - 1)
 
 
 # Remember how p5.js works? setup() is executed once when the sketch starts.
