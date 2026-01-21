@@ -34,3 +34,4 @@ class DNA:
                 self.genes[i] = Py5Vector2D.from_heading(angle).set_mag(
                   random(self.max_force)
                 )
+

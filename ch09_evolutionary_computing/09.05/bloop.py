@@ -78,3 +78,4 @@ class Bloop:
         stroke(0, self.health)
         fill(0, self.health)
         circle(self.position.x, self.position.y, self.r * 2)
+

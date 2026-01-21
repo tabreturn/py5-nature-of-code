@@ -43,3 +43,4 @@ class Pipe:
         """For when a pipe has moved beyond the left edge of the canvas."""
 
         return self.x < -self.w
+

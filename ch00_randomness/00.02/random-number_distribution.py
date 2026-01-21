@@ -27,3 +27,4 @@ def draw():
     # Graph the results.
     for x, count in enumerate(random_counts):
         rect(x * w, height - count, w - 1, count)
+

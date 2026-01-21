@@ -145,3 +145,4 @@ class Rocket:
         self.hit_obstacle = any(
           obstacle.contains(self.position) for obstacle in obstacles
         )
+

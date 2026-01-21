@@ -39,3 +39,4 @@ class Perceptron:
         error = desired - guess
         for i in range(len(self.weights)):
             self.weights[i] += error * inputs[i] * self.learning_constant
+

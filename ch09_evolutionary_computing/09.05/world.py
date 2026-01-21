@@ -52,3 +52,4 @@ class World:
 
         position = Py5Vector2D(x, y)
         self.bloops.append(Bloop(position, DNA()))
+

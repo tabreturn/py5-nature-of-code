@@ -71,3 +71,4 @@ class Population:
         # Undo moving to the next element since the finish has been reached.
         index -= 1
         return self.population[index].dna
+

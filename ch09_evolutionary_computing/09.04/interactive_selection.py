@@ -45,3 +45,4 @@ def next_generation() -> None:
 
     population.selection()
     population.reproduction()
+

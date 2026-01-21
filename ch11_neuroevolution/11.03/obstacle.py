@@ -22,3 +22,4 @@ class Obstacle:
         stroke_weight(2)
         rect_mode(CORNER)
         rect(self.position.x, self.position.y, self.w, self.h)
+

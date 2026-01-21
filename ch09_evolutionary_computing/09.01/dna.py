@@ -41,3 +41,4 @@ class DNA:
 
         c = floor(random(32, 127))
         return chr(c)
+

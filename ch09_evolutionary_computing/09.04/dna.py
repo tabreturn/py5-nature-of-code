@@ -24,3 +24,4 @@ class DNA:
         for i, _ in enumerate(self.genes):
             if random(1) < mutation_rate:
                 self.genes[i] = random(1)
+

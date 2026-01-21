@@ -30,3 +30,4 @@ class Bird:
         stroke(0)
         fill(127)
         circle(self.x, self.y, 16)
+

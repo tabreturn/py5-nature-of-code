@@ -61,3 +61,4 @@ class Population:
         # Now the new population is the current one.
         self.population = new_population
         self.generations += 1
+

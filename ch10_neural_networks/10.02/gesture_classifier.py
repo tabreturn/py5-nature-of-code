@@ -115,3 +115,4 @@ def got_results(label, probas) -> None:
       for l, p in zip(classifier.classes_, probas)
     ]
     print(*results, sep='\n', end='\n\n')
+

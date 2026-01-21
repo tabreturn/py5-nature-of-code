@@ -119,3 +119,4 @@ def all_birds_dead() -> bool:
 def reset_pipes() -> None:
     """Remove all the pipes but the very latest one."""
     del pipes[:-1]
+

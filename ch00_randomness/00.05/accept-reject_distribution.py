@@ -39,3 +39,4 @@ def accept_reject() -> float:
         # Does it qualify? If so, you're done!
         if r2 < probability:
             return r1
+

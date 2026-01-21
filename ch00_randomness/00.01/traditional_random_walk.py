@@ -42,3 +42,4 @@ def draw():
     # Call functions on the walker.
     walker.step()
     walker.show()
+

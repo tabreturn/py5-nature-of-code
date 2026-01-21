@@ -69,3 +69,4 @@ class Bird:
         # classify_binary() returns True (flap) or False (no flap)
         if result:
             self.flap()
+

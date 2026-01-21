@@ -73,3 +73,4 @@ class Flower:
             self.fitness += 0.25
         else:
             self.rollover_on = False
+

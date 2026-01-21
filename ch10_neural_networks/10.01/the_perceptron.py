@@ -61,3 +61,4 @@ def draw():
         stroke_weight(1)
         stroke(0)
         circle(data_point[0], data_point[1], 8)
+

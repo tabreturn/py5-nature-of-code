@@ -38,3 +38,4 @@ def draw():
     # Add a new pipe every 100 frames.
     if frame_count % 100 == 0:
         pipes.append(Pipe())
+

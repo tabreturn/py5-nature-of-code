@@ -80,3 +80,4 @@ class Population:
         index -= 1
 #        return self.population[index].dna
         return self.population[index].brain
+

@@ -51,3 +51,4 @@ class Brain:
         self.b_h = mut(self.b_h)
         self.w_ho = mut(self.w_ho)
         self.b_o = mut(self.b_o)
+

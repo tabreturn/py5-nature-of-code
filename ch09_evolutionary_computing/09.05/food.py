@@ -37,3 +37,4 @@ class Food:
               random(get_current_sketch().width),
               random(get_current_sketch().height)
             ))
+
