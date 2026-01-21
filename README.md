@@ -30,7 +30,7 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch00_randomness/00.01](ch00_randomness/00.01) |
   p5.js: [5C69XyrlsR](https://editor.p5js.org/natureofcode/sketches/5C69XyrlsR)
 
-- 00.02 - IN PROGRESS |
+- **00.02 - random-number_distribution** |
   py5: [ch00_randomness/00.02](ch00_randomness/00.02) |
   p5.js: [u4vTwZuhT](https://editor.p5js.org/natureofcode/sketches/u4vTwZuhT)
 
