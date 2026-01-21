@@ -46,7 +46,7 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch00_randomness/00.05](ch00_randomness/00.05) |
   p5.js: [3t5iHwA7Q](https://editor.p5js.org/natureofcode/sketches/3t5iHwA7Q)
 
-- 00.06 - IN PROGRESS |
+- **00.06 - perlin_noise_walker** |
   py5: [ch00_randomness/00.06](ch00_randomness/00.06) |
   p5.js: [qyNwGUy59](https://editor.p5js.org/natureofcode/sketches/qyNwGUy59)
 
