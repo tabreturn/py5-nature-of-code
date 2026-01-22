@@ -64,6 +64,10 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch00_randomness/01.03](ch00_randomness/01.03) |
   p5.js: [HtXiElQbC](https://editor.p5js.org/natureofcode/sketches/HtXiElQbC)
 
+- **01.04 - vector_multiplication** |
+  py5: [ch00_randomness/01.04](ch00_randomness/01.04) |
+  p5.js: [VQfwqpDlv](https://editor.p5js.org/natureofcode/sketches/VQfwqpDlv)
+
 IN PROGRESS
 
 ...
