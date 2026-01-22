@@ -73,8 +73,12 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   p5.js: [rld_CtioUU](https://editor.p5js.org/natureofcode/sketches/rld_CtioUU)
 
 - **01.06 - vector_normalization** |
-  py5: [ch00_randomness/01.05](ch00_randomness/01.06) |
+  py5: [ch00_randomness/01.06](ch00_randomness/01.06) |
   p5.js: [5dWkegAID](https://editor.p5js.org/natureofcode/sketches/5dWkegAID)
+
+- **01.07 - motion_101_velocity** |
+  py5: [ch00_randomness/01.07](ch00_randomness/01.07) |
+  p5.js: [6foX0NUfS](https://editor.p5js.org/natureofcode/sketches/6foX0NUfS)
 
 - IN PROGRESS ...
 
