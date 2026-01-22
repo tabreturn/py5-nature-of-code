@@ -51,6 +51,9 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   p5.js: [qyNwGUy59](https://editor.p5js.org/natureofcode/sketches/qyNwGUy59)
 
 ### Ch. 01 - Vectors
+
+IN PROGRESS
+
 ...
 
 
@@ -60,6 +63,7 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
 ## Part 2: It's Alive!
 
 ### Ch. 05 - Autonomous Agents
+
 ...
 
 
