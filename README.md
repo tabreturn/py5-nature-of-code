@@ -56,6 +56,10 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch00_randomness/01.01](ch00_randomness/01.01) |
   p5.js: [oadKdOndU](https://editor.p5js.org/natureofcode/sketches/oadKdOndU)
 
+- **01.02 - bouncing_ball_vectors** |
+  py5: [ch00_randomness/01.02](ch00_randomness/01.02) |
+  p5.js: [qU5oPJijX](https://editor.p5js.org/natureofcode/sketches/qU5oPJijX)
+
 IN PROGRESS
 
 ...
