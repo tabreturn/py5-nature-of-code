@@ -66,11 +66,11 @@ class Bloop:
     def borders(self) -> None:
         """Wraparound."""
 
-        sketch = get_current_sketch()
-        if self.position.x < -self.r: self.position.x = sketch.width + self.r
-        elif self.position.x > sketch.width + self.r: self.position.x = -self.r
-        if self.position.y < -self.r: self.position.y = sketch.height + self.r
-        elif self.position.y > sketch.height + self.r: self.position.y = -self.r
+        cs = get_current_sketch()
+        if self.position.x < -self.r: self.position.x = cs.width + self.r
+        elif self.position.x > cs.width + self.r: self.position.x = -self.r
+        if self.position.y < -self.r: self.position.y = cs.height + self.r
+        elif self.position.y > cs.height + self.r: self.position.y = -self.r
 
     def show(self) -> None:
         """A bloop is a circle."""
