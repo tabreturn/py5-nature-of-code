@@ -72,9 +72,7 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch00_randomness/01.05](ch00_randomness/01.05) |
   p5.js: [rld_CtioUU](https://editor.p5js.org/natureofcode/sketches/rld_CtioUU)
 
-IN PROGRESS
-
-...
+- IN PROGRESS ...
 
 
 ---
@@ -84,9 +82,7 @@ IN PROGRESS
 
 ### Ch. 05 - Autonomous Agents
 
-IN PROGRESS
-
-...
+- IN PROGRESS ...
 
 
 ---
@@ -143,15 +139,15 @@ IN PROGRESS
   py5: [ch11_neuroevolution/11.03](ch11_neuroevolution/11.03) |
   p5.js: [KkV4lTS4H](https://editor.p5js.org/natureofcode/sketches/KkV4lTS4H)
 
-- 11.04 - IN PROGRESS |
+- 11.04 - IN PROGRESS ... |
   py5: [ch11_neuroevolution/11.04](ch11_neuroevolution/11.04) |
   p5.js: [fZDfxxVrf](https://editor.p5js.org/natureofcode/sketches/fZDfxxVrf)
 
-- 11.05 - IN PROGRESS |
+- 11.05 - IN PROGRESS ... |
   py5: [ch11_neuroevolution/11.05](ch11_neuroevolution/11.05) |
   p5.js: [vCTMtXXSS](https://editor.p5js.org/natureofcode/sketches/vCTMtXXSS)
 
-- 11.06 - IN PROGRESS |
+- 11.06 - IN PROGRESS ... |
   py5: [ch11_neuroevolution/11.06](ch11_neuroevolution/11.06) |
   p5.js: [IQbcREjUK](https://editor.p5js.org/natureofcode/sketches/IQbcREjUK)
 
