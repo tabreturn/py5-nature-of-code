@@ -53,61 +53,61 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
 ### Ch. 01 - Vectors
 
 - **01.01 - bouncing_ball_no_vectors** |
-  py5: [ch00_randomness/01.01](ch00_randomness/01.01) |
+  py5: [ch01_randomness/01.01](ch00_randomness/01.01) |
   p5.js: [oadKdOndU](https://editor.p5js.org/natureofcode/sketches/oadKdOndU)
 
 - **01.02 - bouncing_ball_vectors** |
-  py5: [ch00_randomness/01.02](ch00_randomness/01.02) |
+  py5: [ch01_randomness/01.02](ch00_randomness/01.02) |
   p5.js: [qU5oPJijX](https://editor.p5js.org/natureofcode/sketches/qU5oPJijX)
 
 - **01.03 - vector_subtraction** |
-  py5: [ch00_randomness/01.03](ch00_randomness/01.03) |
+  py5: [ch01_randomness/01.03](ch00_randomness/01.03) |
   p5.js: [HtXiElQbC](https://editor.p5js.org/natureofcode/sketches/HtXiElQbC)
 
 - **01.04 - vector_multiplication** |
-  py5: [ch00_randomness/01.04](ch00_randomness/01.04) |
+  py5: [ch01_randomness/01.04](ch00_randomness/01.04) |
   p5.js: [VQfwqpDlv](https://editor.p5js.org/natureofcode/sketches/VQfwqpDlv)
 
 - **01.05 - vector_magnitude** |
-  py5: [ch00_randomness/01.05](ch00_randomness/01.05) |
+  py5: [ch01_randomness/01.05](ch00_randomness/01.05) |
   p5.js: [rld_CtioUU](https://editor.p5js.org/natureofcode/sketches/rld_CtioUU)
 
 - **01.06 - vector_normalization** |
-  py5: [ch00_randomness/01.06](ch00_randomness/01.06) |
+  py5: [ch01_randomness/01.06](ch00_randomness/01.06) |
   p5.js: [5dWkegAID](https://editor.p5js.org/natureofcode/sketches/5dWkegAID)
 
 - **01.07 - motion_101_velocity** |
-  py5: [ch00_randomness/01.07](ch00_randomness/01.07) |
+  py5: [ch01_randomness/01.07](ch00_randomness/01.07) |
   p5.js: [6foX0NUfS](https://editor.p5js.org/natureofcode/sketches/6foX0NUfS)
 
 - **01.08 - motion_101_velocity_constant_accel** |
-  py5: [ch00_randomness/01.08](ch00_randomness/01.08) |
+  py5: [ch01_randomness/01.08](ch00_randomness/01.08) |
   p5.js: [4GSialOpQw](https://editor.p5js.org/natureofcode/sketches/4GSialOpQw)
 
 - **01.09 - motion_101_velocity_random_accel** |
-  py5: [ch00_randomness/01.09](ch00_randomness/01.09) |
+  py5: [ch01_randomness/01.09](ch00_randomness/01.09) |
   p5.js: [w9DU8ccWMf](https://editor.p5js.org/natureofcode/sketches/w9DU8ccWMf)
 
 - **01.10 - motion_101_accel_toward_mouse** |
-  py5: [ch00_randomness/01.10](ch00_randomness/01.10) |
+  py5: [ch01_randomness/01.10](ch00_randomness/01.10) |
   p5.js: [gYJHm1EFL](https://editor.p5js.org/natureofcode/sketches/gYJHm1EFL)
 
 ### Ch. 02 - Forces
 
 - **02.01 - forces** |
-  py5: [ch00_randomness/02.01](ch00_randomness/02.01) |
+  py5: [ch02_randomness/02.01](ch00_randomness/02.01) |
   p5.js: [4IRI8BEVE](https://editor.p5js.org/natureofcode/sketches/4IRI8BEVE)
 
 - **02.02 - forces_two_objects** |
-  py5: [ch00_randomness/02.02](ch00_randomness/02.02) |
+  py5: [ch02_randomness/02.02](ch00_randomness/02.02) |
   p5.js: [ePLfo-OGu](https://editor.p5js.org/natureofcode/sketches/ePLfo-OGu)
 
 - **02.03 - gravity_scaled_mass** |
-  py5: [ch00_randomness/02.03](ch00_randomness/02.03) |
+  py5: [ch02_randomness/02.03](ch00_randomness/02.03) |
   p5.js: [0RiwMFOQ7](https://editor.p5js.org/natureofcode/sketches/0RiwMFOQ7)
 
 - **02.04 - including_friction** |
-  py5: [ch00_randomness/02.04](ch00_randomness/02.04) |
+  py5: [ch02_randomness/02.04](ch00_randomness/02.04) |
   p5.js: [I4wC4aXd-E](https://editor.p5js.org/natureofcode/sketches/I4wC4aXd-E)
 
 - IN PROGRESS ...
