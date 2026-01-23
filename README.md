@@ -102,6 +102,10 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch00_randomness/02.02](ch00_randomness/02.02) |
   p5.js: [ePLfo-OGu](https://editor.p5js.org/natureofcode/sketches/ePLfo-OGu)
 
+- **02.03 - gravity_scaled_mass** |
+  py5: [ch00_randomness/02.03](ch00_randomness/02.03) |
+  p5.js: [0RiwMFOQ7](https://editor.p5js.org/natureofcode/sketches/0RiwMFOQ7)
+
 - IN PROGRESS ...
 
 
