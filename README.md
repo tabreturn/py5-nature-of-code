@@ -30,11 +30,11 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch00_randomness/00.01](ch00_randomness/00.01) |
   p5.js: [5C69XyrlsR](https://editor.p5js.org/natureofcode/sketches/5C69XyrlsR)
 
-- **00.02 - random-number_distribution** |
+- **00.02 - random_number_distribution** |
   py5: [ch00_randomness/00.02](ch00_randomness/00.02) |
   p5.js: [u4vTwZuhT](https://editor.p5js.org/natureofcode/sketches/u4vTwZuhT)
 
-- **00.03 - walker_that_tends_right** |
+- **00.03 - walker_tends_right** |
   py5: [ch00_randomness/00.03](ch00_randomness/00.03) |
   p5.js: [iAjs_70DF](https://editor.p5js.org/natureofcode/sketches/iAjs_70DF)
 
@@ -42,7 +42,7 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch00_randomness/00.04](ch00_randomness/00.04) |
   p5.js: [Yk_eSiNOR](https://editor.p5js.org/natureofcode/sketches/Yk_eSiNOR)
 
-- **00.05 - accept-reject_distribution** |
+- **00.05 - accept_reject_distribution** |
   py5: [ch00_randomness/00.05](ch00_randomness/00.05) |
   p5.js: [3t5iHwA7Q](https://editor.p5js.org/natureofcode/sketches/3t5iHwA7Q)
 
@@ -80,15 +80,15 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch00_randomness/01.07](ch00_randomness/01.07) |
   p5.js: [6foX0NUfS](https://editor.p5js.org/natureofcode/sketches/6foX0NUfS)
 
-- **01.08 - motion_101_velocity_and_constant_accel** |
+- **01.08 - motion_101_velocity_constant_accel** |
   py5: [ch00_randomness/01.08](ch00_randomness/01.08) |
   p5.js: [4GSialOpQw](https://editor.p5js.org/natureofcode/sketches/4GSialOpQw)
 
-- **01.09 - motion_101_velocity_and_random_accel** |
+- **01.09 - motion_101_velocity_random_accel** |
   py5: [ch00_randomness/01.09](ch00_randomness/01.09) |
   p5.js: [w9DU8ccWMf](https://editor.p5js.org/natureofcode/sketches/w9DU8ccWMf)
 
-- **01.10 - motion_101_accelerating_toward_the_mouse** |
+- **01.10 - motion_101_accel_toward_mouse** |
   py5: [ch00_randomness/01.10](ch00_randomness/01.10) |
   p5.js: [gYJHm1EFL](https://editor.p5js.org/natureofcode/sketches/gYJHm1EFL)
 
