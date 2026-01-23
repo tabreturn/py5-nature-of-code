@@ -15,11 +15,12 @@ def draw():
     gravity = Py5Vector2D(0, 0.1)
     mover.apply_force(gravity)
 
+    # Make up a wind force and apply it when the mouse is clicked.
     if is_mouse_pressed:
         wind = Py5Vector2D(0.1, 0)
         mover.apply_force(wind)
 
-    # Call methods on the Mover object.
+    # Call methods on the Mover object(s).
     mover.update()
     mover.check_edges()
     mover.show()

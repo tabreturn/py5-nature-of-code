@@ -3,10 +3,10 @@ from py5 import circle, fill, get_current_sketch, Py5Vector2D, stroke, stroke_we
 
 class Mover:
 
-    def __init__(self):
-        # For now, set the mass equal to 1 for simplicity.
-        self.mass = 1
-        self.position = Py5Vector2D(get_current_sketch().width / 2, 30)
+    def __init__(self, x: float, y: float, mass: float):
+        # Set these variables with arguments.
+        self.mass = mass
+        self.position = Py5Vector2D(x, y)
 
         self.velocity = Py5Vector2D()
         self.acceleration = Py5Vector2D()
@@ -30,7 +30,7 @@ class Mover:
         stroke_weight(2)
         fill(127, 127)
         # Scale the size according to mass.
-        circle(self.position.x, self.position.y, self.mass * 16 * 3)
+        circle(self.position.x, self.position.y, self.mass * 16)
         # Stay tuned for an improvement on this to come later in the chapter!
 
     def check_edges(self) -> None:
