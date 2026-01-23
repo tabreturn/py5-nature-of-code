@@ -37,7 +37,7 @@ class Mover:
 
     def check_edges(self) -> None:
         """An object bounces when it hits the edges of the canvas."""
-        
+
         # A new variable to simulate an inelastic collision:
         # 10% of the velocity's x- or y-component is lost.
         bounce = -0.9
