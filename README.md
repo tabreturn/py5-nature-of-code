@@ -1,4 +1,4 @@
-# Nature of Code -- py5 Port
+# Nature of Code (2), py5 Port
 
 *py5 implementations of "The Nature of Code" (2024 edition)*
 
@@ -16,7 +16,7 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
 ---
 
 
-<em>NOTE: I've started porting Chapters 09, 10, and 11 (and 00). After completing those, I will continue from Chapter 01.</em>
+<em><b>NOTE:</b> I initially started porting Chapters 09, 10, and 11. Task 11.04 required restarting from Chapter 00. I'm currently working through and completing Chapters 00--05. Then I'll return to finish Chapter 11. Finally, I will complete Chapters 06--08.</em>
 
 
 ---
