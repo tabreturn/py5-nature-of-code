@@ -16,11 +16,12 @@ class Mover:
         self.position = Py5Vector2D(self.cs.width / 2, self.cs.height / 2)
         self.velocity = Py5Vector2D()
         # Acceleration is the key!
-        self.acceleration = Py5Vector2D(-0.001, 0.01)
+        self.acceleration = Py5Vector2D()
         # The variable top_speed will limit the magnitude of velocity.
         self.top_speed = 10 / 2
 
     def update(self) -> None:
+#        self.acceleration = Py5Vector2D(-0.001, 0.01)
         # The random() method returns a unit vector in a random direction.
         self.acceleration = Py5Vector2D.random()
         self.acceleration *= random(2)  # Random.

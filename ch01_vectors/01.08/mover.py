@@ -16,11 +16,12 @@ class Mover:
         self.position = Py5Vector2D(self.cs.width / 2, self.cs.height / 2)
         self.velocity = Py5Vector2D()
         # Acceleration is the key!
-        self.acceleration = Py5Vector2D(-0.001, 0.01)
+        self.acceleration = Py5Vector2D()
         # The variable top_speed will limit the magnitude of velocity.
         self.top_speed = 10
 
     def update(self) -> None:
+        self.acceleration = Py5Vector2D(-0.001, 0.01)
         # Velocity changes by acceleration and is limited by top_speed.
         self.velocity += self.acceleration
         self.velocity.set_limit(self.top_speed)
