@@ -88,6 +88,12 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch00_randomness/01.09](ch00_randomness/01.09) |
   p5.js: [w9DU8ccWMf](https://editor.p5js.org/natureofcode/sketches/w9DU8ccWMf)
 
+- **01.10 - motion_101_accelerating_toward_the_mouse** |
+  py5: [ch00_randomness/01.10](ch00_randomness/01.10) |
+  p5.js: [gYJHm1EFL](https://editor.p5js.org/natureofcode/sketches/gYJHm1EFL)
+
+### Ch. 02 - Forces
+
 - IN PROGRESS ...
 
 
