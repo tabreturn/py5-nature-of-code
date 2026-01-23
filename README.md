@@ -94,6 +94,10 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
 
 ### Ch. 02 - Forces
 
+- **02.01 - forces** |
+  py5: [ch00_randomness/02.01](ch00_randomness/02.01) |
+  p5.js: [4IRI8BEVE](https://editor.p5js.org/natureofcode/sketches/4IRI8BEVE)
+
 - IN PROGRESS ...
 
 

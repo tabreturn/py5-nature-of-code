@@ -1,0 +1,49 @@
+from py5 import circle, fill, get_current_sketch, Py5Vector2D, stroke, stroke_weight
+
+
+class Mover:
+    
+    def __init__(self):
+        # For now, set the mass equal to 1 for simplicity.
+        self.mass = 1
+        self.position = Py5Vector2D(get_current_sketch().width / 2, 30)
+
+        self.velocity = Py5Vector2D()
+        self.acceleration = Py5Vector2D()
+
+    def apply_force(self, force: Py5Vector2D) -> None:
+        """Newton's second law."""
+
+        # Receive a force, divide by mass, and add to acceleration.
+        f = force / self.mass
+        self.acceleration += f
+
+    def update(self) -> None:
+        # Motion 101 from Chapter 1.
+        self.velocity += self.acceleration
+        self.position += self.velocity
+        # Now add clearing the acceleration each time!
+        self.acceleration *= 0
+
+    def show(self) -> None:
+        stroke(0)
+        stroke_weight(2)
+        fill(175)
+        # Scale the size according to mass.
+        circle(self.position.x, self.position.y, self.mass * 16 * 3)
+        # Stay tuned for an improvement on this to come later in the chapter!
+
+    def check_edges(self) -> None:
+        """An object bounces when it hits the edges of the canvas."""
+
+        if self.position.x > get_current_sketch().width:
+            self.position.x = get_current_sketch().width
+            self.velocity.x *= -1
+        elif self.position.x < 0:
+            self.velocity.x *= -1
+            self.position.x = 0
+    
+        if self.position.y > get_current_sketch().height:
+            # Quick way to reverse the object's direction when it reaches edge.
+            self.velocity.y *= -1
+            self.position.y = get_current_sketch().height
