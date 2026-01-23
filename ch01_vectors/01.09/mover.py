@@ -24,7 +24,7 @@ class Mover:
         # The random() method returns a unit vector in a random direction.
         self.acceleration = Py5Vector2D.random()
         self.acceleration *= random(2)  # Random.
-        
+
         # Velocity changes by acceleration and is limited by top_speed.
         self.velocity += self.acceleration
         self.velocity.set_limit(self.top_speed)
