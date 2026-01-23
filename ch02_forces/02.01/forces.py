@@ -11,11 +11,11 @@ def setup():
 
 def draw():
     background(255)
-    
+
     gravity = Py5Vector2D(0, 0.1)
     mover.apply_force(gravity)
 
-    if is_mouse_pressed: 
+    if is_mouse_pressed:
         wind = Py5Vector2D(0.1, 0)
         mover.apply_force(wind)
 

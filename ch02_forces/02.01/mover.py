@@ -2,7 +2,7 @@ from py5 import circle, fill, get_current_sketch, Py5Vector2D, stroke, stroke_we
 
 
 class Mover:
-    
+
     def __init__(self):
         # For now, set the mass equal to 1 for simplicity.
         self.mass = 1
@@ -42,7 +42,7 @@ class Mover:
         elif self.position.x < 0:
             self.velocity.x *= -1
             self.position.x = 0
-    
+
         if self.position.y > get_current_sketch().height:
             # Quick way to reverse the object's direction when it reaches edge.
             self.velocity.y *= -1
