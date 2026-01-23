@@ -11,9 +11,10 @@ def setup():
     # A smaller mover on right side of the canvas.
     mover_b = Mover(440, 30 - (2 * 8), 2)
 
+
 def draw():
     background(255)
-    
+
     # Make up a gravity force and apply it.
     gravity = Py5Vector2D(0, 0.1)
 
