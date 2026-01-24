@@ -1,7 +1,7 @@
 from py5 import fill, no_stroke, rect
 
 
-class Liquid():
+class Liquid:
 
     def __init__(self, x: float, y: float, w: int, h: int, c: float):
         self.x = x

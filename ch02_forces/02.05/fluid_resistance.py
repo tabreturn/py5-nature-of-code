@@ -11,18 +11,19 @@ def setup():
     # Initialize an array of Mover objects.
     movers = [
       Mover(
-        40 + i * 70, 0, # The x-values are spaced out evenly according to i.
-        random(0.5, 3)  # Use a random mass for each one.
+        40 + i * 70, 0,  # The x-values are spaced out evenly according to i.
+        random(0.5, 3),  # Use a random mass for each one.
       )
       for i in range(9)
     ]
 
+    # Initialize a Liquid object. Low coefficient (0.1) for a weaker effect.
     liquid = Liquid(0, height / 2, width, height / 2, 0.1)
 
 
 def draw():
     background(255)
-    
+
     liquid.show()  # Draw the liquid.
 
     for mover in movers:
