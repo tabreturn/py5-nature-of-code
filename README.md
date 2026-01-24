@@ -1,6 +1,6 @@
 # Nature of Code (2), py5 Port
 
-*py5 implementations of "The Nature of Code" (2024 edition)*
+*py5 implementations of Daniel Shiffman's "The Nature of Code" (2024 edition)*
 
 **Built with [py5](https://py5coding.org) using [Thonny-py5mode](https://github.com/py5coding/thonny-py5mode)**
 
