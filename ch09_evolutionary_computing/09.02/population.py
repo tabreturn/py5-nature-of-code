@@ -25,8 +25,8 @@ class Population:
         for rocket in self.population:
             rocket.run()
 
+    # Needs "target" because Python modules have isolated namespaces.
     def fitness(self, target: Py5Vector2D) -> None:
-        # Needs "target" because Python modules have isolated namespaces.
         """Calculate the fitness for each rocket."""
 
         for rocket in self.population:

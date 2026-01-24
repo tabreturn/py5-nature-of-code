@@ -18,8 +18,8 @@ class Population:
           Rocket(self.x, self.y, DNA(life_span)) for _ in range(length)
         ]
 
+    # Needs "target" because Python modules have isolated namespaces.
     def live(self, obstacles, target: Py5Vector2D) -> None:
-        # Needs "target" because Python modules have isolated namespaces.
         """The run() method takes care of the simulation, updates the rocket's
         position, and draws it to the canvas."""
 
@@ -32,8 +32,8 @@ class Population:
 
         return any(rocket.hit_target for rocket in self.population)
 
+    # Needs "target" because Python modules have isolated namespaces.
     def fitness(self, target: Py5Vector2D) -> None:
-        # Needs "target" because Python modules have isolated namespaces.
         """Calculate the fitness for each rocket."""
 
         for rocket in self.population:
