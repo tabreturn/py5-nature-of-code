@@ -114,6 +114,10 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch02_randomness/02.05](ch00_randomness/02.05) |
   p5.js: [FknzcAaVh](https://editor.p5js.org/natureofcode/sketches/FknzcAaVh)
 
+- **02.06 - attraction** |
+  py5: [ch02_randomness/02.06](ch00_randomness/02.06) |
+  p5.js: [Cl0Eeaz_V](https://editor.p5js.org/natureofcode/sketches/Cl0Eeaz_V)
+
 - IN PROGRESS ...
 
 
