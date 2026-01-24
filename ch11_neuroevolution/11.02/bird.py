@@ -45,7 +45,7 @@ class Bird:
     def show(self) -> None:
         stroke_weight(2)
         stroke(0)
-        fill(127, 200)
+        fill(127, 175)
         circle(self.x, self.y, 16)
 
     def think(self, pipes: list['Pipe']) -> None:

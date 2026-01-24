@@ -26,7 +26,7 @@ class Food:
         rect_mode(CENTER)
         stroke(0)
         stroke_weight(1)
-        fill(200)
+        fill(175)
 
         for position in self.food_positions:
             square(position.x, position.y, 8)

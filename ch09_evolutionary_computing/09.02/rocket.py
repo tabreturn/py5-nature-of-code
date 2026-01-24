@@ -65,7 +65,7 @@ class Rocket:
         rect(-r / 2, r * 2, r / 2, r)
         rect(r / 2, r * 2, r / 2, r)
         # Rocket body.
-        fill(200)
+        fill(175)
         begin_shape(TRIANGLES)
         vertex(0, -r * 2)
         vertex(-r, r * 2)
