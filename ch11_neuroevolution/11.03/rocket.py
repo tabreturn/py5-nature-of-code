@@ -77,8 +77,7 @@ class Rocket:
 #            # Go to the next force in the genes array.
 #            self.gene_counter = (self.gene_counter + 1) % len(self.dna.genes)
             
-            cs = get_current_sketch()
-            inputs = [self.position.x / cs.width, self.position.y / cs.height]
+            inputs = [self.position.x / width, self.position.y / height]
             # Get the outputs from the neural network.
             outputs = self.brain.predict_continuous_01(inputs)
             # Use one output for an angle.

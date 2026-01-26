@@ -12,8 +12,8 @@ class Glow:
 
     def step(self) -> None:
         # x- and y-position mapped from noise.
-        self.x = remap(noise(self.tx), 0, 1, 0, get_current_sketch().width)
-        self.y = remap(noise(self.ty), 0, 1, 0, get_current_sketch().height)
+        self.x = remap(noise(self.tx), 0, 1, 0, width)
+        self.y = remap(noise(self.ty), 0, 1, 0, height)
         # Move forward through time.
         self.tx += 0.01
         self.ty += 0.01

@@ -35,10 +35,10 @@ class Bird:
         # Dampen velocity.
         self.velocity *= 0.95
         # Handle the floor.
-#        if self.y > get_current_sketch().height:
-#            self.y = get_current_sketch().height
+#        if self.y > height:
+#            self.y = height
 #            self.velocity = 0
-        if self.y > get_current_sketch().height or self.y < 0:
+        if self.y > height or self.y < 0:
             self.alive = False
         # Increment the fitness each time through update().
         self.fitness += 1
@@ -58,7 +58,6 @@ class Bird:
                 break
 
         # All the inputs are now normalized by width and height.
-        width, height = get_current_sketch().width, get_current_sketch().height
         inputs = [
           self.y / height,                 # y-position of the bird.
           self.velocity / height,          # y-velocity of the bird.

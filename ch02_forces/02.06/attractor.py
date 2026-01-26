@@ -5,9 +5,7 @@ class Attractor:
 
     def __init__(self):
         # Attractor object doesn't move; it needs just a mass and position.
-        self.position = Py5Vector2D(
-          get_current_sketch().width / 2, get_current_sketch().height / 2
-        )
+        self.position = Py5Vector2D(width / 2, height / 2)
         self.mass = 20
 
         # The attributes below are for mouse interaction

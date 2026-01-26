@@ -12,13 +12,7 @@ class World:
         # Create the population.
         self.bloops = [
           # Create each bloop with a starting position.
-          Bloop(
-            Py5Vector2D(
-              random(get_current_sketch().width),
-              random(get_current_sketch().height)
-            ),
-            DNA()
-          )
+          Bloop(Py5Vector2D(random(width), random(height)), DNA())
           for _ in range(population_size)
         ]
         # Create the food.

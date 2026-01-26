@@ -38,14 +38,14 @@ class Mover:
     def check_edges(self) -> None:
         """An object bounces when it hits the edges of the canvas."""
 
-        if self.position.x > get_current_sketch().width - self.radius:
-            self.position.x = get_current_sketch().width - self.radius
+        if self.position.x > width - self.radius:
+            self.position.x = width - self.radius
             self.velocity.x *= -1
         elif self.position.x < 0 + self.radius:
             self.velocity.x *= -1
             self.position.x = 0 + self.radius
 
-        if self.position.y > get_current_sketch().height - self.radius:
+        if self.position.y > height - self.radius:
             # Quick way to reverse the object's direction when it reaches edge.
             self.velocity.y *= -1
-            self.position.y = get_current_sketch().height - self.radius
+            self.position.y = height - self.radius

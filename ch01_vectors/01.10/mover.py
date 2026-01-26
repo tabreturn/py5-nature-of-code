@@ -4,12 +4,10 @@
 class Mover:
 
     def __init__(self):
-        # Get the current sketch to access values like width and height.
-        self.cs = get_current_sketch()
         # The object has two vectors: position and velocity.
-#        self.position = Py5Vector2D(random(self.cs.width), random(self.cs.height))
+#        self.position = Py5Vector2D(random(width), random(height))
 #        self.velocity = Py5Vector2D(random(-2, 2), random(-2, 2))
-        self.position = Py5Vector2D(self.cs.width / 2, self.cs.height / 2)
+        self.position = Py5Vector2D(width / 2, height / 2)
         self.velocity = Py5Vector2D()
         # Acceleration is the key!
         self.acceleration = Py5Vector2D()
@@ -18,7 +16,7 @@ class Mover:
 
     def update(self) -> None:
 #        self.acceleration = Py5Vector2D(-0.001, 0.01)
-        mouse = Py5Vector2D(self.cs.mouse_x, self.cs.mouse_y)
+        mouse = Py5Vector2D(mouse_x, mouse_y)
         dir = mouse - self.position  # Step 1: Compute the direction.
         dir.normalize()              # Step 2: Normalize.
         dir *= 0.2                   # Step 3: Scale.
@@ -40,12 +38,12 @@ class Mover:
     def check_edges(self) -> None:
         """When it reaches one edge, set the position to the other edge."""
 
-        if self.position.x > self.cs.width:
+        if self.position.x > width:
             self.position.x = 0
         elif self.position.x < 0:
-            self.position.x = self.cs.width
+            self.position.x = width
 
-        if self.position.y > self.cs.height:
+        if self.position.y > height:
             self.position.y = 0
         elif self.position.y < 0:
-            self.position.y = self.cs.height
+            self.position.y = height

@@ -21,8 +21,8 @@ class Bird:
         # Dampen velocity.
         self.velocity *= 0.95
         # Handle the floor.
-        if self.y > get_current_sketch().height:
-            self.y = get_current_sketch().height
+        if self.y > height:
+            self.y = height
             self.velocity = 0
 
     def show(self) -> None:

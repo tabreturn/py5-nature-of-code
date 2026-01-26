@@ -4,10 +4,8 @@
 class Mover:
 
     def __init__(self):
-        # Get the current sketch to access values like width and height.
-        self.cs = get_current_sketch()
         # The object has two vectors: position and velocity.
-        self.position = Py5Vector2D(random(self.cs.width), random(self.cs.height))
+        self.position = Py5Vector2D(random(width), random(height))
         self.velocity = Py5Vector2D(random(-2, 2), random(-2, 2))
 
     def update(self) -> None:
@@ -24,12 +22,12 @@ class Mover:
     def check_edges(self) -> None:
         """When it reaches one edge, set the position to the other edge."""
 
-        if self.position.x > self.cs.width:
+        if self.position.x > width:
             self.position.x = 0
         elif self.position.x < 0:
-            self.position.x = self.cs.width
+            self.position.x = width
 
-        if self.position.y > self.cs.height:
+        if self.position.y > height:
             self.position.y = 0
         elif self.position.y < 0:
-            self.position.y = self.cs.height
+            self.position.y = height

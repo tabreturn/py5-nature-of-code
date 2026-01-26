@@ -7,10 +7,7 @@ class Food:
         """Start with some food."""
 
         self.food_positions = [
-          Py5Vector2D(
-            random(get_current_sketch().width),
-            random(get_current_sketch().height)
-          )
+          Py5Vector2D(random(width), random(height))
           for _ in range(num)
         ]
 
@@ -33,7 +30,6 @@ class Food:
         # There's a small chance food will appear randomly.
         if random(1) < 0.001:
             self.food_positions.append(Py5Vector2D(
-              random(get_current_sketch().width),
-              random(get_current_sketch().height)
+              random(width), random(height)
             ))
 

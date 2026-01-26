@@ -42,18 +42,18 @@ class Mover:
         # 10% of the velocity's x- or y-component is lost.
         bounce = -0.9
 
-        if self.position.x > get_current_sketch().width - self.radius:
-            self.position.x = get_current_sketch().width - self.radius
+        if self.position.x > width - self.radius:
+            self.position.x = width - self.radius
             self.velocity.x *= bounce
         elif self.position.x < 0 + self.radius:
             self.velocity.x *= bounce
             self.position.x = 0 + self.radius
 
-        if self.position.y > get_current_sketch().height - self.radius:
+        if self.position.y > height - self.radius:
             # Quick way to reverse the object's direction when it reaches edge.
             self.velocity.y *= bounce
-            self.position.y = get_current_sketch().height - self.radius
+            self.position.y = height - self.radius
 
     def contact_edge(self) -> bool:
         """The mover is touching the edge when it's within 1 pixel."""
-        return self.position.y > get_current_sketch().height - self.radius - 1
+        return self.position.y > height - self.radius - 1
