@@ -1,4 +1,4 @@
-# https://natureofcode.com/forces/#example-26-attraction
+# https://natureofcode.com/forces/#example-27-attraction-with-many-movers
 
 from mover import Mover
 from attractor import Attractor
@@ -7,11 +7,15 @@ G = 1.0  # A gravitational constant (for global scaling)
 
 
 def setup():
-    global mover, attractor  # A mover and an attractor
+    global movers, attractor
     size(640, 240)
 
-    mover = Mover(300, 50, 2)
-    mover.velocity = Py5Vector(1, 0)
+    # Now you have 10 movers!
+    movers = [
+      # Each mover is initialized randomly.
+      Mover(random(width), random(height), random(0.5, 3))
+      for _ in range(10)
+    ]
 
     attractor = Attractor()  # Initialize the Attractor object.
 
@@ -19,13 +23,15 @@ def setup():
 def draw():
     background(255)
 
-    # Apply the attraction force from the attractor on the mover(s).
-    force = attractor.attract(mover, G)
-    mover.apply_force(force)
-
-    mover.update()
     attractor.show()  # Draw the Attractor object.
-    mover.show()
+
+    # Apply the attraction force from the attractor on the mover(s).
+    for mover in movers:
+        # Calculate an attraction force for each Mover object.
+        force = attractor.attract(mover, G)
+        mover.apply_force(force)
+        mover.update()
+        mover.show()
 
 
 # The functions below are for mouse interaction
