@@ -22,7 +22,7 @@ class Attractor:
     def attract(self, mover: 'Mover', G: float) -> Py5Vector2D:
         # What's the force's direction?
         force = self.position - mover.position
-
+        # The length (magnitude) is the distance between the two objects.
         distance = force.mag
         # Constrain the distance so your circle doesn't spin out of control.
         distance = constrain(distance, 5, 25)

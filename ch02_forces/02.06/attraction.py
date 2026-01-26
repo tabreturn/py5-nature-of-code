@@ -7,7 +7,7 @@ G = 1.0  # A gravitational constant (for global scaling)
 
 
 def setup():
-    global mover, attractor
+    global mover, attractor  # A mover and an attractor
     size(640, 240)
 
     mover = Mover(300, 50, 2)
