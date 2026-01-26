@@ -1,11 +1,5 @@
-from py5 import get_current_sketch, PI, Py5Vector2D, random
+# PY5 IMPORTED MODE CODE
 
-# py5 drawing methods for rendering rockets
-from py5 import (
-  begin_shape, CENTER, CLOSE, end_shape, fill, pop, push, rect, rect_mode,
-  rotate, stroke, stroke_weight, translate, TRIANGLES, vertex,
-  TWO_PI,
-)
 #from dna import DNA
 import sys, os; sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 from brain_ne import Brain

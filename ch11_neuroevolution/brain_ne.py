@@ -1,7 +1,8 @@
 # ml5.js-style neural network functionality implemented with bespoke class.
 
+# PY5 IMPORTED MODE CODE
+
 from __future__ import annotations
-from py5 import np
 
 _rng = np.random.default_rng()
 

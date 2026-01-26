@@ -1,4 +1,4 @@
-from py5 import CORNER, Py5Vector2D, fill, rect, rect_mode, stroke, stroke_weight
+# PY5 IMPORTED MODE CODE
 
 
 class Obstacle:

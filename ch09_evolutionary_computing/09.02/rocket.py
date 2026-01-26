@@ -1,10 +1,5 @@
-from py5 import PI, Py5Vector2D, random
+# PY5 IMPORTED MODE CODE
 
-# py5 drawing methods for rendering rockets
-from py5 import (
-  begin_shape, CENTER, CLOSE, end_shape, fill, pop, push, rect, rect_mode,
-  rotate, stroke, stroke_weight, translate, TRIANGLES, vertex,
-)
 from dna import DNA
 
 

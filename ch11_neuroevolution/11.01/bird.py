@@ -1,4 +1,4 @@
-from py5 import fill, circle, get_current_sketch, stroke, stroke_weight
+# PY5 IMPORTED MODE CODE
 
 
 class Bird:

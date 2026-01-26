@@ -1,5 +1,4 @@
-from py5 import get_current_sketch, Py5Vector2D, random
-from py5 import CENTER, fill, rect_mode, square, stroke, stroke_weight
+# PY5 IMPORTED MODE CODE
 
 
 class Food:

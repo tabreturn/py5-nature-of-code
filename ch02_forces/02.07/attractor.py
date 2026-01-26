@@ -1,7 +1,4 @@
-from py5 import (
-  circle, constrain, dist, fill, get_current_sketch, Py5Vector2D,
-  stroke, stroke_weight,
-)
+# PY5 IMPORTED MODE CODE
 
 
 class Attractor:

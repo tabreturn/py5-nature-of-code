@@ -1,4 +1,4 @@
-from py5 import random
+# PY5 IMPORTED MODE CODE
 
 
 class DNA:

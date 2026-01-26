@@ -1,4 +1,5 @@
-from py5 import fill, circle, get_current_sketch, stroke, stroke_weight
+# PY5 IMPORTED MODE CODE
+
 import sys, os; sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 from brain_ne import Brain
 

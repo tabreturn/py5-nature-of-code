@@ -1,4 +1,5 @@
-from py5 import fill, no_stroke, get_current_sketch, random, rect
+# PY5 IMPORTED MODE CODE
+
 from bird import Bird
 
 

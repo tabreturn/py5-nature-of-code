@@ -1,4 +1,4 @@
-from py5 import floor, Py5Vector2D, random, TWO_PI
+# PY5 IMPORTED MODE CODE
 
 
 class DNA:

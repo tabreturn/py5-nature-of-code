@@ -1,4 +1,4 @@
-from py5 import fill, no_stroke, rect
+# PY5 IMPORTED MODE CODE
 
 
 class Liquid:

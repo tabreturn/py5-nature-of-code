@@ -1,4 +1,5 @@
-from py5 import get_current_sketch, Py5Vector2D, random
+# PY5 IMPORTED MODE CODE
+
 from bloop import Bloop
 from dna import DNA
 from food import Food

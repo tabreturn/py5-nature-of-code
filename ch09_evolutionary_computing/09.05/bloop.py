@@ -1,6 +1,5 @@
-from py5 import (
-  circle, fill, get_current_sketch, noise, Py5Vector2D, stroke, remap, random
-)
+# PY5 IMPORTED MODE CODE
+
 from dna import DNA
 from food import Food
 

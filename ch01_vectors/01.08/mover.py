@@ -1,8 +1,4 @@
-# NOTE: In py5, modules don't automatically know about the sketch.
-# Use get_current_sketch() to retrieve the active Sketch instance.
-from py5 import get_current_sketch
-
-from py5 import circle, fill, Py5Vector2D, stroke, stroke_weight, random
+# PY5 IMPORTED MODE CODE
 
 
 class Mover:

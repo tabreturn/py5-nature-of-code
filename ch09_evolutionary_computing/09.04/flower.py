@@ -1,9 +1,6 @@
+# PY5 IMPORTED MODE CODE
+
 from dna import DNA
-from py5 import (
-  CENTER, color, cos, ellipse, fill, floor, line, no_fill, no_stroke, pop, push,
-  remap, sin, stroke, stroke_weight, rect, rect_mode, text, text_align,
-  translate, TWO_PI
-)
 from rectangle import Rectangle
 
 

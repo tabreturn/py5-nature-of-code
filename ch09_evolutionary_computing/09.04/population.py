@@ -1,5 +1,6 @@
+# PY5 IMPORTED MODE CODE
+
 from dna import DNA
-from py5 import random
 from flower import Flower
 
 
