@@ -9,7 +9,8 @@ class Body:  # The mover is now called a body.
         self.mass = mass
         self.position = Py5Vector2D(x, y)
 
-        self.radius = mass * 8
+#        self.radius = mass * 8
+        self.radius = sqrt(self.mass) * 4
 
         self.velocity = Py5Vector2D()
         self.acceleration = Py5Vector2D()
@@ -33,7 +34,7 @@ class Body:  # The mover is now called a body.
         stroke_weight(2)
         fill(127, 127)
         # Scale the size according to mass.
-        circle(self.position.x, self.position.y, self.mass * 16)
+        circle(self.position.x, self.position.y, self.radius * 2)
         # Stay tuned for an improvement on this to come later in the chapter!
 
     def check_edges(self) -> None:
