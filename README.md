@@ -12,15 +12,13 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
 
 ![](banner.png)
 
-
 ---
 
+**NOTE:** The `# PY5 IMPORTED MODE CODE` marker tells the py5 execution engine to treat that file as if it's already *inside* your sketch. You'll see this marker in several modules, so you don't need to manually include `from py5 import *` or `import py5` in external files.
 
-<em><b>NOTE:</b> I initially started porting Chapters 09, 10, and 11. Task 11.04 required restarting from Chapter 00. I'm currently working through and completing Chapters 00--05. Then I'll return to finish Chapter 11. Finally, I will complete Chapters 06--08.</em>
-
+**NOTE:** I initially began porting Chapters 09, 10, and 11. However, Task 11.04 required restarting from Chapter 00. I am currently working through and completing Chapters 00--05. After that, I’ll return to finish Chapter 11, and finally complete Chapters 06--08.
 
 ---
-
 
 ## Part 1: Inanimate Objects
 
