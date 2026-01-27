@@ -124,11 +124,15 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch02_randomness/02.08](ch00_randomness/02.08) |
   p5.js: [cmj37xPCM](https://editor.p5js.org/natureofcode/sketches/cmj37xPCM)
 
+- **02.09 - attraction_many_movers** |
+  py5: [ch02_randomness/02.09](ch00_randomness/02.09) |
+  p5.js: [uT9VpVvCO](https://editor.p5js.org/natureofcode/sketches/uT9VpVvCO)  
+
+### Ch. 03 - Oscillation
+
 - IN PROGRESS ...
 
-
 ---
-
 
 ## Part 2: It's Alive!
 
@@ -136,12 +140,9 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
 
 - IN PROGRESS ...
 
-
 ---
 
-
 ## Part 3: Intelligence
-
 
 ### Ch. 09 - Evolutionary Computing
 
