@@ -166,7 +166,6 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch09_evolutionary_computing/09.05](ch09_evolutionary_computing/09.05) |
   p5.js: [1HDlp_tKF](https://editor.p5js.org/natureofcode/sketches/1HDlp_tKF)
 
-
 ### Ch. 10 - Neural Networks
 
 - **10.01 - the_perceptron** |
@@ -176,7 +175,6 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
 - **10.02 - gesture_classifier** |
   py5: [ch10_neural_networks/10.02](ch10_neural_networks/10.02) |
   p5.js: [SbfSv_GhM](https://editor.p5js.org/natureofcode/sketches/SbfSv_GhM)
-
 
 ### Ch. 11 - Neuroevolution
 
@@ -203,4 +201,3 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
 - 11.06 - IN PROGRESS ... |
   py5: [ch11_neuroevolution/11.06](ch11_neuroevolution/11.06) |
   p5.js: [IQbcREjUK](https://editor.p5js.org/natureofcode/sketches/IQbcREjUK)
-
