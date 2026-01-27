@@ -120,11 +120,11 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch02_randomness/02.07](ch00_randomness/02.07) |
   p5.js: [LSXJ6-VziJ](https://editor.p5js.org/natureofcode/sketches/LSXJ6-VziJ)
 
-- **02.08 - attraction_many_movers** |
+- **02.08 - two_body_attraction** |
   py5: [ch02_randomness/02.08](ch00_randomness/02.08) |
   p5.js: [cmj37xPCM](https://editor.p5js.org/natureofcode/sketches/cmj37xPCM)
 
-- **02.09 - attraction_many_movers** |
+- **02.09 - n_bodies** |
   py5: [ch02_randomness/02.09](ch00_randomness/02.09) |
   p5.js: [uT9VpVvCO](https://editor.p5js.org/natureofcode/sketches/uT9VpVvCO)  
 
