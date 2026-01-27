@@ -130,6 +130,10 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
 
 ### Ch. 03 - Oscillation
 
+- 03.01 - IN PROGRESS ... |
+  py5: [ch03_randomness/03.01](ch00_randomness/03.01) |
+  p5.js: [EFCfyH88E](https://editor.p5js.org/natureofcode/sketches/EFCfyH88E)
+
 - IN PROGRESS ...
 
 ---
