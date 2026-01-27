@@ -32,7 +32,7 @@ class Mover:
         stroke_weight(2)
         fill(127, 127)
         # Scale the size according to mass.
-        circle(self.position.x, self.position.y, self.mass * 16)
+        circle(self.position.x, self.position.y, self.radius * 2)
         # Stay tuned for an improvement on this to come later in the chapter!
 
     def check_edges(self) -> None:

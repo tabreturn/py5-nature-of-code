@@ -17,6 +17,10 @@ def setup():
       for _ in range(10)
     ]
 
+    # JS version Mover class uses this.velocity = createVector(1, 0)
+    for m in movers:
+        m.velocity = Py5Vector2D(1, 0)
+
     attractor = Attractor()  # Initialize the Attractor object.
 
 

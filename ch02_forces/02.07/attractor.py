@@ -32,7 +32,8 @@ class Attractor:
     def show(self) -> None:
         stroke_weight(4)
         stroke(0)
-        fill(175, 175)
+        if self.dragging or self.rollover: fill(175)
+        else: fill(175, 175)
         circle(self.position.x, self.position.y, self.mass * 2)
 
 

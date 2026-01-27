@@ -7,9 +7,9 @@ def setup():
     global mover_a, mover_b
     size(640, 240)
     # A large mover on left side of the canvas.
-    mover_a = Mover(200, 30 - (10 * 8), 10)
+    mover_a = Mover(200, 30, 10)
     # A smaller mover on right side of the canvas.
-    mover_b = Mover(440, 30 - (2 * 8), 2)
+    mover_b = Mover(440, 30, 2)
 
 
 def draw():
