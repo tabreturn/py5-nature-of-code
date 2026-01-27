@@ -25,6 +25,6 @@ def draw():
             if i != j:  # Do not attract yourself!
                 force = body_j.attract(body_i, G)
                 body_i.apply_force(force)
-
+        # Update and show all bodies.
         body_i.update()
         body_i.show()
