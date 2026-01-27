@@ -3,6 +3,7 @@
 # PY5 IMPORTED MODE CODE
 
 from __future__ import annotations
+import numpy as np
 
 _rng = np.random.default_rng()
 

@@ -7,8 +7,8 @@ class DNA:
         GENE_COUNT = 1
         self.genes = [random(1) for _ in range(GENE_COUNT)]
 
-    def copy(self) -> 'DNA':
-        """This copy() method replaces crossover()."""
+    def copy_dna(self) -> 'DNA':
+        """This copy_dna() method replaces crossover()."""
 
         new_dna = DNA()  # Create new DNA (with random genes).
         # Overwrite the random genes with a copy of this DNA's genes.

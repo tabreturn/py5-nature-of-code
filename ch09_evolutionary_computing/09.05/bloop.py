@@ -36,7 +36,7 @@ class Bloop:
         # A 0.5% chance of executing the code inside the if statement.
         if random(1) < 0.0005:
             # A child is an exact copy of a single parent.
-            child_dna = self.dna.copy()
+            child_dna = self.dna.copy_dna()
             # 1% mutation rate
             child_dna.mutate(0.01)
             # The new bloop starts at this bloop's position.

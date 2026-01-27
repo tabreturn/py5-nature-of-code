@@ -1,13 +1,14 @@
 # https://natureofcode.com/neural-networks/#putting-the-network-in-neural-network
 
 """
-NOTE: In this sketch, the model is trained before setup() runs.
+NOTE: In this sketch, the model is trained before setup() runs / window opens.
 Because of this, callbacks (see asynchronous operations) are not required.
 """
 
 # ml5.js-style neural network functionality implemented with scikit-learn.
 from sklearn.neural_network import MLPClassifier
 from sklearn.preprocessing import StandardScaler
+import numpy as np
 
 DATA = [
   {'x': 0.99, 'y': 0.02, 'label': 'right'},
