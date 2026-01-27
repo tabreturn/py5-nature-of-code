@@ -14,7 +14,7 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
 
 ---
 
-**NOTE:** The `# PY5 IMPORTED MODE CODE` marker tells py5 to inject py5's API into the module's namespace, so external files can call py5 functions without importing py5. You'll see this marker in several modules, so you don't need to manually include `from py5 import *` or `import py5` in external files.
+**NOTE:** The `# PY5 IMPORTED MODE CODE` marker tells py5 to inject its API into the module's namespace, allowing external files to call py5 functions without explicitly importing py5. You'll see this marker in several modules, so there's no need to add `from py5 import *` or `import py5`.
 
 **NOTE:** I initially began porting Chapters 09, 10, and 11. However, Task 11.04 required restarting from Chapter 00. I am currently working through and completing Chapters 00--05. After that, I’ll return to finish Chapter 11, and finally complete Chapters 06--08.
 
