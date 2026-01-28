@@ -134,6 +134,10 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch03_randomness/03.01](ch00_randomness/03.01) |
   p5.js: [EFCfyH88E](https://editor.p5js.org/natureofcode/sketches/EFCfyH88E)
 
+- **03.02 - angular_motion_arbitrary** |
+  py5: [ch03_randomness/03.02](ch00_randomness/03.02) |
+  p5.js: [xj2C2Ldbo](https://editor.p5js.org/natureofcode/sketches/xj2C2Ldbo)
+
 - IN PROGRESS ...
 
 ---
