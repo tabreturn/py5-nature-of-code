@@ -142,6 +142,10 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch03_oscillation/03.03](ch03_oscillation/03.03) |
   p5.js: [bZqHGYbRQ](https://editor.p5js.org/natureofcode/sketches/bZqHGYbRQ)
 
+- **03.04 - polar_to_cartesian** |
+  py5: [ch03_oscillation/03.04](ch03_oscillation/03.04) |
+  p5.js: [qcnlfvP3q](https://editor.p5js.org/natureofcode/sketches/qcnlfvP3q)
+
 - IN PROGRESS ...
 
 ---
