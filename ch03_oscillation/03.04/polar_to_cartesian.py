@@ -4,7 +4,7 @@
 def setup():
     global r, theta
     size(640, 240)
-    
+
     # Initialize all values.
     r = height * 0.45
     theta = 0
@@ -26,7 +26,7 @@ def draw():
     # To complete polar-to-Cartesian conversion, scale position by r.
     position *= r
     x, y = position.x, position.y
-    
+
     # Draw the circle by using the x- and y-components of the vector.
     fill(127)
     stroke(0)
