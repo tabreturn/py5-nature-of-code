@@ -17,7 +17,6 @@ class Mover:
         self.angle = 0
         self.angle_velocity = 0
         self.angle_acceleration = 0
-        
 
     def apply_force(self, force: Py5Vector2D) -> None:
         """Newton's second law."""

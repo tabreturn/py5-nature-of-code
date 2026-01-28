@@ -14,7 +14,7 @@ class Attractor:
 
     # Needs "G" because Python modules have isolated namespaces.
     # (p5.js sketches share a single global scope)
-    def attract(self, mover: 'Mover', G: float) -> Py5Vector2D:
+    def attract(self, mover: "Mover", G: float) -> Py5Vector2D:
         # What's the force's direction?
         force = self.position - mover.position
         # The length (magnitude) is the distance between the two objects.
@@ -24,7 +24,7 @@ class Attractor:
         # The constrain() function limits distance value -- min (5), max (25).
 
         # Calculate the strength of the attraction force.
-        strength = (G * self.mass * mover.mass) / (distance ** 2)
+        strength = (G * self.mass * mover.mass) / (distance**2)
         force.set_mag(strength)
 
         return force  # Return the force so it can be applied!
@@ -32,8 +32,10 @@ class Attractor:
     def show(self) -> None:
         stroke_weight(4)
         stroke(0)
-        if self.dragging or self.rollover: fill(175)
-        else: fill(175, 175)
+        if self.dragging or self.rollover:
+            fill(175)
+        else:
+            fill(175, 175)
         circle(self.position.x, self.position.y, self.mass * 2)
 
 
