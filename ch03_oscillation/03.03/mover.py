@@ -26,7 +26,7 @@ class Mover:
         self.acceleration += f
 
     def update(self) -> None:
-        mouse = Py5Vector2D(mouse_x, mouse_y);
+        mouse = Py5Vector2D(mouse_x, mouse_y)
         dir = mouse - self.position
         dir.normalize()
         dir *= 0.5

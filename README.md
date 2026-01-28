@@ -138,6 +138,10 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch03_oscillation/03.02](ch03_oscillation/03.02) |
   p5.js: [xj2C2Ldbo](https://editor.p5js.org/natureofcode/sketches/xj2C2Ldbo)
 
+- **03.03 - forces_arbitrary_angular_motion** |
+  py5: [ch03_oscillation/03.03](ch03_oscillation/03.03) |
+  p5.js: [bZqHGYbRQ](https://editor.p5js.org/natureofcode/sketches/bZqHGYbRQ)
+
 - IN PROGRESS ...
 
 ---
