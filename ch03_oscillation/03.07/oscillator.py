@@ -14,10 +14,10 @@ class Oscillator:
           random(20, width / 2), random(20, height / 2)
         )
 
-    def update(self):
+    def update(self) -> None:
         self.angle += self.angle_velocity
 
-    def show(self):
+    def show(self) -> None:
         x = sin(self.angle.x) * self.amplitude.x  # Oscillating on the x-axis.
         y = sin(self.angle.y) * self.amplitude.y  # Oscillating on the y-axis.
 
