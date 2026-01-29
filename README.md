@@ -158,6 +158,14 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch03_oscillation/03.07](ch03_oscillation/03.07) |
   p5.js: [b3HpgJa6F](https://editor.p5js.org/natureofcode/sketches/b3HpgJa6F)
 
+- **03.08 - static_wave** |
+  py5: [ch03_oscillation/03.08](ch03_oscillation/03.08) |
+  p5.js: [CQ19Yw0iT](https://editor.p5js.org/natureofcode/sketches/CQ19Yw0iT)
+
+- **03.09 - the_wave** |
+  py5: [ch03_oscillation/03.09](ch03_oscillation/03.09) |
+  p5.js: [qe6oK9F1o](https://editor.p5js.org/natureofcode/sketches/qe6oK9F1o)
+
 - IN PROGRESS ...
 
 ---
