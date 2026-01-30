@@ -3,11 +3,11 @@
 
 class Bob:
 
-    def __init__(self, x: float, y):
+    def __init__(self, x: float, y: float):
         self.position = Py5Vector2D(x, y)
         self.velocity = Py5Vector2D()
         self.acceleration = Py5Vector2D()
-        self.mass = 24
+        self.mass = 24.0
         # Arbitrary damping to simulate friction / drag.
         self.damping = 0.98
         # For user interaction.
@@ -48,6 +48,6 @@ class Bob:
     def stop_dragging(self) -> None:
         self.dragging = False
 
-    def handle_drag(self, mx, my) -> None:
+    def handle_drag(self, mx: int, my: int) -> None:
         if self.dragging:
             self.position = Py5Vector2D(mx, my) + self.drag_offset

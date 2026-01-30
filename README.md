@@ -166,6 +166,10 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch03_oscillation/03.09](ch03_oscillation/03.09) |
   p5.js: [qe6oK9F1o](https://editor.p5js.org/natureofcode/sketches/qe6oK9F1o)
 
+- **03.10 - spring_connection** |
+  py5: [ch03_oscillation/03.10](ch03_oscillation/03.10) |
+  p5.js: [HZOUeCe9p](https://editor.p5js.org/natureofcode/sketches/HZOUeCe9p)
+
 - IN PROGRESS ...
 
 ---

@@ -1,7 +1,7 @@
 # PY5 IMPORTED MODE CODE
 
 
-class Spring():
+class Spring:
 
     def __init__(self, x: float, y: float, length: float):
         """The constructor initializes the anchor point and rest length."""
@@ -9,21 +9,20 @@ class Spring():
         self.anchor = Py5Vector2D(x, y)  # The spring's anchor position.
         # Rest length and spring constant variables
         self.rest_length = length
-        # The magnitude of the spring force according to Hooke's law
         self.k = 0.2
 
     def connect(self, bob: 'Bob') -> None:
-        """Calculate the spring force as an implementation of Hooke’s law."""
+        """Calculate the spring force as an implementation of Hooke's law."""
 
         # Get a vector pointing from the anchor to the bob position.
         force = bob.position - self.anchor
 
-        # Calculate the displacement between distance and rest length.
-        # We'll use the variable name stretch instead of x to be descriptive.
+        # Calculate the displacement between the distance and rest length.
+        # We'll use the variable name "stretch" instead of x to be descriptive.
         current_length = force.mag
         stretch = current_length - self.rest_length
 
-        # Direction and magnitude together!
+        # Put it together: direction and magnitude!
         force.set_mag(-1 * self.k * stretch)
 
         # The connect() method takes care of calling apply_force().
@@ -31,13 +30,15 @@ class Spring():
         bob.apply_force(force)
 
     def constrain_length(self, bob: 'Bob', min_len: float, max_len: float) -> None:
+        # A vector pointing from the bob to the anchor.
         direction = bob.position - self.anchor
         length = direction.mag
 
+        # Is it too short? Is it too long?
         if min_len <= length <= max_len:
             return
 
-        # Clamp length
+        # Keep the position within the constraint.
         target_len = min_len if length < min_len else max_len
         direction.set_mag(target_len)
 
