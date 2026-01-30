@@ -7,8 +7,8 @@ class Pendulum():
         """Many variables keep track of the pendulum's various properties."""
         self.r = r                      # Length of arm.
         self.angle = PI / 4             # Pendulum arm angle.
-        self.angle_velocity = 0         # Angular velocity.
-        self.angle_acceleration = 0     # Angular acceleration.
+        self.angle_velocity = 0         # Angle velocity.
+        self.angle_acceleration = 0     # Angle acceleration.
         self.pivot = Py5Vector2D(x, y)  # Position of pivot.
         self.bob = Py5Vector2D()        # Position of bob.
         self.damping = 0.99             # Arbitrary damping.
@@ -29,8 +29,8 @@ class Pendulum():
             self.angle_velocity *= self.damping
 
     def show(self) -> None:
-        # Apply polar-to-Cartesian conversion. Instead of creating a new vector each time,
-        # use set() to update the bob’s position.
+        # Apply polar-to-Cartesian conversion.
+        # Instead of creating a new vector each time, manually set bob's x and y.
         self.bob.x = self.r * sin(self.angle) + self.pivot.x
         self.bob.y = self.r * cos(self.angle) + self.pivot.y
         # The arm.

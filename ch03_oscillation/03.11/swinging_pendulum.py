@@ -15,7 +15,7 @@ def draw():
     pendulum.update()
     pendulum.show()
 
-    pendulum.handle_drag(mouse_x, mouse_y)  # For user interaction.
+    pendulum.handle_drag(mouse_x, mouse_y)  # For mouse interaction.
 
 
 # The methods below are for mouse interaction
