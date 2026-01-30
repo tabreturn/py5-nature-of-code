@@ -170,6 +170,12 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch03_oscillation/03.10](ch03_oscillation/03.10) |
   p5.js: [HZOUeCe9p](https://editor.p5js.org/natureofcode/sketches/HZOUeCe9p)
 
+- **03.11 - swinging_pendulum** |
+  py5: [ch03_oscillation/03.11](ch03_oscillation/03.11) |
+  p5.js: [MQZWruTlD](https://editor.p5js.org/natureofcode/sketches/MQZWruTlD)
+
+### Ch. 04 - Particle Systems
+
 - IN PROGRESS ...
 
 ---

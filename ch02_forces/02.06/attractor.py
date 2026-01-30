@@ -35,7 +35,6 @@ class Attractor:
         fill(175, 175)
         circle(self.position.x, self.position.y, self.mass * 2)
 
-
     # The methods below are for mouse interaction
 
     def handle_press(self, mx: int, my: int) -> None:

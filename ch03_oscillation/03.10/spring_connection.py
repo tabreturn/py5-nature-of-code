@@ -36,10 +36,8 @@ def draw():
 
 # The methods below are for mouse interaction
 
-
 def mouse_pressed():
     bob.handle_press(mouse_x, mouse_y)
-
 
 def mouse_released():
     bob.stop_dragging()
