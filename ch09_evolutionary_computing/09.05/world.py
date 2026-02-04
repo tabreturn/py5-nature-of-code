@@ -31,7 +31,7 @@ class World:
             bloop.run()
             bloop.eat(self.food)
             # If the bloop is dead, remove it and create food.
-            if bloop.dead():
+            if bloop.dead:
                 self.bloops.pop(i)
                 self.food.add(bloop.position)
                 continue

@@ -42,6 +42,8 @@ class Bloop:
             # The new bloop starts at this bloop's position.
             return Bloop(self.position.copy, child_dna)
 
+    # Computed property -- accessed as particle.dead (no parentheses)
+    @property
     def dead(self) -> bool:
         """A method to test whether the bloop is alive or dead."""
 
