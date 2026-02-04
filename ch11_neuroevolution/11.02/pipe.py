@@ -40,7 +40,9 @@ class Pipe:
         # If it's both a vertical and horizontal hit, it’s a hit!
         return vertical_collision and horizontal_collision
 
-    def offscreen(self) -> bool:
+    # Computed property -- accessed as pipe.off_screen (no parentheses)
+    @property
+    def off_screen(self) -> bool:
         """For when a pipe has moved beyond the left edge of the canvas."""
 
         return self.x < -self.w

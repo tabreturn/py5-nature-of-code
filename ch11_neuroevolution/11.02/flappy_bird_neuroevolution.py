@@ -39,7 +39,7 @@ def draw():
 #        if pipe.collides(bird):
 #           text('OOPS!', pipe.x, pipe.top + 20)
 
-        if pipe.offscreen():
+        if pipe.off_screen:
             pipes.remove(pipe)
 
     for bird in birds:  # There's now an array of birds!
