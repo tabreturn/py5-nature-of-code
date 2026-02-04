@@ -176,6 +176,10 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
 
 ### Ch. 04 - Particle Systems
 
+- **04.01 - single_particle** |
+  py5: [ch04_oscillation/04.01](ch04_oscillation/03.01) |
+  p5.js: [1gpoE1dtG](https://editor.p5js.org/natureofcode/sketches/1gpoE1dtG)
+
 - IN PROGRESS ...
 
 ---
