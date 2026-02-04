@@ -60,7 +60,7 @@ def draw():
         pipes.append(Pipe())
 
     # Create the next generation when all the birds have died.
-    if all_birds_dead:
+    if all_birds_dead():
         normalize_fitness()
         reproduction()
         reset_pipes()
@@ -106,8 +106,7 @@ def reproduction() -> list[Bird]:
     # The next generation is now the current one!
     birds = next_birds
 
-# Computed property -- accessed as particle.all_birds_dead (no parentheses)
-@property
+
 def all_birds_dead() -> bool:
     for bird in birds:
         # If a single bird is alive, they are not all dead!
