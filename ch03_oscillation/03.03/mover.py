@@ -94,6 +94,7 @@ class Mover:
             self.velocity.y *= bounce
             self.position.y = height - self.radius
 
+    # Computed property -- accessed as mover.contact_edge (no parentheses)
     def contact_edge(self) -> bool:
         """The mover is touching the edge when it's within 1 pixel."""
         return self.position.y > height - self.radius - 1

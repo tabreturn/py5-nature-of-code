@@ -22,7 +22,7 @@ def draw():
         wind = Py5Vector2D(0.1, 0)
         mover.apply_force(wind)
 
-    if mover.contact_edge():
+    if mover.contact_edge:
         c = 0.1
         friction = mover.velocity * -1
         friction.set_mag(c)
