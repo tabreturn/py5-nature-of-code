@@ -14,7 +14,7 @@ class Rocket:
         self.velocity = Py5Vector2D()
         self.acceleration = Py5Vector2D()
         self.r = 4  # Size.
-        self.gene_counter = 0  # A counter for the DNA genes array.
+        self.gene_counter = 0  # A counter for the DNA genes list.
 
     def calculate_fitness(self, target: Py5Vector2D) -> None:
         """How close did the rocket get?"""
@@ -25,10 +25,10 @@ class Rocket:
 #        self.fitness = 1 / (distance * distance)  # quadratic
 
     def run(self) -> None:
-        """# Apply a force from the genes array."""
+        """# Apply a force from the genes list."""
 
         self.apply_force(self.dna.genes[self.gene_counter])
-        self.gene_counter += 1  # Go to the next force in the genes array.
+        self.gene_counter += 1  # Go to the next force in the genes list.
         self.update()  # Update the rocket's physics.
         self.show()
 

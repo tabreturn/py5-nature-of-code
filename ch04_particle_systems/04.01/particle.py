@@ -27,7 +27,8 @@ class Particle:
     def show(self) -> None:
         # Since the life ranges from 255 to 0, it can also be used for alpha.
         stroke(0, self.lifespan)
-        fill(0, self.lifespan)
+        stroke_weight(2)
+        fill(127, self.lifespan)
 
         circle(self.position.x, self.position.y, 8)
 

@@ -14,7 +14,7 @@ def setup():
     global birds, pipes
     size(640, 240)
     # Create the bird population.
-    birds = [Bird() for _ in range(POPULATION_SIZE)]  # Array of birds.
+    birds = [Bird() for _ in range(POPULATION_SIZE)]  # List of birds.
     pipes = [Pipe()]
 
     # brain_pe.py runs on NumPy (i.e. on CPU by default)
@@ -42,7 +42,7 @@ def draw():
         if pipe.off_screen:
             pipes.remove(pipe)
 
-    for bird in birds:  # There's now an array of birds!
+    for bird in birds:  # There's now a list of birds!
         # Operate only on the birds that are still alive.
         if bird.alive:
             # This is the new method for the bird to decide to flap or not.
@@ -90,7 +90,7 @@ def normalize_fitness() -> None:
 
 def reproduction() -> list[Bird]:
     global birds
-    next_birds = []  # Start with a new empty array.
+    next_birds = []  # Start with a new empty list.
 
     for _ in range(POPULATION_SIZE):
         # Pick two parents.

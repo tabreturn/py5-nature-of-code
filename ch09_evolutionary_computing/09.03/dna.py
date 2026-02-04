@@ -5,7 +5,7 @@ class DNA:
     # Needs "life_span" because Python modules have isolated namespaces.
     # (p5.js sketches share a single global scope)
     def __init__(self, life_span: int):
-        """The genetic sequence is an array of vectors."""
+        """The genetic sequence is a list of vectors."""
 
         self.max_force = 0.1  # How strong can the thrusters be?
         # Notice that the length of genes is equal to global LIFE_SPAN variable.

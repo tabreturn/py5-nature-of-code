@@ -9,7 +9,7 @@ class DNA:
         self.fitness = 0
 
     def get_phrase(self) -> str:
-        """Convert the array to a string of the phenotype."""
+        """Convert the list to a string of the phenotype."""
 
         return "".join(self.genes)
 

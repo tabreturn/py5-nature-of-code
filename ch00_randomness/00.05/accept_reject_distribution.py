@@ -7,7 +7,7 @@ def setup():
     global random_counts
     size(640, 240)
 
-    # An array to keep track of how often random numbers are picked.
+    # A list to keep track of how often random numbers are picked.
     random_counts = [0] * TOTAL
 
 

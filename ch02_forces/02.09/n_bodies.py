@@ -9,7 +9,7 @@ def setup():
     global bodies
     size(640, 240)
 
-    # Fill the array with Body objects.
+    # Fill the list with Body objects.
     bodies = [
       Body(random(width), random(height), random(0.1, 2))
       for _ in range(10)

@@ -24,7 +24,7 @@ class World:
         # This method draws the food and adds new food when necessary.
         self.food.run()
 
-        # Manage bloops (cycle through array backward since bloops are deleted).
+        # Manage bloops (cycle through list backward since bloops are deleted).
         for i in range(len(self.bloops) - 1, -1, -1):
             # All bloops run and eat.
             bloop = self.bloops[i]

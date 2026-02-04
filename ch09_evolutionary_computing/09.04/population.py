@@ -8,7 +8,7 @@ class Population:
     def __init__(self, mutation: float, length: int):
         self.mutation_rate = mutation  # Mutation rate.
         self.generations = 0  # Number of generations
-        # Array to hold the current population.
+        # List to hold the current population.
         self.population = [Flower(DNA(), 40 + _ * 80, 120) for _ in range(length)]
 
     def show(self) -> None:
@@ -48,7 +48,7 @@ class Population:
             flower.fitness /= total_fitness
 
     def reproduction(self) -> None:
-        new_population = []  # Separate the array for the next generation.
+        new_population = []  # Separate the list for the next generation.
 
         for _ in range(len(self.population)):
             # Now use the weighted selection algorithm.

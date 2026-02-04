@@ -8,7 +8,7 @@ def setup():
     global movers, liquid
     size(640, 240)
 
-    # Initialize an array of Mover objects.
+    # Initialize a list of Mover objects.
     movers = [
       Mover(
         40 + i * 70, 0,  # The x-values are spaced out evenly according to i.

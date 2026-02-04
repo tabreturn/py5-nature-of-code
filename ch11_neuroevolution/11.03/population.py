@@ -9,12 +9,12 @@ class Population:
     # (p5.js sketches share a single global scope)
     def __init__(self, mutation: float, length: int, life_span: int, xy: tuple):
         """Population has variables to keep track of the mutation rate, current
-        population array, and number of generations."""
+        population list, and number of generations."""
 
         self.mutation_rate = mutation  # Mutation rate.
         self.generations = 0  # Number of generations
         self.x, self.y = xy
-        # Array to hold the current population.
+        # List to hold the current population.
         self.population = [
 #          Rocket(self.x, self.y, DNA(life_span)) for _ in range(length)
           Rocket(self.x, self.y) for _ in range(length)
@@ -53,7 +53,7 @@ class Population:
             rocket.fitness /= total_fitness
 
     def reproduction(self) -> None:
-        new_population = []  # Separate the array for the next generation.
+        new_population = []  # Separate the list for the next generation.
 
         for _ in range(len(self.population)):
             # Now use the weighted selection algorithm.

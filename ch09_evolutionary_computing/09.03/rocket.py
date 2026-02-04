@@ -15,7 +15,7 @@ class Rocket:
         self.velocity = Py5Vector2D()
         self.acceleration = Py5Vector2D()
         self.r = 4  # Size.
-        self.gene_counter = 0  # A counter for the DNA genes array.
+        self.gene_counter = 0  # A counter for the DNA genes list.
         self.hit_obstacle = False  # Am I stuck on an obstacle?
         self.record_distance = float('inf')  # High number to be beat instantly.
         self.hit_target = False  # Did I reach the target.
@@ -54,12 +54,12 @@ class Rocket:
             self.finish_counter += 1
 
     def run(self, obstacles: list[Obstacle]) -> None:
-        """# Apply a force from the genes array."""
+        """# Apply a force from the genes list."""
 
         # Stop the rocket if it has hit an obstacle.
         if not self.hit_obstacle and not self.hit_target:
             self.apply_force(self.dna.genes[self.gene_counter])
-            # Go to the next force in the genes array.
+            # Go to the next force in the genes list.
             self.gene_counter = (self.gene_counter + 1) % len(self.dna.genes)
             self.update()
             # Check whether the rocket has hit an obstacle.
