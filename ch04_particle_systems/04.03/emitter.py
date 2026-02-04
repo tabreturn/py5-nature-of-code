@@ -25,4 +25,4 @@ class Emitter:
             particle.run()
 
             if particle.dead:
-                del particles[i]  # Remove particle at index i.    
+                del particles[i]  # Remove particle at index i.
