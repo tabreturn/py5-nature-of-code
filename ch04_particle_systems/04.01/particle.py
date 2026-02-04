@@ -35,7 +35,7 @@ class Particle:
         """Keep the same physics model as in previous chapters."""
         self.acceleration += force
 
-    # Computed property -- accessed as particle.dead (no parentheses)
+    # Computed property -- accessed as particle.dead (no parentheses).
     @property
     def dead(self):
         """Is the particle still alive?"""
