@@ -2,7 +2,7 @@
 
 
 class Particle:
-    
+
     def __init__(self, x: float, y: float):
         """A Particle object is just another name for a mover.
         It has position, velocity, and acceleration."""
