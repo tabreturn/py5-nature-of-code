@@ -184,6 +184,10 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch04_oscillation/04.02](ch04_oscillation/04.02) |
   p5.js: [-xTbGZMim](https://editor.p5js.org/natureofcode/sketches/-xTbGZMim)
 
+- **04.03 - particle_emitter** |
+  py5: [ch04_oscillation/04.03](ch04_oscillation/04.03) |
+  p5.js: [WkX_YtT7xN](https://editor.p5js.org/natureofcode/sketches/WkX_YtT7xN)
+
 - IN PROGRESS ...
 
 ---
