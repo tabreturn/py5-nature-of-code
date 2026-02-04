@@ -41,7 +41,7 @@ def draw():
         # Step 2: The rockets live lives until life_counter reaches LIFE_SPAN.
         population.live(obstacles, target)
 
-        if population.target_reached() and life_counter < record_time:
+        if population.target_reached and life_counter < record_time:
             record_time = life_counter
         else:
             life_counter += 1

@@ -29,6 +29,8 @@ class Population:
             rocket.check_target(target)
             rocket.run(obstacles)
 
+    # Computed property -- accessed as population.target_reached (no parentheses)
+    @property
     def target_reached(self) -> bool:
         """Did anything finish?"""
 
