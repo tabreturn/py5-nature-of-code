@@ -200,6 +200,10 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch04_particle_systems/04.06](ch04_particle_systems/04.06) |
   p5.js: [uZ9CfjLHL](https://editor.p5js.org/natureofcode/sketches/uZ9CfjLHL)
 
+- **04.07 - particle_system_repeller** |
+  py5: [ch04_particle_systems/04.07](ch04_particle_systems/04.07) |
+  p5.js: [H4TMayNak](https://editor.p5js.org/natureofcode/sketches/H4TMayNak)
+
 - IN PROGRESS ...
 
 ---
