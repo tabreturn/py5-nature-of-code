@@ -18,9 +18,9 @@ class Emitter:
 
         # A 50% chance of adding each kind of particle.
         if random() < 0.5:
-          self.particles.append(Particle(*self.origin))
+            self.particles.append(Particle(*self.origin))
         else:
-          self.particles.append(Confetti(*self.origin))
+            self.particles.append(Confetti(*self.origin))
 
     def run(self) -> None:
         particles = self.particles
