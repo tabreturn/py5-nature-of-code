@@ -16,7 +16,7 @@ class Particle:
         # It starts at 255 and counts down to 0.
         self.lifespan = 255.0
 
-        # Try varying mass for different, interesting results!
+        # Add a mass property. Vary mass for different, interesting results!
         self.mass = 1
 
     def update(self) -> None:
