@@ -6,7 +6,7 @@ from rocket import Rocket
 
 MUTATION_RATE = 0.01  # Per-gene mutation probability.
 POPULATION_SIZE = 50  # Number of individuals in the population.
-LIFE_SPAN = 250       # How many frames does a generation live for?
+LIFESPAN = 250        # How many frames does a generation live for?
 life_counter = 0      # Keep track of the life span.
 
 
@@ -19,19 +19,19 @@ def setup():
     # Try different values for the mutation rate and population size.
     xy = (width / 2, height + 20)
     # The population.
-    population = Population(MUTATION_RATE, POPULATION_SIZE, LIFE_SPAN, xy)
+    population = Population(MUTATION_RATE, POPULATION_SIZE, LIFESPAN, xy)
 
 
 def draw():
     global life_counter, target
     background(255)
     # The revised GA
-    if life_counter < LIFE_SPAN:
-        # Step 2: The rockets live lives until life_counter reaches LIFE_SPAN.
+    if life_counter < LIFESPAN:
+        # Step 2: The rockets live lives until life_counter reaches LIFESPAN.
         population.live()
         life_counter += 1
     else:
-        # When LIFE_SPAN is reached, reset life_counter and evolve the next gen.
+        # When LIFESPAN is reached, reset life_counter and evolve the next gen.
         # (steps 3 and 4, selection and reproduction).
         life_counter = 0
         population.fitness(target)
@@ -47,7 +47,7 @@ def draw():
     fill(0); text_font(monospace); text_size(11)
     text(
       f'Generation #: {population.generations}\n'
-      f'Cycles left: {LIFE_SPAN - life_counter}',
+      f'Cycles left: {LIFESPAN - life_counter}',
       10, 20,
     )
     text('(C) pause\n(Z) advance frame\n(X) run continuous\n(Q) quit', 10, 187)

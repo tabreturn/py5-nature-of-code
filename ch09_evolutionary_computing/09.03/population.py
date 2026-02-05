@@ -5,9 +5,9 @@ from rocket import Rocket
 
 
 class Population:
-    # Needs "life_span", "xy" because Python modules have isolated namespaces.
+    # Needs "lifespan", "xy" because Python modules have isolated namespaces.
     # (p5.js sketches share a single global scope)
-    def __init__(self, mutation: float, length: int, life_span: int, xy: tuple):
+    def __init__(self, mutation: float, length: int, lifespan: int, xy: tuple):
         """Population has variables to keep track of the mutation rate, current
         population list, and number of generations."""
 
@@ -16,7 +16,7 @@ class Population:
         self.x, self.y = xy
         # List to hold the current population.
         self.population = [
-          Rocket(self.x, self.y, DNA(life_span)) for _ in range(length)
+          Rocket(self.x, self.y, DNA(lifespan)) for _ in range(length)
         ]
 
     # Needs "target" because Python modules have isolated namespaces.

@@ -2,18 +2,18 @@
 
 
 class DNA:
-    # Needs "life_span" because Python modules have isolated namespaces.
+    # Needs "lifespan" because Python modules have isolated namespaces.
     # (p5.js sketches share a single global scope)
-    def __init__(self, life_span: int):
+    def __init__(self, lifespan: int):
         """The genetic sequence is a list of vectors."""
 
         self.max_force = 0.1  # How strong can the thrusters be?
-        # Notice that the length of genes is equal to global LIFE_SPAN variable.
+        # Notice that the length of genes is equal to global LIFESPAN variable.
         self.genes = [
           # Scale the vectors randomly, but not stronger than the maximum force.
           Py5Vector2D().random() * random(0, self.max_force)
-          # Notice that the length of genes is equal to a life_span variable.
-          for _ in range(life_span)
+          # Notice that the length of genes is equal to a lifespan variable.
+          for _ in range(lifespan)
         ]
 
     def crossover(self, partner: 'DNA') -> 'DNA':

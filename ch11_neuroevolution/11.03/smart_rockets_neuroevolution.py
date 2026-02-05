@@ -10,11 +10,11 @@ from obstacle import Obstacle
 from population import Population
 from rocket import Rocket
 
-MUTATION_RATE = 0.01     # Per-gene mutation probability.
-POPULATION_SIZE = 50     # Number of individuals in the population.
-LIFE_SPAN = 250          # How many frames does a generation live for?
-life_counter = 0         # Keep track of the life span.
-record_time = LIFE_SPAN  # Fastest time to target.
+MUTATION_RATE = 0.01    # Per-gene mutation probability.
+POPULATION_SIZE = 50    # Number of individuals in the population.
+LIFESPAN = 250          # How many frames does a generation live for?
+life_counter = 0        # Keep track of the life span.
+record_time = LIFESPAN  # Fastest time to target.
 
 
 def setup():
@@ -26,7 +26,7 @@ def setup():
     # Try different values for the mutation rate and population size.
     xy = (width / 2, height - 20)
     # The population.
-    population = Population(MUTATION_RATE, POPULATION_SIZE, LIFE_SPAN, xy)
+    population = Population(MUTATION_RATE, POPULATION_SIZE, LIFESPAN, xy)
     # Create the obstacle course
     obstacles = [
       Obstacle(width / 2 - 75, height / 2, 150, 10)
@@ -37,8 +37,8 @@ def draw():
     global life_counter, target, record_time
     background(255)
     # The revised GA
-    if life_counter < LIFE_SPAN:
-        # Step 2: The rockets live lives until life_counter reaches LIFE_SPAN.
+    if life_counter < LIFESPAN:
+        # Step 2: The rockets live lives until life_counter reaches LIFESPAN.
         population.live(obstacles, target)
 
         if population.target_reached and life_counter < record_time:
@@ -46,7 +46,7 @@ def draw():
         else:
             life_counter += 1
     else:
-        # When LIFE_SPAN is reached, reset life_counter and evolve the next gen.
+        # When LIFESPAN is reached, reset life_counter and evolve the next gen.
         # (steps 3 and 4, selection and reproduction).
         life_counter = 0
         population.fitness(target)
@@ -64,7 +64,7 @@ def draw():
     fill(0); text_font(monospace); text_size(11)
     text(
       f'Generation #: {population.generations}\n'
-      f'Cycles left: {LIFE_SPAN - life_counter}\n'
+      f'Cycles left: {LIFESPAN - life_counter}\n'
       f'Record cycles: {record_time}',
       10, 20,
     )
@@ -77,7 +77,7 @@ def mouse_pressed():
     global record_time, target
     target.position.x = mouse_x
     target.position.y = mouse_y
-    record_time = LIFE_SPAN
+    record_time = LIFESPAN
 
 
 def key_pressed():
