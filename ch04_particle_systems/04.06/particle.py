@@ -16,6 +16,9 @@ class Particle:
         # It starts at 255 and counts down to 0.
         self.lifespan = 255.0
 
+        # Try varying mass for different, interesting results!
+        self.mass = 1
+
     def update(self) -> None:
         self.velocity += self.acceleration
         self.position += self.velocity
@@ -34,6 +37,9 @@ class Particle:
 
     def apply_force(self, force: Py5Vector2D) -> None:
         """Keep the same physics model as in previous chapters."""
+        # Divide force by mass.
+        force /= self.mass
+
         self.acceleration += force
 
     def run(self) -> None:

@@ -193,8 +193,12 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   p5.js: [s_Y3-Mmo7](https://editor.p5js.org/natureofcode/sketches/s_Y3-Mmo7)
 
 - **04.05 - system_inheritance_polymorphism** |
-  py5: [ch05_particle_systems/04.05](ch04_particle_systems/04.05) |
+  py5: [ch04_particle_systems/04.05](ch04_particle_systems/04.05) |
   p5.js: [2ZlNJp2EW](https://editor.p5js.org/natureofcode/sketches/2ZlNJp2EW)
+
+- **04.06 - system_forces** |
+  py5: [ch04_particle_systems/04.06](ch04_particle_systems/04.06) |
+  p5.js: [uZ9CfjLHL](https://editor.p5js.org/natureofcode/sketches/uZ9CfjLHL)
 
 - IN PROGRESS ...
 
