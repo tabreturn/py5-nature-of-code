@@ -5,7 +5,7 @@ from emitter import Emitter
 
 def setup():
     global emitter, img
-    size(640, 240, P3D)
+    size(640, 240, P3D)  # Enable the OpenGL-compatible 3D renderer.
     img = load_image('texture.png')  # Load the PNG.
     emitter = Emitter(width / 2, height - 75, img)
 
