@@ -208,7 +208,9 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch04_particle_systems/04.08](ch04_particle_systems/04.08) |
   p5.js: [9c_CPrg3Bp](https://editor.p5js.org/natureofcode/sketches/9c_CPrg3Bp)
 
-- IN PROGRESS ...
+- **04.09 - additive_smoke_system** |
+  py5: [ch04_particle_systems/04.09](ch04_particle_systems/04.09) |
+  p5.js: [fUCtCcOtB](https://editor.p5js.org/natureofcode/sketches/fUCtCcOtB)
 
 ---
 
