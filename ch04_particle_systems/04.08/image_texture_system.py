@@ -26,19 +26,6 @@ def draw():
 
 
 def draw_vector(v: Py5Vector2D, pos: Py5Vector2D, scayl: int) -> None:
-    push()
-    arrow_size = 4
-    translate(*pos)
-    stroke(255)
-    length = v.x * scayl
-    sign = 1 if length >= 0 else -1
-    line(0, 0, length, 0)
-    line(length, 0, length - arrow_size * sign, +arrow_size / 2)
-    line(length, 0, length - arrow_size * sign, -arrow_size / 2)
-    pop()
-
-
-def draw_vector(v: Py5Vector2D, pos: Py5Vector2D, scayl: int) -> None:
     arrow_size = 4
     stroke(255)
     length = v.x * scayl
