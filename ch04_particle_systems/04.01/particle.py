@@ -36,7 +36,7 @@ class Particle:
 
     # Computed property -- accessed as particle.dead (no parentheses).
     @property
-    def dead(self):
+    def dead(self) -> bool:
         """Is the particle still alive?"""
 
         return self.lifespan < 0.0

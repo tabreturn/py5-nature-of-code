@@ -48,9 +48,10 @@ class Particle:
     def apply_force(self, force: Py5Vector2D) -> None:
         """Keep the same physics model as in previous chapters."""
         # Divide force by mass.
-        force /= self.mass
+        f = Py5Vector2D(force.x, force.y)
+        f /= self.mass
 
-        self.acceleration += force
+        self.acceleration += f
 
     def run(self) -> None:
 #        gravity = Py5Vector2D(0, 0.05)
@@ -60,7 +61,7 @@ class Particle:
 
     # Computed property -- accessed as particle.dead (no parentheses).
     @property
-    def dead(self):
+    def dead(self) -> bool:
         """Is the particle still alive?"""
 
         return self.lifespan < 0.0
