@@ -7,9 +7,7 @@ from particle import Particle
 class Emitter:
 
     def __init__(self, x: float, y: float):
-        # Origin point where each particle begins.
-        self.origin = Py5Vector2D(x, y)
-
+        self.origin = Py5Vector2D(x, y)  # Point where each particle begins.
         self.particles: list[Particle] = []
 
     def add_particle(self) -> None:

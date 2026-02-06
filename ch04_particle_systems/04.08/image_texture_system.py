@@ -7,7 +7,7 @@ def setup():
     global emitter, img
     size(640, 240)
     img = load_image('texture.png')  # Load the PNG.
-    emitter = Emitter(width / 2, height - 75)
+    emitter = Emitter(width / 2, height - 75, img)
 
 
 def draw():
@@ -19,7 +19,7 @@ def draw():
 
     emitter.apply_force(wind)
     emitter.run()
-    emitter.add_particle(img)
+    emitter.add_particle()
 
     # Draw an arrow representing the wind force.
     draw_vector(wind, Py5Vector2D(width / 2, 50), 500)

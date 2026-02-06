@@ -2,8 +2,7 @@
 
 
 class Particle:
-    # Needs "img" because Python modules have isolated namespaces.
-    # (p5.js sketches share a single global scope)
+
     def __init__(self, x: float, y: float, img: Py5Image):
         """A Particle object is just another name for a mover.
         It has position, velocity, and acceleration."""

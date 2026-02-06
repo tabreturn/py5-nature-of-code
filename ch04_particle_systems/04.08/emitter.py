@@ -6,13 +6,12 @@ from particle import Particle
 
 class Emitter:
 
-    def __init__(self, x: float, y: float):
-        # Origin point where each particle begins.
-        self.origin = Py5Vector2D(x, y)
-
+    def __init__(self, x: float, y: float, img: Py5Image):
+        self.origin = Py5Vector2D(x, y)  # Point where each particle begins.
         self.particles: list[Particle] = []
+        self.img = img
 
-    def add_particle(self, img: Py5Image) -> None:
+    def add_particle(self) -> None:
 #        # The origin is passed to each particle when it's added to the array.
 #        self.particles.append(Particle(*self.origin))
 
@@ -22,7 +21,7 @@ class Emitter:
 #        else:
 #            self.particles.append(Confetti(*self.origin))
 
-        self.particles.append(Particle(*self.origin, img))
+        self.particles.append(Particle(*self.origin, self.img))
 
     def apply_force(self, force: Py5Vector2D):
         # Use a for in loop to apply the force to all particles.

@@ -6,7 +6,7 @@ from emitter import Emitter
 def setup():
     global emitter
     size(640, 240)
-    emitter = Emitter(width / 2, 20)
+    emitter = Emitter(width / 2, 50)
 
 
 def draw():
