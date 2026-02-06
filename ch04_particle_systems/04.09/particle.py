@@ -39,11 +39,23 @@ class Particle:
 #        fill(127, self.lifespan)
 #        circle(self.position.x, self.position.y, 8)
 
-        image_mode(CENTER)
-        # Note that tint() is the image equivalent of a shape's fill().
+#        image_mode(CENTER)
+#        # Note that tint() is the image equivalent of a shape's fill().
 #        tint(255, self.lifespan)
+#        image(self.img, self.position.x, self.position.y)
+
+        push()
+        translate(*self.position)
+        no_stroke()
         tint(255, 100, 255, self.lifespan)
-        image(self.img, self.position.x, self.position.y)
+        begin_shape()
+        texture(self.img)
+        vertex(-32/2, -32/2, 0, 0, 0)
+        vertex( 32/2, -32/2, 0, self.img.width, 0)
+        vertex( 32/2,  32/2, 0, self.img.width, self.img.height)
+        vertex(-32/2,  32/2, 0, 0, self.img.height)
+        end_shape()
+        pop()
 
     def apply_force(self, force: Py5Vector2D) -> None:
         """Keep the same physics model as in previous chapters."""

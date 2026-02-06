@@ -5,7 +5,7 @@ from emitter import Emitter
 
 def setup():
     global emitter, img
-    size(640, 240, P2D)
+    size(640, 240, P3D)
     img = load_image('texture.png')  # Load the PNG.
     emitter = Emitter(width / 2, height - 75, img)
 
@@ -13,8 +13,6 @@ def setup():
 def draw():
     # Use additive blending.
     blend_mode(ADD)
-    # Clear the previous frame since background() doesn't cover last frame drawn.
-    clear()
     # Additive glow needs a dark background (won't work over white/bright).
     background(0)
 
