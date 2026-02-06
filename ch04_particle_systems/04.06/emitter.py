@@ -10,7 +10,7 @@ class Emitter:
         # Origin point where each particle begins.
         self.origin = Py5Vector2D(x, y)
 
-        self.particles = []
+        self.particles: list[Particle] = []
 
     def add_particle(self) -> None:
 #        # The origin is passed to each particle when it's added to the array.

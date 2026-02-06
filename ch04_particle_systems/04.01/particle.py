@@ -13,8 +13,7 @@ class Particle:
         self.velocity = Py5Vector2D(random(-1, 1), random(-2, 0))
 
         # A new variable to keep track of how long the particle has been "alive."
-        # It starts at 255 and counts down to 0.
-        self.lifespan = 255.0
+        self.lifespan = 255.0  # It starts at 255 and counts down to 0.
 
     def update(self) -> None:
         self.velocity += self.acceleration
@@ -29,7 +28,6 @@ class Particle:
         stroke(0, self.lifespan)
         stroke_weight(2)
         fill(127, self.lifespan)
-
         circle(self.position.x, self.position.y, 8)
 
     def apply_force(self, force: Py5Vector2D) -> None:

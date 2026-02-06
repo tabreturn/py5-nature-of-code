@@ -12,7 +12,7 @@ class Emitter:
 
         self.particles: list[Particle] = []
 
-    def add_particle(self) -> None:
+    def add_particle(self, img: Py5Image) -> None:
 #        # The origin is passed to each particle when it's added to the array.
 #        self.particles.append(Particle(*self.origin))
 
@@ -22,7 +22,7 @@ class Emitter:
 #        else:
 #            self.particles.append(Confetti(*self.origin))
 
-        self.particles.append(Particle(*self.origin))
+        self.particles.append(Particle(*self.origin, img))
 
     def apply_force(self, force: Py5Vector2D):
         # Use a for in loop to apply the force to all particles.

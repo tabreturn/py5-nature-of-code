@@ -204,6 +204,10 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch04_particle_systems/04.07](ch04_particle_systems/04.07) |
   p5.js: [H4TMayNak](https://editor.p5js.org/natureofcode/sketches/H4TMayNak)
 
+- **04.08 - image_texture_system** |
+  py5: [ch04_particle_systems/04.08](ch04_particle_systems/04.08) |
+  p5.js: [9c_CPrg3Bp](https://editor.p5js.org/natureofcode/sketches/9c_CPrg3Bp)
+
 - IN PROGRESS ...
 
 ---
