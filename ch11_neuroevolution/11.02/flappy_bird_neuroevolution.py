@@ -68,6 +68,7 @@ def draw():
 
 def weighted_selection() -> Brain:
     """See Chapter 9 for a detailed explanation of this algorithm."""
+
     index = 0
     start = random()
 
@@ -118,5 +119,6 @@ def all_birds_dead() -> bool:
 
 def reset_pipes() -> None:
     """Remove all the pipes but the very latest one."""
+
     del pipes[:-1]
 

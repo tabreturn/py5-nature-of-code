@@ -14,6 +14,7 @@ class Vehicle:
 
     def update(self) -> None:
         """Standard update function."""
+
         self.velocity += self.acceleration
         self.velocity.set_limit(self.max_speed)
         self.position += self.velocity
@@ -21,10 +22,12 @@ class Vehicle:
 
     def apply_force(self, force: Py5Vector2D) -> None:
         """Newton's second law (skipping the math)."""
+
         self.acceleration += force
 
     def seek(self, target: Py5Vector2D) -> None:
         """The seek steering force algorithm."""
+
         # Calculate the desired velocity to target at max speed.
         desired = target - self.position
         desired.set_mag(self.max_speed)
@@ -37,6 +40,7 @@ class Vehicle:
 
     def show(self) -> None:
         """The vehicle is a triangle pointing in the direction of velocity."""
+
         angle = self.velocity.heading
         fill(127)
         stroke(0)

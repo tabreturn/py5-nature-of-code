@@ -59,6 +59,7 @@ class Body:  # The mover is now called a body.
     # Computed property -- accessed as body.contact_edge (no parentheses).
     def contact_edge(self) -> bool:
         """The mover is touching the edge when it's within 1 pixel."""
+
         return self.position.y > height - self.radius - 1
 
     # The attract() method is now part of the Body class.

@@ -35,6 +35,7 @@ class Particle:
 
     def apply_force(self, force: Py5Vector2D) -> None:
         """Keep the same physics model as in previous chapters."""
+
         # Divide force by mass.
         f = Py5Vector2D(force.x, force.y)
         f /= self.mass

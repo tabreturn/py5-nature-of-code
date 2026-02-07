@@ -32,6 +32,7 @@ class Particle:
 
     def apply_force(self, force: Py5Vector2D) -> None:
         """Keep the same physics model as in previous chapters."""
+
         self.acceleration += force
 
     # Computed property -- accessed as particle.dead (no parentheses).

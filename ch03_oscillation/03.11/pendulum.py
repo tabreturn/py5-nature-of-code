@@ -5,6 +5,7 @@ class Pendulum():
 
     def __init__(self, x: float, y: float, r: float):
         """Many variables keep track of the pendulum's various properties."""
+
         self.r = r                      # Length of arm.
         self.angle = PI / 4             # Pendulum arm angle.
         self.angle_velocity = 0         # Angle velocity.

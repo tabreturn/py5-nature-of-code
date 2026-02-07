@@ -30,6 +30,7 @@ class Emitter:
 
     def apply_repeller(self, repeller: 'Repeller') -> None:
         """Calculate a force for each particle based on a repeller."""
+
         for particle in self.particles:
             force = repeller.repel(particle)
             particle.apply_force(force)
