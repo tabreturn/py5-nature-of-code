@@ -8,6 +8,9 @@ def setup():
     size(640, 240)
     vehicle = Vehicle(width / 2, height / 2)
 
+    vehicle.max_speed = 4.0  # Maximum speed.
+    vehicle.max_force = 0.1  # Also, a maximum force.
+
 
 def draw():
     background(255)

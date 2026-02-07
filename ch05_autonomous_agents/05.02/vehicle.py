@@ -9,8 +9,8 @@ class Vehicle:
         self.acceleration = Py5Vector2D()
         self.r = 6.0  # Additional variable for size.
         # Arbitrary values for max speed and force; try varying these!
-        self.max_speed = 4.0  # Maximum speed.
-        self.max_force = 0.1  # Also, a maximum force.
+        self.max_speed = random(8.0)
+        self.max_force = random(0.3)
 
     def update(self) -> None:
         """Standard update function."""
@@ -62,6 +62,7 @@ class Vehicle:
         angle = self.velocity.heading
         fill(127)
         stroke(0)
+        stroke_weight(2)
         push()
         translate(*self.position)
         rotate(angle)
