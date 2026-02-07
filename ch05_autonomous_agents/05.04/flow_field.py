@@ -17,19 +17,20 @@ class FlowField:
           for _ in range(self.cols)
         ]
 
-        self.init()  # A separate function to create that array
+        self.init()  # ... a separate function to create that 2D list.
 
     def init(self) -> None:
         """The init() method fills the 2D list with vectors."""
 
         noise_seed(int(random(10000)))  # Reseed noise for new field each time.
+
         x_off = 0.0
         # Use a nested loop to hit every column and every row of flow field.
         for i in range(self.cols):
             y_off = 0.0
 
             for j in range(self.rows):
-                # use Perlin noise to create the vectors.
+                # Use Perlin noise to create the vectors.
                 angle = remap(noise(x_off, y_off), 0, 1, 0, TWO_PI)  # 2D noise.
                 self.field[i][j] = Py5Vector2D.from_heading(angle)
                 y_off += 0.1
