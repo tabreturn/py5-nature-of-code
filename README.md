@@ -239,6 +239,10 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
 ### Ch. 06 - Physics Libraries
 
 - IN PROGRESS ...
+  substitute:
+  - matter.js --> https://www.pymunk.org  
+  - verlet physics --> https://github.com/postspectacular/toxiclibs (java)
+    (https://py5coding.org/how_tos/use_processing_libraries.html)
 
 ---
 
