@@ -7,7 +7,7 @@ class Vehicle:
         self.position = Py5Vector2D(x, y)
         self.velocity = Py5Vector2D()
         self.acceleration = Py5Vector2D()
-        self.r = 6.0  # Additional variable for size
+        self.r = 6.0  # Additional variable for size.
         # Arbitrary values for max speed and force; try varying these!
         self.max_speed = 8.0  # Maximum speed.
         self.max_force = 0.2  # Also, a maximum force.
