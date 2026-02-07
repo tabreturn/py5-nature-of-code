@@ -236,6 +236,10 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
 
 - IN PROGRESS ...
 
+### Ch. 06 - Physics Libraries
+
+- IN PROGRESS ...
+
 ---
 
 ## Part 3: Intelligence
