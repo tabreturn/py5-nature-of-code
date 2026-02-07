@@ -21,6 +21,7 @@ def draw():
     circle(mouse.x, mouse.y, 48)
 
     # Call the appropriate steering behaviors for agents.
-    vehicle.seek(mouse)
+#    vehicle.seek(mouse)
+    vehicle.arrive(mouse)
     vehicle.update()
     vehicle.show()

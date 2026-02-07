@@ -222,6 +222,10 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch05_autonomous_agents/05.01](ch05_autonomous_agents/05.01) |
   p5.js: [Y74O77yxy](https://editor.p5js.org/natureofcode/sketches/Y74O77yxy)
 
+- **05.02 - seeking_target** |
+  py5: [ch05_autonomous_agents/05.02](ch05_autonomous_agents/05.02) |
+  p5.js: [v-yJm8WUx](https://editor.p5js.org/natureofcode/sketches/v-yJm8WUx)
+
 - IN PROGRESS ...
 
 ---
