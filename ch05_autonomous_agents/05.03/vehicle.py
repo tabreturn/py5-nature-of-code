@@ -57,7 +57,7 @@ class Vehicle:
         self.apply_force(steer)
 
     def boundaries(self, offset: float) -> None:
-        """The method receives an offset from the edges."""
+        """This method receives an offset from the edges."""
 
         desired = None  # Start with a null desired velocity.
 
