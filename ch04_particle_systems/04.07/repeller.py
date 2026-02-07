@@ -12,7 +12,7 @@ class Repeller:
         # Instead of mass, use the concept of power to scale repellent force.
         self.power = 150  # How strong is the repeller?
 
-        # The attributes below are for mouse interaction
+        # The attribute(s) below are for mouse interaction
         self.drag_offset = Py5Vector2D()
         self.dragging = self.rollover = False
 
@@ -56,7 +56,7 @@ class Repeller:
         fill(175, 175)
         circle(self.position.x, self.position.y, self.mass * 2)
 
-    # The methods below are for mouse interaction
+    # The method(s) below are for mouse interaction
 
     def handle_press(self, mx: int, my: int) -> None:
         if dist(mx, my, *self.position) < self.mass:

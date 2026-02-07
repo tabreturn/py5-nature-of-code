@@ -42,7 +42,7 @@ class Pendulum():
         fill(127)
         circle(self.bob.x, self.bob.y, self.ballr * 2)
 
-    # The methods below are for mouse interaction
+    # The method(s) below are for mouse interaction
 
     def handle_press(self, mx: int, my: int) -> None:
         if dist(mx, my, *self.bob) < self.ballr:

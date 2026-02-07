@@ -38,7 +38,7 @@ class Bob:
             fill(200)
         circle(self.position.x, self.position.y, self.mass * 2)
 
-    # The methods below are for mouse interaction
+    # The method(s) below are for mouse interaction
 
     def handle_press(self, mx: int, my: int) -> None:
         if dist(mx, my, *self.position) < self.mass:

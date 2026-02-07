@@ -18,7 +18,7 @@ def draw():
     pendulum.handle_drag(mouse_x, mouse_y)  # For mouse interaction.
 
 
-# The methods below are for mouse interaction
+# The function(s) below are for mouse interaction
 
 def mouse_pressed():
     pendulum.handle_press(mouse_x, mouse_y)

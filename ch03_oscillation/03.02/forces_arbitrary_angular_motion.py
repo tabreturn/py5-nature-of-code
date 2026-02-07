@@ -42,7 +42,7 @@ def draw():
         mover.show()
 
 
-# The functions below are for mouse interaction
+# The function(s) below are for mouse interaction
 
 def mouse_moved():
     attractor.handle_hover(mouse_x, mouse_y)
