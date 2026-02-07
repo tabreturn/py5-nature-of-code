@@ -230,6 +230,10 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch05_autonomous_agents/05.03](ch05_autonomous_agents/05.03) |
   p5.js: [fGNwVP3h7](https://editor.p5js.org/natureofcode/sketches/fGNwVP3h7)
 
+- **05.04 - flow_field_follow** |
+  py5: [ch05_autonomous_agents/05.04](ch05_autonomous_agents/05.04) |
+  p5.js: [egribz8WV](https://editor.p5js.org/natureofcode/sketches/egribz8WV)
+
 - IN PROGRESS ...
 
 ---
