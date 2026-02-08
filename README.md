@@ -4,7 +4,7 @@
 
 **Built with [py5](https://py5coding.org) using [Thonny-py5mode](https://github.com/py5coding/thonny-py5mode)**
 
-Parts:
+**Parts:**
 #1. [Inanimate Objects](#part-1-inanimate-objects) |
 #2. [It's Alive!](#part-2-its-alive) |
 #3. [Intelligence](#part-3-intelligence)
