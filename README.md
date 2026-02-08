@@ -25,6 +25,7 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
 
 ---
 
+<a id="part-1-inanimate-objects"></a>
 ## ⚙️ Part 1: Inanimate Objects
 
 ### Ch. 00 - Randomness
@@ -221,6 +222,7 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
 
 ---
 
+<a id="part-2-its-alive"></a>
 ## 🧬 Part 2: It's Alive!
 
 ### Ch. 05 - Autonomous Agents
@@ -271,6 +273,7 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
 
 ---
 
+<a id="part-3-intelligence"></a>
 ## 🧠 Part 3: Intelligence
 
 ⬆️ [top](#readme)
