@@ -29,7 +29,7 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
 
 ### Ch. 00 - Randomness
 
-[^ top](#)
+^ [top](#)
 
 - **00.01 - traditional_random_walk** |
   py5: [ch00_randomness/00.01](ch00_randomness/00.01) |
@@ -225,7 +225,7 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
 
 ### Ch. 05 - Autonomous Agents
 
-[^ top](#)
+^ [top](#)
 
 - **05.01 - seeking_target** |
   py5: [ch05_autonomous_agents/05.01](ch05_autonomous_agents/05.01) |
@@ -273,7 +273,7 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
 
 ## Part 3: Intelligence
 
-[^ top](#)
+^ [top](#)
 
 ### Ch. 09 - Evolutionary Computing
 
