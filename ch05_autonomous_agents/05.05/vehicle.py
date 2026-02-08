@@ -105,13 +105,13 @@ class Vehicle:
         # Step 2: Find the normal point along the path.
         normal_point = self.get_normal_point(future, path.start, path.end)
 
-        # Step 3: Move a little further along the path and set a target.
+        # Step 3: Look a little farther along the path and set a target.
         b = path.end - path.start
         b.set_mag(25)  # Set the magnitude to 25 pixels (picked arbitrarily).
-        # Add b to normal_point to find the target 25 pixels ahead on path.
+        # Add b to normal_point to find the target 25 pixels ahead on the path.
         target = normal_point + b
 
-        # Step 4: If off the path, seek target in order to stay on path.
+        # Step 4: If off the path, seek target in order to stay on the path.
         distance = normal_point.dist(future)
         # If the vehicle is outside the path, seek the target.
         if distance > path.radius:
@@ -144,7 +144,7 @@ class Vehicle:
         vector_b = b - a         # Vector that points from a to b.
 
         # Using the dot product for scalar projection.
-        vector_b.normalize()  # # Normalize b, and ...
+        vector_b.normalize()  # Normalize b, and ...
         vector_b *= vector_a.dot(vector_b)  # use dot product to set b's length.
 
         # Finding the normal point along the line segment.
@@ -169,6 +169,7 @@ class Vehicle:
 
     def borders_flow(self) -> None:
         """Wraparound."""
+
         if self.position.x < -self.r: self.position.x = width + self.r
         if self.position.y < -self.r: self.position.y = height + self.r
         if self.position.x > width + self.r: self.position.x = -self.r
@@ -176,6 +177,7 @@ class Vehicle:
 
     def borders_path(self, p: 'PathNoc') -> None:
         """Wraparound."""
+
         if self.position.x > p.end.x + self.r:
             self.position.x = p.start.x - self.r
             self.position.y = p.start.y + (self.position.y - p.end.y)

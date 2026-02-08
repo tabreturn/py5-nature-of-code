@@ -110,6 +110,7 @@ class Vehicle:
 
     def borders_flow(self) -> None:
         """Wraparound."""
+
         if self.position.x < -self.r: self.position.x = width + self.r
         if self.position.y < -self.r: self.position.y = height + self.r
         if self.position.x > width + self.r: self.position.x = -self.r
