@@ -5,9 +5,9 @@
 **Built with [py5](https://py5coding.org) using [Thonny-py5mode](https://github.com/py5coding/thonny-py5mode)**
 
 Parts:
-[#1. Inanimate Objects](#part-1-inanimate-objects) |
-[#2. It's Alive!](#part-2-its-alive) |
-[#3. Intelligence](#part-3-intelligence)
+#1. [Inanimate Objects](#part-1-inanimate-objects) |
+#2. [It's Alive!](#part-2-its-alive) |
+#3. [Intelligence](#part-3-intelligence)
 
 I've taken a few liberties in my interpretation. First, the examples in the book and its accompanying [p5.js sketches](https://natureofcode.com/examples) do not always match exactly. Second, in a few places, minor adjustments were necessary to support an idiomatic, py5-compatible Python implementation. Throughout, however, my aim has been to balance faithfulness to the original material with Python best practices and clarity for readers working through this [fantastic book](https://natureofcode.com).
 
