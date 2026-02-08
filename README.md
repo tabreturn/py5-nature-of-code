@@ -271,6 +271,14 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
 
 - 🚧 IN PROGRESS ...
 
+### Ch. 07 - Cellular Automata
+
+- 🚧 IN PROGRESS ...
+
+### Ch. 08 - Fractals
+
+- 🚧 IN PROGRESS ...
+
 ---
 
 <a id="part-3-intelligence"></a>
