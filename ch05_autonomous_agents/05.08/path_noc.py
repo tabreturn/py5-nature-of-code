@@ -11,7 +11,7 @@ class PathNoc:
 
     def __init__(self):
         self.radius = 20  # A path has a radius, indicating its width.
-        self.points = []  # A path is now an array of points (vector objects).
+        self.points = []  # A path is now an list of points (vector objects).
 
 #        # A path has only two points, start and end.
 #        self.start = Py5Vector2D(0, height / 3)

@@ -10,7 +10,7 @@ class Emitter:
         self.particles: list[Particle] = []
 
     def add_particle(self) -> None:
-        # The origin is passed to each particle when it's added to the array.
+        # The origin is passed to each particle when it's added to the list.
         self.particles.append(Particle(*self.origin))
 
     def run(self) -> None:
@@ -18,7 +18,7 @@ class Emitter:
 
         # Loop through the list backward for deletion.
         for i in range(len(particles) - 1, -1, -1):
-            # Improve readability by assigning the array element to a variable.
+            # Improve readability by assigning the list element to a variable.
             particle = particles[i]
             particle.run()
 

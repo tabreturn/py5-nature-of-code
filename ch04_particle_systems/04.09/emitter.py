@@ -12,7 +12,7 @@ class Emitter:
         self.img = img
 
     def add_particle(self) -> None:
-#        # The origin is passed to each particle when it's added to the array.
+#        # The origin is passed to each particle when it's added to the list.
 #        self.particles.append(Particle(*self.origin))
 
 #        # A 50% chance of adding each kind of particle.
@@ -40,7 +40,7 @@ class Emitter:
 
         # Loop through the list backward for deletion.
         for i in range(len(particles) - 1, -1, -1):
-            # Improve readability by assigning the array element to a variable.
+            # Improve readability by assigning the list element to a variable.
             particle = particles[i]
             particle.run()
 

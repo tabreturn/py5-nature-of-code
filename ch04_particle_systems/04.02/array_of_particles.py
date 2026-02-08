@@ -19,7 +19,7 @@ def draw():
 
     # Loop through the list backward for deletion.
     for i in range(len(particles) - 1, -1, -1):
-        # Improve readability by assigning the array element to a variable.
+        # Improve readability by assigning the list element to a variable.
         particle = particles[i]
         particle.run()
 
