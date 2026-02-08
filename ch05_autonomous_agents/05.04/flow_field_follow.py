@@ -27,7 +27,7 @@ def draw():
     if debug: flow_field.show()
     # Tell all the vehicles to follow the flow field.
     for vehicle in vehicles:
-        vehicle.follow(flow_field)
+        vehicle.follow_flow(flow_field)
         vehicle.run()
 
     # Display some info.

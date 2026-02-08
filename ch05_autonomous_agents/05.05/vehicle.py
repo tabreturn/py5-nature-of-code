@@ -30,6 +30,9 @@ class Vehicle:
 
         # Calculate the desired velocity to target at max speed.
         desired = target - self.position
+        # If the magnitude of desired equals 0, skip out of here.
+        if desired.mag == 0: return
+        # Set desired velocity toward target at max_speed.
         desired.set_mag(self.max_speed)
         # Reynolds' formula for steering force.
         steer = desired - self.velocity
@@ -91,6 +94,62 @@ class Vehicle:
         steer.set_limit(self.max_force)
         self.apply_force(steer)
 
+    # Needs "debug" because Python modules have isolated namespaces.
+    # (p5.js sketches share a single global scope)
+    def follow_path(self, path: 'PathNoc', debug: bool) -> None:
+        # Step 1: Predict the vehicle's future position.
+        future = self.velocity.copy  # Start by making a copy of the velocity.
+        future.set_mag(25)  # Look 25 pixels ahead by setting the magnitude.
+        future += self.position  # Add vector to position to find future position.
+
+        # Step 2: Find the normal point along the path.
+        normal_point = self.get_normal_point(future, path.start, path.end)
+
+        # Step 3: Move a little further along the path and set a target.
+        b = path.end - path.start
+        b.set_mag(25)  # Set the magnitude to 25 pixels (picked arbitrarily).
+        # Add b to normal_point to find the target 25 pixels ahead on path.
+        target = normal_point + b
+
+        # Step 4: If off the path, seek target in order to stay on path.
+        distance = normal_point.dist(future)
+        # If the vehicle is outside the path, seek the target.
+        if distance > path.radius:
+            # Seek target (using seek method created in Example 5.1).
+            self.seek(target)
+
+        # Draw the debugging stuff.
+        if debug:
+            fill(127)
+            stroke(0)
+            line(self.position.x, self.position.y, future.x, future.y)
+            ellipse(future.x, future.y, 4, 4)
+
+            # Draw normal location.
+            fill(127)
+            stroke(0)
+            line(future.x, future.y, normal_point.x, normal_point.y)
+            ellipse(normal_point.x, normal_point.y, 4, 4)
+            stroke(0)
+            if distance > path.radius: fill(255, 0, 0)
+            no_stroke()
+            circle(target.x + b.x, target.y + b.y, 8)
+
+    def get_normal_point(
+      self, position: Py5Vector2D, a: Py5Vector2D, b: Py5Vector2D
+    ) -> Py5Vector2D:
+        """Method to get normal point from position to a line segment (a-b)."""
+
+        vector_a = position - a  # Vector that points from a to position.
+        vector_b = b - a         # Vector that points from a to b.
+
+        # Using the dot product for scalar projection.
+        vector_b.normalize()  # # Normalize b, and ...
+        vector_b *= vector_a.dot(vector_b)  # use dot product to set b's length.
+
+        # Finding the normal point along the line segment.
+        return a + vector_b  # return normal_point
+
     def show(self) -> None:
         """The vehicle is a triangle pointing in the direction of velocity."""
 
@@ -115,7 +174,13 @@ class Vehicle:
         if self.position.x > width + self.r: self.position.x = -self.r
         if self.position.y > height + self.r: self.position.y = -self.r
 
+    def borders_path(self, p: 'PathNoc') -> None:
+        """Wraparound."""
+        if self.position.x > p.end.x + self.r:
+            self.position.x = p.start.x - self.r
+            self.position.y = p.start.y + (self.position.y - p.end.y)
+
     def run(self) -> None:
         self.update()
-        self.borders_flow()
+#        self.borders_flow()
         self.show()
