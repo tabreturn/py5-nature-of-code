@@ -234,7 +234,7 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch05_autonomous_agents/05.04](ch05_autonomous_agents/05.04) |
   p5.js: [egribz8WV](https://editor.p5js.org/natureofcode/sketches/egribz8WV)
 
-- **05.05 - create_path_object** |
+- **05.05 - simple_path_only** |
   py5: [ch05_autonomous_agents/05.05](ch05_autonomous_agents/05.05) |
   p5.js: [8SALyBTym](https://editor.p5js.org/natureofcode/sketches/8SALyBTym)
 
@@ -242,7 +242,7 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch05_autonomous_agents/05.06](ch05_autonomous_agents/05.06) |
   p5.js: [zcH21K3T3](https://editor.p5js.org/natureofcode/sketches/zcH21K3T3)
 
-- **05.07 - path_multiple_segments** |
+- **05.07 - multiple_segments_only** |
   py5: [ch05_autonomous_agents/05.07](ch05_autonomous_agents/05.07) |
   p5.js: [ntGaosFQ7](https://editor.p5js.org/natureofcode/sketches/ntGaosFQ7)
 
