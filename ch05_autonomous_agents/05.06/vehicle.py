@@ -100,7 +100,7 @@ class Vehicle:
 
         # Step 1: Predict the vehicle's future position.
         future = self.velocity.copy  # Start by making a copy of the velocity.
-        future.set_mag(25)  # Look 25 pixels ahead by setting the magnitude.
+        future.set_mag(25)  # Look ahead by setting the magnitude.
         future += self.position  # Add vector to position to find future position.
 
         # Step 2: Find the normal point along the path.
