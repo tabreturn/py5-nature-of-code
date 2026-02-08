@@ -242,6 +242,14 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch05_autonomous_agents/05.06](ch05_autonomous_agents/05.06) |
   p5.js: [zcH21K3T3](https://editor.p5js.org/natureofcode/sketches/zcH21K3T3)
 
+- **05.07 - path_multiple_segments** |
+  py5: [ch05_autonomous_agents/05.07](ch05_autonomous_agents/05.07) |
+  p5.js: [ntGaosFQ7](https://editor.p5js.org/natureofcode/sketches/ntGaosFQ7)
+
+- **05.08 - multiple_segments_follow** |
+  py5: [ch05_autonomous_agents/05.08](ch05_autonomous_agents/05.08) |
+  p5.js: [1T-6LupvJ](https://editor.p5js.org/natureofcode/sketches/1T-6LupvJ)
+
 - IN PROGRESS ...
 
 ### Ch. 06 - Physics Libraries

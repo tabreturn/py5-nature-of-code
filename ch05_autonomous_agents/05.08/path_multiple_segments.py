@@ -1,4 +1,4 @@
-# https://natureofcode.com/autonomous-agents/#path-following-with-multiple-segments
+# https://natureofcode.com/autonomous-agents/#example-58-path-following
 
 from path_noc import PathNoc  # Class is named PathNoc (not Path).
 from vehicle import Vehicle
@@ -39,7 +39,7 @@ def draw():
     fill(0); text_font(monospace); text_size(11)
     text(
       f'Hit space bar to toggle debugging lines.\n'
-      f'Click the mouse to generate a new flow field.',
+      f'Click the mouse to generate a new path.',
       10, 216,
     )
 

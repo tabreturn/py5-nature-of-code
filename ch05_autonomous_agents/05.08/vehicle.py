@@ -153,7 +153,7 @@ class Vehicle:
             self.seek(target)
 
         # Draw the debugging stuff.
-        if debug and normal_noc is not None and target is not None:
+        if debug:
             fill(127)
             stroke(0)
             line(self.position.x, self.position.y, future.x, future.y)
