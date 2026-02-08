@@ -5,9 +5,9 @@
 **Built with [py5](https://py5coding.org) using [Thonny-py5mode](https://github.com/py5coding/thonny-py5mode)**
 
 **Parts:**
-#1. [Inanimate Objects](#part-1-inanimate-objects) |
-#2. [It's Alive!](#part-2-its-alive) |
-#3. [Intelligence](#part-3-intelligence)
+⚙️ #1. [Inanimate Objects](#part-1-inanimate-objects) |
+🧬 #2. [It's Alive!](#part-2-its-alive) |
+🧠 #3. [Intelligence](#part-3-intelligence)
 
 I've taken a few liberties in my interpretation. First, the examples in the book and its accompanying [p5.js sketches](https://natureofcode.com/examples) do not always match exactly. Second, in a few places, minor adjustments were necessary to support an idiomatic, py5-compatible Python implementation. Throughout, however, my aim has been to balance faithfulness to the original material with Python best practices and clarity for readers working through this [fantastic book](https://natureofcode.com).
 
@@ -25,11 +25,11 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
 
 ---
 
-## Part 1: Inanimate Objects
+## ⚙️ Part 1: Inanimate Objects
 
 ### Ch. 00 - Randomness
 
-^ [top](#)
+⬆️ [top](#)
 
 - **00.01 - traditional_random_walk** |
   py5: [ch00_randomness/00.01](ch00_randomness/00.01) |
@@ -221,11 +221,11 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
 
 ---
 
-## Part 2: It's Alive!
+## 🧬 Part 2: It's Alive!
 
 ### Ch. 05 - Autonomous Agents
 
-^ [top](#)
+⬆️ [top](#)
 
 - **05.01 - seeking_target** |
   py5: [ch05_autonomous_agents/05.01](ch05_autonomous_agents/05.01) |
@@ -259,7 +259,7 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch05_autonomous_agents/05.08](ch05_autonomous_agents/05.08) |
   p5.js: [1T-6LupvJ](https://editor.p5js.org/natureofcode/sketches/1T-6LupvJ)
 
-- IN PROGRESS ...
+- 🚧 IN PROGRESS ...
 
 ### Ch. 06 - Physics Libraries
 
@@ -267,13 +267,13 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
 *Substitute: Verlet physics --> https://github.com/postspectacular/toxiclibs (Java)*  
 *(https://py5coding.org/how_tos/use_processing_libraries.html)*
 
-- IN PROGRESS ...  
+- 🚧 IN PROGRESS ...
 
 ---
 
-## Part 3: Intelligence
+## 🧠 Part 3: Intelligence
 
-^ [top](#)
+⬆️ [top](#)
 
 ### Ch. 09 - Evolutionary Computing
 
@@ -321,14 +321,14 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch11_neuroevolution/11.03](ch11_neuroevolution/11.03) |
   p5.js: [KkV4lTS4H](https://editor.p5js.org/natureofcode/sketches/KkV4lTS4H)
 
-- 11.04 - IN PROGRESS ... |
+- 11.04 - 🚧 IN PROGRESS ... |
   py5: [ch11_neuroevolution/11.04](ch11_neuroevolution/11.04) |
   p5.js: [fZDfxxVrf](https://editor.p5js.org/natureofcode/sketches/fZDfxxVrf)
 
-- 11.05 - IN PROGRESS ... |
+- 11.05 - 🚧 IN PROGRESS ... |
   py5: [ch11_neuroevolution/11.05](ch11_neuroevolution/11.05) |
   p5.js: [vCTMtXXSS](https://editor.p5js.org/natureofcode/sketches/vCTMtXXSS)
 
-- 11.06 - IN PROGRESS ... |
+- 11.06 - 🚧 IN PROGRESS ... |
   py5: [ch11_neuroevolution/11.06](ch11_neuroevolution/11.06) |
   p5.js: [IQbcREjUK](https://editor.p5js.org/natureofcode/sketches/IQbcREjUK)
