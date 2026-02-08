@@ -236,6 +236,10 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
 
 - **05.05 - create_path_object** |
   py5: [ch05_autonomous_agents/05.05](ch05_autonomous_agents/05.05) |
+  p5.js: [8SALyBTym](https://editor.p5js.org/natureofcode/sketches/8SALyBTym)
+
+- **05.06 - simple_path_follow** |
+  py5: [ch05_autonomous_agents/05.06](ch05_autonomous_agents/05.06) |
   p5.js: [zcH21K3T3](https://editor.p5js.org/natureofcode/sketches/zcH21K3T3)
 
 - IN PROGRESS ...
