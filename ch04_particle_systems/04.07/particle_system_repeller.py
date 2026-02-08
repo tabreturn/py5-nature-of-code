@@ -26,7 +26,7 @@ def draw():
     emitter.run()
 
 
-# The function(s) below are for mouse interaction
+# The function(s) below are for mouse/key interaction
 
 def mouse_moved():
     global repeller

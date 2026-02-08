@@ -30,7 +30,7 @@ def draw():
     vehicle.show()
 
 
-# The function(s) below are for mouse interaction
+# The function(s) below are for mouse/key interaction
 
 def mouse_pressed():
     global debug
