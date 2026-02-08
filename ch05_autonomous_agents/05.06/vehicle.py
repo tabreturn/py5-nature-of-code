@@ -97,6 +97,7 @@ class Vehicle:
     # Needs "debug" because Python modules have isolated namespaces.
     # (p5.js sketches share a single global scope)
     def follow_path(self, path: 'PathNoc', debug: bool) -> None:
+
         # Step 1: Predict the vehicle's future position.
         future = self.velocity.copy  # Start by making a copy of the velocity.
         future.set_mag(25)  # Look 25 pixels ahead by setting the magnitude.
@@ -123,13 +124,13 @@ class Vehicle:
             fill(127)
             stroke(0)
             line(self.position.x, self.position.y, future.x, future.y)
-            ellipse(future.x, future.y, 4, 4)
+            circle(future.x, future.y, 4)
 
             # Draw normal location.
             fill(127)
             stroke(0)
             line(future.x, future.y, normal_point.x, normal_point.y)
-            ellipse(normal_point.x, normal_point.y, 4, 4)
+            circle(normal_point.x, normal_point.y, 4)
             stroke(0)
             if distance > path.radius: fill(255, 0, 0)
             no_stroke()

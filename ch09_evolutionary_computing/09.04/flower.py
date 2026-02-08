@@ -51,10 +51,10 @@ class Flower:
             angle = remap(i, 0, petal_count, 0, TWO_PI)
             x = petal_size * cos(angle)
             y = petal_size * sin(angle)
-            ellipse(x, y, petal_size, petal_size)
+            circle(x, y, petal_size)
         # Draw the center.
         fill(center_color)
-        ellipse(0, 0, center_size, center_size)
+        circle(0, 0, center_size)
         pop()
 
         # Display fitness value.
