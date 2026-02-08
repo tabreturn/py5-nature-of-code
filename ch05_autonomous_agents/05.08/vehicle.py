@@ -94,7 +94,7 @@ class Vehicle:
         steer.set_limit(self.max_force)
         self.apply_force(steer)
 
-    # Needs "debug" because Python modules have isolated namespaces.
+    # Needs "debug" parameter because Python modules have isolated namespaces.
     # (p5.js sketches share a single global scope)
     def follow_path(self, path: 'PathNoc', debug: bool) -> None:
 

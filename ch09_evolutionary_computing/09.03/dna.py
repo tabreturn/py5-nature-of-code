@@ -2,7 +2,7 @@
 
 
 class DNA:
-    # Needs "lifespan" because Python modules have isolated namespaces.
+    # Needs "lifespan" parameter because Python modules have isolated namespaces.
     # (p5.js sketches share a single global scope)
     def __init__(self, lifespan: int):
         """The genetic sequence is a list of vectors."""

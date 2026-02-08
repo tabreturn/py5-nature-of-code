@@ -5,7 +5,7 @@ from rocket import Rocket
 
 
 class Population:
-    # Needs "lifespan", "xy" because Python modules have isolated namespaces.
+    # Needs "lifespan", "xy" parameter because Python modules have isolated namespaces.
     # (p5.js sketches share a single global scope)
     def __init__(self, mutation: float, length: int, lifespan: int, xy: tuple):
         """Population has variables to keep track of the mutation rate, current
@@ -20,7 +20,7 @@ class Population:
           Rocket(self.x, self.y) for _ in range(length)
         ]
 
-    # Needs "target" because Python modules have isolated namespaces.
+    # Needs "target" parameter because Python modules have isolated namespaces.
     def live(self, obstacles, target: Py5Vector2D) -> None:
         """The run() method takes care of the simulation, updates the rocket's
         position, and draws it to the canvas."""
@@ -36,7 +36,7 @@ class Population:
 
         return any(rocket.hit_target for rocket in self.population)
 
-    # Needs "target" because Python modules have isolated namespaces.
+    # Needs "target" parameter because Python modules have isolated namespaces.
     def fitness(self, target: Py5Vector2D) -> None:
         """Calculate the fitness for each rocket."""
 

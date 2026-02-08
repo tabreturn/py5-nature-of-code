@@ -12,7 +12,7 @@ class Attractor:
         self.drag_offset = Py5Vector2D()
         self.dragging = self.rollover = False
 
-    # Needs "G" because Python modules have isolated namespaces.
+    # Needs "G" parameter because Python modules have isolated namespaces.
     # (p5.js sketches share a single global scope)
     def attract(self, mover: 'Mover', G: float) -> Py5Vector2D:
         # What's the force's direction?

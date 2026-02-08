@@ -64,7 +64,7 @@ class Body:  # The mover is now called a body.
 
     # The attract() method is now part of the Body class.
 
-    # Needs "G" because Python modules have isolated namespaces.
+    # Needs "G" parameter because Python modules have isolated namespaces.
     # (p5.js sketches share a single global scope)
     def attract(self, body: 'Body', G: float) -> Py5Vector2D:
         # What's the force's direction?
