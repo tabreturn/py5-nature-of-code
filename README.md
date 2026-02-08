@@ -29,6 +29,8 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
 
 ### Ch. 00 - Randomness
 
+[^ top](#)
+
 - **00.01 - traditional_random_walk** |
   py5: [ch00_randomness/00.01](ch00_randomness/00.01) |
   p5.js: [5C69XyrlsR](https://editor.p5js.org/natureofcode/sketches/5C69XyrlsR)
@@ -223,6 +225,8 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
 
 ### Ch. 05 - Autonomous Agents
 
+[^ top](#)
+
 - **05.01 - seeking_target** |
   py5: [ch05_autonomous_agents/05.01](ch05_autonomous_agents/05.01) |
   p5.js: [Y74O77yxy](https://editor.p5js.org/natureofcode/sketches/Y74O77yxy)
@@ -268,6 +272,8 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
 ---
 
 ## Part 3: Intelligence
+
+[^ top](#)
 
 ### Ch. 09 - Evolutionary Computing
 
