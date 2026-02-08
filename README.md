@@ -222,7 +222,7 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch05_autonomous_agents/05.01](ch05_autonomous_agents/05.01) |
   p5.js: [Y74O77yxy](https://editor.p5js.org/natureofcode/sketches/Y74O77yxy)
 
-- **05.02 - seeking_target** |
+- **05.02 - arriving_at_target** |
   py5: [ch05_autonomous_agents/05.02](ch05_autonomous_agents/05.02) |
   p5.js: [v-yJm8WUx](https://editor.p5js.org/natureofcode/sketches/v-yJm8WUx)
 
@@ -294,7 +294,7 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch11_neuroevolution/11.01](ch11_neuroevolution/11.01) |
   p5.js: [Pv-JlO0cl](https://editor.p5js.org/natureofcode/sketches/Pv-JlO0cl)
 
-- **11.02 - flappy_bird_neuro_evolution** |
+- **11.02 - flappy_bird_neuroevolution** |
   py5: [ch11_neuroevolution/11.02](ch11_neuroevolution/11.02) |
   p5.js: [PEUKc5dpZ](https://editor.p5js.org/natureofcode/sketches/PEUKc5dpZ)
 
