@@ -1,9 +1,12 @@
 # https://natureofcode.com/neuroevolution/#steering-the-neuroevolutionary-way
 
-# NOTE: this version often learns than the original p5.js/ml5 example.
-# That's mostly because the rocket 'brain' outputs are interpreted in a more
-# direct and stable way. You don't need to worry about the details -- it still
-# feels like working with ml5, just with rockets that tend to act a bit smarter.
+"""
+NOTE: 
+This version often learns than the original p5.js/ml5 example.
+That's mostly because the rocket 'brain' outputs are interpreted in a more
+direct and stable way. You don't need to worry about the details -- it still
+feels like working with ml5, just with rockets that tend to act a bit smarter.
+"""
 
 #from dna import DNA
 from obstacle import Obstacle

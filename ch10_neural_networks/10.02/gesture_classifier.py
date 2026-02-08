@@ -1,7 +1,8 @@
 # https://natureofcode.com/neural-networks/#putting-the-network-in-neural-network
 
 """
-NOTE: In this sketch, the model is trained before setup() runs / window opens.
+NOTE: 
+In this sketch, the model is trained before setup() runs / window opens.
 Because of this, callbacks (see asynchronous operations) are not required.
 """
 

@@ -1,7 +1,8 @@
 # https://natureofcode.com/forces/#example-29-n-bodies
 
 """
-NOTE: This is an extension of 02.07 (attraction_many_movers)
+NOTE: 
+This is an extension of 02.07 (attraction_many_movers)
 """
 
 from mover import Mover
