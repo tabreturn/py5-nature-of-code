@@ -208,23 +208,17 @@ class Vehicle:
                 sum_all += diff
                 count += 1
 
-#        # Make sure there is at least one close vehicle; don't bother to do
-#        # anything if nothing is too close (and this avoids dividing by zero).
-#        if count > 0:
-#            sum_all.set_mag(self.max_speed)  # Scale average to max speed.
-#            # Reynolds' steering formula.
-#            steer = sum_all - self.velocity
-#            steer.set_limit(self.max_force)
+        # Make sure there is at least one close vehicle; don't bother to do
+        # anything if nothing is too close (and this avoids dividing by zero).
+        if count > 0:
+            sum_all /= count
+            sum_all.set_mag(self.max_speed)  # Scale average to max speed.
+            steer = sum_all - self.velocity  # Reynolds' steering formula.
+            steer.set_limit(self.max_force)
 #            self.apply_force(steer)  # Apply the force to the vehicle.
-
-        if count == 0:
+            return steer
+        else:
             return Py5Vector2D()
-
-        sum_all /= count
-        sum_all.set_mag(self.max_speed)
-        steer = sum_all - self.velocity
-        steer.set_limit(self.max_force)
-        return steer
 
     def show(self) -> None:
         """The vehicle is a triangle pointing in the direction of velocity."""

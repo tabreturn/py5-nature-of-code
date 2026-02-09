@@ -18,7 +18,7 @@ def draw():
     background(255)
 
     for vehicle in vehicles:
-        # Vehicle examines all other vehicles to calculate separate AND seek.
+        # Vehicle examines all other vehicles to calculate separate AND seek forces.
         vehicle.apply_behaviors(vehicles)
         vehicle.update()
         vehicle.borders_flow()

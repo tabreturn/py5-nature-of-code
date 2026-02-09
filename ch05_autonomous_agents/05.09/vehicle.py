@@ -209,8 +209,7 @@ class Vehicle:
         # anything if nothing is too close (and this avoids dividing by zero).
         if count > 0:
             sum_all.set_mag(self.max_speed)  # Scale average to max speed.
-            # Reynolds' steering formula.
-            steer = sum_all - self.velocity
+            steer = sum_all - self.velocity  # Reynolds' steering formula.
             steer.set_limit(self.max_force)
             self.apply_force(steer)  # Apply the force to the vehicle.
 
