@@ -265,6 +265,10 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch05_autonomous_agents/05.09](ch05_autonomous_agents/05.09) |
   p5.js: [S7YOOYs7T](https://editor.p5js.org/natureofcode/sketches/S7YOOYs7T)
 
+- **05.10 - separation_and_seek** |
+  py5: [ch05_autonomous_agents/05.10](ch05_autonomous_agents/05.10) |
+  p5.js: [UJEwENSN3](https://editor.p5js.org/natureofcode/sketches/UJEwENSN3)
+
 - 🚧 IN PROGRESS ...
 
 ### Ch. 06 - Physics Libraries

@@ -7,7 +7,7 @@ class Vehicle:
         self.position = Py5Vector2D(x, y)
         self.velocity = Py5Vector2D()
         self.acceleration = Py5Vector2D()
-        self.r = 4.0  # Additional variable for size.
+        self.r = 6.0  # Additional variable for size.
         # Arbitrary values for max speed and force; try varying these!
         self.max_speed = ms
         self.max_force = mf
@@ -25,7 +25,7 @@ class Vehicle:
 
         self.acceleration += force
 
-    def seek(self, target: Py5Vector2D) -> None:
+    def seek(self, target: Py5Vector2D) -> Py5Vector2D:
         """The seek steering force algorithm."""
 
         # Calculate the desired velocity to target at max speed.
@@ -39,8 +39,11 @@ class Vehicle:
         steer = desired - self.velocity
         # Limit the magnitude of the steering force.
         steer.set_limit(self.max_force)
-        # Use the physics model and apply the force to the object's acceleration.
-        self.apply_force(steer)
+#        # Use the physics model and apply the force to the object's acceleration.
+#        self.apply_force(steer)
+        # Instead of applying the force, return the vector.
+        return steer
+
 
     def arrive(self, target: Py5Vector2D) -> None:
         desired = target - self.position
@@ -183,6 +186,46 @@ class Vehicle:
         # Finding the normal point along the line segment.
         return a + vector_b  # return normal_point
 
+    def separate(self, vehicles: list['Vehicle']) -> Py5Vector2D:
+        # This variable specifies how close is too close.
+        desired_separation = self.r * 2  # Based on the vehicle's size.
+
+        sum_all = Py5Vector2D()  # Start with an empty vector.
+        count = 0  # To keep track of how many vehicles are too close.
+
+        for other in vehicles:
+            d = self.position.dist(other.position)
+            # Any code here will be executed if vehicle is within r*2 pixels.
+            if self is not other and 0 < d < desired_separation:
+                # What is the distance between this vehicle and other vehicle?
+                diff = self.position - other.position
+
+                # What is magnitude of vector pointing away from other vehicle?
+                # Closer = more vehicle should flee; farther = less so.
+                diff.set_mag(1 / d)  # Magnitude inverse to distance.
+
+                # Add all the vectors together and increment the count.
+                sum_all += diff
+                count += 1
+
+#        # Make sure there is at least one close vehicle; don't bother to do
+#        # anything if nothing is too close (and this avoids dividing by zero).
+#        if count > 0:
+#            sum_all.set_mag(self.max_speed)  # Scale average to max speed.
+#            # Reynolds' steering formula.
+#            steer = sum_all - self.velocity
+#            steer.set_limit(self.max_force)
+#            self.apply_force(steer)  # Apply the force to the vehicle.
+
+        if count == 0:
+            return Py5Vector2D()
+
+        sum_all /= count
+        sum_all.set_mag(self.max_speed)
+        steer = sum_all - self.velocity
+        steer.set_limit(self.max_force)
+        return steer
+
     def show(self) -> None:
         """The vehicle is a triangle pointing in the direction of velocity."""
 
@@ -192,12 +235,13 @@ class Vehicle:
         stroke_weight(2)
         push()
         translate(*self.position)
-        rotate(angle)
-        begin_shape()
-        vertex(self.r * 2, 0)
-        vertex(-self.r * 2, -self.r)
-        vertex(-self.r * 2, self.r)
-        end_shape(CLOSE)
+#        rotate(angle)
+#        begin_shape()
+#        vertex(self.r * 2, 0)
+#        vertex(-self.r * 2, -self.r)
+#        vertex(-self.r * 2, self.r)
+#        end_shape(CLOSE)
+        circle(0, 0, self.r * 2)
         pop()
 
     def borders_flow(self) -> None:
@@ -214,6 +258,18 @@ class Vehicle:
         if self.position.x > p.end.x + self.r:
             self.position.x = p.start.x - self.r
             self.position.y = p.start.y + (self.position.y - p.end.y)
+
+    def apply_behaviors(self, vehicles: list['Vehicle']) -> None:
+        separate = self.separate(vehicles)
+        seek = self.seek(Py5Vector2D(mouse_x, mouse_y))
+
+        # Values can be anything! Customized per vehicle, or changing over time.
+        separate *= 1.5
+        seek *= 0.5
+
+        # Apply the forces here since seek() and separate() no longer do so.
+        self.apply_force(separate)
+        self.apply_force(seek)
 
     def run(self) -> None:
         self.update()

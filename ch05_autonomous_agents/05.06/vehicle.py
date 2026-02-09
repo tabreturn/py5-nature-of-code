@@ -31,8 +31,9 @@ class Vehicle:
         # Calculate the desired velocity to target at max speed.
         desired = target - self.position
         # If the magnitude of desired equals 0, skip out of here.
-        if desired.mag == 0: return
-        # Set desired velocity toward target at max_speed.
+        if desired.mag == 0: return Py5Vector2D()
+        # Normalize and set desired velocity toward target at max_speed.
+        desired.normalize()
         desired.set_mag(self.max_speed)
         # Reynolds' formula for steering force.
         steer = desired - self.velocity
