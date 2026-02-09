@@ -4,7 +4,7 @@ from vehicle import Vehicle
 
 
 def setup():
-    global vehicles  # Declare an array of Vehicle objects.
+    global vehicles  # Declare a list of Vehicle objects.
     size(640, 240)
 
     # Initialize and fill the list with a bunch of vehicles.

@@ -185,7 +185,6 @@ class Vehicle:
     def separate(self, vehicles: list['Vehicle']) -> None:
         # This variable specifies how close is too close.
         desired_separation = self.r * 2  # Based on the vehicle's size.
-        # What is the distance between this vehicle and the other vehicle?
 
         sum_all = Py5Vector2D()  # Start with an empty vector.
         count = 0  # To keep track of how many vehicles are too close.
@@ -194,16 +193,18 @@ class Vehicle:
             d = self.position.dist(other.position)
             # Any code here will be executed if vehicle is within r*2 pixels.
             if self is not other and 0 < d < desired_separation:
-                # A vector pointing away from the other's position.
+                # What is the distance between this vehicle and other vehicle?
                 diff = self.position - other.position
+
                 # What is magnitude of vector pointing away from other vehicle?
                 # Closer = more vehicle should flee; farther = less so.
                 diff.set_mag(1 / d)  # Magnitude inverse to distance.
+
                 # Add all the vectors together and increment the count.
                 sum_all += diff
                 count += 1
 
-        # Make sure there is at least one close vehicle; there's no need to do
+        # Make sure there is at least one close vehicle; don't bother to do
         # anything if nothing is too close (and this avoids dividing by zero).
         if count > 0:
             sum_all.set_mag(self.max_speed)  # Scale average to max speed.
