@@ -7,7 +7,7 @@ class Vehicle:
         self.position = Py5Vector2D(x, y)
         self.velocity = Py5Vector2D()
         self.acceleration = Py5Vector2D()
-        self.r = 4.0  # Additional variable for size.
+        self.r = 12.0  # Additional variable for size.
         # Arbitrary values for max speed and force; try varying these!
         self.max_speed = ms
         self.max_force = mf
@@ -182,6 +182,36 @@ class Vehicle:
         # Finding the normal point along the line segment.
         return a + vector_b  # return normal_point
 
+    def separate(self, vehicles: list['Vehicle']) -> None:
+        # This variable specifies how close is too close.
+        desired_separation = self.r * 2  # Based on the vehicle's size.
+        # What is the distance between this vehicle and the other vehicle?
+
+        sum_all = Py5Vector2D()  # Start with an empty vector.
+        count = 0  # To keep track of how many vehicles are too close.
+
+        for other in vehicles:
+            d = self.position.dist(other.position)
+            # Any code here will be executed if vehicle is within r*2 pixels.
+            if self is not other and 0 < d < desired_separation:
+                # A vector pointing away from the other's position.
+                diff = self.position - other.position
+                # What is magnitude of vector pointing away from other vehicle?
+                # Closer = more vehicle should flee; farther = less so.
+                diff.set_mag(1 / d)  # Magnitude inverse to distance.
+                # Add all the vectors together and increment the count.
+                sum_all += diff
+                count += 1
+
+        # Make sure there is at least one close vehicle; there's no need to do
+        # anything if nothing is too close (and this avoids dividing by zero).
+        if count > 0:
+            sum_all.set_mag(self.max_speed)  # Scale average to max speed.
+            # Reynolds' steering formula.
+            steer = sum_all - self.velocity
+            steer.set_limit(self.max_force)
+            self.apply_force(steer)  # Apply the force to the vehicle.
+
     def show(self) -> None:
         """The vehicle is a triangle pointing in the direction of velocity."""
 
@@ -191,12 +221,13 @@ class Vehicle:
         stroke_weight(2)
         push()
         translate(*self.position)
-        rotate(angle)
-        begin_shape()
-        vertex(self.r * 2, 0)
-        vertex(-self.r * 2, -self.r)
-        vertex(-self.r * 2, self.r)
-        end_shape(CLOSE)
+#        rotate(angle)
+#        begin_shape()
+#        vertex(self.r * 2, 0)
+#        vertex(-self.r * 2, -self.r)
+#        vertex(-self.r * 2, self.r)
+#        end_shape(CLOSE)
+        circle(0, 0, self.r)
         pop()
 
     def borders_flow(self) -> None:
