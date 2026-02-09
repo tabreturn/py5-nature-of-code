@@ -351,3 +351,22 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
 - 11.06 - 🚧 IN PROGRESS ... |
   py5: [ch11_neuroevolution/11.06](ch11_neuroevolution/11.06) |
   p5.js: [IQbcREjUK](https://editor.p5js.org/natureofcode/sketches/IQbcREjUK)
+
+<!--
+
+Approx. page counts for each chapter, ranked largest to smallest:
+
+06_libraries.html   -- ~82 pages
+05_steering.html    -- ~78 pages
+09_ga.html          -- ~72 pages
+10_nn.html          -- ~56 pages
+03_oscillation.html -- ~53 pages
+02_forces.html      -- ~53 pages
+04_particles.html   -- ~46 pages
+11_nn_ga.html       -- ~45 pages
+07_ca.html          -- ~43 pages
+01_vectors.html     -- ~42 pages
+08_fractals.html    -- ~41 pages
+00_randomness.html  -- ~38 pages
+
+-->
