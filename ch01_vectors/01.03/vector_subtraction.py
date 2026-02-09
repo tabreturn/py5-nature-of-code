@@ -22,7 +22,7 @@ def draw():
     mouse -= center
 
     # Draw a line to represent the result of subtraction.
-    # Notice that I move the origin with translate() to place the vector.
+    # Notice that the origin is moved using translate() to place the vector.
     stroke(0)
     translate(width / 2, height / 2)
     line(0, 0, mouse.x, mouse.y)

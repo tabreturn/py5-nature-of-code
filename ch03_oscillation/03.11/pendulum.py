@@ -19,7 +19,7 @@ class Pendulum():
     def update(self) -> None:
         GRAVITY = 0.4  # An arbitrary constant.
         
-        # As long as we aren't dragging the pendulum, let it swing!
+        # As long as the pendulum isn't being dragged, it is allowed to swing.
         if not self.dragging:
             # Formula for angular acceleration.
             self.angle_acceleration = -1 * GRAVITY * sin(self.angle) / self.r

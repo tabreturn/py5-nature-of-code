@@ -31,9 +31,9 @@ class Rocket:
         self.acceleration = Py5Vector2D()
         self.r = 4  # Size.
         self.gene_counter = 0  # A counter for the DNA genes list.
-        self.hit_obstacle = False  # Am I stuck on an obstacle?
+        self.hit_obstacle = False  # Is it stuck on an obstacle?
         self.record_distance = float('inf')  # High number to be beat instantly.
-        self.hit_target = False  # Did I reach the target.
+        self.hit_target = False  # Did it reach the target.
         self.finish_counter = 0  # Count how long it takes to reach target.
 
     def calculate_fitness(self, target: Py5Vector2D) -> None:
