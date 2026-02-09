@@ -18,7 +18,7 @@ class Population:
             flower.show()
 
     def rollover(self, mx: int, my: int) -> None:
-        """Are we rolling over any of the faces?"""
+        """Is user rolling over any of the faces?"""
 
         for flower in self.population:
             flower.rollover(mx, my)

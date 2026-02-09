@@ -18,7 +18,7 @@ class Spring:
         force = bob.position - self.anchor
 
         # Calculate the displacement between the distance and rest length.
-        # We'll use the variable name "stretch" instead of x to be descriptive.
+        # Use the variable name "stretch" instead of x to be descriptive.
         current_length = force.mag
         stretch = current_length - self.rest_length
 

@@ -46,9 +46,9 @@ class Vehicle:
         # Distance is magnitude of vector pointing from position to the target.
         d = desired.mag
 
-        # If we are closer than 100 pixels ...
+        # If closer than 100 pixels ...
         if d < 100:
-            # ... set the magnitude according to how close we are.
+            # ... set the magnitude according to how close it is.
             m = remap(d, 0, 100, 0, self.max_speed)
             desired.set_mag(m)
         else:
@@ -98,8 +98,6 @@ class Vehicle:
     # (p5.js sketches share a single global scope)
     def follow_path(self, path: 'PathNoc', debug: bool) -> None:
 
-        if len(path.points) < 2: return
-
         # Step 1: Predict the vehicle's future position.
         future = self.velocity.copy  # Start by making a copy of the velocity.
         future.set_mag(50)  # Look ahead by setting the magnitude.
@@ -118,12 +116,12 @@ class Vehicle:
             normal_point = self.get_normal_point(future, a, b)
 
             if normal_point.x < a.x or normal_point.x > b.x:
-                # Use endpoint of segment as normal point if you can't find one.
+                # Use endpoint of segment as normal point if one can't be found.
                 normal_point = b.copy
 
             distance = future.dist(normal_point)
 
-            # If you beat the record, this should be your target.
+            # If it beats the record, this should be the target.
             if distance < world_record:
                 world_record = distance
                 normal_noc = normal_point
@@ -148,7 +146,7 @@ class Vehicle:
 #            # Seek target (using seek method created in Example 5.1).
 #            self.seek(target)
 
-        # Only if distance is greater than path's radius do we bother to steer.
+        # Only if distance is greater than path's radius then bother to steer.
         if world_record > path.radius and target is not None:
             self.seek(target)
 

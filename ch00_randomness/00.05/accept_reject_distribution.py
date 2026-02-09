@@ -31,12 +31,12 @@ def draw():
 
 
 def accept_reject() -> float:
-    # Do this "forever" until you find a qualifying random value.
+    # Do this "forever" until finding a qualifying random value.
     while True:
         r1 = random()     # Pick a random value.
         probability = r1  # Assign a probability.
         r2 = random()     # Pick a second random value.
-        # Does it qualify? If so, you're done!
+        # Does it qualify? If so, it's done!
         if r2 < probability:
             return r1
 

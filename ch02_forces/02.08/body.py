@@ -72,7 +72,7 @@ class Body:  # The mover is now called a body.
         force = self.position - body.position
         # The length (magnitude) is the distance between the two objects.
         distance = force.mag
-        # Constrain the distance so your circle doesn't spin out of control.
+        # Constrain the distance so the circle doesn't spin out of control.
         distance = constrain(distance, 5, 25)
         # The constrain() function limits distance value -- min (5), max (25).
 

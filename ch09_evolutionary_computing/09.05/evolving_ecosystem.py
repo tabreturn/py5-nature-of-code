@@ -14,7 +14,7 @@ def draw():
     background(255)
     world.run()
 
-# We can add a creature manually if we so desire.
+# Can add a creature manually if desired.
 
 def mouse_pressed():
     world.born(mouse_x, mouse_y)

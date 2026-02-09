@@ -10,7 +10,7 @@ def setup():
     global movers, attractor
     size(640, 240)
 
-    # Now you have 10 movers!
+    # Now there are 10 movers!
     movers = [
       # Each mover is initialized randomly.
       Mover(random(width), random(height), random(0.5, 3))

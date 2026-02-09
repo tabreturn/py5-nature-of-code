@@ -2,7 +2,7 @@
 
 from emitter import Emitter
 
-emitters = []  # This time, what you're putting in the list is an emitter itself!
+emitters = []  # This time, what's put in the list is an emitter itself!
 
 
 def setup():

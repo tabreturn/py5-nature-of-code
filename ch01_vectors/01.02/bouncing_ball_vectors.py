@@ -11,7 +11,7 @@ def setup():
 
     size(640, 240)
 
-    # Instead of a bunch of floats, you now have just two variables.
+    # Instead of a bunch of floats, now there are just two variables.
     global position, velocity
     # Note that py5 does not use createVector().
     # It provides Py5Vector, Py5Vector2D, Py5Vector3D for different dimensions.
@@ -40,7 +40,7 @@ def draw():
 
     position += velocity
 
-    # You sometimes need to refer to the individual components of a py5Vector, 
+    # One sometimes need to refer to the individual components of a py5Vector, 
     # and can do so using the dot syntax: position.x, velocity.y, and so forth.
     if position.x > width or position.x < 0:
         velocity.x = velocity.x * -1

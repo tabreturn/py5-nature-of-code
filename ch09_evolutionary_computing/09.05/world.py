@@ -43,7 +43,7 @@ class World:
                 self.bloops.append(child)
 
     def born(self, x: int, y: int) -> None:
-        """We can add a creature manually if we so desire."""
+        """Can add a creature manually if desired."""
 
         position = Py5Vector2D(x, y)
         self.bloops.append(Bloop(position, DNA()))

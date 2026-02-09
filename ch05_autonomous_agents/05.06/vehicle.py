@@ -46,9 +46,9 @@ class Vehicle:
         # Distance is magnitude of vector pointing from position to the target.
         d = desired.mag
 
-        # If we are closer than 100 pixels ...
+        # If closer than 100 pixels ...
         if d < 100:
-            # ... set the magnitude according to how close we are.
+            # ... set the magnitude according to how close it is.
             m = remap(d, 0, 100, 0, self.max_speed)
             desired.set_mag(m)
         else:

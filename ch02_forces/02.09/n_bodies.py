@@ -22,7 +22,7 @@ def draw():
     # For every body, check every body!
     for i, body_i in enumerate(bodies):
         for j, body_j in enumerate(bodies):
-            if i != j:  # Do not attract yourself!
+            if i != j:  # Do not attract oneself!
                 force = body_j.attract(body_i, G)
                 body_i.apply_force(force)
         # Update and show all bodies.

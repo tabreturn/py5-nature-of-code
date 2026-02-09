@@ -4,7 +4,7 @@ from population import Population
 from rectangle import Rectangle
 
 POPULATION_SIZE = 8  # This is a very small population!
-# Pretty high mutation. Our population is small; we need to enforce variety.
+# Pretty high mutation. The population is small, so need to enforce variety.
 MUTATION_RATE = 0.05
 
 

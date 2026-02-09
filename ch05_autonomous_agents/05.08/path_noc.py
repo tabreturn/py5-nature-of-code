@@ -28,7 +28,7 @@ class PathNoc:
         return self.points[-1]
 
     def add_point(self, x: float, y: float) -> None:
-        """This method allows you to add points to the path."""
+        """This method allows one to add points to the path."""
 
         path_point = Py5Vector2D(x, y)
         self.points.append(path_point)

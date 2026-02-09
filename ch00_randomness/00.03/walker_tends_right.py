@@ -50,7 +50,7 @@ def setup():
     background(255)
 
 
-# Then draw() loops forever and ever (until you quit).
+# Then draw() loops forever and ever (until user quits).
 def draw():
     # Call functions on the walker.
     walker.step()

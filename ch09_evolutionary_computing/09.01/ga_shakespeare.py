@@ -42,7 +42,7 @@ def draw():
         child = parent_a.crossover(parent_b)  # Step 3a: Crossover.
         child.mutate(MUTATION_RATE)  # Step 3b: Mutation.
 
-        # You overwrite the population with the new children. 
+        # Now overwrite the population with the new children. 
         # On the next draw(), the same steps run again on this new generation.
         population[i] = child
 
