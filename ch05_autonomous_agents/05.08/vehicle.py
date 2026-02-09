@@ -104,10 +104,8 @@ class Vehicle:
         future += self.position  # Add vector to position to find future position.
 
         target = None
-        normal_noc = None  # "normal" is reverved for py5, hence "normal_noc".
         world_record = float('inf')  # Start with record that's easily beaten!
-
-        distance = 0
+        normal_noc = None  # "normal" is reverved for py5, hence "normal_noc".
 
         # Step 2: Find the normal point along the path.
 #        normal_point = self.get_normal_point(future, path.start, path.end)
@@ -152,6 +150,7 @@ class Vehicle:
 
         # Draw the debugging stuff.
         if debug:
+            # Draw predicted future location.
             fill(127)
             stroke(0)
             line(self.position.x, self.position.y, future.x, future.y)

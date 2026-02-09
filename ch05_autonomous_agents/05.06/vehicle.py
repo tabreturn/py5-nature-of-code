@@ -121,6 +121,7 @@ class Vehicle:
 
         # Draw the debugging stuff.
         if debug:
+            # Draw predicted future location.
             fill(127)
             stroke(0)
             line(self.position.x, self.position.y, future.x, future.y)
