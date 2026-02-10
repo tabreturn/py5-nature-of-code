@@ -1,6 +1,14 @@
 #!/usr/bin/env python3
 
 """
+Checks all sketches for type errors and common Python mistakes.
+
+Scans each lesson folder (chXX/NN.NN) and reports problems like:
+- missing return values
+- wrong argument types
+- untyped lists (e.g. emitters = [])
+- unsafe None usage
+
 RUN:
 python mypy_scan.py &> mypy_log.out
 """
