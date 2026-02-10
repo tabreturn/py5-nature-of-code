@@ -15,7 +15,7 @@ def draw():
 
     translate(width / 2, height / 2)
     stroke_weight(2)
-    stroke(200)
+    stroke(175)
     line(0, 0, mouse.x, mouse.y)
 
     # Multiplying a vector! Now half its original size (multiplied by 0.5).

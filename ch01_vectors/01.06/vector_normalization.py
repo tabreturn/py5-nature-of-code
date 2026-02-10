@@ -14,7 +14,7 @@ def draw():
     mouse -= center
 
     translate(width / 2, height / 2)
-    stroke(200)
+    stroke(175)
     stroke_weight(2)
     line(0, 0, mouse.x, mouse.y)
 

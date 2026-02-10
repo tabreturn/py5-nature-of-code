@@ -35,7 +35,7 @@ class Bob:
         stroke_weight(2)
         fill(127)
         if self.dragging:
-            fill(200)
+            fill(175)
         circle(self.position.x, self.position.y, self.mass * 2)
 
     # The method(s) below are for mouse interaction

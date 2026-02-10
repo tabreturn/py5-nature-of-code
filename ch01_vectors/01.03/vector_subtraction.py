@@ -13,7 +13,7 @@ def draw():
     center = Py5Vector2D(width / 2, height / 2)
 
     # Draw the original two vectors.
-    stroke(200)
+    stroke(175)
     stroke_weight(4)
     line(0, 0, mouse.x, mouse.y)
     line(0, 0, center.x, center.y)
