@@ -8,7 +8,7 @@ class Pendulum():
 
         self.r = r                      # Length of arm.
         self.angle = PI / 4             # Pendulum arm angle.
-        self.angle_velocity = 0         # Angle velocity.
+        self.angle_velocity = 0.0       # Angle velocity.
         self.angle_acceleration = 0     # Angle acceleration.
         self.pivot = Py5Vector2D(x, y)  # Position of pivot.
         self.bob = Py5Vector2D()        # Position of bob.

@@ -13,7 +13,7 @@ class FlowField:
 
         # A flow field is a 2D list of vectors.
         self.field = [
-          [None for _ in range(self.rows)]
+          [Py5Vector2D() for _ in range(self.rows)]
           for _ in range(self.cols)
         ]
 

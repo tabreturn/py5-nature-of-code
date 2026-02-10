@@ -7,7 +7,7 @@ AMPLITUDE = 100
 
 background(255)
 
-angle = 0
+angle = 0.0
 
 for x in range(0, width + 1, 24):
     # Step 1: Calculate the y-position according to amplitude and sine of angle.

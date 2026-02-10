@@ -21,7 +21,7 @@ class Emitter:
 #        else:
 #            self.particles.append(Confetti(*self.origin))
 
-        self.particles.append(Particle(*self.origin, self.img))
+        self.particles.append(Particle(self.origin.x, self.origin.y, self.img))
 
     def apply_force(self, force: Py5Vector2D):
         # Use a for in loop to apply the force to all particles.
