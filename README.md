@@ -269,6 +269,10 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch05_autonomous_agents/05.10](ch05_autonomous_agents/05.10) |
   p5.js: [UJEwENSN3](https://editor.p5js.org/natureofcode/sketches/UJEwENSN3)
 
+- **05.11 - flocking** |
+  py5: [ch05_autonomous_agents/05.10](ch05_autonomous_agents/05.10) |
+  p5.js: [IkpBw96Sd](https://editor.p5js.org/natureofcode/sketches/IkpBw96Sd)
+
 - 🚧 IN PROGRESS ...
 
 ### Ch. 06 - Physics Libraries

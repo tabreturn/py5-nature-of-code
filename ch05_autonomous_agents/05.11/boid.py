@@ -189,7 +189,7 @@ class Boid:
 
     def separate(self, vehicles: list['Vehicle']) -> Py5Vector2D:
         # This variable specifies how close is too close.
-        desired_separation = self.r * 2  # Based on the vehicle's size.
+        desired_separation = self.r * 8.3  # Based on the vehicle's size.
 
         sum_all = Py5Vector2D()  # Start with an empty vector.
         count = 0  # To keep track of how many vehicles are too close.
@@ -230,13 +230,13 @@ class Boid:
         stroke_weight(2)
         push()
         translate(*self.position)
-#        rotate(angle)
-#        begin_shape()
-#        vertex(self.r * 2, 0)
-#        vertex(-self.r * 2, -self.r)
-#        vertex(-self.r * 2, self.r)
-#        end_shape(CLOSE)
-        circle(0, 0, self.r * 2)
+        rotate(angle)
+        begin_shape()
+        vertex(self.r * 2, 0)
+        vertex(-self.r * 2, -self.r)
+        vertex(-self.r * 2, self.r)
+        end_shape(CLOSE)
+#        circle(0, 0, self.r * 2)
         pop()
 
     def borders_flow(self) -> None:
@@ -327,5 +327,5 @@ class Boid:
     def run(self, boids: list['Boid']) -> None:
         self.flock(boids)
         self.update()
-#        self.borders_flow()
+        self.borders_flow()
         self.show()
