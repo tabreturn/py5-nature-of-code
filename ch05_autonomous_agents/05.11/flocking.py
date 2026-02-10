@@ -5,11 +5,11 @@ from flock import Flock
 
 
 def setup():
-    global flock
+    global flock  # A Flock object manages the entire group.
     size(640, 240)
 
     flock = Flock()
-    # The flock starts out with 120 boids.
+    # The flock starts out with 120 (÷3) boids.
     for _ in range(120 // 3):
         boid = Boid(width / 2, height / 2, 3.0, 0.05)
         flock.add_boid(boid)
