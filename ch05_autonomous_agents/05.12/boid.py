@@ -324,8 +324,18 @@ class Boid:
         else:
             return Py5Vector2D()
 
-    def run(self, boids: list['Boid']) -> None:
-        self.flock(boids)
+    # Needs "grid" parameter because Python modules have isolated namespaces.
+    # (p5.js sketches share a single global scope)
+    def run(self, boids: list['Boid'], grid: list[list[list[Boid]]]) -> None:
+#        self.flock(boids)
+
+        # Only these boids will be checked.
+        neighbors = grid[column][row]
+        column = floor(this.position.x / resolution)
+        row = floor(this.position.y / resolution)
+        column = constrain(column, 0, cols - 1)
+        row = constrain(row, 0, rows - 1)
+
         self.update()
         self.borders_flow()
         self.show()
