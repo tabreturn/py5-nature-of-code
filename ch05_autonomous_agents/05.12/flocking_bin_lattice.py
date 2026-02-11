@@ -18,9 +18,11 @@ def setup():
     grid = [[[] for _ in range(rows)] for _ in range(cols)]
 
     flock = Flock()
-    # The flock starts out with 800 (÷xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) boids.
-    for _ in range(800):
+    # The flock starts out with 800 (÷8) boids.
+    for _ in range(800 // 8):
         boid = Boid(random(width), random(height), 3, 0.05)
+        boid.r = 3.0
+        boid.velocity = random(-1, 1), random(-1, 1)
         flock.add_boid(boid)
     
 

@@ -301,7 +301,8 @@ class Boid:
             sum_all.set_mag(self.max_speed)
             # Reynolds' steering force formula.
             steer = sum_all - self.velocity
-            return steer.set_limit(self.max_force)
+            steer.set_limit(self.max_force)
+            return steer
         else:  # If no close boids are found, the steering force is zero.
             return Py5Vector2D()
 

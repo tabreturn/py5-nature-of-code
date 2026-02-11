@@ -301,7 +301,8 @@ class Boid:
             sum_all.set_mag(self.max_speed)
             # Reynolds' steering force formula.
             steer = sum_all - self.velocity
-            return steer.set_limit(self.max_force)
+            steer.set_limit(self.max_force)
+            return steer
         else:  # If no close boids are found, the steering force is zero.
             return Py5Vector2D()
 
@@ -324,18 +325,32 @@ class Boid:
         else:
             return Py5Vector2D()
 
-    # Needs "grid" parameter because Python modules have isolated namespaces.
+    # Needs "grid" & "res" parameters because Python modules have isolated namespaces.
     # (p5.js sketches share a single global scope)
-    def run(self, boids: list['Boid'], grid: list[list[list[Boid]]]) -> None:
+    def run(
+      self, boids: list['Boid'], grid: list[list[list['Boid']]], resolution: int
+    ) -> None:
 #        self.flock(boids)
+#        self.update()
+#        self.borders_flow()
+#        self.show()
 
-        # Only these boids will be checked.
-        neighbors = grid[column][row]
-        column = floor(this.position.x / resolution)
-        row = floor(this.position.y / resolution)
-        column = constrain(column, 0, cols - 1)
-        row = constrain(row, 0, rows - 1)
+        cols = len(grid)
+        rows = len(grid[0]) if grid else 0
 
+        column = constrain(floor(self.position.x / resolution), 0, cols - 1)
+        row = constrain(floor(self.position.y / resolution), 0, rows - 1)
+
+        # Collect neighbors from the surrounding 3×3 block
+        neighbors: list[Boid] = []
+        for i in (-1, 0, 1):
+            for j in (-1, 0, 1):
+                c = column + i
+                r = row + j
+                if 0 <= c < cols and 0 <= r < rows:
+                    neighbors.extend(grid[c][r])
+
+        self.flock(neighbors)
         self.update()
         self.borders_flow()
         self.show()
