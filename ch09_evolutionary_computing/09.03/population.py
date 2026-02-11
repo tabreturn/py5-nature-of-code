@@ -22,7 +22,7 @@ class Population:
         ]
 
     # Needs "target" parameter because Python modules have isolated namespaces.
-    def live(self, obstacles, target: Py5Vector2D) -> None:
+    def live(self, obstacles: list['Obstacle'], target: Py5Vector2D) -> None:
         """The run() method takes care of the simulation, updates the rocket's
         position, and draws it to the canvas."""
 

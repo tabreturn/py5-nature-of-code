@@ -43,12 +43,12 @@ class Attractor:
             self.dragging = True
             self.drag_offset = self.position - Py5Vector2D(mx, my)
 
-    def handle_hover(self, mx, my) -> None:
+    def handle_hover(self, mx: int, my: int) -> None:
         self.rollover = dist(mx, my, *self.position) < self.mass
 
     def stop_dragging(self) -> None:
         self.dragging = False
 
-    def handle_drag(self, mx, my) -> None:
+    def handle_drag(self, mx: int, my: int) -> None:
         if self.dragging:
             self.position = Py5Vector2D(mx, my) + self.drag_offset

@@ -23,7 +23,7 @@ class Emitter:
 
         self.particles.append(Particle(self.origin.x, self.origin.y, self.img))
 
-    def apply_force(self, force: Py5Vector2D):
+    def apply_force(self, force: Py5Vector2D) -> None:
         # Use a for in loop to apply the force to all particles.
         for particle in self.particles:
             particle.apply_force(force)

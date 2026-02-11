@@ -16,10 +16,12 @@ RUN:
 python mypy_scan.py &> mypy_log.out
 """
 
+import ast
 import os
 import re
 import subprocess
 import sys
+from dataclasses import dataclass
 from pathlib import Path
 
 MYPY_ARGS = [
@@ -36,6 +38,11 @@ MYPY_ARGS = [
 
 CHAPTER_GLOB = 'ch*'
 LESSON_DIR_RE = re.compile(r'^\d+\.\d+$')
+
+SKIP_DIRS = {
+  '.git', '__pycache__', '.mypy_cache', '.pytest_cache',
+  'venv', '.venv', 'build', 'dist'
+}
 
 
 def repo_root():
@@ -134,6 +141,100 @@ def summarize(results, root, warnings):
             print(f'  - {relpath_str(lesson, root)} (checked {checked_files})')
 
 
+@dataclass(frozen=True)
+class UntypedMethod:
+    path: Path
+    lineno: int
+    class_name: str
+    method_name: str
+    missing: tuple
+
+
+def iter_project_py_files(root):
+    for p in root.rglob('*.py'):
+        if any(part in SKIP_DIRS for part in p.parts):
+            continue
+        yield p
+
+
+def _missing_hints_for_method(fn):
+    missing = []
+
+    params = []
+    params.extend(getattr(fn.args, 'posonlyargs', []))
+    params.extend(fn.args.args)
+    params.extend(fn.args.kwonlyargs)
+
+    for a in params:
+        if a.arg in ('self', 'cls'):
+            continue
+        if a.annotation is None:
+            missing.append(a.arg)
+
+    if fn.args.vararg is not None and fn.args.vararg.annotation is None:
+        missing.append(f'*{fn.args.vararg.arg}')
+    if fn.args.kwarg is not None and fn.args.kwarg.annotation is None:
+        missing.append(f'**{fn.args.kwarg.arg}')
+
+    if fn.returns is None:
+        missing.append('return')
+
+    return tuple(missing)
+
+
+def scan_untyped_methods(root):
+    findings = []
+
+    for path in iter_project_py_files(root):
+        try:
+            src = path.read_text(encoding='utf-8')
+        except UnicodeDecodeError:
+            continue
+
+        try:
+            tree = ast.parse(src, filename=str(path))
+        except SyntaxError:
+            continue
+
+        for node in tree.body:
+            if not isinstance(node, ast.ClassDef):
+                continue
+
+            for item in node.body:
+                if not isinstance(item, (ast.FunctionDef, ast.AsyncFunctionDef)):
+                    continue
+                if item.name == '__init__':
+                    continue
+
+                missing = _missing_hints_for_method(item)
+                if missing:
+                    findings.append(UntypedMethod(
+                        path,
+                        getattr(item, 'lineno', 1),
+                        node.name,
+                        item.name,
+                        missing,
+                    ))
+
+    return findings
+
+
+def report_untyped_methods(findings, root):
+    if not findings:
+        return 0
+
+    print('\n' + '=' * 80)
+    print('UNTYPED CLASS METHODS')
+    print('=' * 80)
+
+    for f in sorted(findings, key=lambda x: (str(x.path), x.lineno)):
+        rel = relpath_str(f.path, root)
+        print(f'{rel}:{f.lineno}  {f.class_name}.{f.method_name}  missing: {", ".join(f.missing)}')
+
+    print(f'\nTotal: {len(findings)}')
+    return 1
+
+
 def main():
     root = repo_root()
     warnings = 0
@@ -155,7 +256,10 @@ def main():
 
     summarize(results, root, warnings)
 
-    sys.exit(1 if any_fail else 0)
+    findings = scan_untyped_methods(root)
+    untyped_code = report_untyped_methods(findings, root)
+
+    sys.exit(1 if (any_fail or untyped_code != 0) else 0)
 
 
 if __name__ == '__main__':

@@ -67,4 +67,4 @@ def draw():
             if 0 <= col < cols and 0 <= row < rows:
                 square(col * RESOLUTION, row * RESOLUTION, RESOLUTION)
 
-    flock.run(grid)
+    flock.run(grid, RESOLUTION)

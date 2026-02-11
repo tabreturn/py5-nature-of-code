@@ -29,7 +29,7 @@ class DNA:
         child.genes[midpoint:] = partner.genes[midpoint:]
         return child
 
-    def mutate(self, mutationrate) -> None:
+    def mutate(self, mutationrate: float) -> None:
         """Mutation."""
 
         for i in range(len(self.genes)):

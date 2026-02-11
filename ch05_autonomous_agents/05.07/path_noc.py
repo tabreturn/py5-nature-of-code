@@ -33,7 +33,7 @@ class PathNoc:
         path_point = Py5Vector2D(x, y)
         self.points.append(path_point)
 
-    def show(self):
+    def show(self) -> None:
         """Display the path."""
 
 #         stroke_weight(self.radius * 2)
