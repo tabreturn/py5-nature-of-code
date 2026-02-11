@@ -25,7 +25,7 @@ class Rocket:
         self.max_speed = 4
         self.max_force = 1
 
-        self.fitness = 0  # A rocket has fitness.
+        self.fitness = 0.0  # A rocket has fitness.
         self.position = Py5Vector2D(x, y)
         self.velocity = Py5Vector2D()
         self.acceleration = Py5Vector2D()

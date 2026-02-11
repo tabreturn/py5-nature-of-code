@@ -30,7 +30,7 @@ class Bloop:
                 self.health += 100
                 food_positions.pop(i)
 
-    def reproduce(self) -> 'Bloop':
+    def reproduce(self): # -> 'Bloop' | None
         """This method will return a new child bloop."""
 
         # A 0.5% chance of executing the code inside the if statement.

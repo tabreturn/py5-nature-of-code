@@ -12,7 +12,7 @@ class Perceptron:
           for _ in range(n)
         ]
 
-    def feed_forward(self, inputs: tuple[float]) -> int:
+    def feed_forward(self, inputs: list[float]) -> int:
         """Return an output based on inputs."""
 
         weighted_sum = sum(

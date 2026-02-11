@@ -7,7 +7,9 @@ from rocket import Rocket
 class Population:
     # Needs "lifespan", "xy" parameter because Python modules have isolated namespaces.
     # (p5.js sketches share a single global scope)
-    def __init__(self, mutation: float, length: int, lifespan: int, xy: tuple):
+    def __init__(
+      self, mutation: float, length: int, lifespan: int, xy: tuple[float, float]
+    ):
         """Population has variables to keep track of the mutation rate, current
         population list, and number of generations."""
 
@@ -67,7 +69,7 @@ class Population:
         self.population = new_population
         self.generations += 1
 
-    def weighted_selection(self) -> Rocket:
+    def weighted_selection(self) -> DNA:
         # Start with the first element.
         index = 0
         # Pick a starting point.

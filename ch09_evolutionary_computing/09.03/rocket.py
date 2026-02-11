@@ -10,7 +10,7 @@ class Rocket:
         """A rocket has three vectors: position, velocity, and acceleration."""
 
         self.dna = dna  # A rocket has DNA.
-        self.fitness = 0  # A rocket has fitness.
+        self.fitness = 0.0  # A rocket has fitness.
         self.position = Py5Vector2D(x, y)
         self.velocity = Py5Vector2D()
         self.acceleration = Py5Vector2D()

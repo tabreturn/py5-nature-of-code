@@ -9,63 +9,55 @@ Scans each lesson folder (chXX/NN.NN) and reports problems like:
 - untyped lists (e.g. emitters = [])
 - unsafe None usage
 
+REQUIRES:
+Install mypy
+
 RUN:
 python mypy_scan.py &> mypy_log.out
 """
-
-from __future__ import annotations
 
 import os
 import re
 import subprocess
 import sys
-from dataclasses import dataclass
 from pathlib import Path
-from typing import Iterable
 
-MYPY_ARGS: list[str] = [
-    '--python-version', '3.10',
-    '--ignore-missing-imports',
-    '--disallow-any-generics',
-    '--disable-error-code', 'name-defined',
-    '--disable-error-code', 'used-before-def',
-    '--disable-error-code', 'has-type',
-    '--disable-error-code', 'union-attr',
-    '--explicit-package-bases',
-    '--namespace-packages',
+MYPY_ARGS = [
+  '--python-version', '3.10',
+  '--ignore-missing-imports',
+  '--disallow-any-generics',
+  '--disable-error-code', 'name-defined',
+  '--disable-error-code', 'used-before-def',
+  '--disable-error-code', 'has-type',
+  '--disable-error-code', 'union-attr',
+  '--explicit-package-bases',
+  '--namespace-packages',
 ]
 
 CHAPTER_GLOB = 'ch*'
 LESSON_DIR_RE = re.compile(r'^\d+\.\d+$')
 
 
-@dataclass(frozen=True)
-class LessonResult:
-    lesson: Path
-    checked_files: int
-    mypy_exit_code: int
-
-
-def repo_root() -> Path:
+def repo_root():
     return Path.cwd()
 
 
-def relpath_str(p: Path, root: Path) -> str:
+def relpath_str(p, root):
     try:
         return p.resolve().relative_to(root.resolve()).as_posix()
     except Exception:
         return p.as_posix()
 
 
-def is_lesson_dir(p: Path) -> bool:
+def is_lesson_dir(p):
     return p.is_dir() and LESSON_DIR_RE.match(p.name) is not None
 
 
-def chapter_has_lessons(chapter: Path) -> bool:
+def chapter_has_lessons(chapter):
     return chapter.is_dir() and any(is_lesson_dir(p) for p in chapter.iterdir())
 
 
-def iter_lessons(root: Path) -> Iterable[Path]:
+def iter_lessons(root):
     for chapter in sorted(root.glob(CHAPTER_GLOB)):
         if not chapter.is_dir():
             continue
@@ -74,72 +66,94 @@ def iter_lessons(root: Path) -> Iterable[Path]:
                 yield lesson
 
 
-def collect_py_files(lesson: Path) -> list[Path]:
+def collect_py_files(lesson):
     return sorted(lesson.rglob('*.py'))
 
 
-def run_mypy(files: list[Path], lesson: Path) -> int:
+def run_mypy(files, lesson):
     if not files:
         return 0
+
     cmd = [sys.executable, '-m', 'mypy', *MYPY_ARGS, *map(str, files)]
     env = dict(os.environ)
     env['MYPYPATH'] = str(lesson)
+
     p = subprocess.run(cmd, env=env, capture_output=True, text=True)
-    if p.returncode != 0:
-        if p.stdout:
-            print(p.stdout, end='')
-        if p.stderr:
-            print(p.stderr, end='')
+
+    if p.stdout:
+        print(p.stdout, end='')
+    if p.stderr:
+        print(p.stderr, end='')
+
     return p.returncode
 
 
-def main() -> None:
-    root = repo_root()
-
-    for chapter in sorted(root.glob(CHAPTER_GLOB)):
-        if chapter.is_dir() and not chapter_has_lessons(chapter):
-            print(f'Skipping {relpath_str(chapter, root)} -- no NN.NN lesson folders found')
-
-    lessons = list(iter_lessons(root))
-    if not lessons:
-        print('No lesson folders found (expected chXX_name/NN.NN).', file=sys.stderr)
-        sys.exit(2)
-
-    results: list[LessonResult] = []
+def scan_lessons(lessons, root):
+    results = []
     any_fail = False
+    warnings = 0
 
     for lesson in lessons:
-        print('=' * 72)
+        print('=' * 80)
         print(f'Checking {relpath_str(lesson, root)}')
-        print('=' * 72)
+        print('=' * 80)
 
         files = collect_py_files(lesson)
 
         if not files:
-            print('(no .py files in this lesson)')
-            results.append(LessonResult(lesson, 0, 0))
+            print('WARNING: no .py files in this lesson')
+            warnings += 1
+            results.append((lesson, 0, 0))
             continue
 
         code = run_mypy(files, lesson)
         any_fail |= code != 0
-        results.append(LessonResult(lesson, len(files), code))
+        results.append((lesson, len(files), code))
 
-    failed = [r for r in results if r.mypy_exit_code != 0]
-    passed = [r for r in results if r.mypy_exit_code == 0 and r.checked_files > 0]
-    skipped_only = [r for r in results if r.checked_files == 0]
+    return results, any_fail, warnings
 
-    print('\n' + '=' * 72)
-    print('Summary')
-    print('=' * 72)
+
+def summarize(results, root, warnings):
+    failed = [r for r in results if r[2] != 0]
+    passed = [r for r in results if r[2] == 0 and r[1] > 0]
+    skipped_only = [r for r in results if r[1] == 0]
+
+    print('\n' + '*' * 80)
+    print('SUMMARY')
+    print('*' * 80)
     print(f'Lessons scanned: {len(results)}')
     print(f'Passed: {len(passed)}')
     print(f'Failed: {len(failed)}')
     print(f'Skipped (no files): {len(skipped_only)}')
+    print(f'Warnings: {warnings}')
 
     if failed:
         print('\nFailed lessons:')
-        for r in failed:
-            print(f'  - {relpath_str(r.lesson, root)} (checked {r.checked_files})')
+        for lesson, checked_files, code in failed:
+            _ = code
+            print(f'  - {relpath_str(lesson, root)} (checked {checked_files})')
+
+
+def main():
+    root = repo_root()
+    warnings = 0
+
+    for chapter in sorted(root.glob(CHAPTER_GLOB)):
+        if chapter.is_dir() and not chapter_has_lessons(chapter):
+            print(f'WARNING: Skipping {relpath_str(chapter, root)} -- no NN.NN lesson folders found')
+            warnings += 1
+
+    lessons = list(iter_lessons(root))
+    if not lessons:
+        print('WARNING: No lesson folders found (expected chXX_name/NN.NN)')
+        sys.exit(2)
+
+    print()
+
+    results, any_fail, lesson_warnings = scan_lessons(lessons, root)
+    warnings += lesson_warnings
+
+    summarize(results, root, warnings)
 
     sys.exit(1 if any_fail else 0)
 

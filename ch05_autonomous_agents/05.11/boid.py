@@ -282,7 +282,7 @@ class Boid:
         self.apply_force(alignment)
         self.apply_force(cohesion)
 
-    def align(self, boids: list['Boid']) -> None:
+    def align(self, boids: list['Boid']) -> Py5Vector2D:
         # This is an arbitrary value that could vary from boid to boid.
         neighbor_distance = 50
 

@@ -9,7 +9,7 @@ class Flower:
 
     def __init__(self, dna: DNA, x: float, y: float):
         self.dna = dna            # Flower DNA.
-        self.fitness = 1          # How fit is the flower?
+        self.fitness = 1.0        # How fit is the flower?
         self.rollover_on = False  # Is user rolling over this flower?
         self.x, self.y = x, y     # Position on screen.
         self.w, self.h = 70, 140  # Size of square enclosing flower.

@@ -6,7 +6,7 @@ class DNA:
         """Constructor (makes a random DNA)."""
 
         self.genes = [self.random_character() for _ in range(length)]
-        self.fitness = 0
+        self.fitness = 0.0
 
     def get_phrase(self) -> str:
         """Convert the list to a string of the phenotype."""

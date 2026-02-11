@@ -89,7 +89,7 @@ def normalize_fitness() -> None:
         bird.fitness /= fitness_sum
 
 
-def reproduction() -> list[Bird]:
+def reproduction() -> None:
     global birds
     next_birds = []  # Start with a new empty list.
 
