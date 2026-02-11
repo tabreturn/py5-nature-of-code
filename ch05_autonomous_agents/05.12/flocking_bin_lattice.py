@@ -1,5 +1,12 @@
 # https://natureofcode.com/autonomous-agents/#example-512-bin-lattice-spatial-subdivision
 
+"""
+NOTE:
+Although this simulation runs much slower than the p5.js version, it still
+demonstrates a major improvement over 05.11 (flocking), with the FPS counter
+here showing roughly double the frame rate for the same flock size.
+"""
+
 from boid import Boid
 from flock import Flock
 
@@ -7,8 +14,9 @@ RESOLUTION = 40  # Each cell is 40×40 pixels.
 
 
 def setup():
-    global cols, rows, flock, grid
+    global cols, rows, flock, grid, monospace
     size(640, 240)
+    monospace = create_font('../../DejaVuSansMono.ttf', 32)
 
     # How many columns and rows are in the grid, based on the width and height?
     cols = floor(width / RESOLUTION)
@@ -18,8 +26,8 @@ def setup():
     grid = [[[] for _ in range(rows)] for _ in range(cols)]
 
     flock = Flock()
-    # The flock starts out with 800 (÷8) boids.
-    for _ in range(800 // 8):
+    # The flock starts out with 120 (÷3) boids.
+    for _ in range(120 // 3):
         boid = Boid(random(width), random(height), 3, 0.05)
         boid.r = 3.0
         boid.velocity = random(-1, 1), random(-1, 1)
@@ -70,3 +78,7 @@ def draw():
                 square(col * RESOLUTION, row * RESOLUTION, RESOLUTION)
 
     flock.run(grid, RESOLUTION)
+
+    # Display some info.
+    text_align(LEFT); text_font(monospace); text_size(11); fill(0)
+    text(f'FPS: {int(get_frame_rate())}', 10, 226)
