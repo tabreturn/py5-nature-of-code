@@ -277,6 +277,10 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch05_autonomous_agents/05.12](ch05_autonomous_agents/05.12) |
   p5.js: [QXONgLiJ0](https://editor.p5js.org/natureofcode/sketches/QXONgLiJ0)
 
+- **05.13 - quadtree** |
+  py5: [ch05_autonomous_agents/05.13](ch05_autonomous_agents/05.13) |
+  p5.js: [J5XVww9xQ](https://editor.p5js.org/natureofcode/sketches/J5XVww9xQ)
+
 - 🚧 IN PROGRESS ...
 
 ### Ch. 06 - Physics Libraries

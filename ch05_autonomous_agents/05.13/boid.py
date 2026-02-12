@@ -109,7 +109,7 @@ class Boid:
 
         target = None
         world_record = float('inf')  # Start with record that's easily beaten!
-        normal_noc = None  # "normal" is reverved for py5, hence "normal_noc".
+        normal_ = None
 
         # Step 2: Find the normal point along the path.
 #        normal_point = self.get_normal_point(future, path.start, path.end)
@@ -126,7 +126,7 @@ class Boid:
             # If it beats the record, this should be the target.
             if distance < world_record:
                 world_record = distance
-                normal_noc = normal_point
+                normal_ = normal_point
                 target = normal_point.copy
 
                 # Look at the direction of the line segment in order to
@@ -163,8 +163,8 @@ class Boid:
             # Draw normal location.
             fill(127)
             stroke(0)
-            line(future.x, future.y, normal_noc.x, normal_noc.y)
-            circle(normal_noc.x, normal_noc.y, 4)
+            line(future.x, future.y, normal_.x, normal_.y)
+            circle(normal_.x, normal_.y, 4)
             stroke(0)
             if world_record > path.radius: fill(255, 0, 0)
             no_stroke()
@@ -190,7 +190,7 @@ class Boid:
         # This variable specifies how close is too close.
         desired_separation = self.r * 8.3  # Based on the vehicle's size.
 
-        sum_all = Py5Vector2D()  # Start with an empty vector.
+        sum_ = Py5Vector2D()  # Start with an empty vector.
         count = 0  # To keep track of how many vehicles are too close.
 
         for other in vehicles:
@@ -205,15 +205,15 @@ class Boid:
                 diff.set_mag(1 / d)  # Magnitude inverse to distance.
 
                 # Add all the vectors together and increment the count.
-                sum_all += diff
+                sum_ += diff
                 count += 1
 
         # Make sure there is at least one close vehicle; don't bother to do
         # anything if nothing is too close (and this avoids dividing by zero).
         if count > 0:
-            sum_all /= count
-            sum_all.set_mag(self.max_speed)  # Scale average to max speed.
-            steer = sum_all - self.velocity  # Reynolds' steering formula.
+            sum_ /= count
+            sum_.set_mag(self.max_speed)  # Scale average to max speed.
+            steer = sum_ - self.velocity  # Reynolds' steering formula.
             steer.set_limit(self.max_force)
 #            self.apply_force(steer)  # Apply the force to the vehicle.
             return steer
@@ -286,20 +286,20 @@ class Boid:
         neighbor_distance = 50
 
         # Add all velocities and divide by total to calculate average velocity.
-        sum_all = Py5Vector2D()
+        sum_ = Py5Vector2D()
         count = 0
         for other in boids:
             d = self.position.dist(other.position)
             if self is not other and d < neighbor_distance:
-                sum_all += other.velocity
+                sum_ += other.velocity
                 # For average, keep track of how many boids are within distance.
                 count += 1
 
         if count > 0:
             # The vehicle desires to go in that direction at maximum speed.
-            sum_all.set_mag(self.max_speed)
+            sum_.set_mag(self.max_speed)
             # Reynolds' steering force formula.
-            steer = sum_all - self.velocity
+            steer = sum_ - self.velocity
             steer.set_limit(self.max_force)
             return steer
         else:  # If no close boids are found, the steering force is zero.
@@ -307,20 +307,20 @@ class Boid:
 
     def cohere(self, boids: list['Boid']) -> Py5Vector2D:
         neighbor_distance = 50
-        sum_all = Py5Vector2D()
+        sum_ = Py5Vector2D()
         count = 0
         for other in boids:
             d = self.position.dist(other.position)
             if self is not other and d < neighbor_distance:
                 # Add up all the others' positions.
-                sum_all += other.position
+                sum_ += other.position
                 count += 1
 
         if count > 0:
-            sum_all /= count
+            sum_ /= count
             # Use the seek() function from Example 5.10.
             # The target to seek is the average position of its neighbors.
-            return self.seek(sum_all)
+            return self.seek(sum_)
         else:
             return Py5Vector2D()
 
@@ -334,8 +334,10 @@ class Boid:
 #        self.borders_flow()
 #        self.show()
 
-        column = constrain(floor(self.position.x / resolution), 0, len(grid) - 1)
-        row = constrain(floor(self.position.y / resolution), 0, len(grid[0]) - 1)
+        cols = len(grid)
+        column = constrain(floor(self.position.x / resolution), 0, cols - 1)
+        rows = len(grid[0]) if grid else 0
+        row = constrain(floor(self.position.y / resolution), 0, rows - 1)
 
         # Collect neighbors from the surrounding 3×3 block
         neighbors: list[Boid] = []
@@ -350,3 +352,28 @@ class Boid:
         self.update()
         self.borders_flow()
         self.show()
+
+    def run_qtree(self, qtree: 'QuadTree') -> None:
+        # B version: Rectangle query only (no Circle, no query_circle)
+        from quadtree import Rectangle
+
+        neighbor_radius = 50
+
+        # Query bounding box square (center + half sizes)
+        range_ = Rectangle(self.position.x, self.position.y, neighbor_radius, neighbor_radius)
+        pts = qtree.query(range_) or []
+
+        # Convert Points -> Boids, then distance-filter to true circle radius
+        neighbors = []
+        for pt in pts:
+            other = pt.data
+            if other is self:
+                continue
+            if self.position.dist(other.position) < neighbor_radius:
+                neighbors.append(other)
+
+        self.flock(neighbors)
+        self.update()
+        self.borders_flow()
+        self.show()
+
