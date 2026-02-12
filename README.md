@@ -289,7 +289,7 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
 
 - 🚧 IN PROGRESS ...  
   *Substitute: Matter.js --> https://www.pymunk.org* | [**proof_of_concept**](ch06_physics_libraries/pymunk_poc.py)  
-  *Substitute: Verlet physics --> https://github.com/postspectacular/toxiclibs (Java)*  | [**proof_of_concept**](https://py5coding.org/how_tos/use_processing_libraries.html)
+  *Substitute: Verlet physics --> https://github.com/postspectacular/toxiclibs*  | [**proof_of_concept**](ch06_physics_libraries/toxiclibs_poc.py)
 
 ### Ch. 07 - Cellular Automata
 
