@@ -62,22 +62,22 @@ def display_progress() -> None:
     text_size(24)
     text(best, 10, 64)
 
-    avgfitness = sum(phrase.fitness for phrase in population) / len(population)
-    statstext = (
+    avg_fitness = sum(phrase.fitness for phrase in population) / len(population)
+    stats_text = (
       f'total generations:     {frame_count}\n'
-      f'average fitness:       {avgfitness:.2f}\n'
+      f'average fitness:       {avg_fitness:.2f}\n'
       f'total population:      {POPULATION_SIZE}\n'
       f'mutation rate:         {floor(MUTATION_RATE * 100)}%'
     )
     text_size(12)
-    text(statstext, 10, 96)
+    text(stats_text, 10, 96)
 
-    phrasestext = '| ' + '| '.join(
+    phrases_text = '| ' + '| '.join(
       ''.join(population[i].genes) + ('\n' if i % 3 == 2 else ' ')
       for i in range(min(len(population), 99))
     )
     text_size(8)
-    text(phrasestext, width / 2, 24)
+    text(phrases_text, width / 2, 24)
 
     text_size(10)
     text('(C) pause\n(Z) advance frame\n(X) run continuous\n(Q) quit', 10, 300)
