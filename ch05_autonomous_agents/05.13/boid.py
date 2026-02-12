@@ -354,25 +354,22 @@ class Boid:
         self.show()
 
     def run_qtree(self, qtree: 'QuadTree') -> None:
-        # B version: Rectangle query only (no Circle, no query_circle)
         from quadtree import Rectangle
 
-        neighbor_radius = 50
+        neighbor_radius = 50.0
+        r2 = neighbor_radius ** 2
 
-        # Query bounding box square (center + half sizes)
         range_ = Rectangle(
           self.position.x, self.position.y, neighbor_radius, neighbor_radius
         )
-        pts = qtree.query(range_) or []
 
-        # Convert Points -> Boids, then distance-filter to true circle radius
-        neighbors = []
-        for pt in pts:
-            other = pt.data
-            if other is self:
-                continue
-            if self.position.dist(other.position) < neighbor_radius:
-                neighbors.append(other)
+        neighbors = [
+          other
+          for pt in qtree.query(range_)
+          if (other := pt.data) is not self
+          and (other.position.x - self.position.x) ** 2
+            + (other.position.y - self.position.y) ** 2 < r2
+        ]
 
         self.flock(neighbors)
         self.update()

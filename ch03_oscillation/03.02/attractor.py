@@ -24,7 +24,7 @@ class Attractor:
         # The constrain() function limits distance value -- min (5), max (25).
 
         # Calculate the strength of the attraction force.
-        strength = (G * self.mass * mover.mass) / (distance**2)
+        strength = (G * self.mass * mover.mass) / (distance ** 2)
         force.set_mag(strength)
 
         return force  # Return the force so it can be applied!

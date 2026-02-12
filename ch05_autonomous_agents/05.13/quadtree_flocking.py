@@ -11,7 +11,7 @@ from boid import Boid
 from flock import Flock
 from quadtree_noc import QuadTree, Rectangle, Point
 
-QT_CAPACITY = 4  # # Bucket size: points per node before split (4-8 is common).
+QT_CAPACITY = 4  # Bucket size: points per node before split (4-8 is common).
 
 
 def setup():

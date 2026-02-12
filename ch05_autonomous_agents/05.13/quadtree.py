@@ -2,7 +2,7 @@
 
 from quadtree_noc import *
 
-QT_CAPACITY = 8  # # Bucket size: points per node before split (4-8 is common).
+QT_CAPACITY = 8  # Bucket size: points per node before split (4-8 is common).
 
 
 def setup():
@@ -21,11 +21,11 @@ def setup():
 def draw():
     background(255)
 
-    # draw quadtree + points
+    # Draw quadtree & points.
     qtree.show()
 
-    # faint “all points” layer
-    stroke(0, 40)
+    # Faint 'all points' layer.
+    stroke(0, 50)
     stroke_weight(2)
     for p in qtree.query(qtree.boundary) or []:
         point(p.x, p.y)

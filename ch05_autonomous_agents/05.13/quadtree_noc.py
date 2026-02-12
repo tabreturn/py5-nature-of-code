@@ -35,6 +35,7 @@ class Rectangle:
 
 
 class QuadTree:
+
     def __init__(self, boundary: Rectangle, n: int):
         self.boundary = boundary
         self.capacity = n
