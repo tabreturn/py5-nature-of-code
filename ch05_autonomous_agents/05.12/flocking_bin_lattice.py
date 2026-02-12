@@ -32,7 +32,7 @@ def setup():
         boid.r = 3.0
         boid.velocity = random(-1, 1), random(-1, 1)
         flock.add_boid(boid)
-    
+
 
 def draw():
     global grid

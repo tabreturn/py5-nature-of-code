@@ -45,7 +45,6 @@ class Boid:
         # Instead of applying the force, return the vector.
         return steer
 
-
     def arrive(self, target: Py5Vector2D) -> None:
         desired = target - self.position
         # Distance is magnitude of vector pointing from position to the target.
