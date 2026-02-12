@@ -34,7 +34,7 @@ def draw():
         # Convert degrees into array index.
         theta = int((i * SC_INV_PREC) % SC_PERIOD)  # Modulo ensures periodicity.
         stroke_weight(4)
-        # Draw the circle around mouse position.
+        # Draw the circle from/around center.
         point(
           width / 2 + radius * cos_lut[theta],
           height / 2 + radius * sin_lut[theta]
