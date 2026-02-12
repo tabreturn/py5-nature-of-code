@@ -281,15 +281,16 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch05_autonomous_agents/05.13](ch05_autonomous_agents/05.13) |
   p5.js: [J5XVww9xQ](https://editor.p5js.org/natureofcode/sketches/J5XVww9xQ)
 
-- 🚧 IN PROGRESS ...
+- **05.14 - cosine_lookup** |
+  py5: [ch05_autonomous_agents/05.14](ch05_autonomous_agents/05.14) |
+  p5.js: [uqRJyVq8g](https://editor.p5js.org/natureofcode/sketches/uqRJyVq8g)
 
 ### Ch. 06 - Physics Libraries
 
-*Substitute: Matter.js --> https://www.pymunk.org*  
-*Substitute: Verlet physics --> https://github.com/postspectacular/toxiclibs (Java)*  
-*(https://py5coding.org/how_tos/use_processing_libraries.html)*
-
 - 🚧 IN PROGRESS ...
+  *Substitute: Matter.js --> https://www.pymunk.org*  
+  *Substitute: Verlet physics --> https://github.com/postspectacular/toxiclibs (Java)*  
+  *(https://py5coding.org/how_tos/use_processing_libraries.html)*
 
 ### Ch. 07 - Cellular Automata
 
