@@ -288,8 +288,8 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
 ### Ch. 06 - Physics Libraries
 
 - 🚧 IN PROGRESS ...  
-  *Substitute: Matter.js --> https://www.pymunk.org* | [**proof_of_concept**](ch06_physics_libraries/pymunk_poc.py)  
-  *Substitute: Verlet physics --> https://github.com/postspectacular/toxiclibs*  | [**proof_of_concept**](ch06_physics_libraries/toxiclibs_poc.py)
+  [**pymunk_poc**](ch06_physics_libraries/pymunk_poc.py) (proof of concept) | *Substitute: Matter.js --> https://www.pymunk.org*  
+  [**toxiclibs_poc**](ch06_physics_libraries/toxiclibs_poc.py) (proof of concept) | *Substitute: Verlet physics --> https://github.com/postspectacular/toxiclibs*
 
 ### Ch. 07 - Cellular Automata
 
