@@ -360,7 +360,9 @@ class Boid:
         neighbor_radius = 50
 
         # Query bounding box square (center + half sizes)
-        range_ = Rectangle(self.position.x, self.position.y, neighbor_radius, neighbor_radius)
+        range_ = Rectangle(
+          self.position.x, self.position.y, neighbor_radius, neighbor_radius
+        )
         pts = qtree.query(range_) or []
 
         # Convert Points -> Boids, then distance-filter to true circle radius
@@ -376,4 +378,3 @@ class Boid:
         self.update()
         self.borders_flow()
         self.show()
-
