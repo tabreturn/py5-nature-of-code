@@ -5,7 +5,6 @@ SC_INV_PREC = 1 / SC_PRECISION      # Caculate reciprocal for conversions.
 SC_PERIOD = int(360 * SC_INV_PREC)  # Compute required table length.
 
 
-
 def init_sin_cos() -> None:
     """Init sin/cos tables with values. Should be called from setup()."""
 
@@ -33,7 +32,7 @@ def draw():
     # Draw a circle made of points (every 5 degrees).
     for i in range(0, 360, 5):
         # Convert degrees into array index.
-        theta = int((i * SC_INV_PREC) % SC_PERIOD) # Modulo ensures periodicity.
+        theta = int((i * SC_INV_PREC) % SC_PERIOD)  # Modulo ensures periodicity.
         stroke_weight(4)
         # Draw the circle around mouse position.
         point(
