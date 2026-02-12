@@ -191,7 +191,7 @@ class Boid:
         # This variable specifies how close is too close.
         desired_separation = self.r * 8.3  # Based on the vehicle's size.
 
-        sum_all = Py5Vector2D()  # Start with an empty vector.
+        sum_ = Py5Vector2D()  # Start with an empty vector.
         count = 0  # To keep track of how many vehicles are too close.
 
         for other in vehicles:
@@ -206,15 +206,15 @@ class Boid:
                 diff.set_mag(1 / d)  # Magnitude inverse to distance.
 
                 # Add all the vectors together and increment the count.
-                sum_all += diff
+                sum_ += diff
                 count += 1
 
         # Make sure there is at least one close vehicle; don't bother to do
         # anything if nothing is too close (and this avoids dividing by zero).
         if count > 0:
-            sum_all /= count
-            sum_all.set_mag(self.max_speed)  # Scale average to max speed.
-            steer = sum_all - self.velocity  # Reynolds' steering formula.
+            sum_ /= count
+            sum_.set_mag(self.max_speed)  # Scale average to max speed.
+            steer = sum_ - self.velocity  # Reynolds' steering formula.
             steer.set_limit(self.max_force)
 #            self.apply_force(steer)  # Apply the force to the vehicle.
             return steer
@@ -287,20 +287,20 @@ class Boid:
         neighbor_distance = 50
 
         # Add all velocities and divide by total to calculate average velocity.
-        sum_all = Py5Vector2D()
+        sum_ = Py5Vector2D()
         count = 0
         for other in boids:
             d = self.position.dist(other.position)
             if self is not other and d < neighbor_distance:
-                sum_all += other.velocity
+                sum_ += other.velocity
                 # For average, keep track of how many boids are within distance.
                 count += 1
 
         if count > 0:
             # The vehicle desires to go in that direction at maximum speed.
-            sum_all.set_mag(self.max_speed)
+            sum_.set_mag(self.max_speed)
             # Reynolds' steering force formula.
-            steer = sum_all - self.velocity
+            steer = sum_ - self.velocity
             steer.set_limit(self.max_force)
             return steer
         else:  # If no close boids are found, the steering force is zero.
@@ -308,20 +308,20 @@ class Boid:
 
     def cohere(self, boids: list['Boid']) -> Py5Vector2D:
         neighbor_distance = 50
-        sum_all = Py5Vector2D()
+        sum_ = Py5Vector2D()
         count = 0
         for other in boids:
             d = self.position.dist(other.position)
             if self is not other and d < neighbor_distance:
                 # Add up all the others' positions.
-                sum_all += other.position
+                sum_ += other.position
                 count += 1
 
         if count > 0:
-            sum_all /= count
+            sum_ /= count
             # Use the seek() function from Example 5.10.
             # The target to seek is the average position of its neighbors.
-            return self.seek(sum_all)
+            return self.seek(sum_)
         else:
             return Py5Vector2D()
 

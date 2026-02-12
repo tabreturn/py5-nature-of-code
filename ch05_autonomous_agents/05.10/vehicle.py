@@ -190,7 +190,7 @@ class Vehicle:
         # This variable specifies how close is too close.
         desired_separation = self.r * 2  # Based on the vehicle's size.
 
-        sum_all = Py5Vector2D()  # Start with an empty vector.
+        sum_ = Py5Vector2D()  # Start with an empty vector.
         count = 0  # To keep track of how many vehicles are too close.
 
         for other in vehicles:
@@ -205,15 +205,15 @@ class Vehicle:
                 diff.set_mag(1 / d)  # Magnitude inverse to distance.
 
                 # Add all the vectors together and increment the count.
-                sum_all += diff
+                sum_ += diff
                 count += 1
 
         # Make sure there is at least one close vehicle; don't bother to do
         # anything if nothing is too close (and this avoids dividing by zero).
         if count > 0:
-            sum_all /= count
-            sum_all.set_mag(self.max_speed)  # Scale average to max speed.
-            steer = sum_all - self.velocity  # Reynolds' steering formula.
+            sum_ /= count
+            sum_.set_mag(self.max_speed)  # Scale average to max speed.
+            steer = sum_ - self.velocity  # Reynolds' steering formula.
             steer.set_limit(self.max_force)
 #            self.apply_force(steer)  # Apply the force to the vehicle.
             return steer
