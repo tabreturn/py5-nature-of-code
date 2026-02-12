@@ -38,15 +38,15 @@ def draw():
     global grid
     background(255)
 
-    # Each frame, the grid is reset to empty arrays.
+    # Each frame, the grid is reset to empty lists.
     [cell.clear() for col in grid for cell in col]
 
-    # Place each boid into appropriate cell in grid.
+    # Place each boid into the appropriate cell in the grid.
     for boid in flock.boids:
         # Find the right column and row.
         column = floor(boid.position.x / RESOLUTION)
         row = floor(boid.position.y / RESOLUTION)
-        # Constrain to the limits of the array.
+        # Constrain to the limits of the list.
         column = constrain(column, 0, cols - 1)
         row = constrain(row, 0, rows - 1)
         # Add the boid.
