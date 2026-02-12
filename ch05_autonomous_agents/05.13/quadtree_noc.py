@@ -38,13 +38,13 @@ class QuadTree:
     def __init__(self, boundary: Rectangle, n: int):
         self.boundary = boundary
         self.capacity = n
-        self.points = []
+        self.points: list[Point] = []
         self.divided = False
         # JS permits attributes dynamically; Python prefers explicit init.
-        self.northeast = None
-        self.northwest = None
-        self.southeast = None
-        self.southwest = None
+        self.northeast: QuadTree | None = None
+        self.northwest: QuadTree | None = None
+        self.southeast: QuadTree | None = None
+        self.southwest: QuadTree | None = None
 
     def subdivide(self) -> None:
         x = self.boundary.x
@@ -81,7 +81,11 @@ class QuadTree:
             elif self.southwest.insert(point):
                 return True
 
-    def query(self, range_: Rectangle, found=None):
+        return False
+
+    def query(
+      self, range_: Rectangle, found: list[Point] | None = None
+    ) -> list[Point]:
         if found is None:
             found = []
 
