@@ -334,8 +334,10 @@ class Boid:
 #        self.borders_flow()
 #        self.show()
 
-        column = constrain(floor(self.position.x / resolution), 0, len(grid) - 1)
-        row = constrain(floor(self.position.y / resolution), 0, len(grid[0]) - 1)
+        cols = len(grid)
+        column = constrain(floor(self.position.x / resolution), 0, cols - 1)
+        rows = len(grid[0]) if grid else 0
+        row = constrain(floor(self.position.y / resolution), 0, rows - 1)
 
         # Collect neighbors from the surrounding 3×3 block
         neighbors: list[Boid] = []
