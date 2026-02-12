@@ -106,7 +106,7 @@ class Vehicle:
 
         target = None
         world_record = float('inf')  # Start with record that's easily beaten!
-        normal_noc = None  # "normal" is reverved for py5, hence "normal_noc".
+        normal_ = None
 
         # Step 2: Find the normal point along the path.
 #        normal_point = self.get_normal_point(future, path.start, path.end)
@@ -123,7 +123,7 @@ class Vehicle:
             # If it beats the record, this should be the target.
             if distance < world_record:
                 world_record = distance
-                normal_noc = normal_point
+                normal_ = normal_point
                 target = normal_point.copy
 
                 # Look at the direction of the line segment in order to
@@ -160,8 +160,8 @@ class Vehicle:
             # Draw normal location.
             fill(127)
             stroke(0)
-            line(future.x, future.y, normal_noc.x, normal_noc.y)
-            circle(normal_noc.x, normal_noc.y, 4)
+            line(future.x, future.y, normal_.x, normal_.y)
+            circle(normal_.x, normal_.y, 4)
             stroke(0)
             if world_record > path.radius: fill(255, 0, 0)
             no_stroke()
