@@ -8,17 +8,18 @@ from brain_ne import Brain
 
 
 class Rocket:
+
 #    def __init__(self, x: float, y: float, dna: DNA):
     def __init__(self, x: float, y: float, brain: Brain | None = None):
-        """Agent has three vectors: position, velocity, and acceleration."""
+        """A rocket has three vectors: position, velocity, and acceleration."""
 
 #        self.dna = dna  # A rocket has DNA.
         self.brain = (
           brain
           if brain is not None
           else Brain(
-            inputs = 5,
-            outputs = 2,  # angle and magnitude
+            inputs = 5,   # 'Creature' brain is fed 5 sensor values.
+            outputs = 2,  # Angle and magnitude.
           )
         )
         self.max_speed = 4
@@ -136,12 +137,12 @@ class Rocket:
         end_shape(CLOSE)
         pop()
 
-#    def check_obstacles(self, obstacles: list[Obstacle]) -> None:
-#        """Checks whether a rocket has hit an obstacle."""
-#
-#        self.hit_obstacle = any(
-#          obstacle.contains(self.position) for obstacle in obstacles
-#        )
+    def check_obstacles(self, obstacles: list['Obstacle']) -> None:
+        """Checks whether a rocket has hit an obstacle."""
+
+        self.hit_obstacle = any(
+          obstacle.contains(self.position) for obstacle in obstacles
+        )
 
     def seek(self, target: Py5Vector) -> None:
         # Calculate a vector from the position to the target.
