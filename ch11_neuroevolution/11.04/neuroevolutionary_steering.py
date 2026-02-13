@@ -5,7 +5,7 @@ NOTE:
 This version often learns than the original p5.js/ml5 example.
 That's mostly because the rocket 'brain' outputs are interpreted in a more
 direct and stable way. No need to worry about the details -- it still feels
-like working with ml5, just with rockets that tend to act a bit smarter.
+like working with ml5, just with 'creatures' that tend to act a bit smarter.
 """
 
 #from dna import DNA
@@ -20,7 +20,7 @@ LIFESPAN = 250          # How many frames does a generation live for?
 life_counter = 0        # Keep track of the life span.
 record_time = LIFESPAN  # Fastest time to target.
 
-time_slider_value = 10
+time_slider_value = 10  # A variable to hold the slider value.
 life_counter = 0
 generations = 0
 
@@ -30,71 +30,54 @@ def setup():
     size(640, 240)
     monospace = create_font('../../DejaVuSansMono.ttf', 32)
 
-    # Original list-of-creatures approach (not used once Population is wired in)
-    # creatures = [Creature(random(width), random(height)) for _ in range(50)]
-
-    # Use Population to manage creatures + GA (NOTE: must be global)
-    population = Population(
-        MUTATION_RATE,
-        POPULATION_SIZE,
-        LIFESPAN,
-        (width / 2, height / 2)
+    # Use Population to manage creatures.
+    creatures = Population(
+      MUTATION_RATE,
+      POPULATION_SIZE,
+      LIFESPAN,
+      (width / 2, height / 2)
     )
-    for r in population.population:
-        r.position.x, r.position.y = Py5Vector2D(random(width), random(height))
+    for r in creatures.population:
+        r.position = Py5Vector2D(random(width), random(height))
 
     glow = Glow()
 
 
 def draw():
     global life_counter
+    
+    # The drawing code happens just once!
     background(255)
+    glow.show()
+    for creature in creatures.population:
+        creature.show()
 
     # Display a slider with a min and max range, and a starting value.
     display_slider(1, 20, 1)
 
-    glow.show()
-
     # The simulation code runs multiple times according to the slider.
     for i in range(time_slider_value):
-
-        # Old manual loop (commented out)
-        # for creature in creatures:
-        #     creature.seek(glow)
-        #     creature.update(glow)
-
-        # New: run the population
-        for creature in population.population:
+        for creature in creatures.population:
             creature.seek(glow)
             creature.update(glow)
-
         glow.update()
         life_counter += 1
 
-    # Old render loop (commented out)
-    # for creature in creatures:
-    #     creature.show()
-
-    # Render population
-    for creature in population.population:
-        creature.show()
-
-    # GA step at end of lifespan (this was missing)
     if life_counter > LIFESPAN:
-        # Fitness is already accumulated in creature.update(glow),
-        # so we just normalize + breed next generation.
-        population.selection()
-        population.reproduction()
-        for r in population.population:
-            r.position.x, r.position.y = random(width), random(height)
-        life_counter = 0
+        # Use existing Population methods (instead of deigning new functions).
+        creatures.selection()     # handles: normalizeFitness()
+        creatures.reproduction()  # handles: reproduction() + generations++
+        # Randomize positions here (so creatures don't spawn at center).
+        for r in creatures.population:
+            r.position = Py5Vector2D(random(width), random(height))
+        life_counter = 0  # Restart 'timer'; prevents continuous reproduction.
 
     # Display some info.
     fill(0); text_font(monospace); text_size(11)
     text(
       # Old generations variable (commented out)
       # f'Generation #: {generations}\n'
-      f'Generation #: {population.generations}\n'
+      f'Generation #: {creatures.generations}\n'
       f'Cycles left: {LIFESPAN - life_counter}\n',
       10, 20,
     )

@@ -352,7 +352,7 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch11_neuroevolution/11.03](ch11_neuroevolution/11.03) |
   p5.js: [KkV4lTS4H](https://editor.p5js.org/natureofcode/sketches/KkV4lTS4H)
 
-- 11.04 - 🚧 IN PROGRESS ... |
+- **11.04 - neuroevolutionary_steering** |
   py5: [ch11_neuroevolution/11.04](ch11_neuroevolution/11.04) |
   p5.js: [fZDfxxVrf](https://editor.p5js.org/natureofcode/sketches/fZDfxxVrf)
 

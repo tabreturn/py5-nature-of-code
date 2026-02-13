@@ -81,7 +81,7 @@ class Rocket:
             # Get the outputs from the neural network.
             outputs = self.brain.predict_continuous_01(inputs)
             # Use one output for an angle.
-            angle = outputs[0] * TWO_PI
+            angle = outputs[0] * TAU
             # Use another output for the magnitude.
             magnitude = outputs[1] * self.max_force
             # Create and apply the force.
@@ -163,11 +163,9 @@ class Rocket:
 
         # Predict the force to apply.
         outputs = self.brain.predict_continuous_01(inputs)
-        # Use one output for an angle.
-        angle = outputs[0] * TWO_PI
-        # Use another output for the magnitude.
-        magnitude = outputs[1] * self.max_force
+        angle = outputs[0] * TAU
         force = Py5Vector.from_heading(angle)
+        magnitude = outputs[1]
         force.set_mag(magnitude)
 
         self.apply_force(force)
