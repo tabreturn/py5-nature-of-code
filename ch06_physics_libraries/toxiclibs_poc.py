@@ -17,7 +17,6 @@ from toxi.physics2d.behaviors import GravityBehavior2D
 
 def setup():
     global particle, physics
-
     size(640, 240)
 
     physics = VerletPhysics2D()  # Create a Toxiclibs world.
