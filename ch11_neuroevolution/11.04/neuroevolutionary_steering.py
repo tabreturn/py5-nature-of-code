@@ -1,7 +1,7 @@
 # https://natureofcode.com/neuroevolution/#responding-to-change
 
 """
-NOTE: 
+NOTE:
 This version often learns than the original p5.js/ml5 example.
 That's mostly because the rocket 'brain' outputs are interpreted in a more
 direct and stable way. No need to worry about the details -- it still feels
@@ -32,10 +32,7 @@ def setup():
 
     # Use Population to manage creatures.
     creatures = Population(
-      MUTATION_RATE,
-      POPULATION_SIZE,
-      LIFESPAN,
-      (width / 2, height / 2)
+      MUTATION_RATE, POPULATION_SIZE, LIFESPAN, (width / 2, height / 2)
     )
     for r in creatures.population:
         r.position = Py5Vector2D(random(width), random(height))
@@ -45,7 +42,7 @@ def setup():
 
 def draw():
     global life_counter
-    
+
     # The drawing code happens just once!
     background(255)
     glow.show()
@@ -75,8 +72,6 @@ def draw():
     # Display some info.
     fill(0); text_font(monospace); text_size(11)
     text(
-      # Old generations variable (commented out)
-      # f'Generation #: {generations}\n'
       f'Generation #: {creatures.generations}\n'
       f'Cycles left: {LIFESPAN - life_counter}\n',
       10, 20,
@@ -99,3 +94,4 @@ def display_slider(lo: int, hi: int, start: int) -> None:
         time_slider_value = int(
           lo + (constrain(mouse_x, x, x + w) - x) / w * (hi - lo)
         )
+
