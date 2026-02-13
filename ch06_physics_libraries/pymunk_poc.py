@@ -23,8 +23,8 @@ def setup():
 
     # Configure the renderer.
     render_params = {
-      'fill': (0, 0),     # transparent fills (black shows through)
-      'stroke': 255,      # white outlines
+      'fill': (0, 0),      # transparent fills (black shows through)
+      'stroke': 255,       # white outlines
       'stroke_weight': 1,
     }
     
@@ -51,7 +51,7 @@ def setup():
     box_shape.friction = options['friction']
     box_shape.elasticity = options['restitution']
     # Set an arbitrary initial linear and angular velocity.
-    box_body.velocity = (5.0 * SCALE_VELOCITY, 0.0 * SCALE_VELOCITY)  # Set the initial velocity of the box.
+    box_body.velocity = (5.0 * SCALE_VELOCITY, 0.0 * SCALE_VELOCITY)
     box_body.angular_velocity = 0.1 * SCALE_ANG_VELOCITY
     # Add the box object to the engine's world.
     engine.add(box_body, box_shape)
