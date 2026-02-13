@@ -4,21 +4,20 @@
 import sys, os; sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 from brain_ne import Brain
 
-from obstacle import Obstacle
+#from obstacle import Obstacle
 
 
 class Rocket:
-
 #    def __init__(self, x: float, y: float, dna: DNA):
     def __init__(self, x: float, y: float, brain: Brain | None = None):
-        """A rocket has three vectors: position, velocity, and acceleration."""
+        """Agent has three vectors: position, velocity, and acceleration."""
 
 #        self.dna = dna  # A rocket has DNA.
         self.brain = (
           brain
           if brain is not None
           else Brain(
-            inputs = 2,
+            inputs = 5,
             outputs = 2,  # angle and magnitude
           )
         )
@@ -53,7 +52,7 @@ class Rocket:
         if self.hit_target:
             self.fitness *= 2
 
-    def check_target(self, target: Obstacle) -> None:
+    def check_target(self, target: 'Obstacle') -> None:
         """How close did the rocket get?"""
 
         distance = self.position.dist(target.position)
@@ -68,7 +67,7 @@ class Rocket:
         if not self.hit_target:
             self.finish_counter += 1
 
-    def run(self, obstacles: list[Obstacle]) -> None:
+    def run(self, obstacles: list['Obstacle']) -> None:
         """# Apply a force from the genes list."""
 
         # Stop the rocket if it has hit an obstacle.
@@ -99,7 +98,8 @@ class Rocket:
 
         self.acceleration += force
 
-    def update(self) -> None:
+#    def update(self) -> None:
+    def update(self, target: Py5Vector) -> None:
         """A simple physics engine (Euler integration)."""
 
         # Velocity changes according to acceleration.
@@ -108,6 +108,11 @@ class Rocket:
         # Position changes according to velocity.
         self.position += self.velocity
         self.acceleration *= 0
+
+        # Increase the fitness whenever the creature reaches the glow.
+        d = self.position.dist(target.position)
+        if d < self.r + target.r:
+            self.fitness += 1
 
     def show(self) -> None:
         angle = self.velocity.heading + PI / 2
@@ -131,10 +136,37 @@ class Rocket:
         end_shape(CLOSE)
         pop()
 
-    def check_obstacles(self, obstacles: list[Obstacle]) -> None:
-        """Checks whether a rocket has hit an obstacle."""
+#    def check_obstacles(self, obstacles: list[Obstacle]) -> None:
+#        """Checks whether a rocket has hit an obstacle."""
+#
+#        self.hit_obstacle = any(
+#          obstacle.contains(self.position) for obstacle in obstacles
+#        )
 
-        self.hit_obstacle = any(
-          obstacle.contains(self.position) for obstacle in obstacles
-        )
+    def seek(self, target: Py5Vector) -> None:
+        # Calculate a vector from the position to the target.
+        v = target.position - self.position
+        # Save distance in variable and normalize according to width (one input).
+        distance = v.mag / width
+        # Normalize vector pointing from position to target (two inputs).
+        v.normalize()
 
+        # Compile the features into an input list.
+        inputs = [
+          v.x,
+          v.y,
+          distance,
+          self.velocity.x / self.max_speed,
+          self.velocity.y / self.max_speed,
+        ]
+
+        # Predict the force to apply.
+        outputs = self.brain.predict_continuous_01(inputs)
+        # Use one output for an angle.
+        angle = outputs[0] * TWO_PI
+        # Use another output for the magnitude.
+        magnitude = outputs[1] * self.max_force
+        force = Py5Vector.from_heading(angle)
+        force.set_mag(magnitude)
+
+        self.apply_force(force)
