@@ -48,7 +48,7 @@ class Flower:
         # Draw the petals.
         fill(petal_color)
         for i in range(petal_count):
-            angle = remap(i, 0, petal_count, 0, TWO_PI)
+            angle = remap(i, 0, petal_count, 0, TAU)
             x = petal_size * cos(angle)
             y = petal_size * sin(angle)
             circle(x, y, petal_size)

@@ -11,7 +11,7 @@ class Confetti(Particle):
     # Other methods like update() are inherited from the parent.
 
     def show(self) -> None:  # Override the show() method.
-        angle = remap(self.position.x, 0, width, 0, TWO_PI * 2)
+        angle = remap(self.position.x, 0, width, 0, TAU * 2)
 
         rect_mode(CENTER)
         fill(127, self.lifespan)

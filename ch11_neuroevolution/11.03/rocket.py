@@ -19,7 +19,7 @@ class Rocket:
           if brain is not None
           else Brain(
             inputs = 2,
-            outputs = 2,  # angle and magnitude
+            outputs = 2,  # Angle and magnitude.
           )
         )
         self.max_speed = 4
@@ -81,7 +81,7 @@ class Rocket:
             # Get the outputs from the neural network.
             outputs = self.brain.predict_continuous_01(inputs)
             # Use one output for an angle.
-            angle = outputs[0] * TWO_PI
+            angle = outputs[0] * TAU
             # Use another output for the magnitude.
             magnitude = outputs[1] * self.max_force
             # Create and apply the force.

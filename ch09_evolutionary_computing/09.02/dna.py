@@ -30,7 +30,7 @@ class DNA:
 
         for i, gene in enumerate(self.genes):
             if random(1) < mutation_rate:
-                angle = random(TWO_PI)
+                angle = random(TAU)
                 self.genes[i] = Py5Vector2D.from_heading(angle).set_mag(
                   random(self.max_force)
                 )

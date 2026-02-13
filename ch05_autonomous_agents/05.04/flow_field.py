@@ -31,7 +31,7 @@ class FlowField:
 
             for j in range(self.rows):
                 # Use Perlin noise to create the vectors.
-                angle = remap(noise(x_off, y_off), 0, 1, 0, TWO_PI)  # 2D noise.
+                angle = remap(noise(x_off, y_off), 0, 1, 0, TAU)  # 2D noise.
                 self.field[i][j] = Py5Vector2D.from_heading(angle)
                 y_off += 0.1
 

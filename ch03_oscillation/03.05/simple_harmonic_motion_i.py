@@ -14,7 +14,7 @@ def draw():
     background(255)
 
     # Calculate the horizontal position according to simple harmonic motion.
-    x = AMPLITUDE * sin(TWO_PI * frame_count / PERIOD)
+    x = AMPLITUDE * sin(TAU * frame_count / PERIOD)
 
     stroke(0)
     stroke_weight(2)
