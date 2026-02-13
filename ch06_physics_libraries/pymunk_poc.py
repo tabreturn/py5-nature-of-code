@@ -70,7 +70,6 @@ def draw():
 
     # Run the engine!
     engine.step(DT)
-
     # Run the renderer!
     render_run(ground_shape, box_shape)
 
