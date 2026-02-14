@@ -235,8 +235,22 @@ def report_untyped_methods(findings, root):
     return 1
 
 
+def ensure_mypy_installed() -> None:
+    try:
+        __import__('mypy')  # checks the module is importable in this venv/interpreter
+    except ModuleNotFoundError:
+        print(
+          'ERROR: mypy is not installed for this Python interpreter.\n'
+          'Install it with:\n'
+          'python -m pip install mypy\n',
+          file=sys.stderr,
+        )
+        sys.exit(2)
+
+
 def main():
     root = repo_root()
+    ensure_mypy_installed()
     warnings = 0
 
     for chapter in sorted(root.glob(CHAPTER_GLOB)):
