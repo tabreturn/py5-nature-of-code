@@ -288,7 +288,7 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
 - 🚧 IN PROGRESS ...  
   *Substitute: Matter.js --> https://www.pymunk.org*  
   *Substitute: Toxiclibs.js --> https://github.com/postspectacular/toxiclibs* (Java) 
-  **Proofs of concept:** 
+  **Proofs of concept:**  
   [pymunk_poc](ch06_physics_libraries/pymunk_poc.py) | 
   [toxiclibs_poc](ch06_physics_libraries/toxiclibs_poc.py)
 
