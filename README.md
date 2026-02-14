@@ -292,7 +292,7 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
 ### Ch. 07 - Cellular Automata
 
 - **07.01 - wolfram_elementary** |
-  py5: [ch06_cellular_automata/07.01](ch06_cellular_automata/07.01) |
+  py5: [ch07_cellular_automata/07.01](ch07_cellular_automata/07.01) |
   p5.js: [SaLy-OnPZ](https://editor.p5js.org/natureofcode/sketches/SaLy-OnPZ)
 
 - 🚧 IN PROGRESS ...  
