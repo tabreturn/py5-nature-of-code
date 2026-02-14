@@ -4,11 +4,6 @@
 
 **Built with [py5](https://py5coding.org) using [Thonny-py5mode](https://github.com/py5coding/thonny-py5mode)**
 
-**Parts:**
-⚙️ #1. [Inanimate Objects](#part-1-inanimate-objects) |
-🧬 #2. [It's Alive!](#part-2-its-alive) |
-🧠 #3. [Intelligence](#part-3-intelligence)
-
 I've taken a few liberties in my interpretation. First, the examples in the book and its accompanying [p5.js sketches](https://natureofcode.com/examples) don't always align exactly. Second, in places, minor adjustments were necessary to support an idiomatic, py5-compatible Python implementation. Some chapters rely on p5.js-exclusive libraries, so I've had to employ substitutes/alternatives. Throughout, however, my goal has been to balance faithfulness to the original material with Python best practices and clarity for readers working through this [fantastic book](https://natureofcode.com).
 
 To run the sketches, install [Thonny-py5mode](https://github.com/py5coding/thonny-py5mode) and activate **py5 → Imported mode for py5** in the editor.
