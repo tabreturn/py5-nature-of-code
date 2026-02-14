@@ -295,8 +295,7 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
 <details>
   <summary>Ch. 06 - Physics Libraries</summary>
 
-- **Proofs of concept:**  
-  [pymunk_poc](ch06_physics_libraries/pymunk_poc.py) | 
+- **Proofs of concept:** | [pymunk_poc](ch06_physics_libraries/pymunk_poc.py) | 
   [toxiclibs_poc](ch06_physics_libraries/toxiclibs_poc.py)
 
 - 🚧 IN PROGRESS ...  
