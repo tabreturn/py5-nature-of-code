@@ -80,11 +80,13 @@ def draw():
 
 # The function(s) below are for mouse/key interaction
 
-def display_slider(lo: int, hi: int, start: int) -> None:
-    global time_slider_value
+_slider_inited = False
 
-    if not hasattr(display_slider, 'init'):
-        time_slider_value = start; display_slider.init = True
+def display_slider(lo: int, hi: int, start: int) -> None:
+    global time_slider_value, _slider_inited
+
+    if not _slider_inited:
+        time_slider_value = start; _slider_inited = True
 
     x, y, w, r = 10, 226, 160, 7
     k = x + (time_slider_value - lo) / (hi - lo) * w

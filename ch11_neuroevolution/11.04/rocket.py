@@ -88,7 +88,7 @@ class Rocket:
             force = Py5Vector2D.from_heading(angle).set_mag(magnitude)
             self.apply_force(force)
 
-            self.update()
+#            self.update()
             # Check whether the rocket has hit an obstacle.
             self.check_obstacles(obstacles)
 
