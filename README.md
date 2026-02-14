@@ -9,7 +9,7 @@
 🧬 #2. [It's Alive!](#part-2-its-alive) |
 🧠 #3. [Intelligence](#part-3-intelligence)
 
-I've taken a few liberties in my interpretation. First, the examples in the book and its accompanying [p5.js sketches](https://natureofcode.com/examples) do not always match exactly. Second, in a few places, minor adjustments were necessary to support an idiomatic, py5-compatible Python implementation. Throughout, however, my aim has been to balance faithfulness to the original material with Python best practices and clarity for readers working through this [fantastic book](https://natureofcode.com).
+I've taken a few liberties in my interpretation. First, the examples in the book and its accompanying [p5.js sketches](https://natureofcode.com/examples) don't always align exactly. Second, in a few places, minor adjustments were necessary to support an idiomatic, py5-compatible Python implementation. Some chapters rely on p5.js-exclusive libraries, so I've had to employ substitutes/alternatives. Throughout, however, my goal has been to balance faithfulness to the original material with Python best practices and clarity for readers working through this [fantastic book](https://natureofcode.com).
 
 To run the sketches, install [Thonny-py5mode](https://github.com/py5coding/thonny-py5mode) and activate **py5 → Imported mode for py5** in the editor.
 
@@ -19,7 +19,7 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
 
 ---
 
-**NOTE:** The `# PY5 IMPORTED MODE CODE` marker tells py5 to inject its API into the module's namespace, allowing external files to call py5 functions without explicitly importing py5. You'll see this marker in several modules, so there's no need to add `from py5 import *` or `import py5`.
+**NOTE:** The `# PY5 IMPORTED MODE CODE` marker tells py5 to inject its API into the module's namespace, allowing external files to call py5 functions without explicitly importing py5. You'll see this marker in several modules, so that there's no need to add `from py5 import *` or `import py5`.
 
 ---
 
