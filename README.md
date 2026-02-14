@@ -26,9 +26,8 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
 <a id="part-1-inanimate-objects"></a>
 ## ⚙️ Part 1: Inanimate Objects
 
-### Ch. 00 - Randomness
-
-⬆️ [top](#readme)
+<details>
+  <summary>Ch. 00 - Randomness</summary>
 
 - **00.01 - traditional_random_walk** |
   py5: [ch00_randomness/00.01](ch00_randomness/00.01) |
@@ -54,7 +53,10 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch00_randomness/00.06](ch00_randomness/00.06) |
   p5.js: [qyNwGUy59](https://editor.p5js.org/natureofcode/sketches/qyNwGUy59)
 
-### Ch. 01 - Vectors
+</details>
+
+<details>
+  <summary>Ch. 01 - Vectors</summary>
 
 - **01.01 - bouncing_ball_no_vectors** |
   py5: [ch01_vectors/01.01](ch01_vectors/01.01) |
@@ -96,7 +98,10 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch01_vectors/01.10](ch01_vectors/01.10) |
   p5.js: [gYJHm1EFL](https://editor.p5js.org/natureofcode/sketches/gYJHm1EFL)
 
-### Ch. 02 - Forces
+</details>
+
+<details>
+  <summary>Ch. 02 - Forces</summary>
 
 - **02.01 - forces** |
   py5: [ch02_forces/02.01](ch02_forces/02.01) |
@@ -134,7 +139,10 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch02_forces/02.09](ch02_forces/02.09) |
   p5.js: [uT9VpVvCO](https://editor.p5js.org/natureofcode/sketches/uT9VpVvCO)  
 
-### Ch. 03 - Oscillation
+</details>
+
+<details>
+  <summary>Ch. 03 - Oscillation</summary>
 
 - **03.01 - angular_motion_rotate** |
   py5: [ch03_oscillation/03.01](ch03_oscillation/03.01) |
@@ -180,7 +188,10 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch03_oscillation/03.11](ch03_oscillation/03.11) |
   p5.js: [MQZWruTlD](https://editor.p5js.org/natureofcode/sketches/MQZWruTlD)
 
-### Ch. 04 - Particle Systems
+</details>
+
+<details>
+  <summary>Ch. 04 - Particle Systems</summary>
 
 - **04.01 - single_particle** |
   py5: [ch04_particle_systems/04.01](ch04_particle_systems/04.01) |
@@ -218,14 +229,15 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch04_particle_systems/04.09](ch04_particle_systems/04.09) |
   p5.js: [fUCtCcOtB](https://editor.p5js.org/natureofcode/sketches/fUCtCcOtB)
 
+</details>
+
 ---
 
 <a id="part-2-its-alive"></a>
 ## 🧬 Part 2: It's Alive!
 
-### Ch. 05 - Autonomous Agents
-
-⬆️ [top](#readme)
+<details>
+  <summary>Ch. 05 - Autonomous Agents</summary>
 
 - **05.01 - seeking_target** |
   py5: [ch05_autonomous_agents/05.01](ch05_autonomous_agents/05.01) |
@@ -283,7 +295,10 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch05_autonomous_agents/05.14](ch05_autonomous_agents/05.14) |
   p5.js: [uqRJyVq8g](https://editor.p5js.org/natureofcode/sketches/uqRJyVq8g)
 
-### Ch. 06 - Physics Libraries
+</details>
+
+<details>
+  <summary>Ch. 06 - Physics Libraries</summary>
 
 - 🚧 IN PROGRESS ...  
   *Substitute: Matter.js --> https://www.pymunk.org*  
@@ -292,7 +307,10 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   [pymunk_poc](ch06_physics_libraries/pymunk_poc.py) | 
   [toxiclibs_poc](ch06_physics_libraries/toxiclibs_poc.py)
 
-### Ch. 07 - Cellular Automata
+</details>
+
+<details>
+  <summary>Ch. 07 - Cellular Automata</summary>
 
 - **07.01 - wolfram_elementary** |
   py5: [ch07_cellular_automata/07.01](ch07_cellular_automata/07.01) |
@@ -302,7 +320,10 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   *Should be a near 1:1 JS-to-py5 conversion (no extra libs or major API differences),  
   so rest of chapter shouldn't take me long.*
 
-### Ch. 08 - Fractals
+</details>
+
+<details>
+  <summary>Ch. 08 - Fractals</summary>
 
 - **08.01 - recursive_circles_once** |
   py5: [ch08_fractals/08.01](ch08_fractals/08.01) |
@@ -312,14 +333,15 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   *Should be a near 1:1 JS-to-py5 conversion (no extra libs or major API differences),  
   so rest of chapter shouldn't take me long.*
 
+</details>
+
 ---
 
 <a id="part-3-intelligence"></a>
 ## 🧠 Part 3: Intelligence
 
-⬆️ [top](#readme)
-
-### Ch. 09 - Evolutionary Computing
+<details>
+  <summary>Ch. 09 - Evolutionary Computing</summary>
 
 - **09.01 - ga_shakespeare** |
   py5: [ch09_evolutionary_computing/09.01](ch09_evolutionary_computing/09.01) |
@@ -341,7 +363,10 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch09_evolutionary_computing/09.05](ch09_evolutionary_computing/09.05) |
   p5.js: [1HDlp_tKF](https://editor.p5js.org/natureofcode/sketches/1HDlp_tKF)
 
-### Ch. 10 - Neural Networks
+</details>
+
+<details>
+  <summary>Ch. 10 - Neural Networks</summary>
 
 - **10.01 - the_perceptron** |
   py5: [ch10_neural_networks/10.01](ch10_neural_networks/10.01) |
@@ -351,7 +376,10 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch10_neural_networks/10.02](ch10_neural_networks/10.02) |
   p5.js: [SbfSv_GhM](https://editor.p5js.org/natureofcode/sketches/SbfSv_GhM)
 
-### Ch. 11 - Neuroevolution
+</details>
+
+<details>
+  <summary>Ch. 11 - Neuroevolution</summary>
 
 - **11.01 - flappy_bird** |
   py5: [ch11_neuroevolution/11.01](ch11_neuroevolution/11.01) |
@@ -376,6 +404,8 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
 - 11.06 - 🚧 IN PROGRESS ... |
   py5: [ch11_neuroevolution/11.06](ch11_neuroevolution/11.06) |
   p5.js: [IQbcREjUK](https://editor.p5js.org/natureofcode/sketches/IQbcREjUK)
+
+</details>
 
 <!--
 
