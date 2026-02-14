@@ -1,6 +1,4 @@
-<a id="top"></a>
-
-# Nature of Code (2), py5 Port
+<h1>Nature of Code (2), py5 Port<a id="top"></a></h1>
 
 *py5 implementations of Daniel Shiffman's "The Nature of Code" (2024 edition)*
 
