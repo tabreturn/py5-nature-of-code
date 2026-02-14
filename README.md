@@ -292,12 +292,14 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
 ### Ch. 07 - Cellular Automata
 
 - 🚧 IN PROGRESS ...  
-  *Should be a near 1:1 JS-to-py5 conversion (no extra libs or major API differences), so it shouldn't take me long.*
+  *Should be a near 1:1 JS-to-py5 conversion (no extra libs or major API differences),  
+  so it shouldn't take me long.*
 
 ### Ch. 08 - Fractals
 
 - 🚧 IN PROGRESS ...  
-  *Should be a near 1:1 JS-to-py5 conversion (no extra libs or major API differences), so it shouldn't take me long.*
+  *Should be a near 1:1 JS-to-py5 conversion (no extra libs or major API differences),  
+  so it shouldn't take me long.*
 
 ---
 
