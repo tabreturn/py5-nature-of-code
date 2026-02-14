@@ -301,6 +301,10 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
 
 ### Ch. 08 - Fractals
 
+- **08.01 - wolfram_elementary** |
+  py5: [ch08_fractals/08.01](ch08_fractals/08.01) |
+  p5.js: [yqMKM_1NS](https://editor.p5js.org/natureofcode/sketches/yqMKM_1NS)
+
 - 🚧 IN PROGRESS ...  
   *Should be a near 1:1 JS-to-py5 conversion (no extra libs or major API differences),  
   so it shouldn't take me long.*
