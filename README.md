@@ -286,8 +286,11 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
 ### Ch. 06 - Physics Libraries
 
 - 🚧 IN PROGRESS ...  
-  [**pymunk_poc**](ch06_physics_libraries/pymunk_poc.py) (proof of concept) | *Substitute: Matter.js --> https://www.pymunk.org*  
-  [**toxiclibs_poc**](ch06_physics_libraries/toxiclibs_poc.py) (proof of concept) | *Substitute: Toxiclibs.js --> https://github.com/postspectacular/toxiclibs*
+  *Substitute: Matter.js --> https://www.pymunk.org*  
+  *Substitute: Toxiclibs.js --> https://github.com/postspectacular/toxiclibs* (Java) 
+  **Proofs of concept:** 
+  [pymunk_poc](ch06_physics_libraries/pymunk_poc.py) | 
+  [toxiclibs_poc](ch06_physics_libraries/toxiclibs_poc.py)
 
 ### Ch. 07 - Cellular Automata
 
@@ -297,7 +300,7 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
 
 - 🚧 IN PROGRESS ...  
   *Should be a near 1:1 JS-to-py5 conversion (no extra libs or major API differences),  
-  so it shouldn't take me long.*
+  so rest of chapter shouldn't take me long.*
 
 ### Ch. 08 - Fractals
 
@@ -307,7 +310,7 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
 
 - 🚧 IN PROGRESS ...  
   *Should be a near 1:1 JS-to-py5 conversion (no extra libs or major API differences),  
-  so it shouldn't take me long.*
+  so rest of chapter shouldn't take me long.*
 
 ---
 
