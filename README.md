@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 # Nature of Code (2), py5 Port
 
 *py5 implementations of Daniel Shiffman's "The Nature of Code" (2024 edition)*
@@ -404,7 +406,7 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
 
 ---
 
-⬆️ [top](#readme)
+⬆️ [top](#top)
 
 <!--
 
