@@ -402,6 +402,10 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
 
 </details>
 
+---
+
+⬆️ [top](#readme)
+
 <!--
 
 Approx. page counts for each chapter, ranked largest to smallest:
