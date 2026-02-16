@@ -29,7 +29,6 @@ class Creature:
         for sensor in self.sensors:
             sensor.sense(self.position, food)
 
-
     def show(self) -> None:
         """Draw the creature and all the sensors."""
 
@@ -37,12 +36,12 @@ class Creature:
         translate(*self.position)
 
         for sensor in self.sensors:
-          stroke(0)
-          line(0, 0, sensor.v.x, sensor.v.y)
-          if sensor.value > 0:
-            fill(255, sensor.value * 255)
-            stroke(0, 100)
-            circle(sensor.v.x, sensor.v.y, 8)
+            stroke(0)
+            line(0, 0, sensor.v.x, sensor.v.y)
+            if sensor.value > 0:
+                fill(255, sensor.value * 255)
+                stroke(0, 100)
+                circle(sensor.v.x, sensor.v.y, 8)
 
         no_stroke()
         fill(0)
