@@ -10,6 +10,7 @@ class Creature:
         self.position = Py5Vector2D(x, y)
         self.r = 16
 
+        # The creature has a list of sensors.
         self.total_sensors = 15  # How about 15 sensors?
         # Create the sensors for the creature.
         self.sensors = [

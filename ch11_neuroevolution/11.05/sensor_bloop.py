@@ -12,6 +12,7 @@ def setup():
     bloop = Creature()
     food = Food()
 
+    # Overwrite food attributes to match p5.js example.
     food.position = Py5Vector2D(width / 2, height / 2)
     food.r = 32
 

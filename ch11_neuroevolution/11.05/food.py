@@ -5,6 +5,7 @@ class Food:
 
     def __init__(self):
         """A piece of food has a random position and a fixed radius."""
+
         self.position = Py5Vector2D(random(width), random(height))
         self.r = 50
 
