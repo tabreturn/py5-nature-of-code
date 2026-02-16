@@ -392,7 +392,7 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch11_neuroevolution/11.04](ch11_neuroevolution/11.04) |
   p5.js: [fZDfxxVrf](https://editor.p5js.org/natureofcode/sketches/fZDfxxVrf)
 
-- 11.05 - 🚧 IN PROGRESS ... |
+- **11.05 - sensor_bloop** |
   py5: [ch11_neuroevolution/11.05](ch11_neuroevolution/11.05) |
   p5.js: [vCTMtXXSS](https://editor.p5js.org/natureofcode/sketches/vCTMtXXSS)
 
