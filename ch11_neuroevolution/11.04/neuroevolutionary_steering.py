@@ -89,6 +89,7 @@ def display_slider(lo: int, hi: int, start: int) -> None:
         time_slider_value = start; _slider_inited = True
 
     x, y, w, r = 10, 226, 160, 7
+    stroke(0); stroke_weight(1)
     k = x + (time_slider_value - lo) / (hi - lo) * w
     line(x, y, x + w, y); fill(255); circle(k, y, r * 2)
 

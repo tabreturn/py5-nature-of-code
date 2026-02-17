@@ -34,7 +34,7 @@ class Brain:
         raw = np.asarray(self.forward(inputs), dtype=float)
         return ((np.tanh(raw) + 1.0) * 0.5).tolist()
 
-    # Crossover and mutation.
+    # Crossover, copy, and mutation.
 
     def crossover(self, other: 'Brain') -> 'Brain':
         c = Brain(self.n_in, self.n_h, self.n_out)
@@ -43,6 +43,14 @@ class Brain:
         c.w_ho = np.where(_rng.random(self.w_ho.shape) < 0.5, self.w_ho, other.w_ho)
         c.b_o = np.where(_rng.random(self.b_o.shape) < 0.5, self.b_o, other.b_o)
         return c
+
+    def copy(self) -> 'Brain':
+        b = Brain(self.n_in, self.n_out, self.n_h)
+        b.w_ih = self.w_ih.copy()
+        b.b_h  = self.b_h.copy()
+        b.w_ho = self.w_ho.copy()
+        b.b_o  = self.b_o.copy()
+        return b
 
     def mutate(self, rate: float = 0.01, sigma: float = 0.5) -> None:
         def mut(arr: np.ndarray) -> np.ndarray:

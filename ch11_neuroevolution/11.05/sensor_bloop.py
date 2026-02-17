@@ -23,9 +23,9 @@ def draw():
     # Temporarily control the bloop with the mouse.
     bloop.position.x, bloop.position.y = mouse_x, mouse_y
 
-    # Draw the food and the bloop.
+    # Draw the food and the bloop(s).
     food.show()
     bloop.show()
 
-    # The bloop senses the food.
+    # Bloop(s) sensing the food.
     bloop.sense(food)

@@ -1,11 +1,15 @@
 # PY5 IMPORTED MODE CODE
 
+import sys, os; sys.path.append(os.path.dirname(os.path.dirname(__file__)))
+from brain_ne import Brain
+
 from sensor import Sensor
+from food import Food
 
 
 class Creature:
 
-    def __init__(self, x: float = 0.0, y: float = 0.0):
+    def __init__(self, x: float, y: float, brain: Brain | None = None):
         # The creature has a position and radius.
         self.position = Py5Vector2D(x, y)
         self.r = 16
@@ -23,6 +27,20 @@ class Creature:
           )
           for i in range(self.total_sensors)
         ]
+
+        self.brain = (
+          brain
+          if brain is not None
+          else Brain(
+            inputs = len(self.sensors),
+            outputs = 2,  # Angle and magnitude.
+          )
+        )
+        self.health = 100  # The health starts at 100.
+        self.acceleration = Py5Vector2D(0, 0)
+        self.velocity = Py5Vector2D(0, 0)
+        self.max_speed = 2
+
 
     def sense(self, food: 'Food') -> None:
         """Call the sense() method for each sensor."""
@@ -48,3 +66,64 @@ class Creature:
         fill(0)
         circle(0, 0, self.r * 2)
         pop()
+
+    def think(self, food_list: list[Food]) -> None:
+        # Build an input array from the sensor values.
+        for sensor in self.sensors:
+            sensor.value = 0.0
+            for food in food_list:
+                sensor.sense(self.position, food)
+
+        inputs = [s.value for s in self.sensors]
+        outputs = self.brain.predict_continuous_01(inputs)
+
+        angle = outputs[0] * TAU
+        magnitude = outputs[1]
+
+        force = Py5Vector2D.from_heading(angle)
+        force.set_mag(magnitude)
+        self.apply_force(force)
+
+    def update(self) -> None:
+        """A simple physics engine (Euler integration)."""
+
+        # Velocity changes according to acceleration.
+        self.velocity.set_limit(self.max_speed)
+        self.velocity += self.acceleration
+        # Position changes according to velocity.
+        self.position += self.velocity
+        self.acceleration *= 0
+        
+        self.health -= 0.25  # Lose some health!
+
+    def apply_force(self, force: Py5Vector2D) -> None:
+        """Accumulate forces into acceleration (Newton's second law)."""
+
+        self.acceleration += force
+
+    def reproduce(self) -> 'Creature':
+        # Copy and mutate rather than use crossover and mutate.
+        brain = self.brain.copy()
+        brain.mutate(0.1)
+        return Creature(self.position.x, self.position.y, brain)
+
+    def eat(self, food_list: list[Food]) -> None:
+        """If the bloop is close to the food, increase its health!"""
+
+        for i in range(len(food_list)):
+            d = self.position.dist(food_list[i].position)
+
+            if d < self.r + food_list[i].r:
+                self.health += 0.5
+                food_list[i].r -= 0.05
+
+                if food_list[i].r < 20:
+                    food_list[i] = Food()
+
+    def borders(self) -> None:
+        """Wraparound."""
+
+        if self.position.x < -self.r: self.position.x = width + self.r
+        elif self.position.x > width + self.r: self.position.x = -self.r
+        if self.position.y < -self.r: self.position.y = height + self.r
+        elif self.position.y > height + self.r: self.position.y = -self.r
