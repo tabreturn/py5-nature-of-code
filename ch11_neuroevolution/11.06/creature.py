@@ -13,8 +13,8 @@ class Creature:
         # The creature has a position and radius.
         self.position = Py5Vector2D(x, y)
 
-        self.full_size = 12
-        self.r = 12
+        self.full_size = 12.0
+        self.r = self.full_size
 
         # The creature has a list of sensors.
         self.total_sensors = 15  # How about 15 sensors?
@@ -38,7 +38,7 @@ class Creature:
             outputs = 2,  # Angle and magnitude.
           )
         )
-        self.health = 100  # The health starts at 100.
+        self.health = 100.0  # The health starts at 100.
         self.acceleration = Py5Vector2D()
         self.velocity = Py5Vector2D()
         self.max_speed = 2
@@ -73,7 +73,7 @@ class Creature:
     def think(self, food_list: list[Food]) -> None:
         # Build an input array from the sensor values.
         for sensor in self.sensors:
-            sensor.value = 0.0
+            sensor.value = 0
             for food in food_list:
                 sensor.sense(self.position, food)
         inputs = [s.value for s in self.sensors]

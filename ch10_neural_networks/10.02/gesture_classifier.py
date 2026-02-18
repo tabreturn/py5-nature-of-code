@@ -31,11 +31,11 @@ OPTIONS = {
 classifier = MLPClassifier(**OPTIONS)
 
 # An array of two numbers for the inputs.
-inputs = [[item['x'], item['y']] for item in DATA]
-inputs = np.array(inputs)
+inputs_list = [[item['x'], item['y']] for item in DATA]
+inputs = np.array(inputs_list, dtype=float)
 # A single string label for the output.
-outputs = [item['label'] for item in DATA]
-outputs = np.array(outputs)
+outputs_list = [item['label'] for item in DATA]
+outputs = np.array(outputs_list, dtype=str)
 
 # Normalize the data.
 scaler = StandardScaler()
