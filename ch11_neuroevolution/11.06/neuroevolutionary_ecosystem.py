@@ -10,7 +10,7 @@ def setup():
     global bloops, food
     size(640, 240)
 
-    # One bloop, one piece of food.
+    # Many bloops, many pieces of food.
     bloops = [Creature(random(width), random(height)) for _ in range(20)]
     food = [Food() for _ in range(8)]
 
@@ -19,7 +19,7 @@ def draw():
     background(255)
 
     for _ in range(time_slider_value):
-    # Draw the food and the bloop(s).
+        # Draw the food and the bloop(s).
         for i in range(len(bloops) - 1, -1, -1):
             bloops[i].think(food)
             bloops[i].eat(food)
@@ -46,6 +46,7 @@ def draw():
 # The function(s) below are for mouse/key interaction
 
 _slider_inited = False
+
 
 def display_slider(lo: int, hi: int, start: int) -> None:
     global time_slider_value, _slider_inited

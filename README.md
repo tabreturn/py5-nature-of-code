@@ -396,7 +396,7 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch11_neuroevolution/11.05](ch11_neuroevolution/11.05) |
   p5.js: [vCTMtXXSS](https://editor.p5js.org/natureofcode/sketches/vCTMtXXSS)
 
-- 11.06 - 🚧 IN PROGRESS ... |
+- **11.06 - neuroevolutionary_ecosystem** |
   py5: [ch11_neuroevolution/11.06](ch11_neuroevolution/11.06) |
   p5.js: [IQbcREjUK](https://editor.p5js.org/natureofcode/sketches/IQbcREjUK)
 

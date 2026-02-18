@@ -43,12 +43,11 @@ class Creature:
         self.velocity = Py5Vector2D()
         self.max_speed = 2
 
-
-    def sense(self, food: 'Food') -> None:
-        """Call the sense() method for each sensor."""
-
-        for sensor in self.sensors:
-            sensor.sense(self.position, food)
+#    def sense(self, food: 'Food') -> None:
+#        """Call the sense() method for each sensor."""
+#
+#        for sensor in self.sensors:
+#            sensor.sense(self.position, food)
 
     def show(self) -> None:
         """Draw the creature and all the sensors."""
@@ -65,7 +64,7 @@ class Creature:
                 circle(sensor.v.x, sensor.v.y, 8)
 
         no_stroke()
-        fill(0, self.health * 2);
+        fill(0, self.health * 2)
         self.r = remap(self.health, 0, 100, 2, self.full_size)
         self.r = constrain(self.r, 2, self.full_size)
         circle(0, 0, self.r * 2)
@@ -77,13 +76,12 @@ class Creature:
             sensor.value = 0.0
             for food in food_list:
                 sensor.sense(self.position, food)
-
         inputs = [s.value for s in self.sensors]
-        outputs = self.brain.predict_continuous_01(inputs)
 
+        # Predict a steering force from the sensors.
+        outputs = self.brain.predict_continuous_01(inputs)
         angle = outputs[0] * TAU
         magnitude = outputs[1]
-
         force = Py5Vector2D.from_heading(angle)
         force.set_mag(magnitude)
         self.apply_force(force)
@@ -97,7 +95,7 @@ class Creature:
         # Position changes according to velocity.
         self.position += self.velocity
         self.acceleration *= 0
-        
+
         self.health -= 0.25  # Lose some health!
 
     def apply_force(self, force: Py5Vector2D) -> None:
@@ -109,6 +107,7 @@ class Creature:
         # Copy and mutate rather than use crossover and mutate.
         brain = self.brain.copy()
         brain.mutate(0.1)
+
         return Creature(self.position.x, self.position.y, brain)
 
     def eat(self, food_list: list[Food]) -> None:
