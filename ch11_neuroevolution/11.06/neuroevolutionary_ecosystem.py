@@ -18,9 +18,6 @@ def setup():
 def draw():
     background(255)
 
-    # Display a slider with a min and max range, and a starting value.
-    display_slider(1, 20, 1)
-
     for _ in range(time_slider_value):
     # Draw the food and the bloop(s).
         for i in range(len(bloops) - 1, -1, -1):
@@ -41,6 +38,10 @@ def draw():
     # Bloop(s) sensing the food.
     for bloop in bloops:
         bloop.show()
+
+    # Display a slider with a min and max range, and a starting value.
+    display_slider(1, 20, 1)
+
 
 # The function(s) below are for mouse/key interaction
 

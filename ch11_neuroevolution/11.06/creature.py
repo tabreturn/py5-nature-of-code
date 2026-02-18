@@ -12,7 +12,9 @@ class Creature:
     def __init__(self, x: float, y: float, brain: Brain | None = None):
         # The creature has a position and radius.
         self.position = Py5Vector2D(x, y)
-        self.r = 16
+
+        self.full_size = 12
+        self.r = 12
 
         # The creature has a list of sensors.
         self.total_sensors = 15  # How about 15 sensors?
@@ -23,7 +25,7 @@ class Creature:
               # First, calculate a direction for the sensor.
               .from_heading(remap(i, 0, self.total_sensors, 0, TAU))
               # Create a vector a little bit longer than radius as the sensor.
-              .set_mag(self.r * 2)
+              .set_mag(self.full_size * 1.5)
           )
           for i in range(self.total_sensors)
         ]
@@ -37,8 +39,8 @@ class Creature:
           )
         )
         self.health = 100  # The health starts at 100.
-        self.acceleration = Py5Vector2D(0, 0)
-        self.velocity = Py5Vector2D(0, 0)
+        self.acceleration = Py5Vector2D()
+        self.velocity = Py5Vector2D()
         self.max_speed = 2
 
 
@@ -55,7 +57,7 @@ class Creature:
         translate(*self.position)
 
         for sensor in self.sensors:
-            stroke(0)
+            stroke(0, self.health * 2)
             line(0, 0, sensor.v.x, sensor.v.y)
             if sensor.value > 0:
                 fill(255, sensor.value * 255)
@@ -63,7 +65,9 @@ class Creature:
                 circle(sensor.v.x, sensor.v.y, 8)
 
         no_stroke()
-        fill(0)
+        fill(0, self.health * 2);
+        self.r = remap(self.health, 0, 100, 2, self.full_size)
+        self.r = constrain(self.r, 2, self.full_size)
         circle(0, 0, self.r * 2)
         pop()
 

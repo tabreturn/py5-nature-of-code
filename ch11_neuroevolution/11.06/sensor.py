@@ -18,5 +18,5 @@ class Sensor:
         if d < food.r:
             # The farther into the food's center, the more the sensor activates.
             self.value = remap(d, 0, food.r, 1, 0)
-        else:
-            self.value = 0
+#        else:
+#            self.value = 0
