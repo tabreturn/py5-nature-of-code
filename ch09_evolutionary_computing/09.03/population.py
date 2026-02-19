@@ -73,7 +73,7 @@ class Population:
         # Start with the first element.
         index = 0
         # Pick a starting point.
-        start = random(1)
+        start = random()
         # At the finish line?
         while start > 0:
             # Move a distance according to fitness.

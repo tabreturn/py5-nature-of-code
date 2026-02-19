@@ -28,7 +28,7 @@ def draw():
 
             if bloops[i].health < 0:
                 bloops.pop(i)
-            elif random(1) < 0.001:
+            elif random() < 0.001:
                 child = bloops[i].reproduce()
                 bloops.append(child)
 

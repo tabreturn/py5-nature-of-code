@@ -16,7 +16,7 @@ def draw():
     background(255)
 
     # Pick a random number and increase the count.
-    index = floor(random(len(random_counts)))
+    index = random_int(len(random_counts)-1)
     random_counts[index] += 1
 
     stroke(0)

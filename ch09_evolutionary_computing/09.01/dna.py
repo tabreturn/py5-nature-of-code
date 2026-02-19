@@ -24,7 +24,7 @@ class DNA:
         """Crossover."""
 
         child = DNA(len(self.genes))
-        midpoint = floor(random(len(self.genes)))
+        midpoint = random_int(len(self.genes)-1)
         child.genes[:midpoint] = self.genes[:midpoint]
         child.genes[midpoint:] = partner.genes[midpoint:]
         return child
@@ -33,12 +33,12 @@ class DNA:
         """Mutation."""
 
         for i in range(len(self.genes)):
-            if random(1) < mutationrate:
+            if random() < mutationrate:
                 self.genes[i] = self.random_character()
 
     def random_character(self) -> str:
         """Return a random character (letter, number, symbol, and so forth)."""
 
-        c = floor(random(32, 127))
+        c = random_int(32, 127-1)
         return chr(c)
 

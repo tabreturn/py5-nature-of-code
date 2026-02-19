@@ -15,7 +15,7 @@ class Walker:
 
     def step(self) -> None:
         # 0, 1, 2, or 3. The random choice determines the step.
-        match floor(random(4)):
+        match random_int(3):
             # Four possible steps.
             case 0: self.x += 1
             case 1: self.x -= 1

@@ -20,7 +20,7 @@ class DNA:
         """Crossover."""
 
         child = DNA(len(self.genes))
-        midpoint = floor(random(len(self.genes)))
+        midpoint = random_int(len(self.genes)-1)
         child.genes[:midpoint] = self.genes[:midpoint]
         child.genes[midpoint:] = partner.genes[midpoint:]
         return child
@@ -29,7 +29,7 @@ class DNA:
         """Mutation."""
 
         for i, gene in enumerate(self.genes):
-            if random(1) < mutation_rate:
+            if random() < mutation_rate:
                 angle = random(TAU)
                 self.genes[i] = Py5Vector2D.from_heading(angle).set_mag(
                   random(self.max_force)

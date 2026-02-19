@@ -22,7 +22,7 @@ class FlowField:
     def init(self) -> None:
         """The init() method fills the 2D list with vectors."""
 
-        noise_seed(int(random(10000)))  # Reseed noise for new field each time.
+        noise_seed(random_int(10000))  # Reseed noise for new field each time.
 
         x_off = 0.0
         # Use a nested loop to hit every column and every row of flow field.

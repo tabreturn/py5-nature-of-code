@@ -16,14 +16,14 @@ def draw():
     background(255)
 
     # Pick a random number and increase the count.
-#    index = floor(random(len(random_counts)))
+#    index = random_int(len(random_counts)-1)
     index = int(accept_reject() * len(random_counts))
     random_counts[index] += 1
 
     stroke(0)
     stroke_weight(2)
     fill(127)
-    w = width / len(random_counts)
+    w = width / len(random_counts)-1
 
     # Graph the results.
     for x, count in enumerate(random_counts):

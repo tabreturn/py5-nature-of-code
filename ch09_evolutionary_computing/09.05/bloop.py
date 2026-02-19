@@ -34,7 +34,7 @@ class Bloop:
         """This method will return a new child bloop."""
 
         # A 0.5% chance of executing the code inside the if statement.
-        if random(1) < 0.0005:
+        if random() < 0.0005:
             # A child is an exact copy of a single parent.
             child_dna = self.dna.copy_dna()
             # 1% mutation rate

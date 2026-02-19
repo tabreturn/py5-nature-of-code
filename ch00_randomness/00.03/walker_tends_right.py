@@ -15,7 +15,7 @@ class Walker:
 
     def step(self) -> None:
 #        # 0, 1, 2, or 3. The random choice determines the step.
-#        match floor(random(4)):
+#        match random_int(3):
 #            # Four possible steps.
 #            case 0: self.x += 1
 #            case 1: self.x -= 1
@@ -29,7 +29,7 @@ class Walker:
 #        # Instead use random() for any floating-point number from -1 to 1.
 
         # A 40% chance of moving to the right.
-        r = random()
+        r = random()  # With no arguments, returns float between zero and one.
         if r < 0.4:
             self.x += 1
         elif r < 0.6:
