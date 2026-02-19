@@ -311,9 +311,13 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch07_cellular_automata/07.01](ch07_cellular_automata/07.01) |
   p5.js: [SaLy-OnPZ](https://editor.p5js.org/natureofcode/sketches/SaLy-OnPZ)
 
-- 🚧 IN PROGRESS ...  
-  *Should be a near 1:1 JS-to-py5 conversion (no extra libs or major API differences),  
-  so rest of chapter shouldn't take me long.*
+- 07.02 - 🚧 IN PROGRESS ... |
+  py5: [ch07_cellular_automata/07.02](ch07_cellular_automata/07.02) |
+  p5.js: [vzLjFYwJc](https://editor.p5js.org/natureofcode/sketches/vzLjFYwJc)
+
+- 07.03 - 🚧 IN PROGRESS ... |
+  py5: [ch07_cellular_automata/07.03](ch07_cellular_automata/07.03) |
+  p5.js: [13KF3ysx8](https://editor.p5js.org/natureofcode/sketches/13KF3ysx8)
 
 </details>
 
