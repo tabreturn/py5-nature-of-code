@@ -24,7 +24,7 @@ def draw():
         if cells[i] == 1:  # Draw only the cells with a state of 1.
             fill(0)
             # Set the y-position according to the generation.
-            square(i * W, generation * W, W) # X-position is index × cell width.
+            square(i * W, generation * W, W)  # X-position = index × cell width.
 
     # Compute the next generation.
     next_gen = cells[:]  # Create new list to store states for next generation.
