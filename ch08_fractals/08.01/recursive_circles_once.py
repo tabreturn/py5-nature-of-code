@@ -20,3 +20,19 @@ def draw_circles(x: float, y: float, r: float) -> None:
         r *= 0.75
         # Call the function inside the function (aka recursion!).
         draw_circles(x, y, r)  # Is this a paradox?
+
+
+def factorial(n: int) -> int:
+    """Unused function to cover the chapter's preceeding content:
+    https://natureofcode.com/fractals/#implementing-recursive-functions"""
+
+    # Instead of a regular loop to compute the factorial.
+    if n <= 1:
+        return 1
+    return n * factorial(n - 1)
+
+    """
+    NOTE:
+    On my system, py5 (Jython-based) crashes at a bit over 1700 recursive calls.
+    JVM ThreadStackSize = 1024 KB (~1 MB).
+    """
