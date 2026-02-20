@@ -340,7 +340,7 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch08_fractals/08.04](ch08_fractals/08.04) |
   p5.js: [4OW3OCzz6](https://editor.p5js.org/natureofcode/sketches/4OW3OCzz6)
 
-- 08.05 - 🚧 IN PROGRESS ... |
+- **08.05 - koch_curve** |
   py5: [ch08_fractals/08.05](ch08_fractals/08.05) |
   p5.js: [Tbb2MVsA9](https://editor.p5js.org/natureofcode/sketches/Tbb2MVsA9)
 
