@@ -26,7 +26,7 @@ def draw():
 
 def generate() -> None:
     global segments
-    next_ = []  # Create the next array.
+    next_ = []  # Create the next list.
 
     for segment in segments:  # For every segment ...
         a, b, c, d, e = segment.koch_points()  # 5 (Koch computed) points.
