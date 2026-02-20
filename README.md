@@ -328,9 +328,37 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch08_fractals/08.01](ch08_fractals/08.01) |
   p5.js: [yqMKM_1NS](https://editor.p5js.org/natureofcode/sketches/yqMKM_1NS)
 
-- 🚧 IN PROGRESS ...  
-  *Should be a near 1:1 JS-to-py5 conversion (no extra libs or major API differences),  
-  so rest of chapter shouldn't take me long.*
+- 08.02 - 🚧 IN PROGRESS ... |
+  py5: [ch08_fractals/08.02](ch08_fractals/08.02) |
+  p5.js: [0ENwBr7Idw](https://editor.p5js.org/natureofcode/sketches/0ENwBr7Idw)
+
+- 08.03 - 🚧 IN PROGRESS ... |
+  py5: [ch08_fractals/08.03](ch08_fractals/08.03) |
+  p5.js: [JkT90swnM](https://editor.p5js.org/natureofcode/sketches/JkT90swnM)
+
+- 08.04 - 🚧 IN PROGRESS ... |
+  py5: [ch08_fractals/08.04](ch08_fractals/08.04) |
+  p5.js: [4OW3OCzz6](https://editor.p5js.org/natureofcode/sketches/4OW3OCzz6)
+
+- 08.05 - 🚧 IN PROGRESS ... |
+  py5: [ch08_fractals/08.05](ch08_fractals/08.05) |
+  p5.js: [Tbb2MVsA9](https://editor.p5js.org/natureofcode/sketches/Tbb2MVsA9)
+
+- 08.06 - 🚧 IN PROGRESS ... |
+  py5: [ch08_fractals/08.06](ch08_fractals/08.06) |
+  p5.js: [DaINq2A85](https://editor.p5js.org/natureofcode/sketches/DaINq2A85)
+
+- 08.07 - 🚧 IN PROGRESS ... |
+  py5: [ch08_fractals/08.07](ch08_fractals/08.07) |
+  p5.js: [xh0kdMTP4](https://editor.p5js.org/natureofcode/sketches/xh0kdMTP4)
+
+- 08.08 - 🚧 IN PROGRESS ... |
+  py5: [ch08_fractals/08.08](ch08_fractals/08.08) |
+  p5.js: [H_4SeFV3H](https://editor.p5js.org/natureofcode/sketches/H_4SeFV3H)
+
+- 08.09 - 🚧 IN PROGRESS ... |
+  py5: [ch08_fractals/08.09](ch08_fractals/08.09) |
+  p5.js: [KyFcxuFx_](https://editor.p5js.org/natureofcode/sketches/KyFcxuFx_)
 
 </details>
 
