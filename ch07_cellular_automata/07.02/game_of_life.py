@@ -30,7 +30,7 @@ def draw():
 
             # Add up all neighbor states to calculate number of live neighbors.
             neighbor_sum = sum(
-              board[i + k][j + l]  # Use k/l as counters since i/j already used!
+              board[i + k][j + l]  # Use k/l as counters since i/j used!
               for k in range(-1, 2)
               for l in range(-1, 2)
             )

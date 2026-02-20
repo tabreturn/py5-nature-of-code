@@ -315,7 +315,7 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch07_cellular_automata/07.02](ch07_cellular_automata/07.02) |
   p5.js: [vzLjFYwJc](https://editor.p5js.org/natureofcode/sketches/vzLjFYwJc)
 
-- 07.03 - 🚧 IN PROGRESS ... |
+- **07.03 - oop_game_of_life** |
   py5: [ch07_cellular_automata/07.03](ch07_cellular_automata/07.03) |
   p5.js: [13KF3ysx8](https://editor.p5js.org/natureofcode/sketches/13KF3ysx8)
 
