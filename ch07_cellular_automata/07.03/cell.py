@@ -5,13 +5,12 @@ class Cell:
 
     def __init__(self, state: int, x: int, y: int, w: int):
         self.state = state  # What is the cell's state?
+        self.previous = self.state  # What was its previous state?
 
         # Position and size.
         self.x = x
         self.y = y
         self.w = w
-
-        self.previous = self.state  # What was its previous state?
 
     def show(self) -> None:
         stroke(0)
