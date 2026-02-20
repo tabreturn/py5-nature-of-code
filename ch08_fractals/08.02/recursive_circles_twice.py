@@ -13,6 +13,7 @@ def draw():
 
 def draw_circles(x: float, y: float, radius: float) -> None:
     stroke(0)
+    no_fill()
     stroke_weight(2)
     circle(x, y, radius * 2)
 
