@@ -348,7 +348,7 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch08_fractals/08.06](ch08_fractals/08.06) |
   p5.js: [DaINq2A85](https://editor.p5js.org/natureofcode/sketches/DaINq2A85)
 
-- 08.07 - 🚧 IN PROGRESS ... |
+- **08.07 - stochastic_tree** |
   py5: [ch08_fractals/08.07](ch08_fractals/08.07) |
   p5.js: [xh0kdMTP4](https://editor.p5js.org/natureofcode/sketches/xh0kdMTP4)
 

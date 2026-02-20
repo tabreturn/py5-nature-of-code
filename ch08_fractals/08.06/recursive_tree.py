@@ -19,20 +19,20 @@ def draw():
     branch(80)
 
 
-def branch(len_: float) -> None:  # Each branch receives its length as argument.
-    line(0, 0, 0, -len_)  # Draw the branch.
-    translate(0, -len_)   # Translate to the end.
-    len_ *= 0.67          # Each branch's length shrinks by one-third.
+def branch(length: float) -> None:  # Each branch receives its length as an arg.
+    line(0, 0, 0, -length)  # Draw the branch.
+    translate(0, -length)   # Translate to the end.
+    length *= 0.67          # Each branch's length shrinks by one-third.
 
-    if len_ > 2:  # Exit condition for the recursion!
+    if length > 2:  # Exit condition for the recursion!
         push()
         # Rotate to the right and branch again.
         rotate(angle)
-        branch(len_)  # Subsequent calls to branch() include length argument.
+        branch(length)  # Subsequent calls to branch() include a length arg.
         pop()
 
         push()
         # Rotate to the left and branch again.
         rotate(-angle)
-        branch(len_)
+        branch(length)
         pop()
