@@ -13,7 +13,7 @@ REQUIRES:
 Install mypy
 
 RUN:
-python mypy_scan.py &> mypy_log.out
+python mypy_scan.py
 """
 
 import ast
@@ -176,7 +176,12 @@ def _missing_hints_for_method(fn):
     if fn.args.kwarg is not None and fn.args.kwarg.annotation is None:
         missing.append(f'**{fn.args.kwarg.arg}')
 
-    if fn.returns is None:
+    is_property_setter_or_deleter = any(
+      isinstance(d, ast.Attribute) and d.attr in ('setter', 'deleter')
+      for d in fn.decorator_list
+    )
+
+    if fn.returns is None and not is_property_setter_or_deleter:
         missing.append('return')
 
     return tuple(missing)

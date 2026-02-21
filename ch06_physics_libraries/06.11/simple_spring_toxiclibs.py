@@ -82,12 +82,12 @@ class Particle():
     # Provide JS-style fields and forward the relevant physics verbs;
     # else Python would just create wrapper attributes and nothing would move.
     @property
-    def x(self): return float(self.p.x())
+    def x(self) -> float: return float(self.p.x())
     @x.setter
-    def x(self, v): self.p.set(float(v), self.y)
+    def x(self, v: float): self.p.set(float(v), self.y)
     @property
-    def y(self): return float(self.p.y())
+    def y(self) -> float: return float(self.p.y())
     @y.setter
-    def y(self, v): self.p.set(self.x, float(v))
+    def y(self, v: float): self.p.set(self.x, float(v))
     lock   = lambda self: self.p.lock()
     unlock = lambda self: self.p.unlock()
