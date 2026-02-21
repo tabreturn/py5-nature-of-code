@@ -295,12 +295,17 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
 <details>
   <summary>Ch. 06 - Physics Libraries</summary>
 
-- **Proofs of concept:** [pymunk_poc](ch06_physics_libraries/pymunk_poc.py) | 
-  [toxiclibs_poc](ch06_physics_libraries/toxiclibs_poc.py)
+- **06.01 - matter_default_render** |
+  py5: [ch06_physics_libraries/06.01](ch06_physics_libraries/06.01) |
+  p5.js: [GXRa48IQO](https://editor.p5js.org/natureofcode/sketches/GXRa48IQO)
 
-- 🚧 COMING SOON ...  
-  *Substitute: Matter.js --> https://www.pymunk.org*  
-  *Substitute: Toxiclibs.js --> https://github.com/postspectacular/toxiclibs* (Java)  
+- 🚧 IN PROGRESS ...
+
+- **06.11 - simple_spring_toxiclibs** |
+  py5: [ch06_physics_libraries/06.11](ch06_physics_libraries/06.11) |
+  p5.js: [CSzXIfoWH](https://editor.p5js.org/natureofcode/sketches/CSzXIfoWH)
+
+- 🚧 IN PROGRESS ...
 
 </details>
 
