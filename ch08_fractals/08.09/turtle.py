@@ -11,7 +11,7 @@ class Turtle:
         stroke(0)
 
         for c in sentence:  # Look at each character one at a time.
-            # This could also be written with if...else statements. 
+            # This could also be written with if...else statements.
             match c:  # Python equivalent of a JS switch statement.
                 case 'F':
                     line(0, 0, 0, -self.length)
