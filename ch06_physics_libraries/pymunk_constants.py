@@ -7,7 +7,7 @@ these values provide an approximate conversion for matching visual behavior.
 SCALE_GRAVITY = 900.0
 SCALE_VELOCITY = 60.0
 SCALE_ANG_VELOCITY = 60.0
-SCALE_FRICTION = 50.0
+SCALE_FRICTION = 30.0
 
 # Fixed timestep (equivalent to Matter.Runner internal delta time).
 DT = 1 / 60
