@@ -5,7 +5,7 @@ from pymunk import Body, moment_for_box, Poly, Space
 # (Matter.js example imports Bodies, Body, Engine, Composite, Render, Vector.)
 
 import sys, os; sys.path.append(os.path.dirname(os.path.dirname(__file__)))
-from pymunk_constants import *  # Matter.js → Pymunk calibration constants.
+from pymunk_constants import *  # Matter.js <-> Pymunk calibration constants.
 
 
 def setup():

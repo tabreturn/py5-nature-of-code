@@ -4,7 +4,7 @@
 from pymunk import Body, Poly, moment_for_box, Vec2d
 
 import sys, os; sys.path.append(os.path.dirname(os.path.dirname(__file__)))
-from pymunk_constants import *  # Matter.js → Pymunk calibration constants.
+from pymunk_constants import *  # Matter.js <-> Pymunk calibration constants.
 
 
 class Box:
@@ -41,7 +41,7 @@ class Box:
         self.body.velocity = Vec2d(random(-5, 5) * SCALE_VELOCITY, 0.0)
         self.body.angular_velocity = 0.1 * SCALE_ANG_VELOCITY
 
-        self.space = space  # Store reference for adding/removing/etc.
+        self.space = space  # Store reference for removing/etc.
         self.space.add(self.body, self.shape)  # Don't forget to add it to world!
 
     def show(self) -> None:

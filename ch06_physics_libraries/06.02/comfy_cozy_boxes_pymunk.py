@@ -5,7 +5,7 @@ from pymunk import Space
 from box_pm import Box
 
 import sys, os; sys.path.append(os.path.dirname(os.path.dirname(__file__)))
-from pymunk_constants import *  # Matter.js → Pymunk calibration constants.
+from pymunk_constants import *  # Matter.js <-> Pymunk calibration constants.
 
 boxes: list[Box] = []  # A list to store all Box objects.
 

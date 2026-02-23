@@ -15,10 +15,10 @@ class Boundary:
         self.w = w
         self.h = h
 
-        # Lock the body in place by setting isStatic to true!
+        # Lock the body in place by setting body_type to Body.STATIC!
         self.body = Body(body_type=Body.STATIC)
-        self.body.position = (x, y)
-        self.shape = Poly.create_box(self.body, (w, h))
+        self.body.position = (self.x, self.y)
+        self.shape = Poly.create_box(self.body, (self.w, self.h))
         self.shape.friction = 2.0
         self.shape.elasticity = 0.2
 
@@ -30,5 +30,5 @@ class Boundary:
         rect_mode(CENTER)
         fill(127)
         stroke(0)
-        stroke_weight(2)   
+        stroke_weight(2)
         rect(self.x, self.y, self.w, self.h)
