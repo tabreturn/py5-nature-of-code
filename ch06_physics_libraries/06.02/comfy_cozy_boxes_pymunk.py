@@ -16,7 +16,8 @@ def setup():
     size(640, 240)
     engine = Space()  # Create the engine; Pymunk's "world/engine" is a Space.
     # Change the engine's gravity to point downward.
-    engine.gravity = (0, SCALE_GRAVITY)
+    engine.gravity = (0, 1.0 * SCALE_GRAVITY)
+
 
 def draw():
     background(255)
