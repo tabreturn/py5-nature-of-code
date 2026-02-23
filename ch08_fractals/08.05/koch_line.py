@@ -16,7 +16,7 @@ class KochLine:
 
     def koch_points(self) -> list[Py5Vector2D]:
         # It's best to avoid making copies whenever possible,
-        # but we need a new object so segments can move independently.
+        # but this needs a new object so segments can move independently.
         a = self.start.copy
         e = self.end.copy
 
