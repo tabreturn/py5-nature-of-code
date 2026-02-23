@@ -2,7 +2,7 @@
 
 # Note Matter.js uses 'aliases'; for py5 just import Pymunk symbols directly.
 from pymunk import Space
-from box_pymunk import Box
+from box_pm import Box
 
 DT = 1 / 60  # Fixed timestep (equivalent to Matter.Runner internal delta time).
 # Scale factors to approximate Matter.js units in Pymunk.
