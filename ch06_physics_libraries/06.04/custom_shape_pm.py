@@ -38,7 +38,7 @@ class CustomShape:
 
         self.space = space  # Store reference for removing/etc.
         self.space.add(self.body, self.shape)  # Don't forget to add it to world!
-        
+
     def show(self) -> None:
         fill(127)
         stroke(0)
