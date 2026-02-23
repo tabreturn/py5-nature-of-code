@@ -303,6 +303,10 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch06_physics_libraries/06.02](ch06_physics_libraries/06.02) |
   p5.js: [D26YvXr_S](https://editor.p5js.org/natureofcode/sketches/D26YvXr_S)
 
+- **06.03 - falling_boxes_boundaries** |
+  py5: [ch06_physics_libraries/06.03](ch06_physics_libraries/06.03) |
+  p5.js: [WSoUy03ph](https://editor.p5js.org/natureofcode/sketches/WSoUy03ph)
+
 - 🚧 IN PROGRESS ...
 
 - **06.11 - simple_spring_toxiclibs** |
