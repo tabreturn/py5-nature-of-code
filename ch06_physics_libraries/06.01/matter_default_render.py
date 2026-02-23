@@ -4,12 +4,8 @@
 from pymunk import Body, moment_for_box, Poly, Space
 # (Matter.js example imports Bodies, Body, Engine, Composite, Render, Vector.)
 
-DT = 1 / 60  # Fixed timestep (equivalent to Matter.Runner internal delta time).
-# Scale factors to approximate Matter.js units in Pymunk.
-SCALE_GRAVITY = 900.0
-SCALE_VELOCITY = 60.0
-SCALE_ANG_VELOCITY = 60.0
-SCALE_FRICTION = 50.0
+import sys, os; sys.path.append(os.path.dirname(os.path.dirname(__file__)))
+from pymunk_constants import *  # Matter.js → Pymunk calibration constants.
 
 
 def setup():
@@ -31,8 +27,9 @@ def setup():
 
     """
     NOTE:
-    Pymunk separates Body (physics) from Shape (collision geometry). Multiple
-    Shapes can attach to one Body. Think: Body = physics; Shape = collision skin.
+    Pymunk separates Body (physics) from Shape (collision geometry). 
+    Multiple Shapes can attach to one Body. 
+    Think: Body = physics; Shape = collision skin.
     """
 
     # Create a box with custom friction and restitution.

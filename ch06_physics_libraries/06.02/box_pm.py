@@ -16,8 +16,9 @@ class Box:
 
         """
         NOTE:
-        Pymunk separates Body (physics) from Shape (collision geometry). Multiple
-        Shapes can attach to one Body. Think: Body = physics; Shape = collision skin.
+        Pymunk separates Body (physics) from Shape (collision geometry). 
+        Multiple Shapes can attach to one Body. 
+        Think: Body = physics; Shape = collision skin.
         """
 
         # Instead of any of the usual variables, store a reference to a body.
@@ -43,7 +44,7 @@ class Box:
         # Use the position and angle to translate and rotate the square.
         translate(position.x, position.y)
         rotate(angle)
-        square(0, 0, self.w)
+        rect(0, 0, self.w, self.w)
         pop()
 
     def remove_body(self) -> None:

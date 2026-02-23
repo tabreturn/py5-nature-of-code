@@ -4,9 +4,8 @@
 from pymunk import Space
 from box_pm import Box
 
-DT = 1 / 60  # Fixed timestep (equivalent to Matter.Runner internal delta time).
-# Scale factors to approximate Matter.js units in Pymunk.
-SCALE_GRAVITY = 900.0
+import sys, os; sys.path.append(os.path.dirname(os.path.dirname(__file__)))
+from pymunk_constants import *  # Matter.js → Pymunk calibration constants.
 
 boxes: list[Box] = []  # A list to store all Box objects.
 
