@@ -19,8 +19,15 @@ class CustomShape:
           Vec2d(-20, 15),
         ]
 
+        """
+        NOTE:
+        Pymunk separates Body (physics) from Shape (collision geometry).
+        Multiple Shapes can attach to one Body.
+        Think: Body = physics; Shape = collision skin.
+        """
+
         # Make a body shaped by the vertices.
-        options = {
+        options = {  # Specify the properties of this body in a dictionary.
           'friction': 0.01 * SCALE_FRICTION,
           'restitution': 0.2,
           'mass': 1.0,
