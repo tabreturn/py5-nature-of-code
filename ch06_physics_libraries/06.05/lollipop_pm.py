@@ -16,76 +16,70 @@ class Lollipop:
 
         options = {  # Specify the properties of this body in a dictionary.
           'friction': 0.01 * SCALE_FRICTION,
-          'restitution': 0.2,
+          'restitution': 1.0,
           'mass': 1.0,
         }
 
-        # Offsets (body-local) like the JS version:
-        self.part_1_offset = Vec2d(0, 0)
-        self.part_2_offset = Vec2d(self.w / 2, 0)
+        # Add an offset from the x-position of the lollipop's stick.
+        self.offset = Vec2d(self.w / 2, 0)
 
-        m = options['mass']
-
-        # Circle offset inline (like x + w/2 in Matter)
-        circle_offset = Vec2d(self.w / 2, 0)
-
-        # Compound moment
+        # Join the two bodies together first (in Pymunk, make bodies is second).
         self.body = Body(
-          m,
-          moment_for_box(m * 0.6, (self.w, self.h))
-          + moment_for_circle(m * 0.4, 0, self.r, offset=circle_offset),
+          options['mass'],
+          moment_for_box(options['mass'], (self.w, self.h))
+          + moment_for_circle(options['mass'], 0, self.r, self.offset),
         )
+
+        # Make the bodies.
+        self.part_1 = Poly.create_box(self.body, (self.w, self.h))
+        self.part_1.friction = options['friction']
+        self.part_1.elasticity = options['restitution']
+        self.part_2 = Circle(self.body, self.r, self.offset)
+        self.part_2.friction = options['friction']
+        self.part_2.elasticity = options['restitution']
+
         self.body.position = (x, y)
-
-        # Rectangle part (centered on body)
-        self.part1 = Poly.create_box(self.body, (self.w, self.h))
-
-        # Circle part (offset from body)
-        self.part2 = Circle(self.body, self.r, offset=circle_offset)
-
-        for s in (self.part1, self.part2):
-            s.friction = options['friction']
-            s.elasticity = options['restitution']
-
-        # Initial motion (Matter-like)
         self.body.velocity = Vec2d(random(-5, 5) * SCALE_VELOCITY, 0)
         self.body.angular_velocity = 0.1 * SCALE_ANG_VELOCITY
 
+        self.space = space  # Store reference for remove_body/etc.
 
-        self.space = space  # Store reference for removing/etc.
-        self.space.add(self.body, self.part1, self.part2)  # Don't forget to add it to world!
+        # Add the compound body to the world.
+        self.space.add(self.body, self.part_1, self.part_2)
 
 
     def show(self) -> None:
-        # Need the body's position and angle.
-        position1 = self.body.local_to_world(self.part_1_offset)
-        position2 = self.body.local_to_world(self.part_2_offset)
+        # The angle comes from the compound body.
         angle = self.body.angle
 
-        fill(127)
+        # Get the position for each part.
+        position_1 = self.body.position  # body center in world space ...
+        position_2 = self.body.local_to_world(self.offset)  # offset is local.
+
+        fill(175)
         stroke(0)
         stroke_weight(2)
 
-        # Translate and rotate the rectangle (part1)
-        push_matrix()
-        translate(position1.x, position1.y)
+        # Translate and rotate the rectangle (part1).
+        push()
+        translate(*position_1)
         rotate(angle)
         rect_mode(CENTER)
         rect(0, 0, self.w, self.h)
-        pop_matrix()
+        pop()
 
-        # Translate and rotate the circle (part2)
-        push_matrix()
-        translate(position2.x, position2.y)
+        # Translate and rotate the circle (part2).
+        push()
+        translate(*position_2)
         rotate(angle)
-        fill(200)
+        fill(175)
         circle(0, 0, self.r * 2)
-        pop_matrix()
+        pop()
 
     def remove_body(self) -> None:
         """This function removes a body from the Matter.js world."""
 
-        self.space.remove(self.part1, self.part2, self.body)
+        self.space.remove(self.part_1, self.part_2, self.body)
 
     def check_edge(self) -> bool:
         return self.body.position.y > height + self.h * 2

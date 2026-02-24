@@ -26,7 +26,7 @@ class Box:
         self.body.position = (x, y)
         self.shape = Poly.create_box(self.body, (self.w, self.w))
 
-        self.space = space  # Store reference for removing/etc.
+        self.space = space  # Store reference for remove_body/etc.
         self.space.add(self.body, self.shape)  # Don't forget to add it to world!
 
     def show(self) -> None:

@@ -311,6 +311,10 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch06_physics_libraries/06.04](ch06_physics_libraries/06.04) |
   p5.js: [o3-Qpqu2i](https://editor.p5js.org/natureofcode/sketches/o3-Qpqu2i)
 
+- **06.05 - multiple_shapes_one_body** |
+  py5: [ch06_physics_libraries/06.04](ch06_physics_libraries/06.04) |
+  p5.js: [xxYF4I5bi](https://editor.p5js.org/natureofcode/sketches/xxYF4I5bi)
+
 - 🚧 IN PROGRESS ...
 
 - **06.11 - simple_spring_toxiclibs** |
