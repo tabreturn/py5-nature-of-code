@@ -5,10 +5,12 @@ from pymunk import Space
 from boundary_pm import Boundary
 from lollipop_pm import Lollipop
 
-import sys, os; sys.path.append(os.path.dirname(os.path.dirname(__file__)))
+import sys, os
+
+sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 from pymunk_constants import *  # Matter.js <-> Pymunk calibration constants.
 
-lollipops: list[Lollipop] = []  # A list to store all CustomShape objects.
+lollipops: list[Lollipop] = []  # A list to store all Lollipop objects.
 
 
 def setup():
@@ -20,8 +22,8 @@ def setup():
 
     # Add a bunch of fixed boundaries.
     boundaries = [
-      Boundary(engine, width / 4, height - 5, width / 2 - 50, 10),
-      Boundary(engine, (3 * width) / 4, height - 50, width / 2 - 50, 10),
+        Boundary(engine, width / 4, height - 5, width / 2 - 50, 10),
+        Boundary(engine, (3 * width) / 4, height - 50, width / 2 - 50, 10),
     ]
 
 
@@ -30,7 +32,7 @@ def draw():
 
     engine.step(DT)  # Step the engine forward in time!
 
-    # Boxes fall from the top every so often.
+    # Lollipops fall from the top every so often.
     if random() < 0.025:
         lollipop = Lollipop(engine, width / 2, 50)
         lollipops.append(lollipop)
@@ -39,9 +41,9 @@ def draw():
     for boundary in boundaries:
         boundary.show()
 
-    # Iterate over a copy to remove shapes safely (instead of backwards).
+    # Iterate over a copy to remove lollipops safely (instead of backwards).
     for lollipop in lollipops[:]:
-        # Display all the CustomShape objects.
+        # Display all the Lollipop objects.
         lollipop.show()
         # Remove the Body(+shape) from the world and the list.
         if lollipop.check_edge():

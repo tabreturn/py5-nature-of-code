@@ -30,7 +30,7 @@ def draw():
 
     engine.step(DT)  # Step the engine forward in time!
 
-    # Boxes fall from the top every so often.
+    # Shapes fall from the top every so often.
     if random() < 0.025:
         cs = CustomShape(engine, width / 2, 50)
         shapes.append(cs)

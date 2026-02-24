@@ -9,6 +9,8 @@ from pymunk_constants import *  # Matter.js <-> Pymunk calibration constants.
 
 class Lollipop:
 
+    # Needs "space" parameter because Python modules have isolated namespaces.
+    # (p5.js sketches share a single global scope)
     def __init__(self, space, x: float, y: float):
         self.w = 24
         self.h = 4
@@ -23,7 +25,7 @@ class Lollipop:
         # Add an offset from the x-position of the lollipop's stick.
         self.offset = Vec2d(self.w / 2, 0)
 
-        # Join the two bodies together first (in Pymunk, make bodies is second).
+        # Join two bodies together first (in Pymunk, making bodies comes second).
         self.body = Body(
           options['mass'],
           moment_for_box(options['mass'], (self.w, self.h))
@@ -46,7 +48,6 @@ class Lollipop:
 
         # Add the compound body to the world.
         self.space.add(self.body, self.part_1, self.part_2)
-
 
     def show(self) -> None:
         # The angle comes from the compound body.
