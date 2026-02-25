@@ -9,7 +9,7 @@ class Box:
         self.y = y
         self.w = 16
 
-    def show(self):
+    def show(self) -> None:
         # The box is drawn as a square().
         rect_mode(CENTER)
         fill(127)

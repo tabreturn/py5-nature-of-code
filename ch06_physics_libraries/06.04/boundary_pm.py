@@ -24,7 +24,7 @@ class Boundary:
 
         space.add(self.body, self.shape)
 
-    def show(self):
+    def show(self) -> None:
         # Since boundary can never move, show() can draw it old-fashioned way,
         # using the original variables. No need to query Pymunk.
         rect_mode(CENTER)
