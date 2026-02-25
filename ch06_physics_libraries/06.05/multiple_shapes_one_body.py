@@ -5,9 +5,7 @@ from pymunk import Space
 from boundary_pm import Boundary
 from lollipop_pm import Lollipop
 
-import sys, os
-
-sys.path.append(os.path.dirname(os.path.dirname(__file__)))
+import sys, os; sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 from pymunk_constants import *  # Matter.js <-> Pymunk calibration constants.
 
 lollipops: list[Lollipop] = []  # A list to store all Lollipop objects.

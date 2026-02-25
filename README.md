@@ -315,6 +315,10 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch06_physics_libraries/06.05](ch06_physics_libraries/06.05) |
   p5.js: [xxYF4I5bi](https://editor.p5js.org/natureofcode/sketches/xxYF4I5bi)
 
+- **06.06 - pendulum_pm** |
+  py5: [ch06_physics_libraries/06.06](ch06_physics_libraries/06.06) |
+  p5.js: [YT6u0GqtH](https://editor.p5js.org/natureofcode/sketches/YT6u0GqtH)
+
 - 🚧 IN PROGRESS ...
 
 - **06.11 - simple_spring_toxiclibs** |
