@@ -1,7 +1,6 @@
 # PY5 IMPORTED MODE CODE
 
-# Note Matter.js uses 'aliases'; for py5 just import Pymunk symbols directly.
-from pymunk import Body, Poly, moment_for_poly, Vec2d
+from pymunk import *
 
 import sys, os; sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 from pymunk_constants import *  # Matter.js <-> Pymunk calibration constants.
@@ -11,7 +10,7 @@ class CustomShape:
 
     # Needs "space" parameter because Python modules have isolated namespaces.
     # (p5.js sketches share a single global scope)
-    def __init__(self, space: 'Space', x: float, y: float):
+    def __init__(self, space: Space, x: float, y: float):
         # A list of five vectors.
         vertices_ = [
           Vec2d(-10, -10),

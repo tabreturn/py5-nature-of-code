@@ -1,7 +1,6 @@
 # PY5 IMPORTED MODE CODE
 
-# Note Matter.js uses 'aliases'; for py5 just import Pymunk symbols directly.
-from pymunk import Body, Poly, moment_for_box, Circle, moment_for_circle, Vec2d
+from pymunk import *
 
 import sys, os; sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 from pymunk_constants import *  # Matter.js <-> Pymunk calibration constants.

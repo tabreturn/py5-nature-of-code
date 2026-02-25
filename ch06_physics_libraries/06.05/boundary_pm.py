@@ -1,14 +1,13 @@
 # PY5 IMPORTED MODE CODE
 
-# Note Matter.js uses 'aliases'; for py5 just import Pymunk symbols directly.
-from pymunk import Body, Poly
+from pymunk import *
 
 
 class Boundary:
 
     # Needs "space" parameter because Python modules have isolated namespaces.
     # (p5.js sketches share a single global scope)
-    def __init__(self, space: 'Space', x: float, y: float, w: float, h: float):
+    def __init__(self, space: Space, x: float, y: float, w: float, h: float):
         # A boundary is a simple rectangle with x, y, width, and height.
         self.x = x
         self.y = y
