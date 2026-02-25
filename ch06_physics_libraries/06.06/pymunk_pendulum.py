@@ -1,4 +1,4 @@
-# https://natureofcode.com/physics-libraries/#example-66-matterjs-pendulum
+# https://natureofcode.com/physics-libraries/#distance-constraints
 
 # Note Matter.js uses 'aliases'; for py5 just import Pymunk symbols directly.
 from pymunk import Space

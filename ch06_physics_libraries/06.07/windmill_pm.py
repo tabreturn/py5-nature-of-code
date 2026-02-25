@@ -1,6 +1,7 @@
 # PY5 IMPORTED MODE CODE
 
 from pymunk import *
+from pymunk.constraints import *
 
 import sys, os; sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 from pymunk_constants import *  # Matter.js <-> Pymunk calibration constants.
@@ -12,19 +13,27 @@ class Windmill:
         self.w = w
         self.h = h
 
-        # The rotating body.
-        self.body = Bodies.rectangle(x, y, w, h)
-        Composite.add(engine.world, this.body)
+        """
+        NOTE:
+        Matter.js uses Constraint.create({...}) for a revolute joint. In Pymunk,
+        specific joint types are classes (e.g., PivotJoint).
+        """
 
-        # The revolute constraint.
-        options = {
-          body_a: self.body,
-          point_b: { x: x, y: y },
-          length: 0,
-          stiffness: 1,
+        options = {  # Specify the properties of this body in a dictionary.
+          'restitution': 1.0,
+          'mass': 10.0,
         }
-        self.constraint = Constraint.create(options)
-        Composite.add(engine.world, this.constraint)
+        # Create a body at a given position with width and height.
+        self.body = Body(options['mass'], moment_for_box(options['mass'], (w, h)))
+        self.body.position = x, y
+        self.shape = Poly.create_box(self.body, (w, h))  # The rotating body.
+        self.shape.friction = 0.5
+        self.shape.elasticity = options['restitution']
+        space.add(self.body, self.shape)
+
+        # Create PivotJoint (Pymunk has no "Constraint") and add to the world.
+        self.pivot = PivotJoint(self.body, space.static_body, (x, y))
+        space.add(self.pivot)
 
     def show(self) -> None:
         rect_mode(CENTER)
@@ -33,9 +42,8 @@ class Windmill:
         stroke_weight(2)
         push()
         translate(*self.body.position)
-        push()
         rotate(self.body.angle)
         rect(0, 0, self.w, self.h)
         pop()
-        line(0, 0, 0, height)  # Draw stand for windmill (not part of physics).
-        pop()
+        # Draw stand for windmill (not part of physics).
+        line(*self.pivot.anchor_b, self.pivot.anchor_b.x, height)
