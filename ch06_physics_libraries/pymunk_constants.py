@@ -3,11 +3,13 @@ Since the Matter.js and Pymunk engines use different units and solvers,
 these values provide an approximate conversion for matching visual behavior.
 """
 
-# Scale factors to approximate Matter.js units in Pymunk.
-SCALE_GRAVITY = 900.0
-SCALE_VELOCITY = 60.0
-SCALE_ANG_VELOCITY = 60.0
-SCALE_FRICTION = 30.0
-
 # Fixed timestep (equivalent to Matter.Runner internal delta time).
-DT = 1 / 60
+FPS = 60.0
+DT = 1.0 / FPS
+SCALE_TIME = FPS
+
+# Scale factors to approximate Matter.js units in Pymunk.
+SCALE_VELOCITY = SCALE_TIME
+SCALE_ANG_VELOCITY = SCALE_TIME
+SCALE_GRAVITY = SCALE_TIME ** 2
+SCALE_FRICTION = SCALE_TIME
