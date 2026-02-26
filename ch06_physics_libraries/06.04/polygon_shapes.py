@@ -12,7 +12,7 @@ shapes: list[CustomShape] = []  # A list to store all CustomShape objects.
 
 
 def setup():
-    global boundaries, engine  # The engine is now a global variable!
+    global boundaries, engine
     size(640, 240)
     engine = Space()  # Create the engine; Pymunk's "world/engine" is a Space.
     # Change the engine's gravity to point downward.

@@ -9,7 +9,7 @@ from pymunk_constants import *  # Matter.js <-> Pymunk calibration constants.
 
 
 def setup():
-    global pendulum, engine  # The engine is now a global variable!
+    global pendulum, engine
     size(640, 240)
 
     engine = Space()  # Create the engine; Pymunk's "world/engine" is a Space.

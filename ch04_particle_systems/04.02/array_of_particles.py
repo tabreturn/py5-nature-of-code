@@ -2,7 +2,7 @@
 
 from particle import Particle
 
-particles = []  # Start with an empty list.
+particles: list[Particle] = []  # Start with an empty list.
 TOTAL = 10
 
 

@@ -9,6 +9,8 @@ from pymunk_constants import *  # Matter.js <-> Pymunk calibration constants.
 
 class Windmill:
 
+    # Needs "space" parameter because Python modules have isolated namespaces.
+    # (p5.js sketches share a single global scope)
     def __init__(self, space: Space, x: float, y: float, w: float, h: float):
         self.w = w
         self.h = h
