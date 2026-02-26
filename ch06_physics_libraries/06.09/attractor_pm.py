@@ -14,27 +14,25 @@ class Attractor:
         # The attractor is a static body.
         self.radius = 32
         self.body = Body(body_type=Body.STATIC)
-        self.body.position = (x, y)
+        self.body.position = Vec2d(x, y)
         self.shape = Circle(self.body, self.radius)
         self.shape.friction = 2.0
         self.shape.elasticity = 0.2
-
         space.add(self.body, self.shape)
 
     def attract(self, mover: 'Mover') -> Vec2d:
-        # The attract() method now uses vector functions.
+        # The attract() method now uses Pymunk vectors.
         force = self.body.position - mover.body.position
         distance = force.length
         distance = constrain(distance, 5, 25)
 
-        # Use a small value for G to keep the system stable.
-        G = 0.02 * 1000_000  # Use a small value for G to keep the system stable.
+        # Use a small value for G to keep the system stable ...
+        G = 0.02 * 1_000_000  # ... but scale for Pymunk's unit system.
 
-        # The mover's mass is included here, but the attractor's mass is left out since,
-        # as a static body, it is equivalent to infinity.
+        # Attractor's mass is absorbed into G since it is a fixed (static) body.
         strength = (G * mover.body.mass) / (distance ** 2)
 
-        # More Matter.js vector functions.
+        # More vector functions/calculations.
         force = force.normalized()
         force *= strength
 
@@ -48,5 +46,4 @@ class Attractor:
         translate(*self.body.position)
         rotate(self.body.angle)
         circle(0, 0, self.radius * 2)
-        line(0, 0, self.radius, 0)
         pop()

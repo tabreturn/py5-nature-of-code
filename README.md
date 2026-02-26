@@ -325,6 +325,12 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
 
 - 🚧 IN PROGRESS ...
 
+- **06.09 - pymunk_attraction** |
+  py5: [ch06_physics_libraries/06.09](ch06_physics_libraries/06.09) |
+  p5.js: [16sblEvax](https://editor.p5js.org/natureofcode/sketches/16sblEvax)
+
+- 🚧 IN PROGRESS ...
+
 - **06.11 - simple_spring_toxiclibs** |
   py5: [ch06_physics_libraries/06.11](ch06_physics_libraries/06.11) |
   p5.js: [CSzXIfoWH](https://editor.p5js.org/natureofcode/sketches/CSzXIfoWH)

@@ -12,12 +12,14 @@ class Mover:
     # (p5.js sketches share a single global scope)
     def __init__(self, space: Space, x: float, y: float, radius: float):
         self.radius = radius
-        space.damping = 1.0  # No air resistance (see "frictionAir").
+
+        # 1.0 = no damping (conceptual equivalent to "frictionAir").
+        space.damping = 1.0  # Optional -- Pymunk damping is 1.0 by default.
 
         options = {  # Specify the properties of this body in a dictionary.
           'restitution': 0.2,
-          'friction':0.01 * SCALE_FRICTION,
-          'mass': PI * self.radius ** 2 * 0.001,  # density = 0.001
+          'friction': 0.01 * SCALE_FRICTION,
+          'mass': PI * self.radius ** 2 * 0.001,  # Density = 0.001.
         }
         self.body = Body(
           options['mass'],
@@ -35,20 +37,16 @@ class Mover:
         space.add(self.body, self.shape)
 
     def apply_force(self, force: Vec2d) -> None:
-        """Calling Body's applyForce() function."""
+        """Calling Body's apply_force_at_world_point() function."""
         self.body.apply_force_at_world_point(force, self.body.position)
 
     def show(self) -> None:
-        pos = self.body.position
-        a = self.body.angle
-
-        rect_mode(CENTER)
         fill(127)
         stroke(0)
         stroke_weight(2)
         push()
-        translate(*pos)
-        rotate(a)
+        translate(*self.body.position)
+        rotate(self.body.angle)
         circle(0, 0, self.radius * 2)
         line(0, 0, self.radius, 0)
         pop()
