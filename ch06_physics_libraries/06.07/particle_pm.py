@@ -8,6 +8,8 @@ from pymunk_constants import *  # Matter.js <-> Pymunk calibration constants.
 
 class Particle:
 
+    # Needs "space" parameter because Python modules have isolated namespaces.
+    # (p5.js sketches share a single global scope)
     def __init__(self, space: Space, x: float, y: float):
         self.r = 8
 

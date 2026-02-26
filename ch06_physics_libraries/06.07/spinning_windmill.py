@@ -12,7 +12,7 @@ particles: list[Particle] = []  # A list to store all Particle objects.
 
 
 def setup():
-    global windmill, engine  # The engine is now a global variable!
+    global windmill, engine
     size(640, 240)
 
     engine = Space()  # Create the engine; Pymunk's "world/engine" is a Space.
