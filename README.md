@@ -323,13 +323,17 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch06_physics_libraries/06.07](ch06_physics_libraries/06.07) |
   p5.js: [D96JFWc3-](https://editor.p5js.org/natureofcode/sketches/D96JFWc3-)
 
-- 🚧 IN PROGRESS ...
+- **06.08 - mouse_constraint_demo** |
+  py5: [ch06_physics_libraries/06.08](ch06_physics_libraries/06.08) |
+  p5.js: [mTRKgn44p](https://editor.p5js.org/natureofcode/sketches/mTRKgn44p)
 
 - **06.09 - pymunk_attraction** |
   py5: [ch06_physics_libraries/06.09](ch06_physics_libraries/06.09) |
   p5.js: [16sblEvax](https://editor.p5js.org/natureofcode/sketches/16sblEvax)
 
-- 🚧 IN PROGRESS ...
+- **06.10 - collision_events** |
+  py5: [ch06_physics_libraries/06.10](ch06_physics_libraries/06.10) |
+  p5.js: [3cREe4udP](https://editor.p5js.org/natureofcode/sketches/3cREe4udP)
 
 - **06.11 - simple_spring_toxiclibs** |
   py5: [ch06_physics_libraries/06.11](ch06_physics_libraries/06.11) |

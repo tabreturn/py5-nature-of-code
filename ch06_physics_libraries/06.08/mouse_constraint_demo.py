@@ -59,7 +59,6 @@ def mouse_pressed():
         mouse.position = p
         b = hit.shape.body
         mouse_joint = PivotJoint(mouse, b, (0, 0), b.world_to_local(p))
-        mouse_joint.max_force = 2_000_000
         engine.add(mouse_joint)
 
 def mouse_released():
