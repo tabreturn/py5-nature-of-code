@@ -14,7 +14,7 @@ def setup():
     size(640, 240)
 
     engine = Space()  # Create the engine; Pymunk's "world/engine" is a Space.
-    # Disable the gravity. 
+    # Disable the gravity.
     engine.gravity = (0, 0)  # Optional -- Pymunk gravity is (0, 0) by default.
 
     movers = [

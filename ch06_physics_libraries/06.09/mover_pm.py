@@ -13,7 +13,7 @@ class Mover:
     def __init__(self, space: Space, x: float, y: float, radius: float):
         self.radius = radius
 
-        # 1.0 = no damping (conceptual equivalent to "frictionAir").
+        # 1.0 = no damping (global); conceptual equivalent to "frictionAir".
         space.damping = 1.0  # Optional -- Pymunk damping is 1.0 by default.
 
         options = {  # Specify the properties of this body in a dictionary.
