@@ -1,6 +1,7 @@
 # PY5 IMPORTED MODE CODE
 
 from pymunk import *
+from pymunk.constraints import PinJoint
 
 import sys, os; sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 from pymunk_constants import *  # Matter.js <-> Pymunk calibration constants.
@@ -32,7 +33,7 @@ class Pendulum:
           'body_b': self.bob_body,
           'length': self.len_,
         }
-        self.arm = pymunk.PinJoint(
+        self.arm = PinJoint(
           options['body_a'], options['body_b'], (0, 0), (0, 0)
         )
         self.arm.distance = options['length']
