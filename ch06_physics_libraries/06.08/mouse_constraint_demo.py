@@ -9,7 +9,7 @@ velocity clamping ('stiffness') and temporary rotation locking (0, float('inf'))
 
 # Note Matter.js uses 'aliases'; for py5 just import Pymunk symbols directly.
 from pymunk import Body, Space, PivotJoint, ShapeFilter, Vec2d
-# (Matter.js example imports Mouse, MouseConstraint, among others.)
+# (Matter.js example imports Mouse, MouseConstraint, among others)
 
 from box_pm import Box
 from boundary_pm import Boundary

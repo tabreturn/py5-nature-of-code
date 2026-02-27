@@ -50,7 +50,7 @@ def draw():
             life_counter += 1
     else:
         # When LIFESPAN is reached, reset life_counter and evolve the next gen.
-        # (steps 3 and 4, selection and reproduction).
+        # (steps 3 and 4, selection and reproduction)
         life_counter = 0
         population.fitness(target)
         population.selection()
