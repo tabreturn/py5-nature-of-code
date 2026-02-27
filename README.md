@@ -339,7 +339,21 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch06_physics_libraries/06.11](ch06_physics_libraries/06.11) |
   p5.js: [CSzXIfoWH](https://editor.p5js.org/natureofcode/sketches/CSzXIfoWH)
 
-- 🚧 IN PROGRESS ...
+- 06.12 - 🚧 IN PROGRESS ... |
+  py5: [ch06_physics_libraries/06.12](ch06_physics_libraries/06.12) |
+  p5.js: [cIygo3QeX](https://editor.p5js.org/natureofcode/sketches/cIygo3QeX)
+
+- 06.13 - 🚧 IN PROGRESS ... |
+  py5: [ch06_physics_libraries/06.13](ch06_physics_libraries/06.13) |
+  p5.js: [-1beeiwUK](https://editor.p5js.org/natureofcode/sketches/-1beeiwUK)
+
+- 06.14 - 🚧 IN PROGRESS ... |
+  py5: [ch06_physics_libraries/06.14](ch06_physics_libraries/06.14) |
+  p5.js: [_tbPaFqVX](https://editor.p5js.org/natureofcode/sketches/_tbPaFqVX)
+
+- 06.15 - 🚧 IN PROGRESS ... |
+  py5: [ch06_physics_libraries/06.15](ch06_physics_libraries/06.15) |
+  p5.js: [tjIs8XaXP](https://editor.p5js.org/natureofcode/sketches/tjIs8XaXP)
 
 </details>
 
