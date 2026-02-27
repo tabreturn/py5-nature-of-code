@@ -26,13 +26,13 @@ class Attractor:
         distance = force.length
         distance = constrain(distance, 5, 25)
 
-        # Use a small value for G to keep the system stable ...
-        G = 0.02 * 1_000_000  # ... but scale for Pymunk's unit system.
+        # Use a small value for G to keep the system stable, but ...
+        G = 0.02 * 1_000_000  # ... scale massively for Pymunk's unit system.
 
         # Attractor's mass is absorbed into G since it is a fixed (static) body.
         strength = (G * mover.body.mass) / (distance ** 2)
 
-        # More vector functions/calculations.
+        # More vector methods/calculations.
         force = force.normalized()
         force *= strength
 
