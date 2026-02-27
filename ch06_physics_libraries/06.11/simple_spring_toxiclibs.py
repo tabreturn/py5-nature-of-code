@@ -64,14 +64,14 @@ def draw():
 
 
 # How cute is this simple Particle class?!
-class Particle():
+class Particle:
     """For py5, wrap Java VerletParticle2D as **py5 cannot subclass it**."""
 
     def __init__(self, x: float, y: float, r: float):
         # A VerletParticle needs initial (x, y) position, but has no geometry ...
         self._p = VerletParticle2D(x, y)  # (Python wrapper forwards to this)
         # ... so the r is used only for drawing.
-        self.r = r  
+        self.r = r
 
     def show(self) -> None:
         fill(127)
