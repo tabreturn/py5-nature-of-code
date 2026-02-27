@@ -1,7 +1,7 @@
 # https://natureofcode.com/physics-libraries/#collision-events
 
 # Note Matter.js uses 'aliases'; for py5 just import Pymunk symbols directly.
-from pymunk import Space
+from pymunk import Arbiter, Space, Shape
 from boundary_pm import Boundary
 from particle_pm import Particle
 
@@ -16,10 +16,29 @@ def setup():
     size(640, 240)
 
     engine = Space()  # Create the engine; Pymunk's "world/engine" is a Space.
-    # Disable the gravity.
-    engine.gravity = (0, 0)  # Optional -- Pymunk gravity is (0, 0) by default.
+    # Change the engine's gravity to point downward.
+    engine.gravity = (0, 1.0 * SCALE_GRAVITY)
 
     wall = Boundary(engine, width / 2, height - 5, width, 10)
+
+    # Matter.js "collisionStart" substitute. 0 is Pymunk default collision_type.
+    engine.on_collision(0, 0, begin=handle_collisions)
+    # (since we haven't assigned custom types, all shapes are type 0)
+
+
+def handle_collisions(arbiter: Arbiter, space: Space, _) -> bool:
+    shape_a, shape_b = arbiter.shapes
+
+    # Retrieve particles associated with colliding bodies via .particle reference.
+    particle_a = getattr(shape_a, 'particle', None)
+    particle_b = getattr(shape_b, 'particle', None)
+
+    # If they are both particles, change their color!
+    if isinstance(particle_a, Particle) and isinstance(particle_b, Particle):
+        particle_a.change()
+        particle_b.change()
+
+    return True
 
 
 def draw():

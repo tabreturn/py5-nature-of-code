@@ -11,7 +11,9 @@ class Particle:
     # Needs "space" parameter because Python modules have isolated namespaces.
     # (p5.js sketches share a single global scope)
     def __init__(self, space: Space, x: float, y: float):
-        self.r = 8
+#        self.r = 8
+        self.r = random(4, 8)
+        self.col = color(127)
 
         options = {  # Specify the properties of this body in a dictionary.
           'friction': 0.01 * SCALE_FRICTION,
@@ -26,6 +28,9 @@ class Particle:
         self.shape.friction = options['friction']
         self.shape.elasticity = options['restitution']
 
+        # "self" refers to this Particle (a reference to access it later).
+        self.shape.particle = self
+
         self.space = space  # Store reference for remove_body/etc.
         self.space.add(self.body, self.shape)
 
@@ -34,7 +39,8 @@ class Particle:
         a = self.body.angle
 
         rect_mode(CENTER)
-        fill(127)
+#        fill(127)
+        fill(self.col)
         stroke(0)
         stroke_weight(2)
         push()
@@ -51,3 +57,8 @@ class Particle:
 
     def check_edge(self) -> bool:
         return self.body.position.y > height + self.r
+
+    def change(self) -> None:
+        """Change color when hit."""
+
+        self.col = color(random(100, 255), 0, random(100, 255))

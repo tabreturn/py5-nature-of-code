@@ -19,7 +19,7 @@ class Boundary:
         self.body.position = (self.x, self.y)
         self.shape = Poly.create_box(self.body, (self.w, self.h))
         self.shape.friction = 2.0
-        self.shape.elasticity = 0.2
+        self.shape.elasticity = 0.2 * 3
 
         space.add(self.body, self.shape)
 
