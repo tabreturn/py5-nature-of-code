@@ -27,9 +27,10 @@ def setup():
 
 
 def handle_collisions(arbiter: Arbiter, space: Space, _) -> bool:
+    # No loop required -- Pymunk invokes this handler once per colliding pair.
     shape_a, shape_b = arbiter.shapes
 
-    # Retrieve particles associated with colliding bodies via .particle reference.
+    # Retrieve particles associated with collided bodies via .particle reference.
     particle_a = getattr(shape_a, 'particle', None)
     particle_b = getattr(shape_b, 'particle', None)
 

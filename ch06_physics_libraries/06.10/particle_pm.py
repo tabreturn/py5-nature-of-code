@@ -28,8 +28,8 @@ class Particle:
         self.shape.friction = options['friction']
         self.shape.elasticity = options['restitution']
 
-        # "self" refers to this Particle (a reference to access it later).
-        self.shape.particle = self
+        # "self" refers to this Particle (as a reference to access it later).
+        self.shape.particle = self  # Python doesn't need a .plugin wrapper.
 
         self.space = space  # Store reference for remove_body/etc.
         self.space.add(self.body, self.shape)
