@@ -1,5 +1,12 @@
 # https://natureofcode.com/physics-libraries/#importing-the-matterjs-library
 
+"""
+NOTE:
+Examples 6.01 through 6.10 use Pymunk, a Python wrapper for Chipmunk2D .
+Matter.js (from the original Nature of Code examples) is JavaScript only.
+More on Pymunk: https://www.pymunk.org
+"""
+
 # Note Matter.js uses 'aliases'; for py5 just import Pymunk symbols directly.
 from pymunk import Body, moment_for_box, Poly, Space
 # (Matter.js example imports Bodies, Body, Engine, Composite, Render, Vector)
