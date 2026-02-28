@@ -351,7 +351,7 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch06_physics_libraries/06.14](ch06_physics_libraries/06.14) |
   p5.js: [_tbPaFqVX](https://editor.p5js.org/natureofcode/sketches/_tbPaFqVX)
 
-- 06.15 - 🚧 IN PROGRESS ... |
+- **06.15 - attraction_repulsion_behaviors** |
   py5: [ch06_physics_libraries/06.15](ch06_physics_libraries/06.15) |
   p5.js: [tjIs8XaXP](https://editor.p5js.org/natureofcode/sketches/tjIs8XaXP)
 

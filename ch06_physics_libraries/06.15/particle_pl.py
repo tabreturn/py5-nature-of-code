@@ -3,6 +3,8 @@
 from toxi.geom import *
 from toxi.physics2d import *
 
+from toxi.physics2d.behaviors import AttractionBehavior2D
+
 
 # How cute is this simple Particle class?!
 class Particle:
@@ -15,6 +17,10 @@ class Particle:
         self._p = VerletParticle2D(x, y)  # (Python wrapper forwards to this)
         # ... so the r is used only for drawing.
         self.r = r
+
+        # Every time a Particle is made, an AttractionBehavior is generated. 
+        physics.addBehavior(AttractionBehavior2D(self._p, r * 2, -2))
+        # (Note that when the strength is negative, it's a repulsive force!)
 
         # Add the object to the global physics world.
         physics.addParticle(self._p)  # Inside class, reference is self._p.
