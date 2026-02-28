@@ -33,12 +33,12 @@ def setup():
 
     # Create one spring.
     strength = 0.01  # How strong is the spring? (Higher value = more rigid)
-    spring = VerletSpring2D(particle_1._p, particle_2._p, length, strength)
+    spring = VerletSpring2D(particle_1.p, particle_2.p, length, strength)
 
     # Must add everything to the world.
-    # (Particle is a Python wrapper, so pass its underlying Java object via ._p)
-    physics.addParticle(particle_1._p)
-    physics.addParticle(particle_2._p)
+    # (Particle is a Python wrapper, so pass its underlying Java object via .p)
+    physics.addParticle(particle_1.p)
+    physics.addParticle(particle_2.p)
     physics.addSpring(spring)
 
 
@@ -69,7 +69,7 @@ class Particle:
 
     def __init__(self, x: float, y: float, r: float):
         # A VerletParticle needs initial (x, y) position, but has no geometry ...
-        self._p = VerletParticle2D(x, y)  # (Python wrapper forwards to this)
+        self.p = VerletParticle2D(x, y)  # (Python wrapper forwards to this)
         # ... so the r is used only for drawing.
         self.r = r
 
@@ -84,12 +84,12 @@ class Particle:
     # Provide JS-style fields and forward the relevant physics verbs;
     # else Python would just create wrapper attributes and nothing would move.
     @property
-    def x(self) -> float: return float(self._p.x())
+    def x(self) -> float: return float(self.p.x())
     @x.setter
-    def x(self, v: float): self._p.set(float(v), self.y)
+    def x(self, v: float): self.p.set(float(v), self.y)
     @property
-    def y(self) -> float: return float(self._p.y())
+    def y(self) -> float: return float(self.p.y())
     @y.setter
-    def y(self, v: float): self._p.set(self.x, float(v))
-    lock   = lambda self: self._p.lock()
-    unlock = lambda self: self._p.unlock()
+    def y(self, v: float): self.p.set(self.x, float(v))
+    lock   = lambda self: self.p.lock()
+    unlock = lambda self: self.p.unlock()

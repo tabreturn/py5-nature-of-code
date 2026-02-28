@@ -13,7 +13,7 @@ class Spring:
         # Calculate the rest length as the distance between the particles.
         length = dist(a.x, a.y, b.x, b.y)
         # Hardcode the spring strength.
-        self._s = VerletSpring2D(a._p, b._p, length, 0.01)
+        self._s = VerletSpring2D(a.p, b.p, length, 0.01)
         # Another enhancement to have object add itself to the physics world!
         physics.addSpring(self._s)  # Inside class, reference is self._s.
 

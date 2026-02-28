@@ -28,7 +28,7 @@ class Cluster:
             for particle_j in self.particles[i + 1:]:
                 physics.addSpring(
                   # The spring connects particles i and j.
-                  VerletSpring2D(particle_i._p, particle_j._p, length, 0.01)
+                  VerletSpring2D(particle_i.p, particle_j.p, length, 0.01)
                 )
 
     def show(self) -> None:

@@ -25,15 +25,15 @@ def setup():
         # Space them out along the x-axis.
         particle = Particle(width / 2 + i * SPACING, 0, 16)
         # Add the particle to the physics world.
-        physics.addParticle(particle._p)  # (Underlying Java object via ._p)
+        physics.addParticle(particle.p)  # (Underlying Java object via .p)
         # Add the particle to the list.
         particles.append(particle)
 
     for i in range(TOTAL - 1):  # Loop stops before last element (TOTAL – 1).
         # The spring connects particle i to i + 1.
         spring = VerletSpring2D(
-          particles[i]._p,
-          particles[i + 1]._p,
+          particles[i].p,
+          particles[i + 1].p,
           SPACING, 0.2
         )
         physics.addSpring(spring)  # The spring must also be added to the world.
@@ -74,7 +74,7 @@ class Particle:
 
     def __init__(self, x: float, y: float, r: float):
         # A VerletParticle needs initial (x, y) position, but has no geometry ...
-        self._p = VerletParticle2D(x, y)  # (Python wrapper forwards to this)
+        self.p = VerletParticle2D(x, y)  # (Python wrapper forwards to this)
         # ... so the r is used only for drawing.
         self.r = r
 
@@ -89,12 +89,12 @@ class Particle:
     # Provide JS-style fields and forward the relevant physics verbs;
     # else Python would just create wrapper attributes and nothing would move.
     @property
-    def x(self) -> float: return float(self._p.x())
+    def x(self) -> float: return float(self.p.x())
     @x.setter
-    def x(self, v: float): self._p.set(float(v), self.y)
+    def x(self, v: float): self.p.set(float(v), self.y)
     @property
-    def y(self) -> float: return float(self._p.y())
+    def y(self) -> float: return float(self.p.y())
     @y.setter
-    def y(self, v: float): self._p.set(self.x, float(v))
-    lock   = lambda self: self._p.lock()
-    unlock = lambda self: self._p.unlock()
+    def y(self, v: float): self.p.set(self.x, float(v))
+    lock   = lambda self: self.p.lock()
+    unlock = lambda self: self.p.unlock()

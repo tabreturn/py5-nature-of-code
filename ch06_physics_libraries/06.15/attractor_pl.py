@@ -12,19 +12,19 @@ class Attractor:
     # Needs "physics" parameter because Python modules have isolated namespaces.
     # (p5.js sketches share a single global scope)
     def __init__(self, physics: VerletPhysics2D, x: float, y: float, r: float):
-        self._p = VerletParticle2D(x, y)
+        self.p = VerletParticle2D(x, y)
         self.r = r
 
         # Attract all particles always.
         distance = width
         strength = 0.1
-        physics.addBehavior(AttractionBehavior2D(self._p, distance, strength))
+        physics.addBehavior(AttractionBehavior2D(self.p, distance, strength))
         # Repel particles that come within its radius.
-        physics.addBehavior(AttractionBehavior2D(self._p, self.r + 4, -5))
+        physics.addBehavior(AttractionBehavior2D(self.p, self.r + 4, -5))
         # A nice improvement where the attractor adds itself to the physics
-        physics.addParticle(self._p)
+        physics.addParticle(self.p)
 
 
     def show(self) -> None:
         fill(0)
-        circle(self._p.x(), self._p.y(), self.r * 2)
+        circle(self.p.x(), self.p.y(), self.r * 2)

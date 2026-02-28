@@ -36,7 +36,7 @@ def draw():
         particle.show()
 
     if is_mouse_pressed:
-        attractor._p.lock()
+        attractor.p.lock()
         attractor.set(mouse_x, mouse_y)
     else:
-        attractor._p.unlock()
+        attractor.p.unlock()
