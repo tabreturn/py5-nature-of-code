@@ -8,6 +8,8 @@ I've taken a few liberties in my interpretation. First, the examples in the book
 
 To run the sketches, install [Thonny-py5mode](https://github.com/py5coding/thonny-py5mode) and activate **py5 → Imported mode for py5** in the editor.
 
+Find the original p5.js examples in the [noc-book-2 repo](https://github.com/nature-of-code/noc-book-2/tree/main/content/examples), linked alongside each py5 sketch [listed below](#part-1-inanimate-objects), or in the Book's online [Examples section](https://natureofcode.com/examples).
+
 Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
 
 ![](banner.png)
