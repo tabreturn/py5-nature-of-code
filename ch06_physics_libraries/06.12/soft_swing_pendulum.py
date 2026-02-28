@@ -26,7 +26,7 @@ def setup():
         particle = Particle(width / 2 + i * SPACING, 0, 16)
         # Add the particle to the physics world.
         physics.addParticle(particle._p)  # (Underlying Java object via ._p)
-        # Add the particle to the array.
+        # Add the particle to the list.
         particles.append(particle)
 
     for i in range(TOTAL - 1):  # Loop stops before last element (TOTAL – 1).
@@ -59,7 +59,7 @@ def draw():
     # This draws the last particle as a circle.
     particles[-1].show()
 
-    # Move the particle according to the mouse.
+    # Move the *last* particle according to the mouse.
     if is_mouse_pressed:
         # First lock the particle, then set the x and y, then unlock() it.
         particles[-1].lock()
