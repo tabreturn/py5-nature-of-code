@@ -12,7 +12,6 @@ def setup():
 
     # Create a Toxiclibs.js Verlet physics world.
     physics = VerletPhysics2D()
-
     # Create a random cluster.
     cluster = Cluster(physics, random_int(2, 20-1), random(10, height / 2))
 
@@ -22,7 +21,8 @@ def draw():
 
     # Must update the physics.
     physics.update()
-    physics.setDrag(0.2)  # Some drag to avoid fast-spinning clusters.
+    # Some drag to avoid fast-spinning clusters.
+    physics.setDrag(0.2)
 
     background(255)
 
@@ -31,7 +31,7 @@ def draw():
 
     # Display all points.
     if show_particles:
-        cluster.show()  # Draw the particles.
+        cluster.show()  # Draw the cluster particles.
 
     # If we want to see the physics.
     if show_physics:

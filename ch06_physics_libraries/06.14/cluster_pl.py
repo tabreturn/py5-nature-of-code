@@ -14,7 +14,10 @@ class Cluster:
         # Physics will misbehave if all particles created in exact same position.
         self.particles = [
           Particle(
-            physics, width / 2 + random(-1, 1), height / 2 + random(-1, 1), 4
+            physics,                     # physics world
+            width / 2 + random(-1, 1),   # x
+            height / 2 + random(-1, 1),  # y
+            4                            # radius
           )
           for _ in range(n)
         ]
