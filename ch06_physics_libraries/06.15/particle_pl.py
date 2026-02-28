@@ -18,7 +18,7 @@ class Particle:
         # ... so the r is used only for drawing.
         self.r = r
 
-        # Every time a Particle is made, an AttractionBehavior is generated. 
+        # Every time a Particle is made, an AttractionBehavior2D is generated.
         physics.addBehavior(AttractionBehavior2D(self.p, r * 2, -2))
         # (Note that when the strength is negative, it's a repulsive force!)
 

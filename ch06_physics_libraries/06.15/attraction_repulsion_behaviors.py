@@ -37,6 +37,6 @@ def draw():
 
     if is_mouse_pressed:
         attractor.p.lock()
-        attractor.set(mouse_x, mouse_y)
+        attractor.p.set(mouse_x, mouse_y)
     else:
         attractor.p.unlock()

@@ -18,12 +18,12 @@ class Attractor:
         # Attract all particles always.
         distance = width
         strength = 0.1
-        physics.addBehavior(AttractionBehavior2D(self.p, distance, strength))
+        behavior = AttractionBehavior2D(self.p, distance, strength)
+        physics.addBehavior(behavior)
         # Repel particles that come within its radius.
         physics.addBehavior(AttractionBehavior2D(self.p, self.r + 4, -5))
-        # A nice improvement where the attractor adds itself to the physics
+        # A nice improvement where the attractor adds itself to the physics.
         physics.addParticle(self.p)
-
 
     def show(self) -> None:
         fill(0)
