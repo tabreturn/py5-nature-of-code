@@ -71,7 +71,7 @@ class Creature:
         pop()
 
     def think(self, food_list: list[Food]) -> None:
-        # Build an input array from the sensor values.
+        # Build an input list from the sensor values.
         for sensor in self.sensors:
             sensor.value = 0
             for food in food_list:

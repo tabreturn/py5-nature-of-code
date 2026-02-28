@@ -339,7 +339,7 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch06_physics_libraries/06.11](ch06_physics_libraries/06.11) |
   p5.js: [CSzXIfoWH](https://editor.p5js.org/natureofcode/sketches/CSzXIfoWH)
 
-- 06.12 - 🚧 IN PROGRESS ... |
+- **06.12 - soft_swing_pendulum** |
   py5: [ch06_physics_libraries/06.12](ch06_physics_libraries/06.12) |
   p5.js: [cIygo3QeX](https://editor.p5js.org/natureofcode/sketches/cIygo3QeX)
 

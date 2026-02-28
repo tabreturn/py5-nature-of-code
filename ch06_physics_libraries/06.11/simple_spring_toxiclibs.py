@@ -10,7 +10,7 @@ https://py5coding.org/how_tos/use_processing_libraries.html
 # The necessary geometry classes: vectors, rectangles.
 from toxi.geom import Vec2D, Rect
 # Import the important classes from toxi.physics2d.
-from toxi.physics2d import VerletPhysics2D, VerletSpring2D, VerletParticle2D
+from toxi.physics2d import VerletPhysics2D, VerletParticle2D, VerletSpring2D
 # For the world's gravity.
 from toxi.physics2d.behaviors import GravityBehavior2D
 
