@@ -347,7 +347,7 @@ Where text is displayed, the sketches use the *DejaVu Sans Mono* font.
   py5: [ch06_physics_libraries/06.13](ch06_physics_libraries/06.13) |
   p5.js: [-1beeiwUK](https://editor.p5js.org/natureofcode/sketches/-1beeiwUK)
 
-- 06.14 - 🚧 IN PROGRESS ... |
+- **06.14 - force_directed_graph** |
   py5: [ch06_physics_libraries/06.14](ch06_physics_libraries/06.14) |
   p5.js: [_tbPaFqVX](https://editor.p5js.org/natureofcode/sketches/_tbPaFqVX)
 
