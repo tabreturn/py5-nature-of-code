@@ -6,6 +6,8 @@
 
 I've taken a few liberties in my interpretation. First, the examples in the book and its accompanying [p5.js sketches](https://natureofcode.com/examples) don't always align exactly. Second, in places, minor adjustments were necessary to support an idiomatic, py5-compatible Python implementation. Some chapters rely on p5.js-exclusive libraries, so I've had to employ substitutes/alternatives. Throughout, however, my goal has been to balance faithfulness to the original material with Python best practices and clarity for readers working through the book.
 
+This port was the subject of a **[CC Fest 2026 session](https://github.com/tabreturn/cc-fest-noc-py5)** exploring what translates directly, what requires rethinking, and where Python simplifies the original p5.js code.
+
 To run the sketches, install [Thonny-py5mode](https://github.com/py5coding/thonny-py5mode) and activate **py5 → Imported mode for py5** in the editor.
 
 Find the original p5.js examples in the [noc-book-2 repo](https://github.com/nature-of-code/noc-book-2/tree/main/content/examples), linked alongside each py5 sketch [listed below](#part-1-inanimate-objects), or in the Book's online [Examples section](https://natureofcode.com/examples).
